@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deportes & Safaris | The Waterman Experience - Los Roques</title>
+    <meta name="description" content="Kitesurf, Windsurf, Wingfoil y Buceo en Los Roques, Venezuela. Programas de 6 días con coaching 1:1, guías náuticos y safaris a cayos vírgenes.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <!-- Custom Adventure.travel Style System -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        /* Subpage specific clean component styling aligned with design system */
+        .sport-tab-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            border: 1px solid var(--color-border);
+            background: #ffffff;
+            color: var(--color-text-body);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .sport-tab-btn:hover {
+            border-color: var(--color-coral);
+            color: var(--color-coral);
+        }
+        .sport-tab-btn.active {
+            background: var(--color-coral);
+            color: #ffffff;
+            border-color: var(--color-coral);
+            box-shadow: 0 4px 14px rgba(224, 90, 71, 0.35);
+        }
+        .level-btn {
+            padding: 0.4rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            font-size: 0.75rem;
+            cursor: pointer;
+            border: 1px solid var(--color-border);
+            background: #ffffff;
+            color: var(--color-text-muted);
+            transition: all 0.2s ease;
+        }
+        .level-btn.active {
+            background: var(--color-nav-dark);
+            color: #ffffff;
+            border-color: var(--color-nav-dark);
+        }
+        .day-card {
+            background: #ffffff;
+            border: 1px solid var(--color-border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .day-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+        }
+        .day-card .day-badge {
+            color: var(--color-coral);
+            font-weight: 800;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .hidden-panel {
+            display: none !important;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- ================= 1. FLOATING NAV (ADVENTURE.TRAVEL EXACT) ================= -->
+    <header class="nav-floating">
+        <nav class="nav-inner">
+            <a href="index.html" class="nav-logo" aria-label="Ricky Waterman Experience">
+                <img src="assets/logo.png" alt="Ricky Waterman Logo">
+                <div class="nav-logo-text">WATERMAN <span>EXPERIENCE</span></div>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="nav-links">
+                <div class="mega-menu-wrapper">
+                    <button aria-expanded="false" aria-haspopup="true">
+                        Destinos <i class="fa-solid fa-chevron-down chevron-sm"></i>
+                    </button>
+                    <div class="mega-menu-dropdown">
+                        <div class="mega-menu-content">
+                            <div>
+                                <h4>Destinos Destacados</h4>
+                                <ul>
+                                    <li><a href="deportes.html"><i class="fa-solid fa-location-dot text-coral" style="font-size:0.75rem;margin-right:0.5rem"></i>Gran Roque (Base Principal)</a></li>
+                                    <li><a href="deportes.html"><i class="fa-solid fa-location-dot text-coral" style="font-size:0.75rem;margin-right:0.5rem"></i>Francisquí (Piscina Natural)</a></li>
+                                    <li><a href="deportes.html"><i class="fa-solid fa-location-dot text-coral" style="font-size:0.75rem;margin-right:0.5rem"></i>Cayo de Agua (Barra Doble)</a></li>
+                                    <li><a href="deportes.html"><i class="fa-solid fa-location-dot text-coral" style="font-size:0.75rem;margin-right:0.5rem"></i>Crasquí (Kite & Pescado Fresco)</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Por Deporte</h4>
+                                <ul>
+                                    <li><a href="deportes.html">Kitesurf & Safaris de Viento</a></li>
+                                    <li><a href="deportes.html">Windsurf Paradise</a></li>
+                                    <li><a href="deportes.html">Wingfoil Levitation</a></li>
+                                    <li><a href="deportes.html">Buceo PADI Arrecifes</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="paquetes.html">
+                    Planifica tu Viaje <i class="fa-solid fa-chevron-down chevron-sm"></i>
+                </a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="contacto.html">Suscríbete</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="nav-mobile-btn" onclick="toggleMobileMenu()" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ================= MOBILE MENU OVERLAY ================= -->
+    <div id="mobile-menu" class="mobile-menu-overlay" onclick="closeMobileMenu(event)">
+        <div class="mobile-menu-panel" onclick="event.stopPropagation()">
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="mobile-menu-links">
+                <a href="index.html">Inicio</a>
+                <a href="deportes.html">Deportes & Safaris</a>
+                <a href="paquetes.html">Planifica tu Viaje</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="experiencia.html">La Experiencia</a>
+                <a href="prepara-tu-viaje.html">Preguntas Frecuentes</a>
+            </div>
+            <a href="contacto.html" class="btn-coral" style="text-align:center">Reservar Ahora</a>
+        </div>
+    </div>
+
+    <main style="padding-top: 6rem;">
+        <!-- Header Banner Section -->
+        <section class="max-w-editorial" style="padding-top: 2rem; padding-bottom: 2rem;">
+            <div style="text-align: center; max-w: 800px; margin: 0 auto;">
+                <span class="section-label">Programas de 6 Días</span>
+                <h1 class="editorial-section-title" style="font-size: clamp(2.2rem, 4vw, 3.5rem); margin-bottom: 1rem;">
+                    Elige Tu Deporte & Tu Nivel
+                </h1>
+                <p style="font-size: 1.1rem; color: var(--color-text-body); line-height: 1.6;">
+                    Diseñados tanto para quienes nunca han tocado una tabla como para los apasionados que buscan safaris extremos en agua plana e impecable.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sport Selector Tabs -->
+        <section class="max-w-editorial" style="margin-bottom: 3rem;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem;">
+                <button onclick="switchSport('kite')" id="tab-kite" class="sport-tab-btn active">
+                    <i class="fa-solid fa-wind"></i> Kitesurf
+                </button>
+                <button onclick="switchSport('windsurf')" id="tab-windsurf" class="sport-tab-btn">
+                    <i class="fa-solid fa-sailboat"></i> Windsurf
+                </button>
+                <button onclick="switchSport('wingfoil')" id="tab-wingfoil" class="sport-tab-btn">
+                    <i class="fa-solid fa-plane-up"></i> Wingfoil
+                </button>
+                <button onclick="switchSport('diving')" id="tab-diving" class="sport-tab-btn">
+                    <i class="fa-solid fa-water-lower"></i> Buceo (PADI)
+                </button>
+            </div>
+        </section>
+
+        <!-- Sports Container Card -->
+        <section class="max-w-editorial" style="margin-bottom: 5rem;">
+            <div style="background: #ffffff; border: 1px solid var(--color-border); border-radius: 1.5rem; padding: clamp(1.5rem, 4vw, 3rem); box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+
+                <!-- KITESURF PANEL -->
+                <div id="sport-kite" class="sport-panel">
+                    <div style="display: flex; flex-direction: column; gap: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1.5rem; margin-bottom: 2rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                            <div>
+                                <span style="background: rgba(224,90,71,0.1); color: var(--color-coral); font-size: 0.75rem; font-weight: 800; padding: 0.25rem 0.75rem; border-radius: 0.375rem; text-transform: uppercase;">Destacado #1 en Los Roques</span>
+                                <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--color-text-dark); margin-top: 0.5rem;">Kitesurf Experience</h2>
+                                <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-top: 0.25rem;">Aguas totalmente llanas ("flat water"), viento continuo de 18 a 25 nudos y temperatura perfecta.</p>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">Nivel:</span>
+                                <button onclick="toggleLevel('kite', 'beg')" id="btn-kite-beg" class="level-btn active">Principiante</button>
+                                <button onclick="toggleLevel('kite', 'adv')" id="btn-kite-adv" class="level-btn">Avanzado / Pro</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kite Beginner Itinerary -->
+                    <div id="kite-beg-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                        <div class="day-card">
+                            <div class="day-badge">DÍA 1</div>
+                            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 0.5rem;">Teoría & Control en Tierra</h3>
+                            <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5;">Bienvenida en Gran Roque, setup de equipos, principios aerodinámicos de la cometa y primeros vuelos con Kite de entrenamiento en la playa.</p>
+                        </div>
+                        <div class="day-card">
+                            <div class="day-badge">DÍAS 2 Y 3</div>
+                            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 0.5rem;">Clases Intensivas en Agua</h3>
+                            <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5;">Body drag en la piscina natural de Francisquí, water start (puesta de tabla) y primeros deslizamientos asistidos por instructor 1:1.</p>
+                        </div>
+                        <div class="day-card">
+                            <div class="day-badge">DÍAS 4 A 6</div>
+                            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 0.5rem;">Coaching & Alquiler Supervisado</h3>
+                            <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5;">Navegación independiente ganando barlovento, perfeccionamiento de postura y safari de graduación en Cayo Crasquí.</p>
+                        </div>
+                    </div>
+
+                    <!-- Kite Advanced Itinerary (Hidden by default) -->
+                    <div id="kite-adv-content" class="hidden-panel" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                        <div class="day-card">
+                            <div class="day-badge">DÍA 1</div>
+                            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 0.5rem;">Reconocimiento & Warm Up</h3>
+                            <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5;">Evaluación de spots locales, ajuste de arnés/foils y sesión de calentamiento en la barra de Francisquí.</p>
+                        </div>
+                        <div class="day-card">
+                            <div class="day-badge">DÍAS 2 Y 3</div>
+                            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 0.5rem;">Kite Safari #1: Cayo de Agua</h3>
+                            <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5;">Excursión en lancha rápida privada a una de las playas más bellas del mundo. Navegación en istmo de arena blanca y fotos HD.</p>
+                        </div>
+                        <div class="day-card">
+                            <div class="day-badge">DÍAS 4 A 6</div>
+                            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 0.5rem;">Downwinder Extremo & Jump Clinic</h3>
+                            <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5;">Downwinder de 15km asistido por lancha de rescate entre cayos remotos (Sebastopol/Nordisquí) y clínica de saltos con Ricky.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WINDSURF PANEL -->
+                <div id="sport-windsurf" class="sport-panel hidden-panel">
+                    <div style="border-bottom: 1px solid var(--color-border); padding-bottom: 1.5rem; margin-bottom: 2rem;">
+                        <span style="background: rgba(0,168,150,0.1); color: var(--color-teal); font-size: 0.75rem; font-weight: 800; padding: 0.25rem 0.75rem; border-radius: 0.375rem; text-transform: uppercase;">El Clásico del Mar</span>
+                        <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--color-text-dark); margin-top: 0.5rem;">Windsurf Paradise</h2>
+                        <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-top: 0.25rem;">El equilibrio perfecto entre vela, agua y brisa constante. Ideal para aprender rápido o planear a máxima velocidad.</p>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                        <div class="day-card">
+                            <div class="day-badge">DÍA 1</div>
+                            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 0.5rem;">Teoría & Uphaul</h3>
+                            <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5;">Izado de vela, posición del cuerpo, virada básica y navegación de ida y vuelta en zona protegida.</p>
+                        </div>
+                        <div class="day-card">
+                            <div class="day-badge">DÍAS 2 A 4</div>
+                            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 0.5rem;">Planeo & Arnés</h3>
+                            <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5;">Uso del arnés, entrada en footstraps y técnica para entrar en planeo sostenido en la laguna.</p>
+                        </div>
+                        <div class="day-card">
+                            <div class="day-badge">DÍAS 5 Y 6</div>
+                            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 0.5rem;">Trasuchada & Freeride</h3>
+                            <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5;">Perfeccionamiento de jibe (trasuchada) y recorrido libre descubriendo los manglares y bajos de arena.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WINGFOIL PANEL -->
+                <div id="sport-wingfoil" class="sport-panel hidden-panel">
+                    <div style="border-bottom: 1px solid var(--color-border); padding-bottom: 1.5rem; margin-bottom: 2rem;">
+                        <span style="background: rgba(0,180,216,0.1); color: var(--color-cyan); font-size: 0.75rem; font-weight: 800; padding: 0.25rem 0.75rem; border-radius: 0.375rem; text-transform: uppercase;">La Revolución del Agua</span>
+                        <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--color-text-dark); margin-top: 0.5rem;">Wingfoil Experience</h2>
+                        <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-top: 0.25rem;">Vuela sin ruido sobre las aguas transparentes con el ala neumática y el hydrofoil.</p>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                        <div class="day-card">
+                            <div class="day-badge">DÍA 1</div>
+                            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 0.5rem;">Wing en Tierra & SUP</h3>
+                            <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5;">Aprende a dominar el viento con el ala neumática sobre tabla de SUP sin foil para entender la propulsión.</p>
+                        </div>
+                        <div class="day-card">
+                            <div class="day-badge">DÍAS 2 A 4</div>
+                            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 0.5rem;">Towing & Primeros Vuelos</h3>
+                            <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5;">Remolque suave detrás de la lancha para sentir el despegue del Foil, seguido del acople con el Wing.</p>
+                        </div>
+                        <div class="day-card">
+                            <div class="day-badge">DÍAS 5 Y 6</div>
+                            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 0.5rem;">Foil Safari</h3>
+                            <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5;">Desplazamiento fluido entre cayos volando sobre la superficie turquesa con coaching en video.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DIVING PANEL -->
+                <div id="sport-diving" class="sport-panel hidden-panel">
+                    <div style="border-bottom: 1px solid var(--color-border); padding-bottom: 1.5rem; margin-bottom: 2rem;">
+                        <span style="background: rgba(224,90,71,0.1); color: var(--color-coral); font-size: 0.75rem; font-weight: 800; padding: 0.25rem 0.75rem; border-radius: 0.375rem; text-transform: uppercase;">Certificación PADI & Safaris Submarinos</span>
+                        <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--color-text-dark); margin-top: 0.5rem;">Buceo en el Arrecife</h2>
+                        <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-top: 0.25rem;">Explora una de las barreras coralinas más vivas del Caribe: tortugas, rayas, pecios y corales de fuego.</p>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                        <div class="day-card">
+                            <div class="day-badge">DÍAS 1 Y 2</div>
+                            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 0.5rem;">Teoría & Aguas Confinadas</h3>
+                            <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5;">Módulos PADI, ensamble del equipo autónomo y prácticas de flotabilidad en aguas poco profundas.</p>
+                        </div>
+                        <div class="day-card">
+                            <div class="day-badge">DÍAS 3 Y 4</div>
+                            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 0.5rem;">Inmersiones en Mar Abierto (1 a 4)</h3>
+                            <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5;">Inmersiones reales en la barrera coralina hasta 18m de profundidad acompañados por Instructores PADI Master.</p>
+                        </div>
+                        <div class="day-card">
+                            <div class="day-badge">DÍAS 5 Y 6</div>
+                            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 0.5rem;">Dive Safari & Pecio</h3>
+                            <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5;">Buceo de graduación en barcos hundidos y arrecifes de coral profundo con expedición fotográfica.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="max-w-editorial" style="margin-bottom: 6rem; text-align: center;">
+            <div style="background: var(--color-nav-dark); color: #ffffff; padding: clamp(2rem, 5vw, 4rem); border-radius: 1.5rem;">
+                <h2 style="font-family: var(--font-serif); font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 1rem;">¿Listo para Tu Próxima Aventura?</h2>
+                <p style="color: #d1d5db; max-width: 600px; margin: 0 auto 2rem auto; font-size: 1rem; line-height: 1.6;">
+                    Cotiza tu viaje o consulta disponibilidad con nuestro equipo especializado en WhatsApp.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="contacto.html" class="btn-coral">Planificar Mi Viaje</a>
+                    <a href="https://wa.me/584120000000" target="_blank" class="btn-outline" style="border-color: #ffffff; color: #ffffff;">Consultar por WhatsApp</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= 10. FOOTER (ADVENTURE.TRAVEL INSTITUTIONAL STYLE) ================= -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" style="display: flex; align-items: center; gap: 0.75rem; font-family: var(--font-serif); font-size: 1.5rem; text-decoration: none; color: #fff; margin-bottom: 1rem;">
+                    <img src="assets/logo.png" alt="Ricky Waterman Logo" style="height: 38px; width: auto; border-radius: 50%; background: #fff; padding: 2px;">
+                    <span>Waterman<span style="color:var(--color-coral)">.</span></span>
+                </a>
+                <p>Únete a nuestra comunidad de viajeros conscientes y recibe historias, guías y ofertas exclusivas directamente en tu correo.</p>
+                <form class="footer-newsletter" onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte!');">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit" class="btn-coral" style="white-space:nowrap">Suscribir</button>
+                </form>
+            </div>
+
+            <div class="footer-col">
+                <h4>Explorar</h4>
+                <ul>
+                    <li><a href="deportes.html">Destinos</a></li>
+                    <li><a href="deportes.html">Actividades</a></li>
+                    <li><a href="paquetes.html">Estilos de Viaje</a></li>
+                    <li><a href="nosotros.html">Operadores</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Nosotros</h4>
+                <ul>
+                    <li><a href="nosotros.html">Nuestra Historia</a></li>
+                    <li><a href="experiencia.html">Sostenibilidad</a></li>
+                    <li><a href="prepara-tu-viaje.html">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Conectar</h4>
+                <ul>
+                    <li><a href="contacto.html">Contáctanos</a></li>
+                    <li><a href="prepara-tu-viaje.html">Preguntas Frecuentes</a></li>
+                </ul>
+                <div class="footer-social">
+                    <a href="https://instagram.com/rickywaterman" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com/rickywaterman" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://youtube.com/@rickywaterman" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Waterman Experience. Todos los derechos reservados.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Servicio</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
+    <a href="https://wa.me/584120000000?text=Hola!%20Me%20interesa%20reservar%20mi%20lugar%20en%20The%20Waterman%20Experience" target="_blank" class="whatsapp-float" title="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('is-open');
+        }
+        function closeMobileMenu(e) {
+            if (e.target === document.getElementById('mobile-menu')) {
+                toggleMobileMenu();
+            }
+        }
+
+        function switchSport(sportName) {
+            document.querySelectorAll('.sport-tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`tab-${sportName}`).classList.add('active');
+
+            document.querySelectorAll('.sport-panel').forEach(panel => panel.classList.add('hidden-panel'));
+            document.getElementById(`sport-${sportName}`).classList.remove('hidden-panel');
+        }
+
+        function toggleLevel(sport, level) {
+            const begBtn = document.getElementById(`btn-${sport}-beg`);
+            const advBtn = document.getElementById(`btn-${sport}-adv`);
+            const begContent = document.getElementById(`${sport}-beg-content`);
+            const advContent = document.getElementById(`${sport}-adv-content`);
+
+            if (level === 'beg') {
+                begBtn.classList.add('active');
+                advBtn.classList.remove('active');
+                begContent.classList.remove('hidden-panel');
+                advContent.classList.add('hidden-panel');
+            } else {
+                advBtn.classList.add('active');
+                begBtn.classList.remove('active');
+                advContent.classList.remove('hidden-panel');
+                begContent.classList.add('hidden-panel');
+            }
+        }
+    </script>
+</body>
+</html>

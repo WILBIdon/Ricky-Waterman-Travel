@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paquetes All-In-One | The Waterman Experience - Los Roques</title>
+    <meta name="description" content="Servicios incluidos en nuestros paquetes All-In-One en Los Roques, Venezuela: hospedaje B&B, vuelos Caracas-Los Roques, lanchas privadas y coaching.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <!-- Custom Adventure.travel Style System -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .feature-item-card {
+            background: #ffffff;
+            border: 1px solid var(--color-border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .feature-item-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+        }
+        .feature-icon-wrapper {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.75rem;
+            background: rgba(224,90,71,0.1);
+            color: var(--color-coral);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- ================= 1. FLOATING NAV (ADVENTURE.TRAVEL EXACT) ================= -->
+    <header class="nav-floating">
+        <nav class="nav-inner">
+            <a href="index.html" class="nav-logo" aria-label="Ricky Waterman Experience">
+                <img src="assets/logo.png" alt="Ricky Waterman Logo">
+                <div class="nav-logo-text">WATERMAN <span>EXPERIENCE</span></div>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="nav-links">
+                <div class="mega-menu-wrapper">
+                    <button aria-expanded="false" aria-haspopup="true">
+                        Destinos <i class="fa-solid fa-chevron-down chevron-sm"></i>
+                    </button>
+                    <div class="mega-menu-dropdown">
+                        <div class="mega-menu-content">
+                            <div>
+                                <h4>Destinos Destacados</h4>
+                                <ul>
+                                    <li><a href="deportes.html"><i class="fa-solid fa-location-dot text-coral" style="font-size:0.75rem;margin-right:0.5rem"></i>Gran Roque (Base Principal)</a></li>
+                                    <li><a href="deportes.html"><i class="fa-solid fa-location-dot text-coral" style="font-size:0.75rem;margin-right:0.5rem"></i>Francisquí (Piscina Natural)</a></li>
+                                    <li><a href="deportes.html"><i class="fa-solid fa-location-dot text-coral" style="font-size:0.75rem;margin-right:0.5rem"></i>Cayo de Agua (Barra Doble)</a></li>
+                                    <li><a href="deportes.html"><i class="fa-solid fa-location-dot text-coral" style="font-size:0.75rem;margin-right:0.5rem"></i>Crasquí (Kite & Pescado Fresco)</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Por Deporte</h4>
+                                <ul>
+                                    <li><a href="deportes.html">Kitesurf & Safaris de Viento</a></li>
+                                    <li><a href="deportes.html">Windsurf Paradise</a></li>
+                                    <li><a href="deportes.html">Wingfoil Levitation</a></li>
+                                    <li><a href="deportes.html">Buceo PADI Arrecifes</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="paquetes.html">
+                    Planifica tu Viaje <i class="fa-solid fa-chevron-down chevron-sm"></i>
+                </a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="contacto.html">Suscríbete</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="nav-mobile-btn" onclick="toggleMobileMenu()" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ================= MOBILE MENU OVERLAY ================= -->
+    <div id="mobile-menu" class="mobile-menu-overlay" onclick="closeMobileMenu(event)">
+        <div class="mobile-menu-panel" onclick="event.stopPropagation()">
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="mobile-menu-links">
+                <a href="index.html">Inicio</a>
+                <a href="deportes.html">Deportes & Safaris</a>
+                <a href="paquetes.html">Planifica tu Viaje</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="experiencia.html">La Experiencia</a>
+                <a href="prepara-tu-viaje.html">Preguntas Frecuentes</a>
+            </div>
+            <a href="contacto.html" class="btn-coral" style="text-align:center">Reservar Ahora</a>
+        </div>
+    </div>
+
+    <main style="padding-top: 6rem;">
+        <!-- Header Banner Section -->
+        <section class="max-w-editorial" style="padding-top: 2rem; padding-bottom: 3rem;">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <span class="section-label">Experiencia "All-In-One"</span>
+                <h1 class="editorial-section-title" style="font-size: clamp(2.2rem, 4vw, 3.5rem); margin-bottom: 1rem;">
+                    Tú Solo Preocúpate de Disfrutar
+                </h1>
+                <p style="font-size: 1.1rem; color: var(--color-text-body); line-height: 1.6;">
+                    Nos encargamos de absolutamente toda la logística desde tu llegada al aeropuerto de Caracas hasta cada traslado diario a los cayos vírgenes.
+                </p>
+            </div>
+        </section>
+
+        <!-- Main Showcase & Features Grid -->
+        <section class="max-w-editorial" style="margin-bottom: 5rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; align-items: start;">
+                
+                <!-- Left Showcase Cards -->
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <div style="position: relative; border-radius: 1.5rem; overflow: hidden; height: 380px; box-shadow: 0 12px 30px rgba(0,0,0,0.08);">
+                        <img src="assets/IMG_4161.JPG" alt="Posada y playa en Los Roques" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);"></div>
+                        <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; right: 1.5rem; color: #ffffff;">
+                            <span style="background: var(--color-coral); color: #fff; font-size: 0.75rem; font-weight: 800; padding: 0.25rem 0.75rem; border-radius: 9999px; text-transform: uppercase;">Alojamiento B&B Incluido</span>
+                            <h3 style="font-family: var(--font-serif); font-size: 1.6rem; margin-top: 0.5rem; line-height: 1.2;">Posadas Seleccionadas con Encanto Caribeño</h3>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div style="background: #ffffff; border: 1px solid var(--color-border); border-radius: 1rem; padding: 1.25rem; display: flex; align-items: center; gap: 1rem;">
+                            <i class="fa-solid fa-plane-arrival" style="color: var(--color-teal); font-size: 1.5rem;"></i>
+                            <div>
+                                <h4 style="font-size: 0.875rem; font-weight: 700; color: var(--color-text-dark);">Vuelos Domésticos</h4>
+                                <p style="font-size: 0.75rem; color: var(--color-text-muted);">Caracas - Los Roques A/V</p>
+                            </div>
+                        </div>
+
+                        <div style="background: #ffffff; border: 1px solid var(--color-border); border-radius: 1rem; padding: 1.25rem; display: flex; align-items: center; gap: 1rem;">
+                            <i class="fa-solid fa-sailboat" style="color: var(--color-teal); font-size: 1.5rem;"></i>
+                            <div>
+                                <h4 style="font-size: 0.875rem; font-weight: 700; color: var(--color-text-dark);">Lanchas Privadas</h4>
+                                <p style="font-size: 0.75rem; color: var(--color-text-muted);">Traslados diarios a cayos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Features List -->
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                    <div class="feature-item-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="fa-solid fa-hotel"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 0.25rem;">Alojamiento B&B Seleccionado</h3>
+                            <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5;">Habitaciones VIP con A/C, baño privado, desayunos frescos y cenas gourmet de pescado fresco frente al mar.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item-card">
+                        <div class="feature-icon-wrapper" style="background: rgba(0,168,150,0.1); color: var(--color-teal);">
+                            <i class="fa-solid fa-van-shuttle"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 0.25rem;">Logística Completa de Vuelos & Lanchas</h3>
+                            <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5;">Recibimiento VIP en Caracas, pasajes de avión charter Caracas–Los Roques–Caracas y embarcaciones diarias equipadas.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item-card">
+                        <div class="feature-icon-wrapper" style="background: rgba(0,180,216,0.1); color: var(--color-cyan);">
+                            <i class="fa-solid fa-kit-medical"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-dark); margin-bottom: 0.25rem;">Equipos Deportivos Top & Hidratación</h3>
+                            <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5;">Cavas con hielo, fruta fresca y agua mineral ilimitada en cada playa. Equipos de kite/wind/wing de última generación.</p>
+                        </div>
+                    </div>
+
+                    <!-- Lifestyle Extras Box -->
+                    <div style="background: var(--color-bg-warm); border: 1px solid var(--color-border); border-radius: 1rem; padding: 1.5rem;">
+                        <h4 style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; font-weight: 800; color: var(--color-coral); text-transform: uppercase; margin-bottom: 0.5rem;">
+                            <i class="fa-solid fa-sparkles"></i> Actividades Extra Incluidas (Lifestyle)
+                        </h4>
+                        <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5;">
+                            Sessions de SUP al atardecer, Snorkel con tortugas en arrecifes, Yoga en la playa al amanecer, opción de Skydiving (Salto en paracaídas con César) y hogueras nocturnas bajo las estrellas.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="max-w-editorial" style="margin-bottom: 6rem; text-align: center;">
+            <div style="background: var(--color-nav-dark); color: #ffffff; padding: clamp(2rem, 5vw, 4rem); border-radius: 1.5rem;">
+                <h2 style="font-family: var(--font-serif); font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 1rem;">¿Quieres Personalizar Tu Paquete?</h2>
+                <p style="color: #d1d5db; max-width: 600px; margin: 0 auto 2rem auto; font-size: 1rem; line-height: 1.6;">
+                    Utiliza nuestro cotizador interactivo o ponte en contacto con nuestro equipo para estructurar tu viaje ideal a medida.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="contacto.html" class="btn-coral">Ir al Cotizador</a>
+                    <a href="https://wa.me/584120000000" target="_blank" class="btn-outline" style="border-color: #ffffff; color: #ffffff;">Hablar con Asesor</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= 10. FOOTER (ADVENTURE.TRAVEL INSTITUTIONAL STYLE) ================= -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" style="display: flex; align-items: center; gap: 0.75rem; font-family: var(--font-serif); font-size: 1.5rem; text-decoration: none; color: #fff; margin-bottom: 1rem;">
+                    <img src="assets/logo.png" alt="Ricky Waterman Logo" style="height: 38px; width: auto; border-radius: 50%; background: #fff; padding: 2px;">
+                    <span>Waterman<span style="color:var(--color-coral)">.</span></span>
+                </a>
+                <p>Únete a nuestra comunidad de viajeros conscientes y recibe historias, guías y ofertas exclusivas directamente en tu correo.</p>
+                <form class="footer-newsletter" onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte!');">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit" class="btn-coral" style="white-space:nowrap">Suscribir</button>
+                </form>
+            </div>
+
+            <div class="footer-col">
+                <h4>Explorar</h4>
+                <ul>
+                    <li><a href="deportes.html">Destinos</a></li>
+                    <li><a href="deportes.html">Actividades</a></li>
+                    <li><a href="paquetes.html">Estilos de Viaje</a></li>
+                    <li><a href="nosotros.html">Operadores</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Nosotros</h4>
+                <ul>
+                    <li><a href="nosotros.html">Nuestra Historia</a></li>
+                    <li><a href="experiencia.html">Sostenibilidad</a></li>
+                    <li><a href="prepara-tu-viaje.html">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Conectar</h4>
+                <ul>
+                    <li><a href="contacto.html">Contáctanos</a></li>
+                    <li><a href="prepara-tu-viaje.html">Preguntas Frecuentes</a></li>
+                </ul>
+                <div class="footer-social">
+                    <a href="https://instagram.com/rickywaterman" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com/rickywaterman" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://youtube.com/@rickywaterman" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Waterman Experience. Todos los derechos reservados.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Servicio</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
+    <a href="https://wa.me/584120000000?text=Hola!%20Me%20interesa%20reservar%20mi%20lugar%20en%20The%20Waterman%20Experience" target="_blank" class="whatsapp-float" title="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('is-open');
+        }
+        function closeMobileMenu(e) {
+            if (e.target === document.getElementById('mobile-menu')) {
+                toggleMobileMenu();
+            }
+        }
+    </script>
+</body>
+</html>

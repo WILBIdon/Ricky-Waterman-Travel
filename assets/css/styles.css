@@ -1,0 +1,1097 @@
+/* ==========================================================================
+   THE WATERMAN EXPERIENCE - ADVENTURE.TRAVEL EDITORIAL DESIGN SYSTEM
+   Pixel-perfect match to adventure.travel reference
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --color-bg-warm: #F1EFE7;
+    --color-bg-card: #FFFFFF;
+    --color-bg-dark: #000000;
+    --color-nav-dark: #07161B;
+    
+    --color-turquoise: #10B3BF;
+    --color-coral: #10B3BF;
+    --color-coral-hover: #096A71;
+    --color-teal: #096A71;
+    --color-cyan: #10B3BF;
+    --color-silver: #BDBEC0;
+    
+    --color-text-dark: #000000;
+    --color-text-body: #333333;
+    --color-text-muted: #555555;
+    --color-border: #BDBEC0;
+    
+    --font-serif: 'DM Serif Display', Georgia, serif;
+    --font-sans: 'Figtree', sans-serif;
+
+    --max-editorial: 1236px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    background-color: var(--color-bg-warm);
+    color: var(--color-text-body);
+}
+
+body {
+    background-color: var(--color-bg-warm);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+}
+
+/* Marca de Agua del Logo en el Fondo */
+body::before {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65vw;
+    height: 65vw;
+    max-width: 650px;
+    max-height: 650px;
+    background-image: url('../logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.045;
+    pointer-events: none;
+    z-index: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ==========================================================================
+   1. NAVIGATION — Floating rounded dark pill (adventure.travel exact)
+   ========================================================================== */
+.nav-floating {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-inner {
+    background: var(--color-nav-dark);
+    color: #fff;
+    border-radius: 1rem;
+    width: 100%;
+    max-width: var(--max-editorial);
+    padding: 0.875rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    transition: all 0.3s ease;
+}
+
+/* Logo — Official Ricky Waterman Logo */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #fff;
+    transition: opacity 0.2s;
+    text-decoration: none;
+}
+.nav-logo:hover {
+    opacity: 0.85;
+}
+.nav-logo img {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #ffffff;
+    padding: 2px;
+}
+.nav-logo-text {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.nav-logo-text span {
+    color: var(--color-turquoise);
+}
+
+/* Desktop Nav Links */
+.nav-links {
+    display: none;
+    align-items: center;
+    gap: 1.75rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex;
+    }
+}
+
+.nav-links a,
+.nav-links button {
+    background: none;
+    border: none;
+    color: #fff;
+    font: inherit;
+    font-weight: 500;
+    font-size: 0.875rem;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    transition: color 0.2s;
+}
+.nav-links a:hover,
+.nav-links button:hover {
+    color: #d1d5db;
+}
+.nav-links .chevron-sm {
+    font-size: 0.625rem;
+}
+
+/* Mobile hamburger */
+.nav-mobile-btn {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+@media (min-width: 768px) {
+    .nav-mobile-btn {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   MEGA MENU — Dropdown panel
+   ========================================================================== */
+.mega-menu-wrapper {
+    position: relative;
+    padding: 1rem 0;
+}
+.mega-menu-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(1rem);
+    padding-top: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    width: 800px;
+    z-index: 60;
+}
+.mega-menu-wrapper:hover .mega-menu-dropdown,
+.mega-menu-dropdown.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.mega-menu-content {
+    background: rgba(26,26,26,0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 1rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem;
+    gap: 2rem;
+    text-align: left;
+    cursor: default;
+}
+
+.mega-menu-content h4 {
+    font-family: var(--font-serif);
+    color: var(--color-coral);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.mega-menu-content ul {
+    list-style: none;
+    padding: 0;
+}
+.mega-menu-content li {
+    margin-bottom: 0.75rem;
+}
+.mega-menu-content li a {
+    color: #e5e7eb;
+    font-size: 0.875rem;
+    transition: color 0.2s;
+}
+.mega-menu-content li a:hover {
+    color: var(--color-coral);
+}
+
+/* ==========================================================================
+   2. HERO — Full-screen with frosted glass box (adventure.travel exact)
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #000;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.hero-bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+/* Frosted glass box — exact match to reference image */
+.hero-glass-box {
+    position: relative;
+    z-index: 10;
+    background: rgba(255,255,255,0.40);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 3rem 3.5rem;
+    border-radius: 1rem;
+    max-width: 850px;
+    margin: 0 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+    .hero-glass-box {
+        padding: 3.5rem 4rem;
+    }
+}
+
+/* Hero Heading — DM Serif Display, dark gray on glass, exact size */
+.hero-glass-box h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    color: #333333;
+    font-weight: 400;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.3);
+}
+
+.hero-glass-box .hero-subtitle {
+    color: #374151;
+    font-weight: 500;
+    font-size: 1.125rem;
+    max-width: 34rem;
+    line-height: 1.6;
+}
+
+/* Hero CTA Buttons */
+.hero-cta-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+@media (min-width: 640px) {
+    .hero-cta-row {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+/* Scroll indicator */
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    animation: bounce 2s infinite;
+    opacity: 0.7;
+    font-size: 1.25rem;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(-10px); }
+    60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* ==========================================================================
+   3. EDITORIAL TYPOGRAPHY
+   ========================================================================== */
+.font-editorial {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+h2.editorial-section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1.15;
+    color: var(--color-text-dark);
+}
+
+.section-label {
+    color: var(--color-coral);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   4. DESTINATION CARDS
+   ========================================================================== */
+.dest-card {
+    cursor: pointer;
+}
+
+.dest-card-img-wrapper {
+    overflow: hidden;
+    border-radius: 1rem;
+    margin-bottom: 1.25rem;
+    aspect-ratio: 4/3;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.dest-card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+.dest-card:hover .dest-card-img-wrapper img {
+    transform: scale(1.05);
+}
+
+.dest-card-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+}
+.dest-card-tag {
+    background: var(--color-bg-warm);
+    border: 1px solid rgba(26,26,26,0.1);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-weight: 500;
+}
+
+.dest-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    transition: color 0.2s;
+}
+.dest-card:hover h3 {
+    color: var(--color-coral);
+}
+
+.dest-card p {
+    color: #6b7280;
+    line-height: 1.7;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Quick Fast Attributes */
+.dest-card-attrs {
+    padding-top: 0.75rem;
+    border-top: 1px solid #f1f1f0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    font-size: 0.6875rem;
+    color: #44403C;
+    font-weight: 600;
+    margin-top: 0.75rem;
+}
+.dest-card-attrs i {
+    color: var(--color-coral);
+    margin-right: 0.25rem;
+}
+
+/* ==========================================================================
+   5. EXPLORE BY REGION — Dark section with rounded top
+   ========================================================================== */
+.region-section {
+    background: var(--color-text-dark);
+    color: var(--color-bg-warm);
+    padding: 6rem 1.5rem;
+    border-radius: 3rem 3rem 0 0;
+    margin-top: 3rem;
+}
+
+.region-list button {
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 0;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background: none;
+    color: inherit;
+    font-size: 1.25rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: var(--font-sans);
+}
+.region-list button:hover,
+.region-list button.is-active {
+    color: var(--color-coral);
+    padding-left: 1rem;
+}
+.region-list button.is-active::after {
+    content: ' →';
+    font-size: 0.875rem;
+    margin-left: 0.5rem;
+}
+
+.region-map-placeholder {
+    background: rgba(0,0,0,0.3);
+    border-radius: 1.5rem;
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 2rem;
+}
+
+/* ==========================================================================
+   6. EDITORIAL BLOCKS — Alternating text/image (adventure.travel exact)
+   ========================================================================== */
+.editorial-block {
+    max-width: var(--max-editorial);
+    margin: 0 auto;
+    padding: 6rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+}
+@media (min-width: 768px) {
+    .editorial-block {
+        flex-direction: row;
+    }
+}
+
+.editorial-block-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.editorial-block-text h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+}
+
+.editorial-block-text p {
+    font-size: 1.125rem;
+    color: #6b7280;
+    line-height: 1.7;
+}
+
+.editorial-block-text .editorial-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--color-coral);
+    padding-top: 1rem;
+    transition: color 0.2s;
+}
+.editorial-block-text .editorial-link:hover {
+    color: var(--color-text-dark);
+}
+
+.editorial-block-image {
+    flex: 1;
+}
+.editorial-block-image img {
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+/* Reverse order for alternating blocks */
+@media (min-width: 768px) {
+    .editorial-block.reverse .editorial-block-text {
+        order: 2;
+    }
+    .editorial-block.reverse .editorial-block-image {
+        order: 1;
+    }
+}
+
+/* ==========================================================================
+   7. EDITORIAL CARDS — Generic card system
+   ========================================================================== */
+.editorial-card {
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(28, 25, 23, 0.1);
+    border-color: var(--color-coral);
+}
+
+/* ==========================================================================
+   8. IMPACT STORIES GRID
+   ========================================================================== */
+.impact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .impact-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width: 1024px) {
+    .impact-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.impact-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.impact-card img {
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+.impact-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+.impact-card p {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+.impact-card .impact-link {
+    color: var(--color-coral);
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: color 0.2s;
+}
+.impact-card .impact-link:hover {
+    color: var(--color-text-dark);
+}
+
+/* ==========================================================================
+   9. STORIES THAT INSPIRE — Featured + sidebar layout
+   ========================================================================== */
+.stories-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+@media (min-width: 1024px) {
+    .stories-grid {
+        grid-template-columns: 8fr 4fr;
+    }
+}
+
+.stories-featured {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    height: 400px;
+    cursor: pointer;
+}
+@media (min-width: 1024px) {
+    .stories-featured {
+        height: 600px;
+    }
+}
+
+.stories-featured img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+.stories-featured:hover img {
+    transform: scale(1.05);
+}
+.stories-featured .stories-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.3) 40%, transparent);
+}
+.stories-featured .stories-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 2rem;
+    color: #fff;
+    z-index: 2;
+}
+@media (min-width: 768px) {
+    .stories-featured .stories-content {
+        padding: 3rem;
+    }
+}
+
+.stories-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: space-between;
+}
+
+.stories-sidebar-item {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    cursor: pointer;
+}
+.stories-sidebar-item img {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 1rem;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+@media (min-width: 768px) {
+    .stories-sidebar-item img {
+        width: 8rem;
+        height: 8rem;
+    }
+}
+
+.stories-sidebar-item h4 {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    line-height: 1.3;
+    transition: color 0.2s;
+}
+.stories-sidebar-item:hover h4 {
+    color: var(--color-coral);
+}
+.stories-sidebar-item .stories-cat {
+    color: var(--color-coral);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+/* ==========================================================================
+   10. BUTTONS
+   ========================================================================== */
+.btn-coral {
+    background-color: var(--color-coral);
+    color: #FFFFFF;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.875rem 2rem;
+    border-radius: 9999px;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(224,90,71,0.3);
+}
+.btn-coral:hover {
+    background-color: var(--color-coral-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(224,90,71,0.4);
+}
+
+.btn-dark {
+    background-color: var(--color-text-dark);
+    color: #FFFFFF;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.875rem 2rem;
+    border-radius: 9999px;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.btn-dark:hover {
+    background-color: var(--color-coral);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 1px solid var(--color-text-dark);
+    color: var(--color-text-dark);
+    background: none;
+    padding: 0.875rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: var(--font-sans);
+}
+.btn-outline:hover {
+    background: var(--color-text-dark);
+    color: #fff;
+}
+
+/* ==========================================================================
+   11. FOOTER — adventure.travel style with rounded top
+   ========================================================================== */
+.site-footer {
+    background: var(--color-text-dark);
+    color: #fff;
+    padding: 6rem 1.5rem 3rem;
+    border-radius: 3rem 3rem 0 0;
+    margin-top: 3rem;
+}
+
+.footer-grid {
+    max-width: var(--max-editorial);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (min-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+}
+
+.footer-brand a {
+    font-family: var(--font-serif);
+    font-size: 2.25rem;
+    color: var(--color-coral);
+    letter-spacing: 0.02em;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.footer-brand p {
+    color: #9ca3af;
+    max-width: 24rem;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.footer-newsletter {
+    display: flex;
+    gap: 0.5rem;
+}
+.footer-newsletter input {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 9999px;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    color: #fff;
+    font-size: 0.875rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.footer-newsletter input::placeholder {
+    color: #9ca3af;
+}
+.footer-newsletter input:focus {
+    border-color: var(--color-coral);
+}
+
+.footer-col h4 {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-col li {
+    margin-bottom: 0.75rem;
+}
+.footer-col li a {
+    color: #9ca3af;
+    font-size: 0.875rem;
+    transition: color 0.2s;
+}
+.footer-col li a:hover {
+    color: #fff;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.footer-social a {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: background 0.2s;
+}
+.footer-social a:hover {
+    background: var(--color-coral);
+}
+
+.footer-bottom {
+    max-width: var(--max-editorial);
+    margin: 0 auto;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 2rem;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+@media (min-width: 768px) {
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+.footer-bottom-links {
+    display: flex;
+    gap: 1.5rem;
+}
+.footer-bottom-links a {
+    color: #6b7280;
+    transition: color 0.2s;
+}
+.footer-bottom-links a:hover {
+    color: #fff;
+}
+
+/* ==========================================================================
+   12. WHATSAPP FLOATING BUTTON
+   ========================================================================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 50;
+    background: #25D366;
+    color: #fff;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+    transition: transform 0.2s;
+    animation: pulse-wa 2s infinite;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+@keyframes pulse-wa {
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+    70% { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* ==========================================================================
+   13. MOBILE MENU OVERLAY
+   ========================================================================== */
+.mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+.mobile-menu-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 85%;
+    max-width: 380px;
+    background: var(--color-nav-dark);
+    z-index: 101;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow-y: auto;
+}
+.mobile-menu-overlay.is-open .mobile-menu-panel {
+    transform: translateX(0);
+}
+
+.mobile-menu-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.mobile-menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.mobile-menu-links a {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: block;
+    transition: color 0.2s;
+}
+.mobile-menu-links a:hover {
+    color: var(--color-coral);
+}
+
+/* ==========================================================================
+   14. UTILITY & HELPERS
+   ========================================================================== */
+.max-w-editorial {
+    max-width: var(--max-editorial);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-padding {
+    padding: 6rem 1.5rem;
+}
+
+.text-coral {
+    color: var(--color-coral);
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 9px;
+}
+::-webkit-scrollbar-track {
+    background: var(--color-bg-warm);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-coral);
+    border-radius: 5px;
+}

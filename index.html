@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Waterman Experience | Los Roques, Venezuela - Adventure Travel & Expeditions</title>
+    <meta name="description" content="Plataforma de viajes de aventura y deportes acuáticos en Los Roques, Venezuela. Kitesurf, Windsurf, Wingfoil y Buceo en aguas vírgenes.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <!-- Custom Adventure.travel Style System -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="font-sans antialiased">
+
+    <!-- ================= 1. FLOATING NAV (ADVENTURE.TRAVEL EXACT) ================= -->
+    <header class="nav-floating">
+        <nav class="nav-inner">
+            <!-- Logo: Official Ricky Waterman Brand Logo -->
+            <a href="index.html" class="nav-logo" aria-label="Ricky Waterman Experience">
+                <img src="assets/logo.png" alt="Ricky Waterman Logo">
+                <div class="nav-logo-text">WATERMAN <span>EXPERIENCE</span></div>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="nav-links">
+                <!-- Destinations mega menu trigger -->
+                <div class="mega-menu-wrapper">
+                    <button aria-expanded="false" aria-haspopup="true">
+                        Destinos <i class="fa-solid fa-chevron-down chevron-sm"></i>
+                    </button>
+
+                    <!-- Mega Menu Dropdown -->
+                    <div class="mega-menu-dropdown">
+                        <div class="mega-menu-content">
+                            <div>
+                                <h4>Destinos Destacados</h4>
+                                <ul>
+                                    <li><a href="deportes.html"><i class="fa-solid fa-location-dot text-coral" style="font-size:0.75rem;margin-right:0.5rem"></i>Gran Roque (Base Principal)</a></li>
+                                    <li><a href="deportes.html"><i class="fa-solid fa-location-dot text-coral" style="font-size:0.75rem;margin-right:0.5rem"></i>Francisquí (Piscina Natural)</a></li>
+                                    <li><a href="deportes.html"><i class="fa-solid fa-location-dot text-coral" style="font-size:0.75rem;margin-right:0.5rem"></i>Cayo de Agua (Barra Doble)</a></li>
+                                    <li><a href="deportes.html"><i class="fa-solid fa-location-dot text-coral" style="font-size:0.75rem;margin-right:0.5rem"></i>Crasquí (Kite & Pescado Fresco)</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Por Deporte</h4>
+                                <ul>
+                                    <li><a href="deportes.html">Kitesurf & Safaris de Viento</a></li>
+                                    <li><a href="deportes.html">Windsurf Paradise</a></li>
+                                    <li><a href="deportes.html">Wingfoil Levitation</a></li>
+                                    <li><a href="deportes.html">Buceo PADI Arrecifes</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="paquetes.html">
+                    Planifica tu Viaje <i class="fa-solid fa-chevron-down chevron-sm"></i>
+                </a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="contacto.html">Suscríbete</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="nav-mobile-btn" onclick="toggleMobileMenu()" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+
+    <!-- ================= MOBILE MENU OVERLAY ================= -->
+    <div id="mobile-menu" class="mobile-menu-overlay" onclick="closeMobileMenu(event)">
+        <div class="mobile-menu-panel" onclick="event.stopPropagation()">
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="mobile-menu-links">
+                <a href="deportes.html">Destinos</a>
+                <a href="paquetes.html">Planifica tu Viaje</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="contacto.html">Suscríbete</a>
+                <a href="deportes.html">Deportes & Safaris</a>
+                <a href="prepara-tu-viaje.html">Preguntas Frecuentes</a>
+            </div>
+            <a href="contacto.html" class="btn-coral" style="text-align:center">Reservar Ahora</a>
+        </div>
+    </div>
+
+
+    <main>
+        <!-- ================= 2. HERO (ADVENTURE.TRAVEL EXACT — FROSTED GLASS BOX) ================= -->
+        <section class="hero-section">
+            <!-- Video/Image Background -->
+            <video autoplay loop muted playsinline class="hero-bg-video">
+                <source src="assets/hero-video.mp4" type="video/mp4">
+            </video>
+            <!-- Fallback bg image if video fails -->
+            <img src="assets/IMG_4118.JPG" alt="Los Roques landscape" class="hero-bg" style="display:none" onerror="this.style.display='none'" id="hero-fallback-img">
+
+            <!-- Frosted glass box — pixel match to reference screenshot -->
+            <div class="hero-glass-box">
+                <h1>
+                    Tu Aventura Te<br>
+                    Espera. ¿A Dónde<br>
+                    Te Llevará Tu<br>
+                    Curiosidad?
+                </h1>
+
+                <p class="hero-subtitle">
+                    Descubre el archipiélago de Los Roques, Venezuela. Aguas turquesas vírgenes, viento constante y la expedición de deportes acuáticos más auténtica del Caribe.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="hero-cta-row">
+                    <a href="#destinos" class="btn-coral">
+                        <i class="fa-solid fa-compass"></i> Explorar Destinos
+                    </a>
+                    <a href="contacto.html" class="btn-dark">
+                        <i class="fa-solid fa-calendar-check"></i> Planifica tu Viaje
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="hero-scroll-indicator">
+                <i class="fa-solid fa-arrow-down"></i>
+            </div>
+        </section>
+
+
+        <!-- ================= 3. DESTINOS DESTACADOS (CURATED SELECTION) ================= -->
+        <section id="destinos" class="section-padding max-w-editorial">
+            <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem">
+                <div>
+                    <span class="section-label">Selección Curada</span>
+                    <h2 class="editorial-section-title">Destinos Destacados del Mes</h2>
+                </div>
+                <a href="deportes.html" style="border-bottom:2px solid var(--color-coral);font-weight:600;padding-bottom:0.25rem;display:none" class="desktop-only-link">Ver todos</a>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem">
+                <!-- Spot 1: Gran Roque -->
+                <article class="dest-card">
+                    <div class="dest-card-img-wrapper">
+                        <img src="assets/IMG_4129.JPG" alt="Gran Roque">
+                    </div>
+                    <div class="dest-card-tags">
+                        <span class="dest-card-tag">Cultura</span>
+                        <span class="dest-card-tag">Base Principal</span>
+                    </div>
+                    <h3>Gran Roque</h3>
+                    <p>Corazón del archipiélago con posadas VIP frente al mar, gastronomía local y vida de pueblo pescador.</p>
+                    <div class="dest-card-attrs">
+                        <span><i class="fa-solid fa-water"></i> Cultura & Posadas</span>
+                        <span><i class="fa-solid fa-wind"></i> Viento Alisio</span>
+                        <span><i class="fa-solid fa-sun"></i> Oct - Mayo</span>
+                        <span><i class="fa-solid fa-signal"></i> Fácil Acceso</span>
+                    </div>
+                </article>
+
+                <!-- Spot 2: Francisquí -->
+                <article class="dest-card">
+                    <div class="dest-card-img-wrapper">
+                        <img src="assets/IMG_4160.JPG" alt="Francisquí">
+                    </div>
+                    <div class="dest-card-tags">
+                        <span class="dest-card-tag">Agua Plana</span>
+                        <span class="dest-card-tag">Piscina Natural</span>
+                    </div>
+                    <h3>Francisquí</h3>
+                    <p>Cayo de aguas transparentes de espejo ideal para la práctica de Wingfoil, Windsurf e iniciación de Kitesurf.</p>
+                    <div class="dest-card-attrs">
+                        <span><i class="fa-solid fa-water"></i> Agua Plana</span>
+                        <span><i class="fa-solid fa-wind"></i> 18-25 Kts</span>
+                        <span><i class="fa-solid fa-feather"></i> Wing & Kite</span>
+                        <span><i class="fa-solid fa-shield"></i> Zona Segura</span>
+                    </div>
+                </article>
+
+                <!-- Spot 3: Cayo de Agua -->
+                <article class="dest-card">
+                    <div class="dest-card-img-wrapper">
+                        <img src="assets/IMG_4118.JPG" alt="Cayo de Agua">
+                    </div>
+                    <div class="dest-card-tags">
+                        <span class="dest-card-tag">Naturaleza</span>
+                        <span class="dest-card-tag">Icono Mundial</span>
+                    </div>
+                    <h3>Cayo de Agua</h3>
+                    <p>La famosa estrecha barra de arena blanca que une dos franjas de mar turquesa impecable sin turismo masivo.</p>
+                    <div class="dest-card-attrs">
+                        <span><i class="fa-solid fa-water"></i> Barra Doble</span>
+                        <span><i class="fa-solid fa-wind"></i> Viento Limpio</span>
+                        <span><i class="fa-solid fa-camera"></i> Inolvidable</span>
+                        <span><i class="fa-solid fa-leaf"></i> 100% Virgen</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+
+        <!-- ================= 4. EXPLORE BY REGION / CAYOS (DARK ROUNDED SECTION) ================= -->
+        <section class="region-section">
+            <div class="max-w-editorial">
+                <div style="text-align:center;margin-bottom:4rem">
+                    <h2 style="font-family:var(--font-serif);font-size:clamp(2rem,4vw,3rem);color:#FFFBF2">Explorar por Región</h2>
+                    <p style="color:#9ca3af;margin-top:1rem;max-width:40rem;margin-left:auto;margin-right:auto">Selecciona una zona del archipiélago para conocer sus condiciones específicas de navegación y buceo.</p>
+                </div>
+
+                <div style="display:flex;flex-direction:column;gap:4rem;align-items:center">
+                    <!-- Responsive flex becomes row on desktop via media query below -->
+                    <div style="display:flex;flex-direction:column;gap:4rem;width:100%" id="region-layout">
+                        <!-- Region List -->
+                        <div style="flex:1">
+                            <ul class="region-list" style="list-style:none;padding:0">
+                                <li><button class="is-active">Gran Roque</button></li>
+                                <li><button>Francisquí</button></li>
+                                <li><button>Cayo de Agua</button></li>
+                                <li><button>Crasquí</button></li>
+                                <li><button>Madrisquí</button></li>
+                                <li><button>Noronquí</button></li>
+                                <li><button>Sebastopol</button></li>
+                            </ul>
+                        </div>
+
+                        <!-- Map placeholder -->
+                        <div style="flex:2">
+                            <div class="region-map-placeholder">
+                                <div style="text-align:center;color:#6b7280">
+                                    <i class="fa-solid fa-globe" style="font-size:3.5rem;margin-bottom:1rem;opacity:0.5"></i>
+                                    <p style="font-family:var(--font-serif);font-size:1.25rem;color:#fff">Mapa Interactivo del Archipiélago</p>
+                                    <p style="font-size:0.875rem;margin-top:0.5rem">Selecciona un cayo para ver sus condiciones de viento y actividades disponibles.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= 5, 6, 7. EDITORIAL BLOCKS (ADVENTURE.TRAVEL ALTERNATING LAYOUT) ================= -->
+        <section style="background:var(--color-bg-warm)">
+
+            <!-- Block 1: "La Aventura Es Para Todos" (Text Left, Image Right) -->
+            <article class="editorial-block">
+                <div class="editorial-block-text">
+                    <h2>La Aventura Es<br>Para Todos</h2>
+                    <p>
+                        Creemos que la aventura en el mar no es exclusiva de atletas extremos. Diseñamos nuestras expediciones para que tanto principiantes que nunca han tocado una tabla como navegantes avanzados disfruten al máximo en un entorno seguro y cálido.
+                    </p>
+                    <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.5rem;font-weight:700;font-size:0.875rem">
+                        <li><i class="fa-solid fa-check" style="color:var(--color-coral);margin-right:0.75rem"></i> Grupos reducidos de 10 a 15 personas</li>
+                        <li><i class="fa-solid fa-check" style="color:var(--color-coral);margin-right:0.75rem"></i> Coaching 1:1 adaptado a tu ritmo</li>
+                        <li><i class="fa-solid fa-check" style="color:var(--color-coral);margin-right:0.75rem"></i> Equipamiento completo pro incluido</li>
+                    </ul>
+                    <a href="experiencia.html" class="editorial-link">
+                        Conoce nuestros estilos de viaje <i class="fa-solid fa-arrow-right-long"></i>
+                    </a>
+                </div>
+                <div class="editorial-block-image">
+                    <img src="assets/IMG_4118.JPG" alt="Adventure for everyone">
+                </div>
+            </article>
+
+            <!-- Block 2: "Tu Viaje, Perfeccionado" (Image Left, Text Right) -->
+            <article class="editorial-block reverse">
+                <div class="editorial-block-text">
+                    <h2>Tu Viaje,<br>Perfeccionado</h2>
+                    <p>
+                        Nos encargamos de absolutamente toda la logística para que tú solo pienses en disfrutar del agua. Desde tu llegada al aeropuerto de Caracas hasta cada transfer diario en lancha privada a los cayos más remotos.
+                    </p>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:0.5rem">
+                        <div style="background:var(--color-bg-warm);padding:1rem;border-radius:0.75rem;border:1px solid var(--color-border)">
+                            <i class="fa-solid fa-plane" style="color:var(--color-teal);font-size:1.25rem;margin-bottom:0.5rem;display:block"></i>
+                            <span style="font-weight:700;font-size:0.875rem">Vuelos Chárter VIP</span>
+                        </div>
+                        <div style="background:var(--color-bg-warm);padding:1rem;border-radius:0.75rem;border:1px solid var(--color-border)">
+                            <i class="fa-solid fa-hotel" style="color:var(--color-teal);font-size:1.25rem;margin-bottom:0.5rem;display:block"></i>
+                            <span style="font-weight:700;font-size:0.875rem">Posada Frente al Mar</span>
+                        </div>
+                    </div>
+                    <a href="paquetes.html" class="editorial-link">
+                        Habla con un asesor experto <i class="fa-solid fa-arrow-right-long"></i>
+                    </a>
+                </div>
+                <div class="editorial-block-image">
+                    <img src="assets/IMG_4160.JPG" alt="Your Journey Perfected">
+                </div>
+            </article>
+
+            <!-- Block 3: "Descubre Una Mejor Forma de Viajar" -->
+            <article class="editorial-block">
+                <div class="editorial-block-text">
+                    <h2>Descubre Una Mejor<br>Forma de Viajar</h2>
+                    <p>
+                        Los Roques es una reserva marina protegida de valor incalculable. Operamos bajo estrictas normas de sostenibilidad: cero plásticos de un solo uso, protectores solares Reef-Safe y respeto absoluto por las comunidades pesqueras locales.
+                    </p>
+                    <div style="padding:1.25rem;background:#fff;border-radius:1rem;border:1px solid var(--color-border);font-size:0.875rem;color:#6b7280">
+                        <div style="font-weight:700;color:var(--color-text-dark);display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem">
+                            <i class="fa-solid fa-leaf" style="color:#059669"></i> Certificación Eco-Ocean
+                        </div>
+                        <p style="margin:0;font-size:0.875rem">Proporcionamos a cada viajero un termo reutilizable de aluminio y apoyamos proyectos locales de conservación marina.</p>
+                    </div>
+                    <a href="nosotros.html" class="editorial-link">
+                        Nuestros pilares de sostenibilidad <i class="fa-solid fa-arrow-right-long"></i>
+                    </a>
+                </div>
+                <div class="editorial-block-image">
+                    <img src="assets/IMG_4128.JPG" alt="Better way to travel">
+                </div>
+            </article>
+        </section>
+
+
+        <!-- ================= 8. IMPACT STORIES (TRAVEL WITH PURPOSE) ================= -->
+        <section class="section-padding max-w-editorial" style="border-top:1px solid #e5e7eb">
+            <div style="text-align:center;margin-bottom:4rem">
+                <span class="section-label">Viaja con Propósito</span>
+                <h2 class="editorial-section-title">Historias de Impacto</h2>
+            </div>
+
+            <div class="impact-grid">
+                <!-- Story 1 -->
+                <article class="impact-card">
+                    <img src="assets/IMG_4162.JPG" alt="La Historia de Ricky">
+                    <h3>La Historia de Ricky</h3>
+                    <p>Fundador y apasionado del mar compartiendo el paraíso marino de su infancia con el mundo.</p>
+                    <a href="nosotros.html" class="impact-link">Conoce la historia</a>
+                </article>
+
+                <!-- Story 2 -->
+                <article class="impact-card">
+                    <img src="assets/IMG_4160.JPG" alt="Protección de Arrecifes">
+                    <h3>Protección de Arrecifes</h3>
+                    <p>Iniciativas para mantener intacta la barrera coralina de Los Roques para futuras generaciones.</p>
+                    <a href="experiencia.html" class="impact-link">Descubre el impacto</a>
+                </article>
+
+                <!-- Story 3 -->
+                <article class="impact-card">
+                    <img src="assets/IMG_4165.JPG" alt="Apoyo a Capitanes Locales">
+                    <h3>Apoyo a Capitanes Locales</h3>
+                    <p>Integración y trabajo digno con las familias de pescadores de la isla.</p>
+                    <a href="nosotros.html" class="impact-link">Ver el proyecto</a>
+                </article>
+
+                <!-- Story 4 -->
+                <article class="impact-card">
+                    <img src="assets/IMG_4129.JPG" alt="Política Zero Plastic">
+                    <h3>Política Zero Plastic</h3>
+                    <p>Eliminación completa de plásticos en todos nuestros safaris náuticos.</p>
+                    <a href="prepara-tu-viaje.html" class="impact-link">Conoce la iniciativa</a>
+                </article>
+            </div>
+
+            <div style="margin-top:3rem;text-align:center">
+                <button class="btn-outline">Ver más iniciativas</button>
+            </div>
+        </section>
+
+
+        <!-- ================= 9. STORIES THAT INSPIRE (FEATURED + SIDEBAR) ================= -->
+        <section class="section-padding max-w-editorial">
+            <h2 class="editorial-section-title" style="margin-bottom:3rem">Historias que Inspiran</h2>
+
+            <div class="stories-grid">
+                <!-- Featured Large Story -->
+                <article class="stories-featured">
+                    <img src="assets/IMG_4118.JPG" alt="Featured Story">
+                    <div class="stories-overlay"></div>
+                    <div class="stories-content">
+                        <span style="background:var(--color-coral);color:#fff;font-size:0.75rem;font-weight:700;padding:0.25rem 0.75rem;border-radius:9999px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:1rem;display:inline-block">Guía de Viaje</span>
+                        <h3 style="font-family:var(--font-serif);font-size:clamp(1.5rem,3vw,2.5rem);margin-bottom:1rem;line-height:1.15">¿Por qué Los Roques es el Mejor Spot de Agua Plana del Mundo?</h3>
+                        <p style="color:#d1d5db;font-size:1rem;max-width:32rem;margin-bottom:1.5rem;display:none" class="desktop-only-text">Descubre las razones meteorológicas e hidrográficas que convierten al archipiélago en un paraíso constante.</p>
+                        <span style="font-weight:600;font-size:0.875rem;border-bottom:1px solid #fff;padding-bottom:0.25rem">Leer artículo completo</span>
+                    </div>
+                </article>
+
+                <!-- Sidebar Stories -->
+                <div class="stories-sidebar">
+                    <article class="stories-sidebar-item">
+                        <img src="assets/IMG_4129.JPG" alt="Checklist">
+                        <div>
+                            <span class="stories-cat">Checklist de Empaque</span>
+                            <h4>Qué Llevar a Tu Primera Expedición en Los Roques</h4>
+                        </div>
+                    </article>
+
+                    <article class="stories-sidebar-item">
+                        <img src="assets/IMG_4163.JPG" alt="Logística">
+                        <div>
+                            <span class="stories-cat">Logística de Vuelo</span>
+                            <h4>Cómo Funciona la Conexión VIP en Caracas</h4>
+                        </div>
+                    </article>
+
+                    <article class="stories-sidebar-item">
+                        <img src="assets/IMG_4161.JPG" alt="Gastronomía">
+                        <div>
+                            <span class="stories-cat">Gastronomía Marina</span>
+                            <h4>Pescado Fresco & Langosta en Cayos Desiertos</h4>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- ================= 10. FOOTER (ADVENTURE.TRAVEL INSTITUTIONAL STYLE) ================= -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <!-- Brand & Newsletter -->
+            <div class="footer-brand">
+                <a href="index.html" style="display: flex; align-items: center; gap: 0.75rem; font-family: var(--font-serif); font-size: 1.5rem; text-decoration: none; color: #fff; margin-bottom: 1rem;">
+                    <img src="assets/logo.png" alt="Ricky Waterman Logo" style="height: 38px; width: auto; border-radius: 50%; background: #fff; padding: 2px;">
+                    <span>Waterman<span style="color:var(--color-coral)">.</span></span>
+                </a>
+                <p>Únete a nuestra comunidad de viajeros conscientes y recibe historias, guías y ofertas exclusivas directamente en tu correo.</p>
+                <form class="footer-newsletter" onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte!');">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit" class="btn-coral" style="white-space:nowrap">Suscribir</button>
+                </form>
+            </div>
+
+            <!-- Enlaces Explorar -->
+            <div class="footer-col">
+                <h4>Explorar</h4>
+                <ul>
+                    <li><a href="deportes.html">Destinos</a></li>
+                    <li><a href="deportes.html">Actividades</a></li>
+                    <li><a href="paquetes.html">Estilos de Viaje</a></li>
+                    <li><a href="nosotros.html">Operadores</a></li>
+                </ul>
+            </div>
+
+            <!-- Enlaces Nosotros -->
+            <div class="footer-col">
+                <h4>Nosotros</h4>
+                <ul>
+                    <li><a href="nosotros.html">Nuestra Historia</a></li>
+                    <li><a href="experiencia.html">Sostenibilidad</a></li>
+                    <li><a href="prepara-tu-viaje.html">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+
+            <!-- Conectar -->
+            <div class="footer-col">
+                <h4>Conectar</h4>
+                <ul>
+                    <li><a href="contacto.html">Contáctanos</a></li>
+                    <li><a href="prepara-tu-viaje.html">Preguntas Frecuentes</a></li>
+                </ul>
+                <div class="footer-social">
+                    <a href="https://instagram.com/rickywaterman" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com/rickywaterman" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://youtube.com/@rickywaterman" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Legal -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Waterman Experience. Todos los derechos reservados.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Servicio</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
+    <a href="https://wa.me/584120000000?text=Hola!%20Me%20interesa%20reservar%20mi%20lugar%20en%20The%20Waterman%20Experience" target="_blank" class="whatsapp-float" title="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        // Mobile menu
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('is-open');
+        }
+        function closeMobileMenu(e) {
+            if (e.target === document.getElementById('mobile-menu')) {
+                toggleMobileMenu();
+            }
+        }
+
+        // Region list active state
+        document.querySelectorAll('.region-list button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.region-list button').forEach(b => b.classList.remove('is-active'));
+                btn.classList.add('is-active');
+            });
+        });
+
+        // Show hero fallback image if video fails
+        const heroVideo = document.querySelector('.hero-bg-video');
+        if (heroVideo) {
+            heroVideo.addEventListener('error', () => {
+                const fallback = document.getElementById('hero-fallback-img');
+                if (fallback) fallback.style.display = 'block';
+            });
+        }
+
+        // Responsive region layout — make it row on desktop
+        function updateRegionLayout() {
+            const layout = document.getElementById('region-layout');
+            if (layout) {
+                if (window.innerWidth >= 1024) {
+                    layout.style.flexDirection = 'row';
+                } else {
+                    layout.style.flexDirection = 'column';
+                }
+            }
+            // Show/hide desktop-only elements
+            document.querySelectorAll('.desktop-only-link, .desktop-only-text').forEach(el => {
+                el.style.display = window.innerWidth >= 768 ? '' : 'none';
+            });
+        }
+        updateRegionLayout();
+        window.addEventListener('resize', updateRegionLayout);
+    </script>
+</body>
+</html>

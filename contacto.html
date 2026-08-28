@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto & Cotizador | The Waterman Experience - Los Roques</title>
+    <meta name="description" content="Calcula la cotización estimada para tu expedición de kitesurf, windsurf, wingfoil o buceo en Los Roques, Venezuela. Contáctanos y reserva tu lugar.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <!-- Custom Adventure.travel Style System -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .form-input-styled {
+            width: 100%;
+            background: #ffffff;
+            border: 1px solid var(--color-border);
+            border-radius: 0.75rem;
+            padding: 0.85rem 1rem;
+            font-size: 0.95rem;
+            color: var(--color-text-dark);
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+        .form-input-styled:focus {
+            border-color: var(--color-coral);
+        }
+        .calc-box {
+            background: #ffffff;
+            border: 1px solid var(--color-border);
+            border-radius: 1.5rem;
+            padding: clamp(1.5rem, 4vw, 3rem);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- ================= 1. FLOATING NAV (ADVENTURE.TRAVEL EXACT) ================= -->
+    <header class="nav-floating">
+        <nav class="nav-inner">
+            <a href="index.html" class="nav-logo" aria-label="Ricky Waterman Experience">
+                <img src="assets/logo.png" alt="Ricky Waterman Logo">
+                <div class="nav-logo-text">WATERMAN <span>EXPERIENCE</span></div>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="nav-links">
+                <div class="mega-menu-wrapper">
+                    <button aria-expanded="false" aria-haspopup="true">
+                        Destinos <i class="fa-solid fa-chevron-down chevron-sm"></i>
+                    </button>
+                    <div class="mega-menu-dropdown">
+                        <div class="mega-menu-content">
+                            <div>
+                                <h4>Destinos Destacados</h4>
+                                <ul>
+                                    <li><a href="deportes.html"><i class="fa-solid fa-location-dot text-coral" style="font-size:0.75rem;margin-right:0.5rem"></i>Gran Roque (Base Principal)</a></li>
+                                    <li><a href="deportes.html"><i class="fa-solid fa-location-dot text-coral" style="font-size:0.75rem;margin-right:0.5rem"></i>Francisquí (Piscina Natural)</a></li>
+                                    <li><a href="deportes.html"><i class="fa-solid fa-location-dot text-coral" style="font-size:0.75rem;margin-right:0.5rem"></i>Cayo de Agua (Barra Doble)</a></li>
+                                    <li><a href="deportes.html"><i class="fa-solid fa-location-dot text-coral" style="font-size:0.75rem;margin-right:0.5rem"></i>Crasquí (Kite & Pescado Fresco)</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Por Deporte</h4>
+                                <ul>
+                                    <li><a href="deportes.html">Kitesurf & Safaris de Viento</a></li>
+                                    <li><a href="deportes.html">Windsurf Paradise</a></li>
+                                    <li><a href="deportes.html">Wingfoil Levitation</a></li>
+                                    <li><a href="deportes.html">Buceo PADI Arrecifes</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="paquetes.html">
+                    Planifica tu Viaje <i class="fa-solid fa-chevron-down chevron-sm"></i>
+                </a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="contacto.html">Suscríbete</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="nav-mobile-btn" onclick="toggleMobileMenu()" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ================= MOBILE MENU OVERLAY ================= -->
+    <div id="mobile-menu" class="mobile-menu-overlay" onclick="closeMobileMenu(event)">
+        <div class="mobile-menu-panel" onclick="event.stopPropagation()">
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="mobile-menu-links">
+                <a href="index.html">Inicio</a>
+                <a href="deportes.html">Deportes & Safaris</a>
+                <a href="paquetes.html">Planifica tu Viaje</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="experiencia.html">La Experiencia</a>
+                <a href="prepara-tu-viaje.html">Preguntas Frecuentes</a>
+            </div>
+            <a href="contacto.html" class="btn-coral" style="text-align:center">Reservar Ahora</a>
+        </div>
+    </div>
+
+    <main style="padding-top: 6rem;">
+        
+        <!-- Header Banner -->
+        <section class="max-w-editorial" style="padding-top: 2rem; padding-bottom: 2rem;">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <span class="section-label">Cotizador en Tiempo Real</span>
+                <h1 class="editorial-section-title" style="font-size: clamp(2.2rem, 4vw, 3.5rem); margin-bottom: 1rem;">
+                    Personaliza Tu Experiencia
+                </h1>
+                <p style="font-size: 1.1rem; color: var(--color-text-body); line-height: 1.6;">
+                    Calcula un estimado de tu paquete según deporte, nivel y número de participantes.
+                </p>
+            </div>
+        </section>
+
+        <!-- Cotizador Section -->
+        <section class="max-w-editorial" style="margin-bottom: 5rem;">
+            <div class="calc-box">
+                <form id="calc-form" style="display: flex; flex-direction: column; gap: 1.5rem;" onsubmit="event.preventDefault(); calculatePrice();">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+                        <!-- Select Sport -->
+                        <div>
+                            <label style="display: block; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.5rem;">Deporte Principal</label>
+                            <select id="calc-sport" onchange="calculatePrice()" class="form-input-styled">
+                                <option value="kite">Kitesurf (Clases / Safari)</option>
+                                <option value="windsurf">Windsurf</option>
+                                <option value="wingfoil">Wingfoil</option>
+                                <option value="diving">Buceo (PADI)</option>
+                                <option value="multi">Multi-Deporte / Aventura</option>
+                            </select>
+                        </div>
+
+                        <!-- Select Level -->
+                        <div>
+                            <label style="display: block; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.5rem;">Tu Nivel</label>
+                            <select id="calc-level" onchange="calculatePrice()" class="form-input-styled">
+                                <option value="beg">Principiante (Incluye Clases 1:1)</option>
+                                <option value="int">Intermedio (Supervisión + Alquiler)</option>
+                                <option value="adv">Avanzado (Safari + Guía Pro)</option>
+                            </select>
+                        </div>
+
+                        <!-- Select Travelers -->
+                        <div>
+                            <label style="display: block; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.5rem;">Número de Personas</label>
+                            <select id="calc-people" onchange="calculatePrice()" class="form-input-styled">
+                                <option value="1">1 Persona (Solo Traveler)</option>
+                                <option value="2">2 Personas (Pareja / Amigos)</option>
+                                <option value="3">3 a 4 Personas (Grupo Pequeño)</option>
+                                <option value="5">5+ Personas (Grupo Privado)</option>
+                            </select>
+                        </div>
+
+                        <!-- Select Equipment -->
+                        <div>
+                            <label style="display: block; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.5rem;">Alquiler de Equipos</label>
+                            <select id="calc-gear" onchange="calculatePrice()" class="form-input-styled">
+                                <option value="yes">Sí, incluir equipos completos</option>
+                                <option value="no">No, llevo mi propio equipo</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Price Output Box -->
+                    <div style="border-top: 1px solid var(--color-border); padding-top: 1.5rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem;">
+                        <div>
+                            <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--color-text-muted);">Estimado Paquete 6 Días (All-In-One):</div>
+                            <div style="font-family: var(--font-serif); font-size: 2.5rem; color: var(--color-coral); font-weight: 700; margin-top: 0.25rem;" id="price-output">
+                                $1,450 <span style="font-size: 0.9rem; font-family: var(--font-sans); font-weight: 600; color: var(--color-text-muted);">USD / pers.</span>
+                            </div>
+                            <div style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.25rem;">* Incluye Posada B&B, Vuelos Caracas-LRV, Lanchas diarias y Deporte seleccionado.</div>
+                        </div>
+
+                        <button onclick="sendCalculatedQuote()" class="btn-coral" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Solicitar Propuesta Oficial
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Formulario & Info Section -->
+        <section class="max-w-editorial" style="margin-bottom: 6rem;">
+            <div style="background: #ffffff; border: 1px solid var(--color-border); border-radius: 1.5rem; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+                
+                <!-- Left Dark Banner Info -->
+                <div style="background: var(--color-nav-dark); color: #ffffff; padding: clamp(2rem, 4vw, 3rem); display: flex; flex-direction: column; justify-content: space-between; gap: 2rem;">
+                    <div>
+                        <span style="color: var(--color-coral); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Reserva o Consulta</span>
+                        <h2 style="font-family: var(--font-serif); font-size: 2.2rem; margin-top: 0.5rem; margin-bottom: 1rem; line-height: 1.2;">Únete a la Tripulación</h2>
+                        <p style="color: #d1d5db; font-size: 0.95rem; line-height: 1.6;">
+                            Escríbenos tus fechas estimadas y deporte de interés. Diseñaremos un itinerario a tu medida en menos de 24 horas.
+                        </p>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.05); padding: 0.85rem; border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.1);">
+                            <i class="fa-brands fa-whatsapp" style="color: var(--color-teal); font-size: 1.25rem;"></i>
+                            <div>
+                                <div style="font-size: 0.7rem; color: #9ca3af;">WhatsApp Directo</div>
+                                <div style="font-size: 0.875rem; font-weight: 700;">+58 412 000 0000</div>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.05); padding: 0.85rem; border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.1);">
+                            <i class="fa-regular fa-envelope" style="color: var(--color-teal); font-size: 1.25rem;"></i>
+                            <div>
+                                <div style="font-size: 0.7rem; color: #9ca3af;">Email de Contacto</div>
+                                <div style="font-size: 0.875rem; font-weight: 700;">info@rickywaterman.com</div>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.05); padding: 0.85rem; border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.1);">
+                            <i class="fa-brands fa-instagram" style="color: var(--color-teal); font-size: 1.25rem;"></i>
+                            <div>
+                                <div style="font-size: 0.7rem; color: #9ca3af;">Instagram</div>
+                                <div style="font-size: 0.875rem; font-weight: 700;">@rickywaterman</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="font-size: 0.8rem; color: var(--color-teal); font-weight: 700; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fa-solid fa-shield-halved"></i> Atención personalizada en ES / EN / DE
+                    </div>
+                </div>
+
+                <!-- Right Contact Form -->
+                <div style="padding: clamp(2rem, 4vw, 3rem);">
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" style="display: flex; flex-direction: column; gap: 1.25rem;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem;">
+                            <div>
+                                <label style="display: block; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.4rem;">Nombre Completo *</label>
+                                <input type="text" required placeholder="Ej. Carlos Mendoza" class="form-input-styled">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.4rem;">WhatsApp / Teléfono *</label>
+                                <input type="tel" required placeholder="+34 600 000 000" class="form-input-styled">
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem;">
+                            <div>
+                                <label style="display: block; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.4rem;">Correo Electrónico *</label>
+                                <input type="email" required placeholder="tu@email.com" class="form-input-styled">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.4rem;">Deporte de Interés</label>
+                                <select class="form-input-styled">
+                                    <option>Kitesurf</option>
+                                    <option>Windsurf</option>
+                                    <option>Wingfoil</option>
+                                    <option>Buceo PADI</option>
+                                    <option>Multi-deporte / Aventura</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label style="display: block; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: 0.4rem;">Fechas Tentativas / Mensaje</label>
+                            <textarea rows="4" placeholder="¿En qué mes te gustaría viajar y cuántas personas serían?" class="form-input-styled"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-coral" style="width: 100%; text-align: center; justify-content: center; padding: 1rem; margin-top: 0.5rem;">
+                            <i class="fa-solid fa-paper-plane" style="margin-right: 0.5rem;"></i> Enviar Solicitud de Reserva
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= 10. FOOTER (ADVENTURE.TRAVEL INSTITUTIONAL STYLE) ================= -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" style="display: flex; align-items: center; gap: 0.75rem; font-family: var(--font-serif); font-size: 1.5rem; text-decoration: none; color: #fff; margin-bottom: 1rem;">
+                    <img src="assets/logo.png" alt="Ricky Waterman Logo" style="height: 38px; width: auto; border-radius: 50%; background: #fff; padding: 2px;">
+                    <span>Waterman<span style="color:var(--color-coral)">.</span></span>
+                </a>
+                <p>Únete a nuestra comunidad de viajeros conscientes y recibe historias, guías y ofertas exclusivas directamente en tu correo.</p>
+                <form class="footer-newsletter" onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte!');">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit" class="btn-coral" style="white-space:nowrap">Suscribir</button>
+                </form>
+            </div>
+
+            <div class="footer-col">
+                <h4>Explorar</h4>
+                <ul>
+                    <li><a href="deportes.html">Destinos</a></li>
+                    <li><a href="deportes.html">Actividades</a></li>
+                    <li><a href="paquetes.html">Estilos de Viaje</a></li>
+                    <li><a href="nosotros.html">Operadores</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Nosotros</h4>
+                <ul>
+                    <li><a href="nosotros.html">Nuestra Historia</a></li>
+                    <li><a href="experiencia.html">Sostenibilidad</a></li>
+                    <li><a href="prepara-tu-viaje.html">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Conectar</h4>
+                <ul>
+                    <li><a href="contacto.html">Contáctanos</a></li>
+                    <li><a href="prepara-tu-viaje.html">Preguntas Frecuentes</a></li>
+                </ul>
+                <div class="footer-social">
+                    <a href="https://instagram.com/rickywaterman" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com/rickywaterman" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://youtube.com/@rickywaterman" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Waterman Experience. Todos los derechos reservados.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Servicio</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
+    <a href="https://wa.me/584120000000?text=Hola!%20Me%20interesa%20reservar%20mi%20lugar%20en%20The%20Waterman%20Experience" target="_blank" class="whatsapp-float" title="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('is-open');
+        }
+        function closeMobileMenu(e) {
+            if (e.target === document.getElementById('mobile-menu')) {
+                toggleMobileMenu();
+            }
+        }
+
+        function calculatePrice() {
+            const sport = document.getElementById('calc-sport').value;
+            const level = document.getElementById('calc-level').value;
+            const people = parseInt(document.getElementById('calc-people').value);
+            const gear = document.getElementById('calc-gear').value;
+
+            let basePrice = 1350;
+
+            if (sport === 'kite') basePrice += 150;
+            if (sport === 'windsurf') basePrice += 100;
+            if (sport === 'wingfoil') basePrice += 180;
+            if (sport === 'diving') basePrice += 200;
+            if (sport === 'multi') basePrice += 220;
+
+            if (level === 'beg') basePrice += 150;
+            if (gear === 'no') basePrice -= 100;
+
+            if (people >= 2 && people <= 4) basePrice *= 0.95;
+            if (people >= 5) basePrice *= 0.90;
+
+            const finalPrice = Math.round(basePrice);
+            document.getElementById('price-output').innerHTML = `$${finalPrice} <span style="font-size: 0.9rem; font-family: var(--font-sans); font-weight: 600; color: var(--color-text-muted);">USD / pers.</span>`;
+        }
+
+        function sendCalculatedQuote() {
+            const sport = document.getElementById('calc-sport').selectedOptions[0].text;
+            const people = document.getElementById('calc-people').selectedOptions[0].text;
+            const price = document.getElementById('price-output').innerText;
+            const msg = encodeURIComponent(`Hola! Calculé mi cotización para The Waterman Experience:\n- Deporte: ${sport}\n- Participantes: ${people}\n- Estimado: ${price}\nQuiero más detalles de reservas.`);
+            window.open(`https://wa.me/584120000000?text=${msg}`, '_blank');
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu solicitud! Nuestro equipo te contactará por WhatsApp / Email en menos de 24 horas.');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prepara Tu Viaje (FAQs) | The Waterman Experience - Los Roques</title>
+    <meta name="description" content="Preguntas frecuentes para tu viaje a Los Roques, Venezuela. Vuelos domésticos, visado, qué empacar, equipamiento deportivo y logística de grupos.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <!-- Custom Adventure.travel Style System -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .faq-card-styled {
+            background: #ffffff;
+            border: 1px solid var(--color-border);
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+        .faq-card-styled:hover {
+            border-color: var(--color-coral);
+        }
+        .faq-header-btn {
+            width: 100%;
+            padding: 1.5rem;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: var(--color-text-dark);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+            background: var(--color-bg-warm);
+        }
+        .accordion-content.open {
+            max-height: 1000px;
+            transition: max-height 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- ================= 1. FLOATING NAV (ADVENTURE.TRAVEL EXACT) ================= -->
+    <header class="nav-floating">
+        <nav class="nav-inner">
+            <a href="index.html" class="nav-logo" aria-label="Ricky Waterman Experience">
+                <img src="assets/logo.png" alt="Ricky Waterman Logo">
+                <div class="nav-logo-text">WATERMAN <span>EXPERIENCE</span></div>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="nav-links">
+                <div class="mega-menu-wrapper">
+                    <button aria-expanded="false" aria-haspopup="true">
+                        Destinos <i class="fa-solid fa-chevron-down chevron-sm"></i>
+                    </button>
+                    <div class="mega-menu-dropdown">
+                        <div class="mega-menu-content">
+                            <div>
+                                <h4>Destinos Destacados</h4>
+                                <ul>
+                                    <li><a href="deportes.html"><i class="fa-solid fa-location-dot text-coral" style="font-size:0.75rem;margin-right:0.5rem"></i>Gran Roque (Base Principal)</a></li>
+                                    <li><a href="deportes.html"><i class="fa-solid fa-location-dot text-coral" style="font-size:0.75rem;margin-right:0.5rem"></i>Francisquí (Piscina Natural)</a></li>
+                                    <li><a href="deportes.html"><i class="fa-solid fa-location-dot text-coral" style="font-size:0.75rem;margin-right:0.5rem"></i>Cayo de Agua (Barra Doble)</a></li>
+                                    <li><a href="deportes.html"><i class="fa-solid fa-location-dot text-coral" style="font-size:0.75rem;margin-right:0.5rem"></i>Crasquí (Kite & Pescado Fresco)</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>Por Deporte</h4>
+                                <ul>
+                                    <li><a href="deportes.html">Kitesurf & Safaris de Viento</a></li>
+                                    <li><a href="deportes.html">Windsurf Paradise</a></li>
+                                    <li><a href="deportes.html">Wingfoil Levitation</a></li>
+                                    <li><a href="deportes.html">Buceo PADI Arrecifes</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="paquetes.html">
+                    Planifica tu Viaje <i class="fa-solid fa-chevron-down chevron-sm"></i>
+                </a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="contacto.html">Suscríbete</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="nav-mobile-btn" onclick="toggleMobileMenu()" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ================= MOBILE MENU OVERLAY ================= -->
+    <div id="mobile-menu" class="mobile-menu-overlay" onclick="closeMobileMenu(event)">
+        <div class="mobile-menu-panel" onclick="event.stopPropagation()">
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="mobile-menu-links">
+                <a href="index.html">Inicio</a>
+                <a href="deportes.html">Deportes & Safaris</a>
+                <a href="paquetes.html">Planifica tu Viaje</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="experiencia.html">La Experiencia</a>
+                <a href="prepara-tu-viaje.html">Preguntas Frecuentes</a>
+            </div>
+            <a href="contacto.html" class="btn-coral" style="text-align:center">Reservar Ahora</a>
+        </div>
+    </div>
+
+    <main style="padding-top: 6rem;">
+        
+        <!-- Header Banner Section -->
+        <section class="max-w-editorial" style="padding-top: 2rem; padding-bottom: 2rem;">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <span class="section-label">Prepara Tu Viaje</span>
+                <h1 class="editorial-section-title" style="font-size: clamp(2.2rem, 4vw, 3.5rem); margin-bottom: 1rem;">
+                    Preguntas Frecuentes
+                </h1>
+                <p style="font-size: 1.1rem; color: var(--color-text-body); line-height: 1.6;">
+                    Todo lo que necesitas saber antes de empacar tu traje de baño y volar al paraíso caribeño de Los Roques.
+                </p>
+            </div>
+        </section>
+
+        <!-- FAQs Accordion Section -->
+        <section class="max-w-editorial" style="margin-bottom: 6rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                
+                <!-- FAQ 1 -->
+                <div class="faq-card-styled">
+                    <button onclick="toggleAccordion('faq-1')" class="faq-header-btn">
+                        <span>¿Cómo gestiono los vuelos hasta Los Roques?</span>
+                        <i id="faq-1-icon" class="fa-solid fa-plus" style="color: var(--color-coral); font-size: 1rem; transition: transform 0.3s ease;"></i>
+                    </button>
+                    <div id="faq-1" class="accordion-content">
+                        <div style="padding: 1.5rem; font-size: 0.95rem; color: var(--color-text-body); line-height: 1.6; border-top: 1px solid var(--color-border);">
+                            Te asesoramos en la compra de tu vuelo internacional con destino al Aeropuerto de Caracas (CCS). Una vez allí, nosotros nos encargamos de reservar tus pasajes domésticos en avión chárter privado directo a Los Roques (40 min de vuelo) y del acompañamiento VIP en el terminal.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-card-styled">
+                    <button onclick="toggleAccordion('faq-2')" class="faq-header-btn">
+                        <span>¿Necesito visa para ingresar a Venezuela?</span>
+                        <i id="faq-2-icon" class="fa-solid fa-plus" style="color: var(--color-coral); font-size: 1rem; transition: transform 0.3s ease;"></i>
+                    </button>
+                    <div id="faq-2" class="accordion-content">
+                        <div style="padding: 1.5rem; font-size: 0.95rem; color: var(--color-text-body); line-height: 1.6; border-top: 1px solid var(--color-border);">
+                            La mayoría de los ciudadanos europeos, británicos y latinoamericanos pueden ingresar como turistas por hasta 90 días con solo pasaporte vigente (mínimo 6 meses). Te daremos todos los requerimientos migratorios vigentes antes de tu salida.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-card-styled">
+                    <button onclick="toggleAccordion('faq-3')" class="faq-header-btn">
+                        <span>¿Qué debo empacar en mi equipaje? (Checklist)</span>
+                        <i id="faq-3-icon" class="fa-solid fa-plus" style="color: var(--color-coral); font-size: 1rem; transition: transform 0.3s ease;"></i>
+                    </button>
+                    <div id="faq-3" class="accordion-content">
+                        <div style="padding: 1.5rem; font-size: 0.95rem; color: var(--color-text-body); line-height: 1.6; border-top: 1px solid var(--color-border);">
+                            <ul style="list-style: disc; padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                                <li>Protector solar Reef-Safe (biodegradable)</li>
+                                <li>Lycras con protección UV / Neopreno ligero 1.5mm</li>
+                                <li>Gafas de sol polarizadas con sujetador acuático</li>
+                                <li>Sombrero o gorra protectora</li>
+                                <li>Ropa ligera de algodón/lino para las noches</li>
+                                <li>Repelente biodegradable de mosquitos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-card-styled">
+                    <button onclick="toggleAccordion('faq-4')" class="faq-header-btn">
+                        <span>¿Tengo que llevar mi propio equipo deportivo?</span>
+                        <i id="faq-4-icon" class="fa-solid fa-plus" style="color: var(--color-coral); font-size: 1rem; transition: transform 0.3s ease;"></i>
+                    </button>
+                    <div id="faq-4" class="accordion-content">
+                        <div style="padding: 1.5rem; font-size: 0.95rem; color: var(--color-text-body); line-height: 1.6; border-top: 1px solid var(--color-border);">
+                            No es necesario. Todos nuestros paquetes incluyen equipos de primera categoría (kites, tablas, arneses, velas, tanques y reguladores). Si prefieres traer tus propias cometas, te ayudaremos a coordinar el sobrepeso de equipaje en la aerolínea local.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-card-styled">
+                    <button onclick="toggleAccordion('faq-5')" class="faq-header-btn">
+                        <span>¿Cómo se compone el grupo de viaje?</span>
+                        <i id="faq-5-icon" class="fa-solid fa-plus" style="color: var(--color-coral); font-size: 1rem; transition: transform 0.3s ease;"></i>
+                    </button>
+                    <div id="faq-5" class="accordion-content">
+                        <div style="padding: 1.5rem; font-size: 0.95rem; color: var(--color-text-body); line-height: 1.6; border-top: 1px solid var(--color-border);">
+                            Organizamos grupos pequeños de 10 a 15 personas apasionadas por el mar y la naturaleza. Pueden unirse viajeros individuales, parejas, amigos o familias. Promovemos un ambiente cálido, inclusivo y lleno de compañerismo.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="max-w-editorial" style="margin-bottom: 6rem; text-align: center;">
+            <div style="background: var(--color-nav-dark); color: #ffffff; padding: clamp(2rem, 5vw, 4rem); border-radius: 1.5rem;">
+                <h2 style="font-family: var(--font-serif); font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 1rem;">¿Tienes Alguna Otra Duda?</h2>
+                <p style="color: #d1d5db; max-width: 600px; margin: 0 auto 2rem auto; font-size: 1rem; line-height: 1.6;">
+                    Nuestro equipo está listo para ayudarte personalmente vía WhatsApp.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://wa.me/584120000000" target="_blank" class="btn-coral"><i class="fa-brands fa-whatsapp"></i> Preguntar en WhatsApp</a>
+                    <a href="contacto.html" class="btn-outline" style="border-color: #ffffff; color: #ffffff;">Formulario de Contacto</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= 10. FOOTER (ADVENTURE.TRAVEL INSTITUTIONAL STYLE) ================= -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" style="display: flex; align-items: center; gap: 0.75rem; font-family: var(--font-serif); font-size: 1.5rem; text-decoration: none; color: #fff; margin-bottom: 1rem;">
+                    <img src="assets/logo.png" alt="Ricky Waterman Logo" style="height: 38px; width: auto; border-radius: 50%; background: #fff; padding: 2px;">
+                    <span>Waterman<span style="color:var(--color-coral)">.</span></span>
+                </a>
+                <p>Únete a nuestra comunidad de viajeros conscientes y recibe historias, guías y ofertas exclusivas directamente en tu correo.</p>
+                <form class="footer-newsletter" onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte!');">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit" class="btn-coral" style="white-space:nowrap">Suscribir</button>
+                </form>
+            </div>
+
+            <div class="footer-col">
+                <h4>Explorar</h4>
+                <ul>
+                    <li><a href="deportes.html">Destinos</a></li>
+                    <li><a href="deportes.html">Actividades</a></li>
+                    <li><a href="paquetes.html">Estilos de Viaje</a></li>
+                    <li><a href="nosotros.html">Operadores</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Nosotros</h4>
+                <ul>
+                    <li><a href="nosotros.html">Nuestra Historia</a></li>
+                    <li><a href="experiencia.html">Sostenibilidad</a></li>
+                    <li><a href="prepara-tu-viaje.html">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Conectar</h4>
+                <ul>
+                    <li><a href="contacto.html">Contáctanos</a></li>
+                    <li><a href="prepara-tu-viaje.html">Preguntas Frecuentes</a></li>
+                </ul>
+                <div class="footer-social">
+                    <a href="https://instagram.com/rickywaterman" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com/rickywaterman" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://youtube.com/@rickywaterman" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Waterman Experience. Todos los derechos reservados.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Servicio</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
+    <a href="https://wa.me/584120000000?text=Hola!%20Me%20interesa%20reservar%20mi%20lugar%20en%20The%20Waterman%20Experience" target="_blank" class="whatsapp-float" title="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('is-open');
+        }
+        function closeMobileMenu(e) {
+            if (e.target === document.getElementById('mobile-menu')) {
+                toggleMobileMenu();
+            }
+        }
+
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById(`${id}-icon`);
+            const isOpen = content.classList.contains('open');
+
+            document.querySelectorAll('.accordion-content').forEach(el => el.classList.remove('open'));
+            document.querySelectorAll('[id$="-icon"]').forEach(ic => {
+                ic.className = "fa-solid fa-plus";
+                ic.style.transform = "rotate(0deg)";
+            });
+
+            if (!isOpen) {
+                content.classList.add('open');
+                icon.className = "fa-solid fa-minus";
+                icon.style.transform = "rotate(180deg)";
+            }
+        }
+    </script>
+</body>
+</html>
