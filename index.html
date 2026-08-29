@@ -99,22 +99,22 @@
         <!-- ================= 2. HERO (ADVENTURE.TRAVEL EXACT — FROSTED GLASS BOX) ================= -->
         <section class="hero-section">
             <!-- Video/Image Background -->
-            <video autoplay loop muted playsinline class="hero-bg-video">
+            <video autoplay loop muted playsinline class="hero-bg-video" data-cms-id="hero-video">
                 <source src="assets/hero-video.mp4" type="video/mp4">
             </video>
             <!-- Fallback bg image if video fails -->
-            <img src="assets/IMG_4118.JPG" alt="Los Roques landscape" class="hero-bg" style="display:none" onerror="this.style.display='none'" id="hero-fallback-img">
+            <img src="assets/IMG_4118.JPG" alt="Los Roques landscape" class="hero-bg" style="display:none" onerror="this.style.display='none'" id="hero-fallback-img" data-cms-id="hero-fallback">
 
             <!-- Frosted glass box — pixel match to reference screenshot -->
             <div class="hero-glass-box">
-                <h1>
+                <h1 data-cms-id="hero-title">
                     Tu Aventura Te<br>
                     Espera. ¿A Dónde<br>
                     Te Llevará Tu<br>
                     Curiosidad?
                 </h1>
 
-                <p class="hero-subtitle">
+                <p class="hero-subtitle" data-cms-id="hero-subtitle">
                     Descubre el archipiélago de Los Roques, Venezuela. Aguas turquesas vírgenes, viento constante y la expedición de deportes acuáticos más auténtica del Caribe.
                 </p>
 
@@ -150,14 +150,14 @@
                 <!-- Spot 1: Gran Roque -->
                 <article class="dest-card">
                     <div class="dest-card-img-wrapper">
-                        <img src="assets/IMG_4129.JPG" alt="Gran Roque">
+                        <img src="assets/IMG_4129.JPG" alt="Gran Roque" data-cms-id="dest1-img">
                     </div>
                     <div class="dest-card-tags">
                         <span class="dest-card-tag">Cultura</span>
                         <span class="dest-card-tag">Base Principal</span>
                     </div>
-                    <h3>Gran Roque</h3>
-                    <p>Corazón del archipiélago con posadas VIP frente al mar, gastronomía local y vida de pueblo pescador.</p>
+                    <h3 data-cms-id="dest1-title">Gran Roque</h3>
+                    <p data-cms-id="dest1-text">Corazón del archipiélago con posadas VIP frente al mar, gastronomía local y vida de pueblo pescador.</p>
                     <div class="dest-card-attrs">
                         <span><i class="fa-solid fa-water"></i> Cultura & Posadas</span>
                         <span><i class="fa-solid fa-wind"></i> Viento Alisio</span>
@@ -169,14 +169,14 @@
                 <!-- Spot 2: Francisquí -->
                 <article class="dest-card">
                     <div class="dest-card-img-wrapper">
-                        <img src="assets/IMG_4160.JPG" alt="Francisquí">
+                        <img src="assets/IMG_4160.JPG" alt="Francisquí" data-cms-id="dest2-img">
                     </div>
                     <div class="dest-card-tags">
                         <span class="dest-card-tag">Agua Plana</span>
                         <span class="dest-card-tag">Piscina Natural</span>
                     </div>
-                    <h3>Francisquí</h3>
-                    <p>Cayo de aguas transparentes de espejo ideal para la práctica de Wingfoil, Windsurf e iniciación de Kitesurf.</p>
+                    <h3 data-cms-id="dest2-title">Francisquí</h3>
+                    <p data-cms-id="dest2-text">Cayo de aguas transparentes de espejo ideal para la práctica de Wingfoil, Windsurf e iniciación de Kitesurf.</p>
                     <div class="dest-card-attrs">
                         <span><i class="fa-solid fa-water"></i> Agua Plana</span>
                         <span><i class="fa-solid fa-wind"></i> 18-25 Kts</span>
@@ -188,14 +188,14 @@
                 <!-- Spot 3: Cayo de Agua -->
                 <article class="dest-card">
                     <div class="dest-card-img-wrapper">
-                        <img src="assets/IMG_4118.JPG" alt="Cayo de Agua">
+                        <img src="assets/IMG_4118.JPG" alt="Cayo de Agua" data-cms-id="dest3-img">
                     </div>
                     <div class="dest-card-tags">
                         <span class="dest-card-tag">Naturaleza</span>
                         <span class="dest-card-tag">Icono Mundial</span>
                     </div>
-                    <h3>Cayo de Agua</h3>
-                    <p>La famosa estrecha barra de arena blanca que une dos franjas de mar turquesa impecable sin turismo masivo.</p>
+                    <h3 data-cms-id="dest3-title">Cayo de Agua</h3>
+                    <p data-cms-id="dest3-text">La famosa estrecha barra de arena blanca que une dos franjas de mar turquesa impecable sin turismo masivo.</p>
                     <div class="dest-card-attrs">
                         <span><i class="fa-solid fa-water"></i> Barra Doble</span>
                         <span><i class="fa-solid fa-wind"></i> Viento Limpio</span>
@@ -253,8 +253,8 @@
             <!-- Block 1: "La Aventura Es Para Todos" (Text Left, Image Right) -->
             <article class="editorial-block">
                 <div class="editorial-block-text">
-                    <h2>La Aventura Es<br>Para Todos</h2>
-                    <p>
+                    <h2 data-cms-id="edit1-title">La Aventura Es<br>Para Todos</h2>
+                    <p data-cms-id="edit1-text">
                         Creemos que la aventura en el mar no es exclusiva de atletas extremos. Diseñamos nuestras expediciones para que tanto principiantes que nunca han tocado una tabla como navegantes avanzados disfruten al máximo en un entorno seguro y cálido.
                     </p>
                     <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.5rem;font-weight:700;font-size:0.875rem">
@@ -267,15 +267,15 @@
                     </a>
                 </div>
                 <div class="editorial-block-image">
-                    <img src="assets/IMG_4118.JPG" alt="Adventure for everyone">
+                    <img src="assets/IMG_4118.JPG" alt="Adventure for everyone" data-cms-id="edit1-img">
                 </div>
             </article>
 
             <!-- Block 2: "Tu Viaje, Perfeccionado" (Image Left, Text Right) -->
             <article class="editorial-block reverse">
                 <div class="editorial-block-text">
-                    <h2>Tu Viaje,<br>Perfeccionado</h2>
-                    <p>
+                    <h2 data-cms-id="edit2-title">Tu Viaje,<br>Perfeccionado</h2>
+                    <p data-cms-id="edit2-text">
                         Nos encargamos de absolutamente toda la logística para que tú solo pienses en disfrutar del agua. Desde tu llegada al aeropuerto de Caracas hasta cada transfer diario en lancha privada a los cayos más remotos.
                     </p>
                     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:0.5rem">
@@ -293,15 +293,15 @@
                     </a>
                 </div>
                 <div class="editorial-block-image">
-                    <img src="assets/IMG_4160.JPG" alt="Your Journey Perfected">
+                    <img src="assets/IMG_4160.JPG" alt="Your Journey Perfected" data-cms-id="edit2-img">
                 </div>
             </article>
 
             <!-- Block 3: "Descubre Una Mejor Forma de Viajar" -->
             <article class="editorial-block">
                 <div class="editorial-block-text">
-                    <h2>Descubre Una Mejor<br>Forma de Viajar</h2>
-                    <p>
+                    <h2 data-cms-id="edit3-title">Descubre Una Mejor<br>Forma de Viajar</h2>
+                    <p data-cms-id="edit3-text">
                         Los Roques es una reserva marina protegida de valor incalculable. Operamos bajo estrictas normas de sostenibilidad: cero plásticos de un solo uso, protectores solares Reef-Safe y respeto absoluto por las comunidades pesqueras locales.
                     </p>
                     <div style="padding:1.25rem;background:#fff;border-radius:1rem;border:1px solid var(--color-border);font-size:0.875rem;color:#6b7280">
@@ -315,7 +315,7 @@
                     </a>
                 </div>
                 <div class="editorial-block-image">
-                    <img src="assets/IMG_4128.JPG" alt="Better way to travel">
+                    <img src="assets/IMG_4128.JPG" alt="Better way to travel" data-cms-id="edit3-img">
                 </div>
             </article>
         </section>
@@ -331,33 +331,33 @@
             <div class="impact-grid">
                 <!-- Story 1 -->
                 <article class="impact-card">
-                    <img src="assets/IMG_4162.JPG" alt="La Historia de Ricky">
-                    <h3>La Historia de Ricky</h3>
-                    <p>Fundador y apasionado del mar compartiendo el paraíso marino de su infancia con el mundo.</p>
+                    <img src="assets/IMG_4162.JPG" alt="La Historia de Ricky" data-cms-id="impact1-img">
+                    <h3 data-cms-id="impact1-title">La Historia de Ricky</h3>
+                    <p data-cms-id="impact1-text">Fundador y apasionado del mar compartiendo el paraíso marino de su infancia con el mundo.</p>
                     <a href="nosotros.html" class="impact-link">Conoce la historia</a>
                 </article>
 
                 <!-- Story 2 -->
                 <article class="impact-card">
-                    <img src="assets/IMG_4160.JPG" alt="Protección de Arrecifes">
-                    <h3>Protección de Arrecifes</h3>
-                    <p>Iniciativas para mantener intacta la barrera coralina de Los Roques para futuras generaciones.</p>
+                    <img src="assets/IMG_4160.JPG" alt="Protección de Arrecifes" data-cms-id="impact2-img">
+                    <h3 data-cms-id="impact2-title">Protección de Arrecifes</h3>
+                    <p data-cms-id="impact2-text">Iniciativas para mantener intacta la barrera coralina de Los Roques para futuras generaciones.</p>
                     <a href="experiencia.html" class="impact-link">Descubre el impacto</a>
                 </article>
 
                 <!-- Story 3 -->
                 <article class="impact-card">
-                    <img src="assets/IMG_4165.JPG" alt="Apoyo a Capitanes Locales">
-                    <h3>Apoyo a Capitanes Locales</h3>
-                    <p>Integración y trabajo digno con las familias de pescadores de la isla.</p>
+                    <img src="assets/IMG_4165.JPG" alt="Apoyo a Capitanes Locales" data-cms-id="impact3-img">
+                    <h3 data-cms-id="impact3-title">Apoyo a Capitanes Locales</h3>
+                    <p data-cms-id="impact3-text">Integración y trabajo digno con las familias de pescadores de la isla.</p>
                     <a href="nosotros.html" class="impact-link">Ver el proyecto</a>
                 </article>
 
                 <!-- Story 4 -->
                 <article class="impact-card">
-                    <img src="assets/IMG_4129.JPG" alt="Política Zero Plastic">
-                    <h3>Política Zero Plastic</h3>
-                    <p>Eliminación completa de plásticos en todos nuestros safaris náuticos.</p>
+                    <img src="assets/IMG_4129.JPG" alt="Política Zero Plastic" data-cms-id="impact4-img">
+                    <h3 data-cms-id="impact4-title">Política Zero Plastic</h3>
+                    <p data-cms-id="impact4-text">Eliminación completa de plásticos en todos nuestros safaris náuticos.</p>
                     <a href="prepara-tu-viaje.html" class="impact-link">Conoce la iniciativa</a>
                 </article>
             </div>
@@ -533,5 +533,6 @@
         updateRegionLayout();
         window.addEventListener('resize', updateRegionLayout);
     </script>
+    <script src="assets/js/cms.js"></script>
 </body>
 </html>

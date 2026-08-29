@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | Waterman Experience</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- FontAwesome 6 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <!-- Admin Styles -->
+    <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+    <!-- ================= LOGIN OVERLAY ================= -->
+    <div id="login-overlay" class="admin-login-overlay">
+        <div class="admin-login-card">
+            <img src="assets/logo.png" alt="Waterman Logo" class="login-logo">
+            <h1>Panel Admin</h1>
+            <p class="login-subtitle">Ingresa tu contraseña para administrar el sitio</p>
+            <form id="login-form">
+                <input type="password" id="login-pass" placeholder="Contraseña" autocomplete="off" autofocus>
+                <div id="login-error" class="login-error"></div>
+                <button type="submit" class="admin-btn admin-btn-primary admin-btn-block">
+                    <i class="fa-solid fa-right-to-bracket"></i> Ingresar
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- ================= MOBILE OVERLAY ================= -->
+    <div id="sidebar-overlay" class="admin-sidebar-overlay"></div>
+
+
+    <!-- ================= LAYOUT ================= -->
+    <div class="admin-layout">
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside id="admin-sidebar" class="admin-sidebar">
+            <div class="admin-sidebar-header">
+                <img src="assets/logo.png" alt="Logo">
+                <div class="brand-text">Waterman<span>.</span> Admin</div>
+            </div>
+
+            <nav id="sidebar-nav" class="admin-sidebar-nav">
+                <!-- Rendered by JS -->
+            </nav>
+
+            <div class="admin-sidebar-footer">
+                <button class="admin-nav-item" onclick="adminExport()">
+                    <i class="fa-solid fa-download"></i> Exportar Backup JSON
+                </button>
+                <button class="admin-nav-item" onclick="adminImport()">
+                    <i class="fa-solid fa-upload"></i> Importar desde JSON
+                </button>
+                <button class="admin-nav-item" onclick="adminResetAll()" style="color: var(--admin-danger);">
+                    <i class="fa-solid fa-trash-can"></i> Borrar Todo
+                </button>
+                <button class="admin-nav-item" onclick="adminLogout()">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Cerrar Sesión
+                </button>
+            </div>
+        </aside>
+
+
+        <!-- ===== MAIN ===== -->
+        <div class="admin-main">
+
+            <!-- Top Bar -->
+            <header class="admin-topbar">
+                <div class="admin-topbar-left">
+                    <button id="hamburger-btn" class="admin-hamburger">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <h2 id="topbar-title">Inicio</h2>
+                </div>
+                <div class="admin-topbar-right">
+                    <button class="admin-btn" onclick="adminResetPage()">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        <span>Resetear Página</span>
+                    </button>
+                    <button class="admin-btn" onclick="adminPreview()">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>Previsualizar</span>
+                    </button>
+                    <button class="admin-btn admin-btn-primary" onclick="adminSave()">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        <span>Guardar</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Editor Content -->
+            <div class="admin-content">
+                <div id="editor-content">
+                    <!-- Rendered dynamically by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================= TOAST CONTAINER ================= -->
+    <div id="toast-container" class="admin-toast-container"></div>
+
+
+    <!-- ================= SCRIPTS ================= -->
+    <script src="assets/js/admin.js"></script>
+
+</body>
+</html>
