@@ -293,10 +293,29 @@
         renderSidebar();
         switchPage('index');
         setupHamburger();
+        checkServerStatus();
     }
 
-    // ===================== STORAGE =====================
+    // ===================== STORAGE & SERVER API =====================
     function loadData() {
+        // Try fetching from Server DB /api/cms
+        fetch('/api/cms')
+            .then(function (res) { return res.json(); })
+            .then(function (resData) {
+                if (resData && resData.success && resData.data) {
+                    cmsData = resData.data;
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(cmsData));
+                    if (PAGES[currentPage]) renderEditor(PAGES[currentPage]);
+                } else {
+                    loadFromLocalStorage();
+                }
+            })
+            .catch(function (err) {
+                loadFromLocalStorage();
+            });
+    }
+
+    function loadFromLocalStorage() {
         try {
             const raw = localStorage.getItem(STORAGE_KEY);
             cmsData = raw ? JSON.parse(raw) : {};
@@ -306,16 +325,49 @@
     }
 
     function saveData() {
+        // Save to LocalStorage
         try {
             localStorage.setItem(STORAGE_KEY, JSON.stringify(cmsData));
-            showToast('Cambios guardados correctamente', 'success');
-        } catch (e) {
-            if (e.name === 'QuotaExceededError') {
-                showToast('Error: almacenamiento lleno. Reduce el tamaño de las imágenes.', 'error');
+        } catch (e) {}
+
+        // Save to Server DB /api/cms
+        showToast('Guardando en la base de datos del servidor...', 'info');
+        fetch('/api/cms', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(cmsData)
+        })
+        .then(function (res) { return res.json(); })
+        .then(function (resData) {
+            if (resData && resData.success) {
+                showToast('✅ Cambios guardados en el servidor y sincronizados globalmente', 'success');
+                checkServerStatus();
             } else {
-                showToast('Error al guardar: ' + e.message, 'error');
+                showToast('Guardado en caché local (Servidor no respondió)', 'info');
             }
-        }
+        })
+        .catch(function (err) {
+            showToast('Guardado localmente en navegador', 'info');
+        });
+    }
+
+    function checkServerStatus() {
+        fetch('/api/status')
+            .then(function (res) { return res.json(); })
+            .then(function (data) {
+                var badge = document.getElementById('server-status-badge');
+                if (badge) {
+                    badge.innerHTML = '<i class="fa-solid fa-server"></i> Servidor Persistente Activo (' + data.dbSizeKB + ' KB / ' + data.uploadsCount + ' archivos)';
+                    badge.className = 'status-badge status-online';
+                }
+            })
+            .catch(function () {
+                var badge = document.getElementById('server-status-badge');
+                if (badge) {
+                    badge.innerHTML = '<i class="fa-solid fa-database"></i> Modo Local (Navegador)';
+                    badge.className = 'status-badge status-offline';
+                }
+            });
     }
 
     // ===================== LOGIN =====================
@@ -481,32 +533,63 @@
             });
         });
 
-        // File inputs — image/video
+        // File inputs — image/video upload to server
         document.querySelectorAll('.img-upload-area input[type="file"]').forEach(function (input) {
             input.addEventListener('change', function () {
                 var file = this.files[0];
                 if (!file) return;
                 var id = this.getAttribute('data-field-id');
 
-                if (file.type.startsWith('video/')) {
-                    var reader = new FileReader();
-                    reader.onload = function (e) {
+                showToast('Subiendo archivo al servidor...', 'info');
+
+                // Try uploading file directly to Server API /api/upload
+                var formData = new FormData();
+                formData.append('file', file);
+
+                fetch('/api/upload', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(function (res) { return res.json(); })
+                .then(function (resData) {
+                    if (resData && resData.success && resData.url) {
                         if (!cmsData[id]) cmsData[id] = {};
-                        cmsData[id].video = e.target.result;
+                        if (file.type.startsWith('video/')) {
+                            cmsData[id].video = resData.url;
+                        } else {
+                            cmsData[id].img = resData.url;
+                        }
                         renderEditor(PAGES[currentPage]);
-                    };
-                    reader.readAsDataURL(file);
-                } else {
-                    // Compress image via Canvas to lightweight JPEG (max 1200px, 0.75 quality)
-                    compressImageFile(file, function (compressedUrl) {
-                        if (!cmsData[id]) cmsData[id] = {};
-                        cmsData[id].img = compressedUrl;
-                        renderEditor(PAGES[currentPage]);
-                        showToast('Imagen comprimida y optimizada', 'info');
-                    });
-                }
+                        showToast('✅ Archivo subido al servidor (' + (file.size / 1024 / 1024).toFixed(2) + ' MB)', 'success');
+                        checkServerStatus();
+                    } else {
+                        fallbackLocalUpload(file, id);
+                    }
+                })
+                .catch(function (err) {
+                    fallbackLocalUpload(file, id);
+                });
             });
         });
+
+        function fallbackLocalUpload(file, id) {
+            if (file.type.startsWith('video/')) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    if (!cmsData[id]) cmsData[id] = {};
+                    cmsData[id].video = e.target.result;
+                    renderEditor(PAGES[currentPage]);
+                };
+                reader.readAsDataURL(file);
+            } else {
+                compressImageFile(file, function (compressedUrl) {
+                    if (!cmsData[id]) cmsData[id] = {};
+                    cmsData[id].img = compressedUrl;
+                    renderEditor(PAGES[currentPage]);
+                    showToast('Imagen comprimida guardada en navegador', 'info');
+                });
+            }
+        }
 
         // Remove image buttons
         document.querySelectorAll('.remove-img-btn').forEach(function (btn) {
@@ -628,6 +711,72 @@
         sessionStorage.removeItem('waterman_admin_auth');
         location.reload();
     };
+
+    // ===================== INTERACTIVE ADMIN TOUR =====================
+    var currentTourStep = 0;
+    var tourSteps = [
+        {
+            title: '1. Organización Modular por Páginas 📁',
+            icon: 'fa-cubes',
+            text: 'El panel está estructurado en módulos según las páginas públicas del sitio (Inicio, Deportes, Nosotros, Paquetes, Contacto, Experiencia, FAQ). Selecciona cualquier página en el menú lateral izquierdo para editar sus contenidos.'
+        },
+        {
+            title: '2. Edición Modular por Secciones ✏️',
+            icon: 'fa-layer-group',
+            text: 'Cada página está dividida en tarjetas/bloques funcionales (Hero, Destinos, Bloques Editoriales, Historias). Puedes modificar textos, descripciones y títulos directamente en tiempo real.'
+        },
+        {
+            title: '3. Subida Directa de Fotos & Videos al Servidor ☁️',
+            icon: 'fa-cloud-arrow-up',
+            text: 'Arrastra o selecciona cualquier foto o video (MP4). Los archivos se suben directamente a la base de datos del servidor (/uploads/) de forma ilimitada y sin topes de almacenamiento.'
+        },
+        {
+            title: '4. Base de Datos Persistente & Previsualización 🚀',
+            icon: 'fa-database',
+            text: 'Haz clic en "Guardar" en la esquina superior derecha para almacenar tus cambios en la base de datos global. Haz clic en "Previsualizar" para abrir la página pública y ver cómo luce tu sitio web live.'
+        }
+    ];
+
+    window.startAdminTour = function () {
+        currentTourStep = 0;
+        showTourStep(0);
+        var modal = document.getElementById('admin-tour-modal');
+        if (modal) modal.classList.add('open');
+    };
+
+    window.closeAdminTour = function () {
+        var modal = document.getElementById('admin-tour-modal');
+        if (modal) modal.classList.remove('open');
+    };
+
+    window.nextTourStep = function () {
+        if (currentTourStep < tourSteps.length - 1) {
+            currentTourStep++;
+            showTourStep(currentTourStep);
+        } else {
+            closeAdminTour();
+            showToast('¡Tour completado! Ya estás listo para administrar el sitio.', 'success');
+        }
+    };
+
+    window.prevTourStep = function () {
+        if (currentTourStep > 0) {
+            currentTourStep--;
+            showTourStep(currentTourStep);
+        }
+    };
+
+    function showTourStep(idx) {
+        var step = tourSteps[idx];
+        document.getElementById('tour-step-title').innerHTML = '<i class="fa-solid ' + step.icon + '" style="color:var(--color-turquoise);margin-right:0.5rem"></i>' + step.title;
+        document.getElementById('tour-step-body').textContent = step.text;
+        document.getElementById('tour-step-counter').textContent = 'Paso ' + (idx + 1) + ' de ' + tourSteps.length;
+        
+        var prevBtn = document.getElementById('tour-prev-btn');
+        var nextBtn = document.getElementById('tour-next-btn');
+        if (prevBtn) prevBtn.style.display = idx === 0 ? 'none' : 'inline-flex';
+        if (nextBtn) nextBtn.textContent = idx === tourSteps.length - 1 ? 'Entendido / Finalizar' : 'Siguiente paso →';
+    }
 
     // ===================== TOAST =====================
     function showToast(message, type) {

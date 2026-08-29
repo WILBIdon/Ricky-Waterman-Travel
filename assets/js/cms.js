@@ -21,10 +21,28 @@
     }
 
     /**
-     * Apply stored content to the current page
+     * Apply stored content to the current page (server API first, localStorage fallback)
      */
     function applyContent() {
-        const data = getCMSData();
+        // First try fetching from Server API /api/cms
+        fetch('/api/cms')
+            .then(function (res) { return res.json(); })
+            .then(function (resData) {
+                if (resData && resData.success && resData.data) {
+                    // Update localStorage cache with server database
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(resData.data));
+                    patchElements(resData.data);
+                } else {
+                    patchElements(getCMSData());
+                }
+            })
+            .catch(function (err) {
+                // Offline fallback
+                patchElements(getCMSData());
+            });
+    }
+
+    function patchElements(data) {
         if (!data || Object.keys(data).length === 0) return;
 
         // Find all elements with data-cms-id

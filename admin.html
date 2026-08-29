@@ -76,8 +76,15 @@
                         <i class="fa-solid fa-bars"></i>
                     </button>
                     <h2 id="topbar-title">Inicio</h2>
+                    <span id="server-status-badge" class="status-badge status-online">
+                        <i class="fa-solid fa-server"></i> Conectando al servidor...
+                    </span>
                 </div>
                 <div class="admin-topbar-right">
+                    <button class="admin-btn admin-btn-tour" onclick="startAdminTour()">
+                        <i class="fa-solid fa-lightbulb" style="color: #FFD700"></i>
+                        <span>💡 Tour del Admin</span>
+                    </button>
                     <button class="admin-btn" onclick="adminResetPage()">
                         <i class="fa-solid fa-rotate-left"></i>
                         <span>Resetear Página</span>
@@ -88,7 +95,7 @@
                     </button>
                     <button class="admin-btn admin-btn-primary" onclick="adminSave()">
                         <i class="fa-solid fa-floppy-disk"></i>
-                        <span>Guardar</span>
+                        <span>Guardar en Servidor</span>
                     </button>
                 </div>
             </header>
@@ -97,6 +104,31 @@
             <div class="admin-content">
                 <div id="editor-content">
                     <!-- Rendered dynamically by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================= INTERACTIVE ADMIN TOUR MODAL ================= -->
+    <div id="admin-tour-modal" class="admin-tour-modal">
+        <div class="admin-tour-card">
+            <div class="tour-header">
+                <h3 id="tour-step-title"><i class="fa-solid fa-cubes"></i> 1. Organización Modular</h3>
+                <span id="tour-step-counter" class="tour-counter">Paso 1 de 4</span>
+            </div>
+            <p id="tour-step-body" class="tour-body">
+                El panel está estructurado en módulos según las páginas del sitio...
+            </p>
+            <div class="tour-footer">
+                <button id="tour-prev-btn" class="admin-btn" onclick="prevTourStep()" style="display:none">
+                    ← Anterior
+                </button>
+                <div style="margin-left:auto; display:flex; gap:0.5rem">
+                    <button class="admin-btn" onclick="closeAdminTour()">Omitir</button>
+                    <button id="tour-next-btn" class="admin-btn admin-btn-primary" onclick="nextTourStep()">
+                        Siguiente paso →
+                    </button>
                 </div>
             </div>
         </div>

@@ -1,16 +1,19 @@
-FROM nginx:alpine
+FROM node:18-alpine
 
-# Remove default nginx config
-RUN rm /etc/nginx/conf.d/default.conf
+WORKDIR /app
 
-# Copy custom nginx config template
-COPY nginx.conf /etc/nginx/templates/default.conf.template
+# Copy package files and install dependencies
+COPY package*.json ./
+RUN npm install --production
 
-# Copy static site files
-COPY . /usr/share/nginx/html/
+# Copy application files
+COPY . .
 
-# Railway assigns a dynamic port via $PORT env variable
-# nginx:alpine docker image uses envsubst to replace $PORT in templates automatically
+# Ensure data and uploads directories exist
+RUN mkdir -p data uploads
+
+# Expose Railway dynamic PORT
 EXPOSE ${PORT}
 
-CMD ["nginx", "-g", "daemon off;"]
+# Start Express Node.js server
+CMD ["node", "server.js"]
