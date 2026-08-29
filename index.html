@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     
     <!-- FontAwesome 6 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
@@ -96,8 +96,8 @@
 
 
     <main>
-        <!-- ================= 2. HERO (ADVENTURE.TRAVEL EXACT — FROSTED GLASS BOX) ================= -->
-        <section class="hero-section">
+        <!-- ================= 2. HERO (ADVENTURE.TRAVEL EXACT — FROSTED GLASS BOX & SVG WAVES) ================= -->
+        <section class="hero-section hero-radial-bg">
             <!-- Video/Image Background -->
             <video autoplay loop muted playsinline class="hero-bg-video" data-cms-id="hero-video">
                 <source src="assets/hero-video.mp4" type="video/mp4">
@@ -107,6 +107,7 @@
 
             <!-- Frosted glass box — pixel match to reference screenshot -->
             <div class="hero-glass-box">
+                <div class="eyebrow">Travel Agency &amp; Expeditions</div>
                 <h1 data-cms-id="hero-title">
                     Tu Aventura Te<br>
                     Espera. ¿A Dónde<br>
@@ -120,13 +121,44 @@
 
                 <!-- CTA Buttons -->
                 <div class="hero-cta-row">
-                    <a href="#destinos" class="btn-coral">
+                    <a href="#destinos" class="btn-coral btn-ripple" onclick="ripple(event)">
                         <i class="fa-solid fa-compass"></i> Explorar Destinos
                     </a>
-                    <a href="contacto.html" class="btn-dark">
+                    <a href="contacto.html" class="btn-dark btn-ripple" onclick="ripple(event)">
                         <i class="fa-solid fa-calendar-check"></i> Planifica tu Viaje
                     </a>
                 </div>
+            </div>
+
+            <!-- SVG Wave Layers Animation -->
+            <div class="wave-wrap">
+                <svg class="layer-back" viewBox="0 0 1600 300" preserveAspectRatio="none">
+                    <path fill="#096A71" d="M0,180 C200,120 400,220 600,170 C800,120 1000,210 1200,160 C1350,130 1500,190 1600,150 L1600,300 L0,300 Z">
+                        <animate attributeName="d" dur="9s" repeatCount="indefinite"
+                            values="
+                                M0,180 C200,120 400,220 600,170 C800,120 1000,210 1200,160 C1350,130 1500,190 1600,150 L1600,300 L0,300 Z;
+                                M0,160 C200,210 400,140 600,190 C800,220 1000,150 1200,190 C1350,210 1500,150 1600,180 L1600,300 L0,300 Z;
+                                M0,180 C200,120 400,220 600,170 C800,120 1000,210 1200,160 C1350,130 1500,190 1600,150 L1600,300 L0,300 Z" />
+                    </path>
+                </svg>
+                <svg class="layer-mid" viewBox="0 0 1600 300" preserveAspectRatio="none">
+                    <path fill="#0e8f99" d="M0,220 C250,170 450,240 700,210 C900,190 1100,240 1350,200 C1450,185 1550,215 1600,200 L1600,300 L0,300 Z">
+                        <animate attributeName="d" dur="7s" repeatCount="indefinite"
+                            values="
+                                M0,220 C250,170 450,240 700,210 C900,190 1100,240 1350,200 C1450,185 1550,215 1600,200 L1600,300 L0,300 Z;
+                                M0,205 C250,240 450,180 700,230 C900,250 1100,190 1350,225 C1450,235 1550,195 1600,215 L1600,300 L0,300 Z;
+                                M0,220 C250,170 450,240 700,210 C900,190 1100,240 1350,200 C1450,185 1550,215 1600,200 L1600,300 L0,300 Z" />
+                    </path>
+                </svg>
+                <svg class="layer-front" viewBox="0 0 1600 300" preserveAspectRatio="none">
+                    <path fill="#F1EFE7" d="M0,260 C300,230 500,280 800,250 C1050,225 1250,270 1600,240 L1600,300 L0,300 Z">
+                        <animate attributeName="d" dur="5.5s" repeatCount="indefinite"
+                            values="
+                                M0,260 C300,230 500,280 800,250 C1050,225 1250,270 1600,240 L1600,300 L0,300 Z;
+                                M0,250 C300,275 500,235 800,265 C1050,285 1250,240 1600,260 L1600,300 L0,300 Z;
+                                M0,260 C300,230 500,280 800,250 C1050,225 1250,270 1600,240 L1600,300 L0,300 Z" />
+                    </path>
+                </svg>
             </div>
 
             <!-- Scroll indicator -->
@@ -134,6 +166,26 @@
                 <i class="fa-solid fa-arrow-down"></i>
             </div>
         </section>
+
+        <!-- ================= STATS STRIP ================= -->
+        <div class="stats-strip">
+            <div>
+                <div class="stat-num">14+</div>
+                <div class="stat-label">Años en el agua</div>
+            </div>
+            <div>
+                <div class="stat-num">32</div>
+                <div class="stat-label">Cayos &amp; Spots</div>
+            </div>
+            <div>
+                <div class="stat-num">500+</div>
+                <div class="stat-label">Viajeros felices</div>
+            </div>
+            <div>
+                <div class="stat-num">18-25 Kts</div>
+                <div class="stat-label">Viento alisio continuo</div>
+            </div>
+        </div>
 
 
         <!-- ================= 3. DESTINOS DESTACADOS (CURATED SELECTION) ================= -->
@@ -148,7 +200,7 @@
 
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem">
                 <!-- Spot 1: Gran Roque -->
-                <article class="dest-card">
+                <article class="dest-card card-animated">
                     <div class="dest-card-img-wrapper">
                         <img src="assets/IMG_4129.JPG" alt="Gran Roque" data-cms-id="dest1-img">
                     </div>
@@ -167,7 +219,7 @@
                 </article>
 
                 <!-- Spot 2: Francisquí -->
-                <article class="dest-card">
+                <article class="dest-card card-animated">
                     <div class="dest-card-img-wrapper">
                         <img src="assets/IMG_4160.JPG" alt="Francisquí" data-cms-id="dest2-img">
                     </div>
@@ -186,7 +238,7 @@
                 </article>
 
                 <!-- Spot 3: Cayo de Agua -->
-                <article class="dest-card">
+                <article class="dest-card card-animated">
                     <div class="dest-card-img-wrapper">
                         <img src="assets/IMG_4118.JPG" alt="Cayo de Agua" data-cms-id="dest3-img">
                     </div>
@@ -330,7 +382,7 @@
 
             <div class="impact-grid">
                 <!-- Story 1 -->
-                <article class="impact-card">
+                <article class="impact-card card-animated">
                     <img src="assets/IMG_4162.JPG" alt="La Historia de Ricky" data-cms-id="impact1-img">
                     <h3 data-cms-id="impact1-title">La Historia de Ricky</h3>
                     <p data-cms-id="impact1-text">Fundador y apasionado del mar compartiendo el paraíso marino de su infancia con el mundo.</p>
@@ -338,7 +390,7 @@
                 </article>
 
                 <!-- Story 2 -->
-                <article class="impact-card">
+                <article class="impact-card card-animated">
                     <img src="assets/IMG_4160.JPG" alt="Protección de Arrecifes" data-cms-id="impact2-img">
                     <h3 data-cms-id="impact2-title">Protección de Arrecifes</h3>
                     <p data-cms-id="impact2-text">Iniciativas para mantener intacta la barrera coralina de Los Roques para futuras generaciones.</p>
@@ -346,7 +398,7 @@
                 </article>
 
                 <!-- Story 3 -->
-                <article class="impact-card">
+                <article class="impact-card card-animated">
                     <img src="assets/IMG_4165.JPG" alt="Apoyo a Capitanes Locales" data-cms-id="impact3-img">
                     <h3 data-cms-id="impact3-title">Apoyo a Capitanes Locales</h3>
                     <p data-cms-id="impact3-text">Integración y trabajo digno con las familias de pescadores de la isla.</p>
@@ -354,7 +406,7 @@
                 </article>
 
                 <!-- Story 4 -->
-                <article class="impact-card">
+                <article class="impact-card card-animated">
                     <img src="assets/IMG_4129.JPG" alt="Política Zero Plastic" data-cms-id="impact4-img">
                     <h3 data-cms-id="impact4-title">Política Zero Plastic</h3>
                     <p data-cms-id="impact4-text">Eliminación completa de plásticos en todos nuestros safaris náuticos.</p>
@@ -532,6 +584,32 @@
         }
         updateRegionLayout();
         window.addEventListener('resize', updateRegionLayout);
+
+        // Button ripple animation handler
+        function ripple(e) {
+            const btn = e.currentTarget;
+            const circle = document.createElement('span');
+            const rect = btn.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            circle.style.width = circle.style.height = size + 'px';
+            circle.style.left = (e.clientX - rect.left - size / 2) + 'px';
+            circle.style.top = (e.clientY - rect.top - size / 2) + 'px';
+            circle.classList.add('ripple');
+            btn.appendChild(circle);
+            setTimeout(() => circle.remove(), 650);
+        }
+
+        // Card reveal animation on scroll (IntersectionObserver)
+        const animatedCards = document.querySelectorAll('.card-animated');
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('in-view'), i * 80);
+                    cardObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        animatedCards.forEach(c => cardObserver.observe(c));
     </script>
     <script src="assets/js/cms.js"></script>
 </body>
