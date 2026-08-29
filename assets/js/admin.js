@@ -149,6 +149,51 @@
                 }
             ]
         },
+        caracas: {
+            label: 'Destino: Caracas',
+            icon: 'fa-city',
+            sections: [
+                {
+                    title: 'Hero & Contenido General',
+                    icon: 'fa-mountain',
+                    fields: [
+                        { id: 'caracas-hero-img', label: 'Imagen Hero', type: 'image' },
+                        { id: 'caracas-title', label: 'Título Principal', type: 'text', placeholder: 'Caracas: El Comienzo de la Historia' },
+                        { id: 'caracas-desc', label: 'Descripción General', type: 'textarea' }
+                    ]
+                }
+            ]
+        },
+        choroni: {
+            label: 'Destino: Choroní',
+            icon: 'fa-tree',
+            sections: [
+                {
+                    title: 'Hero & Contenido General',
+                    icon: 'fa-water',
+                    fields: [
+                        { id: 'choroni-hero-img', label: 'Imagen Hero', type: 'image' },
+                        { id: 'choroni-title', label: 'Título Principal', type: 'text', placeholder: 'Choroní: Entre la Selva y el Mar' },
+                        { id: 'choroni-desc', label: 'Descripción General', type: 'textarea' }
+                    ]
+                }
+            ]
+        },
+        margarita: {
+            label: 'Destino: Margarita & Coche',
+            icon: 'fa-umbrella-beach',
+            sections: [
+                {
+                    title: 'Hero & Contenido General',
+                    icon: 'fa-sun',
+                    fields: [
+                        { id: 'margarita-hero-img', label: 'Imagen Hero', type: 'image' },
+                        { id: 'margarita-title', label: 'Título Principal', type: 'text', placeholder: 'Margarita y Coche: El Encanto de las Islas' },
+                        { id: 'margarita-desc', label: 'Descripción General', type: 'textarea' }
+                    ]
+                }
+            ]
+        },
         nosotros: {
             label: 'Nosotros',
             icon: 'fa-users',

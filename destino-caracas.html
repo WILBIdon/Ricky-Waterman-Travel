@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caracas: El Comienzo de la Historia | The Waterman Experience</title>
+    <meta name="description" content="Descubre Caracas: gastronomía VIP, trekking en El Ávila, herencia cultural y skydiving profesional.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <!-- Custom Adventure.travel Style System -->
+    <link rel="stylesheet" href="assets/css/styles.css?v=1.0.8">
+</head>
+<body class="font-sans antialiased">
+
+    <!-- ================= 1. FLOATING NAV (SEMI-ROUNDED 16PX & BOLD LOGO) ================= -->
+    <header class="nav-floating">
+        <nav class="nav-inner">
+            <div class="drip-container">
+                <div class="drip-drop"></div>
+                <div class="drip-drop"></div>
+                <div class="drip-drop"></div>
+                <div class="drip-drop"></div>
+                <div class="drip-drop"></div>
+            </div>
+
+            <a href="index.html" class="nav-logo" aria-label="Ricky Waterman Experience">
+                <img src="assets/logo-full-services.png" alt="Ricky Waterman Logo">
+                <div class="nav-logo-text">WATERMAN <span>EXPERIENCE</span></div>
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="deportes.html">Deportes</a>
+                <a href="paquetes.html">Paquetes</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="admin.html" style="color:var(--color-turquoise); font-weight:700;"><i class="fa-solid fa-lock"></i> Admin</a>
+            </div>
+
+            <button class="nav-mobile-btn" onclick="toggleMobileMenu()" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div id="mobile-menu" class="mobile-menu-overlay" onclick="closeMobileMenu(event)">
+        <div class="mobile-menu-panel" onclick="event.stopPropagation()">
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="mobile-menu-links">
+                <a href="index.html">Inicio</a>
+                <a href="destino-caracas.html">Caracas</a>
+                <a href="destino-choroni.html">Choroní</a>
+                <a href="destino-margarita.html">Margarita & Coche</a>
+                <a href="deportes.html">Los Roques & Deportes</a>
+                <a href="admin.html" style="color:var(--color-turquoise);">🔒 Admin</a>
+            </div>
+        </div>
+    </div>
+
+    <main style="padding-top: 6.5rem;">
+        
+        <!-- HERO DESTINO -->
+        <section class="max-w-editorial" style="margin-bottom: 3rem;">
+            <div style="position: relative; border-radius: 1.5rem; overflow: hidden; min-height: 420px; display: flex; align-items: flex-end; padding: clamp(2rem, 5vw, 3.5rem); box-shadow: 0 15px 40px rgba(0,0,0,0.3);">
+                <img src="assets/IMG_4129.JPG" alt="Caracas El Ávila" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" data-cms-id="caracas-hero-img">
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(3,20,26,0.92) 0%, rgba(3,20,26,0.3) 60%, transparent 100%);"></div>
+                <div style="position: relative; z-index: 2; color: #fff; max-width: 750px;">
+                    <span class="eyebrow" style="color: var(--color-turquoise);">Destino #1 | Ciudad &amp; Cultura</span>
+                    <h1 style="font-family: var(--font-serif); font-size: clamp(2.2rem, 5vw, 3.8rem); margin-top: 0.5rem; margin-bottom: 1rem; line-height: 1.1;" data-cms-id="caracas-title">
+                        Caracas: El Comienzo de la Historia
+                    </h1>
+                    <p style="font-size: 1.15rem; color: #E0F7FA; line-height: 1.6;" data-cms-id="caracas-desc">
+                        Mucho más que una puerta de entrada, Caracas es una vibrante metrópolis que late al pie del imponente cerro El Ávila. Sofisticada mezcla de gastronomía de clase mundial, arquitectura icónica y rica herencia cultural.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ATRACTIVOS DETALLADOS DE CARACAS -->
+        <section class="max-w-editorial" style="margin-bottom: 4rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <div class="text-gradient-card">
+                    <i class="fa-solid fa-mountain" style="font-size: 2rem; color: var(--color-turquoise); margin-bottom: 1rem;"></i>
+                    <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-text-dark); margin-bottom: 0.5rem;">Parque Nacional El Ávila</h3>
+                    <p style="color: var(--color-text-body); font-size: 0.95rem; line-height: 1.6;">Ascenso en teleférico VIP, caminatas por senderos selváticos con vistas al mar Caribe y aire puro de montaña a 2.100m de altura.</p>
+                </div>
+                <div class="text-gradient-card">
+                    <i class="fa-solid fa-utensils" style="font-size: 2rem; color: var(--color-turquoise); margin-bottom: 1rem;"></i>
+                    <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-text-dark); margin-bottom: 0.5rem;">Gastronomía de Autor</h3>
+                    <p style="color: var(--color-text-body); font-size: 0.95rem; line-height: 1.6;">Ruta gastronómica exclusiva visitando restaurantes galardonados, cata de rones premium venezolanos y café de especialidad.</p>
+                </div>
+                <div class="text-gradient-card">
+                    <i class="fa-solid fa-plane-departure" style="font-size: 2rem; color: var(--color-turquoise); margin-bottom: 1rem;"></i>
+                    <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-text-dark); margin-bottom: 0.5rem;">Skydiving &amp; Vuelos en Helicóptero</h3>
+                    <p style="color: var(--color-text-body); font-size: 0.95rem; line-height: 1.6;">Saltos en paracaídas tándem de alta altitud y sobrevuelos privados en helicóptero sobre el valle caraqueño y la costa marítima.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE SELECCIÓN DE ACTIVIDAD / DEPORTE EN CARACAS -->
+        <section class="max-w-editorial" style="margin-bottom: 5rem;">
+            <div style="background: #ffffff; border: 1px solid var(--color-border); border-radius: 1.5rem; padding: clamp(1.5rem, 4vw, 3rem); box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+                <div style="text-align: center; margin-bottom: 2.5rem;">
+                    <span style="background: rgba(16,179,191,0.1); color: var(--color-turquoise); font-size: 0.8rem; font-weight: 800; padding: 0.35rem 0.85rem; border-radius: 9999px; text-transform: uppercase;">¡Ya Escogiste Caracas!</span>
+                    <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--color-text-dark); margin-top: 0.5rem;">
+                        Ahora Selecciona Tu Actividad o Deporte a Realizar en Caracas
+                    </h2>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                    
+                    <!-- Actividad 1 -->
+                    <div style="border: 1px solid var(--color-border); border-radius: 1rem; padding: 1.5rem; background: #fafafa;">
+                        <span style="color: var(--color-coral); font-weight: 800; font-size: 0.75rem;">ACTIVIDAD #1</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-text-dark); margin: 0.5rem 0;">Tours VIP &amp; Gastronomía</h3>
+                        <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5; margin-bottom: 1.25rem;">Recorrido privado de 2 días por el casco histórico, galerías de arte contemporáneo y cenas maridaje VIP.</p>
+                        <a href="contacto.html" class="btn-coral btn-sm btn-block" style="text-align: center;">Reservar Esta Actividad</a>
+                    </div>
+
+                    <!-- Actividad 2 -->
+                    <div style="border: 1px solid var(--color-border); border-radius: 1rem; padding: 1.5rem; background: #fafafa;">
+                        <span style="color: var(--color-coral); font-weight: 800; font-size: 0.75rem;">ACTIVIDAD #2</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-text-dark); margin: 0.5rem 0;">Trekking El Ávila &amp; Naturaleza</h3>
+                        <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5; margin-bottom: 1.25rem;">Senderismo de montaña guiado por ecologistas expertos, avistamiento de aves exóticas y picnic panorámico.</p>
+                        <a href="contacto.html" class="btn-coral btn-sm btn-block" style="text-align: center;">Reservar Esta Actividad</a>
+                    </div>
+
+                    <!-- Actividad 3 -->
+                    <div style="border: 1px solid var(--color-border); border-radius: 1rem; padding: 1.5rem; background: #fafafa;">
+                        <span style="color: var(--color-coral); font-weight: 800; font-size: 0.75rem;">ACTIVIDAD #3</span>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-text-dark); margin: 0.5rem 0;">Skydiving Pro &amp; Vuelo Helicóptero</h3>
+                        <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5; margin-bottom: 1.25rem;">Experiencia extrema de paracaidismo tándem con la tripulación de César (Skydiving Pro) y video HD de recuerdo.</p>
+                        <a href="contacto.html" class="btn-coral btn-sm btn-block" style="text-align: center;">Reservar Esta Actividad</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Waterman Experience. Caracas, Venezuela &amp; Austria.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('is-open'); }
+        function closeMobileMenu(e) { if (e.target === document.getElementById('mobile-menu')) toggleMobileMenu(); }
+    </script>
+    <script src="assets/js/cms.js"></script>
+</body>
+</html>

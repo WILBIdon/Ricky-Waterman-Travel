@@ -102,7 +102,7 @@ img {
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     color: #fff;
-    border-radius: 9999px;
+    border-radius: 16px;
     width: 100%;
     max-width: var(--max-editorial);
     padding: 0.65rem 2rem;
@@ -328,6 +328,15 @@ img {
 }
 
 /* Strict Responsive Rules for Navigation */
+/* Text Gradient & Contrast Card Utility */
+.text-gradient-card {
+    background: linear-gradient(135deg, rgba(9, 106, 113, 0.08) 0%, rgba(16, 179, 191, 0.04) 100%);
+    border: 1px solid rgba(16, 179, 191, 0.2);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
 @media (max-width: 768px) {
     .nav-floating {
         top: 0.5rem;
@@ -517,36 +526,36 @@ img {
     text-shadow: 0 1px 6px rgba(0,0,0,0.7);
 }
 
-/* Floating Hero Bottom-Left Standalone Logo (Solo Logo Vector/Texto, Grande) */
+/* Floating Hero Bottom-Left Standalone Logo (Solo Logo Vector/Texto, Mucho Más Grande 180px) */
 .hero-floating-logo-standalone {
     position: absolute;
-    bottom: 4rem;
-    left: 4.5rem;
+    bottom: 3.5rem;
+    left: 4rem;
     z-index: 15;
     pointer-events: none;
     animation: heroBadgeFloat 4.5s ease-in-out infinite alternate;
 }
 
 .hero-floating-logo-standalone img {
-    height: 130px;
+    height: 180px;
     width: auto;
-    max-width: 380px;
+    max-width: 480px;
     object-fit: contain;
-    filter: drop-shadow(0 0 25px rgba(16, 179, 191, 0.85)) drop-shadow(0 6px 18px rgba(0,0,0,0.95));
+    filter: drop-shadow(0 0 35px rgba(16, 179, 191, 0.9)) drop-shadow(0 8px 24px rgba(0,0,0,0.95));
 }
 
 @keyframes heroBadgeFloat {
     from { transform: translateY(0); }
-    to { transform: translateY(-10px); }
+    to { transform: translateY(-12px); }
 }
 
 @media (max-width: 900px) {
     .hero-floating-logo-standalone {
-        bottom: 2.5rem;
-        left: 2rem;
+        bottom: 2rem;
+        left: 1.5rem;
     }
     .hero-floating-logo-standalone img {
-        height: 90px;
+        height: 120px;
     }
 }
 
