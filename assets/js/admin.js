@@ -79,11 +79,25 @@
             icon: 'fa-wind',
             sections: [
                 {
-                    title: 'Encabezado',
+                    title: 'Encabezado General',
                     icon: 'fa-heading',
                     fields: [
-                        { id: 'dep-title', label: 'Título Principal', type: 'text', placeholder: 'Elige Tu Deporte & Tu Nivel' },
-                        { id: 'dep-subtitle', label: 'Subtítulo', type: 'textarea' }
+                        { id: 'dep-title', label: 'Título Principal', type: 'text', placeholder: '¿En Qué Destino Quieres Navegar?' },
+                        { id: 'dep-subtitle', label: 'Subtítulo', type: 'textarea', placeholder: 'Primero escoge el lugar de Venezuela que quieres explorar y luego selecciona el deporte...' }
+                    ]
+                },
+                {
+                    title: 'Paso 1: Configuración de Destinos',
+                    icon: 'fa-map-location-dot',
+                    fields: [
+                        { id: 'dest-caracas-title', label: 'Destino 1: Caracas (Título)', type: 'text', placeholder: 'Caracas (Ciudad & Cultura)' },
+                        { id: 'dest-caracas-desc', label: 'Destino 1: Caracas (Descripción)', type: 'textarea', placeholder: 'El comienzo de la historia. Cultura, gastronomía VIP, El Ávila y skydiving.' },
+                        { id: 'dest-choroni-title', label: 'Destino 2: Choroní (Título)', type: 'text', placeholder: 'Choroní (Selva & Mar)' },
+                        { id: 'dest-choroni-desc', label: 'Destino 2: Choroní (Descripción)', type: 'textarea', placeholder: 'Selva tropical y aguas del Caribe. Kitesurf, Surf y trekking en Henri Pittier.' },
+                        { id: 'dest-margarita-title', label: 'Destino 3: Margarita & Coche (Título)', type: 'text', placeholder: 'Margarita & Coche (Islas)' },
+                        { id: 'dest-margarita-desc', label: 'Destino 3: Margarita & Coche (Descripción)', type: 'textarea', placeholder: 'La Perla del Caribe. El Yaque meca de Windsurf, Wingfoil y Buceo Los Frailes.' },
+                        { id: 'dest-losroques-title', label: 'Destino 4: Los Roques (Título)', type: 'text', placeholder: 'Los Roques (Safaris Acuáticos VIP)' },
+                        { id: 'dest-losroques-desc', label: 'Destino 4: Los Roques (Descripción)', type: 'textarea', placeholder: 'El paraíso acuático por excelencia. Kitesurf, Windsurf, Wingfoil y Buceo PADI.' }
                     ]
                 },
                 {

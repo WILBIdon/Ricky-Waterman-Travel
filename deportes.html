@@ -165,20 +165,114 @@
 
     <main style="padding-top: 6rem;">
         <!-- Header Banner Section -->
-        <section class="max-w-editorial" style="padding-top: 2rem; padding-bottom: 2rem;">
-            <div style="text-align: center; max-w: 800px; margin: 0 auto;">
-                <span class="section-label">Programas de 6 Días</span>
+        <section class="max-w-editorial" style="padding-top: 2rem; padding-bottom: 1.5rem;">
+            <div style="text-align: center; max-width: 850px; margin: 0 auto;">
+                <span class="section-label">Paso 1 de 2: Elige Tu Destino</span>
                 <h1 class="editorial-section-title" style="font-size: clamp(2.2rem, 4vw, 3.5rem); margin-bottom: 1rem;" data-cms-id="dep-title">
-                    Elige Tu Deporte & Tu Nivel
+                    ¿En Qué Destino Quieres Navegar?
                 </h1>
-                <p style="font-size: 1.1rem; color: var(--color-text-body); line-height: 1.6;" data-cms-id="dep-subtitle">
-                    Diseñados tanto para quienes nunca han tocado una tabla como para los apasionados que buscan safaris extremos en agua plana e impecable.
+                <p style="font-size: 1.15rem; color: var(--color-text-body); line-height: 1.6;" data-cms-id="dep-subtitle">
+                    Primero escoge el lugar de Venezuela que quieres explorar y luego selecciona el deporte y programa de 6 días que deseas realizar.
                 </p>
             </div>
         </section>
 
-        <!-- Sport Selector Tabs -->
-        <section class="max-w-editorial" style="margin-bottom: 3rem;">
+        <!-- PASO 1: DESTINATION CARDS GRID -->
+        <section class="max-w-editorial" style="margin-bottom: 4rem;" id="paso-1-destinos">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+                
+                <!-- Destination 1: Caracas -->
+                <div onclick="selectDestination('caracas')" id="dest-card-caracas" class="editor-card" style="cursor:pointer; border:2px solid var(--color-border); border-radius:1.25rem; overflow:hidden; transition:all 0.3s ease; position:relative; background:#fff;">
+                    <div style="height:160px; overflow:hidden; position:relative;">
+                        <img src="assets/IMG_4129.JPG" alt="Caracas" style="width:100%; height:100%; object-fit:cover;">
+                        <span style="position:absolute; top:0.75rem; right:0.75rem; background:rgba(0,0,0,0.7); color:#fff; font-size:0.7rem; font-weight:800; padding:0.25rem 0.6rem; border-radius:9999px; text-transform:uppercase;">Metrópolis</span>
+                    </div>
+                    <div style="padding:1.25rem;">
+                        <h3 style="font-family:var(--font-serif); font-size:1.35rem; color:var(--color-text-dark); margin-bottom:0.4rem;">Caracas</h3>
+                        <p style="font-size:0.85rem; color:var(--color-text-muted); margin-bottom:1rem; line-height:1.5;">El comienzo de la historia. Cultura, gastronomía VIP, El Ávila y skydiving.</p>
+                        <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1rem;">
+                            <span style="background:rgba(16,179,191,0.1); color:var(--color-teal); font-size:0.7rem; font-weight:700; padding:0.2rem 0.5rem; border-radius:0.3rem;">Tours VIP</span>
+                            <span style="background:rgba(16,179,191,0.1); color:var(--color-teal); font-size:0.7rem; font-weight:700; padding:0.2rem 0.5rem; border-radius:0.3rem;">El Ávila</span>
+                            <span style="background:rgba(16,179,191,0.1); color:var(--color-teal); font-size:0.7rem; font-weight:700; padding:0.2rem 0.5rem; border-radius:0.3rem;">Skydiving</span>
+                        </div>
+                        <button class="btn-coral btn-sm btn-ripple" style="width:100%; justify-content:center;">
+                            Seleccionar Caracas <i class="fa-solid fa-arrow-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Destination 2: Choroní -->
+                <div onclick="selectDestination('choroni')" id="dest-card-choroni" class="editor-card" style="cursor:pointer; border:2px solid var(--color-border); border-radius:1.25rem; overflow:hidden; transition:all 0.3s ease; position:relative; background:#fff;">
+                    <div style="height:160px; overflow:hidden; position:relative;">
+                        <img src="assets/IMG_4160.JPG" alt="Choroní" style="width:100%; height:100%; object-fit:cover;">
+                        <span style="position:absolute; top:0.75rem; right:0.75rem; background:rgba(0,0,0,0.7); color:#fff; font-size:0.7rem; font-weight:800; padding:0.25rem 0.6rem; border-radius:9999px; text-transform:uppercase;">Selva &amp; Mar</span>
+                    </div>
+                    <div style="padding:1.25rem;">
+                        <h3 style="font-family:var(--font-serif); font-size:1.35rem; color:var(--color-text-dark); margin-bottom:0.4rem;">Choroní</h3>
+                        <p style="font-size:0.85rem; color:var(--color-text-muted); margin-bottom:1rem; line-height:1.5;">Selva tropical y aguas del Caribe. Kitesurf, Surf y trekking en Henri Pittier.</p>
+                        <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1rem;">
+                            <span style="background:rgba(16,179,191,0.1); color:var(--color-teal); font-size:0.7rem; font-weight:700; padding:0.2rem 0.5rem; border-radius:0.3rem;">Kitesurf</span>
+                            <span style="background:rgba(16,179,191,0.1); color:var(--color-teal); font-size:0.7rem; font-weight:700; padding:0.2rem 0.5rem; border-radius:0.3rem;">Surf</span>
+                            <span style="background:rgba(16,179,191,0.1); color:var(--color-teal); font-size:0.7rem; font-weight:700; padding:0.2rem 0.5rem; border-radius:0.3rem;">Trekking</span>
+                        </div>
+                        <button class="btn-coral btn-sm btn-ripple" style="width:100%; justify-content:center;">
+                            Seleccionar Choroní <i class="fa-solid fa-arrow-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Destination 3: Margarita & Coche -->
+                <div onclick="selectDestination('margarita')" id="dest-card-margarita" class="editor-card" style="cursor:pointer; border:2px solid var(--color-border); border-radius:1.25rem; overflow:hidden; transition:all 0.3s ease; position:relative; background:#fff;">
+                    <div style="height:160px; overflow:hidden; position:relative;">
+                        <img src="assets/IMG_4118.JPG" alt="Margarita y Coche" style="width:100%; height:100%; object-fit:cover;">
+                        <span style="position:absolute; top:0.75rem; right:0.75rem; background:rgba(0,0,0,0.7); color:#fff; font-size:0.7rem; font-weight:800; padding:0.25rem 0.6rem; border-radius:9999px; text-transform:uppercase;">Islas</span>
+                    </div>
+                    <div style="padding:1.25rem;">
+                        <h3 style="font-family:var(--font-serif); font-size:1.35rem; color:var(--color-text-dark); margin-bottom:0.4rem;">Margarita &amp; Coche</h3>
+                        <p style="font-size:0.85rem; color:var(--color-text-muted); margin-bottom:1rem; line-height:1.5;">La Perla del Caribe. El Yaque meca de Windsurf, Wingfoil y Buceo Los Frailes.</p>
+                        <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1rem;">
+                            <span style="background:rgba(16,179,191,0.1); color:var(--color-teal); font-size:0.7rem; font-weight:700; padding:0.2rem 0.5rem; border-radius:0.3rem;">Windsurf</span>
+                            <span style="background:rgba(16,179,191,0.1); color:var(--color-teal); font-size:0.7rem; font-weight:700; padding:0.2rem 0.5rem; border-radius:0.3rem;">Wingfoil</span>
+                            <span style="background:rgba(16,179,191,0.1); color:var(--color-teal); font-size:0.7rem; font-weight:700; padding:0.2rem 0.5rem; border-radius:0.3rem;">Buceo</span>
+                        </div>
+                        <button class="btn-coral btn-sm btn-ripple" style="width:100%; justify-content:center;">
+                            Seleccionar Margarita &amp; Coche <i class="fa-solid fa-arrow-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Destination 4: Los Roques -->
+                <div onclick="selectDestination('losroques')" id="dest-card-losroques" class="editor-card" style="cursor:pointer; border:2px solid var(--color-turquoise); border-radius:1.25rem; overflow:hidden; transition:all 0.3s ease; position:relative; background:#fff; box-shadow:0 8px 25px rgba(16,179,191,0.25);">
+                    <div style="height:160px; overflow:hidden; position:relative;">
+                        <img src="assets/IMG_4161.JPG" alt="Los Roques" style="width:100%; height:100%; object-fit:cover;">
+                        <span style="position:absolute; top:0.75rem; right:0.75rem; background:var(--color-turquoise); color:#000; font-size:0.7rem; font-weight:800; padding:0.25rem 0.6rem; border-radius:9999px; text-transform:uppercase;">Safaris VIP</span>
+                    </div>
+                    <div style="padding:1.25rem;">
+                        <h3 style="font-family:var(--font-serif); font-size:1.35rem; color:var(--color-text-dark); margin-bottom:0.4rem;">Los Roques</h3>
+                        <p style="font-size:0.85rem; color:var(--color-text-muted); margin-bottom:1rem; line-height:1.5;">El paraíso acuático por excelencia. Kitesurf, Windsurf, Wingfoil y Buceo PADI 6 Días.</p>
+                        <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1rem;">
+                            <span style="background:rgba(16,179,191,0.1); color:var(--color-teal); font-size:0.7rem; font-weight:700; padding:0.2rem 0.5rem; border-radius:0.3rem;">Kite Safari</span>
+                            <span style="background:rgba(16,179,191,0.1); color:var(--color-teal); font-size:0.7rem; font-weight:700; padding:0.2rem 0.5rem; border-radius:0.3rem;">Buceo PADI</span>
+                            <span style="background:rgba(16,179,191,0.1); color:var(--color-teal); font-size:0.7rem; font-weight:700; padding:0.2rem 0.5rem; border-radius:0.3rem;">Wingfoil</span>
+                        </div>
+                        <button class="btn-coral btn-sm btn-ripple" style="width:100%; justify-content:center;">
+                            Seleccionar Los Roques <i class="fa-solid fa-arrow-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PASO 2: SPORT & PROGRAM SELECTOR TABS -->
+        <section class="max-w-editorial" style="margin-bottom: 3rem;" id="paso-2-deportes">
+            <div style="text-align:center; margin-bottom:1.5rem;">
+                <span class="section-label" id="current-dest-badge">Destino Seleccionado: Los Roques</span>
+                <h2 style="font-family:var(--font-serif); font-size:2rem; color:var(--color-text-dark); margin-top:0.25rem;">
+                    Paso 2 de 2: Selecciona Tu Deporte &amp; Programa
+                </h2>
+            </div>
+
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem;">
                 <button onclick="switchSport('kite')" id="tab-kite" class="sport-tab-btn active">
                     <i class="fa-solid fa-wind"></i> Kitesurf
@@ -432,6 +526,48 @@
             document.querySelectorAll('.sport-panel').forEach(panel => panel.classList.add('hidden-panel'));
             document.getElementById(`sport-${sportName}`).classList.remove('hidden-panel');
         }
+
+        const destNames = {
+            caracas: 'Caracas (Ciudad & Cultura)',
+            choroni: 'Choroní (Selva & Mar)',
+            margarita: 'Margarita & Coche (Islas)',
+            losroques: 'Los Roques (Safaris Acuáticos VIP)'
+        };
+
+        function selectDestination(destKey) {
+            // Highlight selected destination card
+            document.querySelectorAll('[id^="dest-card-"]').forEach(card => {
+                card.style.borderColor = 'var(--color-border)';
+                card.style.boxShadow = 'none';
+            });
+
+            const activeCard = document.getElementById('dest-card-' + destKey);
+            if (activeCard) {
+                activeCard.style.borderColor = 'var(--color-turquoise)';
+                activeCard.style.boxShadow = '0 8px 30px rgba(16,179,191,0.3)';
+            }
+
+            // Update Step 2 badge text
+            const badge = document.getElementById('current-dest-badge');
+            if (badge && destNames[destKey]) {
+                badge.textContent = 'Destino Seleccionado: ' + destNames[destKey];
+            }
+
+            // Scroll smoothly to Step 2
+            const step2 = document.getElementById('paso-2-deportes');
+            if (step2) {
+                step2.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Check URL query param e.g. deportes.html?destino=caracas
+        document.addEventListener('DOMContentLoaded', function () {
+            const params = new URLSearchParams(window.location.search);
+            const dest = params.get('destino');
+            if (dest && destNames[dest]) {
+                selectDestination(dest);
+            }
+        });
 
         function toggleLevel(sport, level) {
             const begBtn = document.getElementById(`btn-${sport}-beg`);
