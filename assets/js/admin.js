@@ -25,17 +25,17 @@
                     ]
                 },
                 {
-                    title: 'Destinos Destacados',
+                    title: 'Destinos Destacados (Tres Caras de Venezuela)',
                     icon: 'fa-map-location-dot',
                     fields: [
-                        { id: 'dest1-img', label: 'Foto Destino 1 (Gran Roque)', type: 'image' },
-                        { id: 'dest1-title', label: 'Título Destino 1', type: 'text', placeholder: 'Gran Roque' },
+                        { id: 'dest1-img', label: 'Foto Destino 1 (Caracas)', type: 'image' },
+                        { id: 'dest1-title', label: 'Título Destino 1', type: 'text', placeholder: 'Caracas: El Comienzo de la Historia' },
                         { id: 'dest1-text', label: 'Descripción Destino 1', type: 'textarea' },
-                        { id: 'dest2-img', label: 'Foto Destino 2 (Francisquí)', type: 'image' },
-                        { id: 'dest2-title', label: 'Título Destino 2', type: 'text', placeholder: 'Francisquí' },
+                        { id: 'dest2-img', label: 'Foto Destino 2 (Choroní)', type: 'image' },
+                        { id: 'dest2-title', label: 'Título Destino 2', type: 'text', placeholder: 'Choroní: Entre la Selva y el Mar' },
                         { id: 'dest2-text', label: 'Descripción Destino 2', type: 'textarea' },
-                        { id: 'dest3-img', label: 'Foto Destino 3 (Cayo de Agua)', type: 'image' },
-                        { id: 'dest3-title', label: 'Título Destino 3', type: 'text', placeholder: 'Cayo de Agua' },
+                        { id: 'dest3-img', label: 'Foto Destino 3 (Margarita y Coche)', type: 'image' },
+                        { id: 'dest3-title', label: 'Título Destino 3', type: 'text', placeholder: 'Margarita y Coche: El Encanto de las Islas' },
                         { id: 'dest3-text', label: 'Descripción Destino 3', type: 'textarea' }
                     ]
                 },
