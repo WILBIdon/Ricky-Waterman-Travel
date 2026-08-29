@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canaima & Salto Ángel: La Tierra Perdida | The Waterman Experience</title>
+    <meta name="description" content="Descubre Canaima y Salto Ángel: expediciones en curiara, tepuyes ancestrales y sobrevuelos en helicóptero.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <!-- Custom Adventure.travel Style System -->
+    <link rel="stylesheet" href="assets/css/styles.css?v=1.0.9">
+</head>
+<body class="font-sans antialiased">
+
+    <!-- ================= 1. FLOATING NAV (SEMI-ROUNDED 16PX & BOLD LOGO) ================= -->
+    <header class="nav-floating">
+        <nav class="nav-inner">
+            <div class="drip-container">
+                <div class="drip-drop"></div>
+                <div class="drip-drop"></div>
+                <div class="drip-drop"></div>
+                <div class="drip-drop"></div>
+                <div class="drip-drop"></div>
+            </div>
+
+            <a href="index.html" class="nav-logo" aria-label="Ricky Waterman Experience">
+                <img src="assets/logo-full-services.png" alt="Ricky Waterman Logo">
+                <div class="nav-logo-text">WATERMAN <span>EXPERIENCE</span></div>
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="deportes.html">Deportes</a>
+                <a href="paquetes.html">Paquetes</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="admin.html" style="color:var(--color-turquoise); font-weight:700;"><i class="fa-solid fa-lock"></i> Admin</a>
+            </div>
+
+            <button class="nav-mobile-btn" onclick="toggleMobileMenu()" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div id="mobile-menu" class="mobile-menu-overlay" onclick="closeMobileMenu(event)">
+        <div class="mobile-menu-panel" onclick="event.stopPropagation()">
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="mobile-menu-links">
+                <a href="index.html">Inicio</a>
+                <a href="destino-caracas.html">Caracas</a>
+                <a href="destino-choroni.html">Choroní</a>
+                <a href="destino-margarita.html">Margarita & Coche</a>
+                <a href="destino-losroques.html">Los Roques</a>
+                <a href="destino-canaima.html">Canaima</a>
+                <a href="deportes.html">Ver por Deportes</a>
+                <a href="admin.html" style="color:var(--color-turquoise);">🔒 Admin</a>
+            </div>
+        </div>
+    </div>
+
+    <main style="padding-top: 6.5rem;">
+        
+        <!-- HERO DESTINO -->
+        <section class="max-w-editorial" style="margin-bottom: 3rem;">
+            <div style="position: relative; border-radius: 1.5rem; overflow: hidden; min-height: 420px; display: flex; align-items: flex-end; padding: clamp(2rem, 5vw, 3.5rem); box-shadow: 0 15px 40px rgba(0,0,0,0.3);">
+                <img src="assets/IMG_4129.JPG" alt="Canaima Salto Ángel" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" data-cms-id="canaima-hero-img">
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(3,20,26,0.92) 0%, rgba(3,20,26,0.3) 60%, transparent 100%);"></div>
+                <div style="position: relative; z-index: 2; color: #fff; max-width: 750px;">
+                    <span class="eyebrow" style="color: var(--color-turquoise);">Destino #5 | Próximamente (Expedición Selva)</span>
+                    <h1 style="font-family: var(--font-serif); font-size: clamp(2.2rem, 5vw, 3.8rem); margin-top: 0.5rem; margin-bottom: 1rem; line-height: 1.1;" data-cms-id="canaima-title">
+                        Canaima y Salto Ángel: La Tierra Sagrada
+                    </h1>
+                    <p style="font-size: 1.15rem; color: #E0F7FA; line-height: 1.6;" data-cms-id="canaima-desc">
+                        Navega los ríos de agua roja teñida por minerales ancestrales hasta la caída de agua más alta del planeta (979 metros). Una aventura mística entre tepuyes millonarios.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN PROXIMAMENTE CANAIMA -->
+        <section class="max-w-editorial" style="margin-bottom: 5rem;">
+            <div style="background: #ffffff; border: 1px solid var(--color-border); border-radius: 1.5rem; padding: clamp(2rem, 4vw, 4rem); text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+                <span style="background: rgba(224,90,71,0.1); color: var(--color-coral); font-size: 0.85rem; font-weight: 800; padding: 0.4rem 1rem; border-radius: 9999px; text-transform: uppercase;">Próxima Apertura 2026</span>
+                <h2 style="font-family: var(--font-serif); font-size: 2.4rem; color: var(--color-text-dark); margin: 1rem 0 0.5rem 0;">
+                    Únete a la Lista de Espera Exclusiva
+                </h2>
+                <p style="color: var(--color-text-muted); max-width: 600px; margin: 0 auto 2rem auto; font-size: 1.05rem; line-height: 1.6;">
+                    Estamos diseñando itinerarios de expedición privada a Salto Ángel con pernocta en campamentos VIP y vuelos helicóptero. Déjanos tu correo para recibir acceso prioritario.
+                </p>
+                <a href="contacto.html" class="btn-coral" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                    <i class="fa-solid fa-bell"></i> Notificarme Cuando Abra Canaima
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Waterman Experience. Canaima, Venezuela &amp; Austria.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('is-open'); }
+        function closeMobileMenu(e) { if (e.target === document.getElementById('mobile-menu')) toggleMobileMenu(); }
+    </script>
+    <script src="assets/js/cms.js"></script>
+</body>
+</html>

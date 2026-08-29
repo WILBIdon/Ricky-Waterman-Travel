@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Roques: Safaris Acuáticos VIP | The Waterman Experience</title>
+    <meta name="description" content="Descubre Los Roques: Kitesurf en agua plana, Windsurf, Wingfoil y certificación de Buceo PADI 6 Días.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    
+    <!-- Custom Adventure.travel Style System -->
+    <link rel="stylesheet" href="assets/css/styles.css?v=1.0.9">
+</head>
+<body class="font-sans antialiased">
+
+    <!-- ================= 1. FLOATING NAV (SEMI-ROUNDED 16PX & BOLD LOGO) ================= -->
+    <header class="nav-floating">
+        <nav class="nav-inner">
+            <div class="drip-container">
+                <div class="drip-drop"></div>
+                <div class="drip-drop"></div>
+                <div class="drip-drop"></div>
+                <div class="drip-drop"></div>
+                <div class="drip-drop"></div>
+            </div>
+
+            <a href="index.html" class="nav-logo" aria-label="Ricky Waterman Experience">
+                <img src="assets/logo-full-services.png" alt="Ricky Waterman Logo">
+                <div class="nav-logo-text">WATERMAN <span>EXPERIENCE</span></div>
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="deportes.html">Deportes</a>
+                <a href="paquetes.html">Paquetes</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="admin.html" style="color:var(--color-turquoise); font-weight:700;"><i class="fa-solid fa-lock"></i> Admin</a>
+            </div>
+
+            <button class="nav-mobile-btn" onclick="toggleMobileMenu()" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div id="mobile-menu" class="mobile-menu-overlay" onclick="closeMobileMenu(event)">
+        <div class="mobile-menu-panel" onclick="event.stopPropagation()">
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="mobile-menu-links">
+                <a href="index.html">Inicio</a>
+                <a href="destino-caracas.html">Caracas</a>
+                <a href="destino-choroni.html">Choroní</a>
+                <a href="destino-margarita.html">Margarita & Coche</a>
+                <a href="destino-losroques.html">Los Roques</a>
+                <a href="destino-canaima.html">Canaima</a>
+                <a href="deportes.html">Ver por Deportes</a>
+                <a href="admin.html" style="color:var(--color-turquoise);">🔒 Admin</a>
+            </div>
+        </div>
+    </div>
+
+    <main style="padding-top: 6.5rem;">
+        
+        <!-- HERO DESTINO -->
+        <section class="max-w-editorial" style="margin-bottom: 3rem;">
+            <div style="position: relative; border-radius: 1.5rem; overflow: hidden; min-height: 420px; display: flex; align-items: flex-end; padding: clamp(2rem, 5vw, 3.5rem); box-shadow: 0 15px 40px rgba(0,0,0,0.3);">
+                <img src="assets/IMG_4161.JPG" alt="Los Roques Safaris VIP" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" data-cms-id="losroques-hero-img">
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(3,20,26,0.92) 0%, rgba(3,20,26,0.3) 60%, transparent 100%);"></div>
+                <div style="position: relative; z-index: 2; color: #fff; max-width: 750px;">
+                    <span class="eyebrow" style="color: var(--color-turquoise);">Destino #4 | Paraíso Caribeño &amp; Safaris Acuáticos</span>
+                    <h1 style="font-family: var(--font-serif); font-size: clamp(2.2rem, 5vw, 3.8rem); margin-top: 0.5rem; margin-bottom: 1rem; line-height: 1.1;" data-cms-id="losroques-title">
+                        Los Roques: El Santuario del Viento y Cristal
+                    </h1>
+                    <p style="font-size: 1.15rem; color: #E0F7FA; line-height: 1.6;" data-cms-id="losroques-desc">
+                        Considerado uno de los archipiélagos coralinos más prístinos del planeta. Aguas totalmente planas ("flat water"), viento alisio constante de 18 a 25 nudos y una visibilidad submarina infinita.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ATRACTIVOS DETALLADOS DE LOS ROQUES -->
+        <section class="max-w-editorial" style="margin-bottom: 4rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <div class="text-gradient-card">
+                    <i class="fa-solid fa-water" style="font-size: 2rem; color: var(--color-turquoise); margin-bottom: 1rem;"></i>
+                    <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-text-dark); margin-bottom: 0.5rem;">Cayo Francisquí &amp; Cayo de Agua</h3>
+                    <p style="color: var(--color-text-body); font-size: 0.95rem; line-height: 1.6;">Piscinas naturales protegidas por arrecifes de coral y la famosa barra de arena blanca votada entre las mejores del mundo.</p>
+                </div>
+                <div class="text-gradient-card">
+                    <i class="fa-solid fa-wind" style="font-size: 2rem; color: var(--color-turquoise); margin-bottom: 1rem;"></i>
+                    <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-text-dark); margin-bottom: 0.5rem;">Viento Continuo 18-25 Nudos</h3>
+                    <p style="color: var(--color-text-body); font-size: 0.95rem; line-height: 1.6;">Brisa constante y pareja de Noviembre a Junio. Condiciones de entrenamiento e instrucción de nivel internacional.</p>
+                </div>
+                <div class="text-gradient-card">
+                    <i class="fa-solid fa-fish" style="font-size: 2rem; color: var(--color-turquoise); margin-bottom: 1rem;"></i>
+                    <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-text-dark); margin-bottom: 0.5rem;">Barrera Coralina &amp; PADI</h3>
+                    <p style="color: var(--color-text-body); font-size: 0.95rem; line-height: 1.6;">Paredes profundas de coral vivo, pecios hundidos, tortugas marinas y certificación PADI Open Water completa.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE SELECCIÓN DE DEPORTE EN LOS ROQUES -->
+        <section class="max-w-editorial" style="margin-bottom: 5rem;">
+            <div style="background: #ffffff; border: 1px solid var(--color-border); border-radius: 1.5rem; padding: clamp(1.5rem, 4vw, 3rem); box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+                <div style="text-align: center; margin-bottom: 2.5rem;">
+                    <span style="background: rgba(16,179,191,0.1); color: var(--color-turquoise); font-size: 0.8rem; font-weight: 800; padding: 0.35rem 0.85rem; border-radius: 9999px; text-transform: uppercase;">¡Ya Escogiste Los Roques!</span>
+                    <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--color-text-dark); margin-top: 0.5rem;">
+                        Ahora Selecciona Tu Deporte o Safari Acuático en Los Roques
+                    </h2>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+                    
+                    <!-- Deporte 1: Kite -->
+                    <div style="border: 1px solid var(--color-border); border-radius: 1rem; padding: 1.5rem; background: #fafafa;">
+                        <span style="color: var(--color-coral); font-weight: 800; font-size: 0.75rem;">SAFARI #1</span>
+                        <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--color-text-dark); margin: 0.5rem 0;">Kitesurf Experience</h3>
+                        <p style="font-size: 0.85rem; color: var(--color-text-body); line-height: 1.5; margin-bottom: 1.25rem;">Navegación en agua plana de Francisquí y downwinders extremos a Cayo de Agua con lancha de apoyo privada.</p>
+                        <a href="contacto.html" class="btn-coral btn-sm btn-block" style="text-align: center;">Reservar Kitesurf</a>
+                    </div>
+
+                    <!-- Deporte 2: Windsurf -->
+                    <div style="border: 1px solid var(--color-border); border-radius: 1rem; padding: 1.5rem; background: #fafafa;">
+                        <span style="color: var(--color-coral); font-weight: 800; font-size: 0.75rem;">SAFARI #2</span>
+                        <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--color-text-dark); margin: 0.5rem 0;">Windsurf Paradise</h3>
+                        <p style="font-size: 0.85rem; color: var(--color-text-body); line-height: 1.5; margin-bottom: 1.25rem;">Planeo ilimitado en la laguna turquesa de Gran Roque con tablas y velas de marcas líderes.</p>
+                        <a href="contacto.html" class="btn-coral btn-sm btn-block" style="text-align: center;">Reservar Windsurf</a>
+                    </div>
+
+                    <!-- Deporte 3: Wingfoil -->
+                    <div style="border: 1px solid var(--color-border); border-radius: 1rem; padding: 1.5rem; background: #fafafa;">
+                        <span style="color: var(--color-coral); font-weight: 800; font-size: 0.75rem;">SAFARI #3</span>
+                        <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--color-text-dark); margin: 0.5rem 0;">Wingfoil Levitation</h3>
+                        <p style="font-size: 0.85rem; color: var(--color-text-body); line-height: 1.5; margin-bottom: 1.25rem;">Aprende a levitar sobre el agua con remo o remolque de lancha (towing) seguido de vuelo independiente.</p>
+                        <a href="contacto.html" class="btn-coral btn-sm btn-block" style="text-align: center;">Reservar Wingfoil</a>
+                    </div>
+
+                    <!-- Deporte 4: Buceo -->
+                    <div style="border: 1px solid var(--color-border); border-radius: 1rem; padding: 1.5rem; background: #fafafa;">
+                        <span style="color: var(--color-coral); font-weight: 800; font-size: 0.75rem;">SAFARI #4</span>
+                        <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--color-text-dark); margin: 0.5rem 0;">Buceo PADI 6 Días</h3>
+                        <p style="font-size: 0.85rem; color: var(--color-text-body); line-height: 1.5; margin-bottom: 1.25rem;">Curso completo Open Water PADI con 4 inmersiones en mar abierto, pecios y fotos submarinas HD.</p>
+                        <a href="contacto.html" class="btn-coral btn-sm btn-block" style="text-align: center;">Reservar Buceo PADI</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Waterman Experience. Los Roques, Venezuela &amp; Austria.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('is-open'); }
+        function closeMobileMenu(e) { if (e.target === document.getElementById('mobile-menu')) toggleMobileMenu(); }
+    </script>
+    <script src="assets/js/cms.js"></script>
+</body>
+</html>

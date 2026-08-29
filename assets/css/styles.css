@@ -526,20 +526,20 @@ img {
     text-shadow: 0 1px 6px rgba(0,0,0,0.7);
 }
 
-/* Floating Hero Bottom-Left Standalone Logo (Solo Logo Vector/Texto, Impresionante 300px) */
+/* Floating Hero Bottom-Left Standalone Logo (Solo Logo Vector/Texto, 300px Exactos en Desktop) */
 .hero-floating-logo-standalone {
     position: absolute;
-    bottom: 3.5rem;
-    left: 4rem;
+    bottom: 2.5rem;
+    left: 3.5rem;
     z-index: 15;
     pointer-events: none;
     animation: heroBadgeFloat 4.5s ease-in-out infinite alternate;
 }
 
 .hero-floating-logo-standalone img {
-    height: 300px;
-    width: auto;
-    max-width: 580px;
+    height: 300px !important;
+    width: auto !important;
+    max-width: 650px !important;
     object-fit: contain;
     filter: drop-shadow(0 0 45px rgba(16, 179, 191, 0.95)) drop-shadow(0 10px 30px rgba(0,0,0,0.95));
 }
@@ -549,13 +549,13 @@ img {
     to { transform: translateY(-14px); }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
     .hero-floating-logo-standalone {
         bottom: 2rem;
         left: 1.5rem;
     }
     .hero-floating-logo-standalone img {
-        height: 180px;
+        height: 200px !important;
     }
 }
 

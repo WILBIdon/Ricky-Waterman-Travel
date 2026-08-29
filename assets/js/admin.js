@@ -194,6 +194,36 @@
                 }
             ]
         },
+        losroques: {
+            label: 'Destino: Los Roques',
+            icon: 'fa-water',
+            sections: [
+                {
+                    title: 'Hero & Contenido General',
+                    icon: 'fa-sailboat',
+                    fields: [
+                        { id: 'losroques-hero-img', label: 'Imagen Hero', type: 'image' },
+                        { id: 'losroques-title', label: 'Título Principal', type: 'text', placeholder: 'Los Roques: Safaris Acuáticos VIP' },
+                        { id: 'losroques-desc', label: 'Descripción General', type: 'textarea' }
+                    ]
+                }
+            ]
+        },
+        canaima: {
+            label: 'Destino: Canaima',
+            icon: 'fa-mountain-sun',
+            sections: [
+                {
+                    title: 'Hero & Contenido General',
+                    icon: 'fa-tree',
+                    fields: [
+                        { id: 'canaima-hero-img', label: 'Imagen Hero', type: 'image' },
+                        { id: 'canaima-title', label: 'Título Principal', type: 'text', placeholder: 'Canaima y Salto Ángel: La Tierra Sagrada' },
+                        { id: 'canaima-desc', label: 'Descripción General', type: 'textarea' }
+                    ]
+                }
+            ]
+        },
         nosotros: {
             label: 'Nosotros',
             icon: 'fa-users',
