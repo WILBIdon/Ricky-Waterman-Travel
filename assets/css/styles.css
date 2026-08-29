@@ -185,7 +185,7 @@ img {
     border-color: rgba(16, 179, 191, 0.5);
 }
 
-/* Logo — Direct Dark Mounting with High Prominence */
+/* Logo — Direct Dark Mounting with High Prominence (Mas grande sin miedo) */
 .nav-logo {
     display: flex;
     align-items: center;
@@ -201,20 +201,20 @@ img {
 }
 
 .nav-logo img {
-    height: 64px;
+    height: 82px;
     width: auto;
-    max-width: 240px;
+    max-width: 280px;
     object-fit: contain;
     background: transparent;
     padding: 0;
     border: none;
     border-radius: 0;
     box-shadow: none;
-    filter: drop-shadow(0 0 12px rgba(16, 179, 191, 0.45));
+    filter: drop-shadow(0 0 16px rgba(16, 179, 191, 0.6));
     transition: all 0.3s ease;
 }
 .nav-logo:hover img {
-    filter: drop-shadow(0 0 18px rgba(16, 179, 191, 0.75)) brightness(1.08);
+    filter: drop-shadow(0 0 24px rgba(16, 179, 191, 0.85)) brightness(1.1);
 }
 
 .nav-logo-text {
@@ -331,14 +331,14 @@ img {
         right: 0.5rem;
     }
     .nav-inner {
-        padding: 0.45rem 1rem;
+        padding: 0.4rem 1rem;
     }
     .nav-logo {
         gap: 0.6rem;
     }
     .nav-logo img {
-        height: 48px;
-        max-width: 160px;
+        height: 60px;
+        max-width: 200px;
     }
     .nav-logo-text {
         font-size: 1.05rem;
@@ -347,8 +347,8 @@ img {
 
 @media (max-width: 480px) {
     .nav-logo img {
-        height: 42px;
-        max-width: 140px;
+        height: 52px;
+        max-width: 170px;
     }
     .nav-logo-text span {
         display: block;
@@ -457,49 +457,119 @@ img {
     opacity: 0.7;
 }
 
-/* Frosted glass box — exact match to reference image */
+/* Compact High-Contrast Frosted Glass Box over Video */
 .hero-glass-box {
     position: relative;
     z-index: 10;
-    background: rgba(255,255,255,0.40);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 3rem 3.5rem;
-    border-radius: 1rem;
-    max-width: 850px;
+    background: rgba(3, 20, 26, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 2rem 2.25rem;
+    border-radius: 1.25rem;
+    max-width: 520px;
     margin: 0 1rem;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
-    border: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    margin-top: 3rem;
+    gap: 1rem;
+    border: 1px solid rgba(16, 179, 191, 0.45);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.65), 0 0 30px rgba(16, 179, 191, 0.25);
+    margin-top: 2rem;
 }
 
-@media (min-width: 768px) {
-    .hero-glass-box {
-        padding: 3.5rem 4rem;
-    }
+.hero-glass-box .eyebrow {
+    color: #7BF4FF !important;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: -0.25rem;
+    text-shadow: 0 0 10px rgba(123, 244, 255, 0.5);
 }
 
-/* Hero Heading — DM Serif Display, dark gray on glass, exact size */
+/* Hero Heading — Crisp White with Soft Cyan Shadow */
 .hero-glass-box h1 {
     font-family: var(--font-serif);
-    font-size: clamp(2.8rem, 6vw, 4.5rem);
-    line-height: 1.1;
-    color: #333333;
-    font-weight: 400;
-    text-shadow: 0 1px 2px rgba(255,255,255,0.3);
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    line-height: 1.15;
+    color: #FFFFFF !important;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8), 0 0 20px rgba(16, 179, 191, 0.4);
 }
 
 .hero-glass-box .hero-subtitle {
-    color: #374151;
-    font-weight: 500;
-    font-size: 1.125rem;
-    max-width: 34rem;
-    line-height: 1.6;
+    color: #E0F7FA !important;
+    font-weight: 600;
+    font-size: 1rem;
+    max-width: 28rem;
+    line-height: 1.5;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.7);
+}
+
+/* Floating Hero Bottom-Left Logo Badge */
+.hero-floating-logo-badge {
+    position: absolute;
+    bottom: 4rem;
+    left: 4rem;
+    z-index: 15;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    background: rgba(3, 20, 26, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 0.75rem 1.25rem;
+    border-radius: 1.25rem;
+    border: 1px solid rgba(16, 179, 191, 0.4);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.6), 0 0 20px rgba(16, 179, 191, 0.3);
+    animation: heroBadgeFloat 4s ease-in-out infinite alternate;
+}
+
+.hero-floating-logo-badge img {
+    height: 72px;
+    width: auto;
+    filter: drop-shadow(0 0 12px rgba(16, 179, 191, 0.6));
+}
+
+.hero-floating-logo-badge .badge-label {
+    display: flex;
+    flex-direction: column;
+}
+.hero-floating-logo-badge .badge-label span:first-child {
+    font-size: 0.7rem;
+    color: #7BF4FF;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+.hero-floating-logo-badge .badge-label span:last-child {
+    font-size: 0.95rem;
+    color: #FFFFFF;
+    font-weight: 800;
+    font-family: var(--font-serif);
+}
+
+@keyframes heroBadgeFloat {
+    from { transform: translateY(0); }
+    to { transform: translateY(-8px); }
+}
+
+@media (max-width: 900px) {
+    .hero-floating-logo-badge {
+        bottom: 2rem;
+        left: 2rem;
+        padding: 0.55rem 0.9rem;
+    }
+    .hero-floating-logo-badge img {
+        height: 54px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-floating-logo-badge {
+        display: none;
+    }
 }
 
 /* Hero CTA Buttons */
