@@ -1175,28 +1175,40 @@ h2.editorial-section-title {
     position: relative;
     z-index: 10;
     display: flex;
-    gap: 3.5rem;
-    padding: 2.5rem 6vw;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    gap: 2rem 4rem;
+    padding: 3.5rem 6vw;
+    background: var(--color-nav-dark);
+    color: #FFFFFF;
+    border-top: 1px solid rgba(16, 179, 191, 0.25);
+    border-bottom: 1px solid rgba(16, 179, 191, 0.25);
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 140px;
 }
 .stat-num {
     font-family: var(--font-mono);
-    font-size: 1.85rem;
-    color: var(--color-bg-warm);
-    font-weight: 600;
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    color: var(--color-turquoise);
+    font-weight: 700;
+    line-height: 1.1;
+    text-shadow: 0 0 20px rgba(16, 179, 191, 0.3);
 }
 .stat-label {
-    font-size: 0.75rem;
-    color: var(--color-silver);
+    font-size: 0.85rem;
+    color: #D1D5DB;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-top: 0.25rem;
+    letter-spacing: 0.12em;
+    margin-top: 0.5rem;
     font-family: var(--font-sans);
+    font-weight: 600;
 }
 
 /* Card Reveal Animations (IntersectionObserver) */
