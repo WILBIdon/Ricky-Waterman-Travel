@@ -487,17 +487,24 @@
                 var file = this.files[0];
                 if (!file) return;
                 var id = this.getAttribute('data-field-id');
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    if (!cmsData[id]) cmsData[id] = {};
-                    if (file.type.startsWith('video/')) {
+
+                if (file.type.startsWith('video/')) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        if (!cmsData[id]) cmsData[id] = {};
                         cmsData[id].video = e.target.result;
-                    } else {
-                        cmsData[id].img = e.target.result;
-                    }
-                    renderEditor(PAGES[currentPage]);
-                };
-                reader.readAsDataURL(file);
+                        renderEditor(PAGES[currentPage]);
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    // Compress image via Canvas to lightweight JPEG (max 1200px, 0.75 quality)
+                    compressImageFile(file, function (compressedUrl) {
+                        if (!cmsData[id]) cmsData[id] = {};
+                        cmsData[id].img = compressedUrl;
+                        renderEditor(PAGES[currentPage]);
+                        showToast('Imagen comprimida y optimizada', 'info');
+                    });
+                }
             });
         });
 
@@ -641,6 +648,42 @@
     }
 
     // ===================== HELPERS =====================
+    function compressImageFile(file, callback) {
+        var img = new Image();
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            img.onload = function () {
+                var canvas = document.createElement('canvas');
+                var maxW = 1200;
+                var maxH = 1200;
+                var width = img.width;
+                var height = img.height;
+
+                if (width > height) {
+                    if (width > maxW) {
+                        height *= maxW / width;
+                        width = maxW;
+                    }
+                } else {
+                    if (height > maxH) {
+                        width *= maxH / height;
+                        height = maxH;
+                    }
+                }
+
+                canvas.width = width;
+                canvas.height = height;
+                var ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, width, height);
+
+                var compressedUrl = canvas.toDataURL('image/jpeg', 0.75);
+                callback(compressedUrl);
+            };
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+
     function escapeHtml(str) {
         if (!str) return '';
         return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
