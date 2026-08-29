@@ -185,7 +185,7 @@ img {
     border-color: rgba(16, 179, 191, 0.5);
 }
 
-/* Logo — Direct Dark Mounting with High Prominence (Mas grande sin miedo) */
+/* Logo — Direct Dark Mounting with Maximum Prominence (Mucho mas grande) */
 .nav-logo {
     display: flex;
     align-items: center;
@@ -201,20 +201,24 @@ img {
 }
 
 .nav-logo img {
-    height: 82px;
+    height: 115px;
     width: auto;
-    max-width: 280px;
+    max-width: 380px;
     object-fit: contain;
     background: transparent;
     padding: 0;
     border: none;
     border-radius: 0;
     box-shadow: none;
-    filter: drop-shadow(0 0 16px rgba(16, 179, 191, 0.6));
+    filter: drop-shadow(0 0 20px rgba(16, 179, 191, 0.75));
     transition: all 0.3s ease;
 }
 .nav-logo:hover img {
-    filter: drop-shadow(0 0 24px rgba(16, 179, 191, 0.85)) brightness(1.1);
+    filter: drop-shadow(0 0 30px rgba(16, 179, 191, 0.95)) brightness(1.12);
+}
+
+.nav-inner.scrolled .nav-logo img {
+    height: 88px;
 }
 
 .nav-logo-text {
@@ -337,8 +341,11 @@ img {
         gap: 0.6rem;
     }
     .nav-logo img {
-        height: 60px;
-        max-width: 200px;
+        height: 75px;
+        max-width: 240px;
+    }
+    .nav-inner.scrolled .nav-logo img {
+        height: 65px;
     }
     .nav-logo-text {
         font-size: 1.05rem;
@@ -347,8 +354,11 @@ img {
 
 @media (max-width: 480px) {
     .nav-logo img {
-        height: 52px;
-        max-width: 170px;
+        height: 62px;
+        max-width: 200px;
+    }
+    .nav-inner.scrolled .nav-logo img {
+        height: 54px;
     }
     .nav-logo-text span {
         display: block;
@@ -507,67 +517,41 @@ img {
     text-shadow: 0 1px 6px rgba(0,0,0,0.7);
 }
 
-/* Floating Hero Bottom-Left Logo Badge */
-.hero-floating-logo-badge {
+/* Floating Hero Bottom-Left Standalone Logo (Solo Logo Vector/Texto, Grande) */
+.hero-floating-logo-standalone {
     position: absolute;
     bottom: 4rem;
-    left: 4rem;
+    left: 4.5rem;
     z-index: 15;
-    display: flex;
-    align-items: center;
-    gap: 0.85rem;
-    background: rgba(3, 20, 26, 0.82);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 0.75rem 1.25rem;
-    border-radius: 1.25rem;
-    border: 1px solid rgba(16, 179, 191, 0.4);
-    box-shadow: 0 12px 35px rgba(0,0,0,0.6), 0 0 20px rgba(16, 179, 191, 0.3);
-    animation: heroBadgeFloat 4s ease-in-out infinite alternate;
+    pointer-events: none;
+    animation: heroBadgeFloat 4.5s ease-in-out infinite alternate;
 }
 
-.hero-floating-logo-badge img {
-    height: 72px;
+.hero-floating-logo-standalone img {
+    height: 130px;
     width: auto;
-    filter: drop-shadow(0 0 12px rgba(16, 179, 191, 0.6));
-}
-
-.hero-floating-logo-badge .badge-label {
-    display: flex;
-    flex-direction: column;
-}
-.hero-floating-logo-badge .badge-label span:first-child {
-    font-size: 0.7rem;
-    color: #7BF4FF;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-}
-.hero-floating-logo-badge .badge-label span:last-child {
-    font-size: 0.95rem;
-    color: #FFFFFF;
-    font-weight: 800;
-    font-family: var(--font-serif);
+    max-width: 380px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 25px rgba(16, 179, 191, 0.85)) drop-shadow(0 6px 18px rgba(0,0,0,0.95));
 }
 
 @keyframes heroBadgeFloat {
     from { transform: translateY(0); }
-    to { transform: translateY(-8px); }
+    to { transform: translateY(-10px); }
 }
 
 @media (max-width: 900px) {
-    .hero-floating-logo-badge {
-        bottom: 2rem;
+    .hero-floating-logo-standalone {
+        bottom: 2.5rem;
         left: 2rem;
-        padding: 0.55rem 0.9rem;
     }
-    .hero-floating-logo-badge img {
-        height: 54px;
+    .hero-floating-logo-standalone img {
+        height: 90px;
     }
 }
 
 @media (max-width: 600px) {
-    .hero-floating-logo-badge {
+    .hero-floating-logo-standalone {
         display: none;
     }
 }
