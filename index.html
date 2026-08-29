@@ -15,7 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     
     <!-- Custom Adventure.travel Style System -->
-    <link rel="stylesheet" href="assets/css/styles.css?v=1.0.3">
+    <link rel="stylesheet" href="assets/css/styles.css?v=1.0.4">
 </head>
 <body class="font-sans antialiased">
 
@@ -545,6 +545,14 @@
 
     <!-- ================= JAVASCRIPT LOGIC ================= -->
     <script>
+        // Nav shrink on scroll
+        const navInner = document.querySelector('.nav-inner');
+        if (navInner) {
+            window.addEventListener('scroll', () => {
+                navInner.classList.toggle('scrolled', window.scrollY > 40);
+            });
+        }
+
         // Mobile menu
         function toggleMobileMenu() {
             document.getElementById('mobile-menu').classList.toggle('is-open');
