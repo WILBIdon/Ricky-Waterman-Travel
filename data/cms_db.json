@@ -1,86 +1,206 @@
 {
-  "hero-title": {
-    "text": "Tu Aventura Te\nEspera. ¿A Dónde\nTe Llevará Tu\nCuriosidad?"
-  },
-  "hero-subtitle": {
-    "text": "Descubre tres caras de Venezuela: ciudad, naturaleza y Caribe. Te invitamos a vivir una experiencia única, diseñada para quienes buscan autenticidad, exclusividad y una conexión profunda con el alma de Sudamérica."
-  },
-  "dest1-title": {
-    "text": "Caracas: El Comienzo de la Historia"
-  },
-  "dest1-text": {
-    "text": "Mucho más que una puerta de entrada, es una vibrante metrópolis que late al pie del imponente cerro El Ávila. Sofisticada mezcla de gastronomía de clase mundial, arquitectura icónica y rica herencia cultural."
-  },
-  "dest2-title": {
-    "text": "Choroní: Entre la Selva y el Mar"
-  },
-  "dest2-text": {
-    "text": "Cruza las montañas nubladas del Parque Nacional Henri Pittier para llegar a Choroní, un tesoro colonial donde la selva tropical abraza las aguas del Caribe en un entorno virgen."
-  },
-  "dest3-title": {
-    "text": "Margarita y Coche: El Encanto de las Islas"
-  },
-  "dest3-text": {
-    "text": "Desde la vibrante Isla de Margarita hasta la paz absoluta de las arenas blancas de la Isla de Coche. Disfruta de atardeceres inolvidables, deportes acuáticos y la calidez de nuestra gente."
-  },
-  "dep-title": {
-    "text": "Programas Deportivos de 6 Días"
-  },
-  "dep-subtitle": {
-    "text": "Programas diseñados para todos los niveles: Kitesurf, Windsurf, Wingfoil y Buceo PADI con coaches 1:1 y safaris guiados en lancha rápida."
-  },
-  "kite-title": {
-    "text": "Kitesurf Experience & Safaris"
-  },
-  "kite-desc": {
-    "text": "Agua completamente plana, viento constante de 18 a 25 nudos y temperatura perfecta. Día 1: Teoría y control. Días 2-3: Clases en agua. Días 4-6: Coaching y safaris por cayos vírgenes."
-  },
-  "windsurf-title": {
-    "text": "Windsurf Paradise"
-  },
-  "windsurf-desc": {
-    "text": "Viento alisio limpio sin turbulencias. Día 1: Teoría y agua. Días 2-3: Clases de viraje y planeo. Días 4-6: Coaching, alquiler y surf safari."
-  },
-  "wingfoil-title": {
-    "text": "Wingfoil Levitation"
-  },
-  "wingfoil-desc": {
-    "text": "Levita sobre las aguas turquesas. Día 1: Manejo de ala en tierra y agua. Días 2-3: Vuelo sobre foil. Días 4-6: Coaching y wingfoil safari."
-  },
-  "diving-title": {
-    "text": "Buceo Open Water PADI & Safari"
-  },
-  "diving-desc": {
-    "text": "Arrecifes vírgenes y paredes coralinas. Día 1: Teoría. Día 2: Práctica en aguas poco profundas. Días 3-4: Inmersiones 1 a 4. Día 5: Buceo profundo. Día 6: Safari de buceo."
-  },
-  "nos-title": {
-    "text": "Confianza y Pasión por Venezuela"
-  },
-  "nos-subtitle": {
-    "text": "Creemos que la gente compra confianza antes que un viaje. Nuestra historia nace del amor profundo por Venezuela y el deseo de mostrar su cara más auténtica al mundo."
-  },
-  "nos-bio1": {
-    "text": "Desde nuestra base en Austria, diseñamos experiencias de turismo responsable que apoyan directamente a proveedores locales, garantizando que cada viaje sea un intercambio justo y enriquecedor."
-  },
-  "nos-bio2": {
-    "text": "Somos tus anfitriones en una tierra que conocemos y amamos, comprometidos con la calidad y la personalización total de tu aventura: desde la metrópolis cultural de Caracas y la selva marina de Choroní, hasta la paz caribeña de Margarita, Coche y los safaris acuáticos en Los Roques."
-  },
-  "paq-title": {
-    "text": "Experiencias Curadas & Paquetes VIP"
-  },
-  "paq-subtitle": {
-    "text": "Viajes todo incluido diseñados a tu medida: vuelos, hospedaje boutique, lanchas privadas, hidratación y coaching 1:1."
-  },
-  "exp-title": {
-    "text": "La Experiencia Waterman"
-  },
-  "exp-subtitle": {
-    "text": "Turismo consciente, exclusividad en grupos reducidos de 10 a 15 personas y conexión profunda con la cultura y naturaleza costera."
-  },
-  "faq-title": {
-    "text": "Preguntas Frecuentes"
-  },
-  "faq-subtitle": {
-    "text": "Todo lo que necesitas saber para preparar tu aventura a Caracas, Choroní, Margarita, Coche y Los Roques."
-  }
+  "hero-title": { "text": "Tu Aventura<br>Te Espera" },
+  "hero-subtitle": { "text": "Ciudad, naturaleza y Caribe en una experiencia exclusiva diseñada a tu medida." },
+  "hero-video": { "video": "assets/hero-video.mp4" },
+  "hero-fallback": { "img": "assets/IMG_4118.JPG" },
+  "stat1-num": { "text": "14+" },
+  "stat1-label": { "text": "Años en el agua" },
+  "stat2-num": { "text": "32" },
+  "stat2-label": { "text": "Cayos & Spots" },
+  "stat3-num": { "text": "500+" },
+  "stat3-label": { "text": "Viajeros felices" },
+  "stat4-num": { "text": "18-25 Kts" },
+  "stat4-label": { "text": "Viento alisio continuo" },
+  "dest1-img": { "img": "assets/IMG_4129.JPG" },
+  "dest1-title": { "text": "Caracas: El Comienzo de la Historia" },
+  "dest1-text": { "text": "Mucho más que una puerta de entrada, es una vibrante metrópolis que late al pie del imponente cerro El Ávila. Sofisticada mezcla de gastronomía, arquitectura icónica y rica herencia cultural." },
+  "dest2-img": { "img": "assets/IMG_4160.JPG" },
+  "dest2-title": { "text": "Choroní: Entre la Selva y el Mar" },
+  "dest2-text": { "text": "Cruza las montañas nubladas del Parque Nacional Henri Pittier para llegar a Choroní, un tesoro colonial donde la selva tropical abraza las aguas del Caribe en un entorno virgen." },
+  "dest3-img": { "img": "assets/IMG_4118.JPG" },
+  "dest3-title": { "text": "Margarita y Coche: El Encanto de las Islas" },
+  "dest3-text": { "text": "Desde la vibrante Isla de Margarita hasta la paz absoluta de las arenas blancas de Coche. Disfruta de atardeceres inolvidables, deportes acuáticos y la calidez de nuestra gente." },
+  "canaima-banner-title": { "text": "Canaima y el Salto Ángel" },
+  "canaima-banner-text": { "text": "Estamos preparando algo extraordinario. Muy pronto abriremos las puertas a una de las maravillas naturales más impresionantes del mundo. Imagina encontrarte frente a la caída de agua más alta del planeta, en una tierra ancestral que parece detenida en el tiempo. Mantente atento: las plazas serán limitadas para garantizar una experiencia de máxima exclusividad. Canaima te espera." },
+  "edit1-title": { "text": "La Aventura Es Para Todos" },
+  "edit1-text": { "text": "Creemos que la aventura en el mar no es exclusiva de atletas extremos. Diseñamos nuestras expediciones para que tanto principiantes que nunca han tocado una tabla como navegantes avanzados disfruten al máximo en un entorno seguro y cálido." },
+  "edit1-img": { "img": "assets/IMG_4118.JPG" },
+  "edit2-title": { "text": "Tu Viaje, Perfeccionado" },
+  "edit2-text": { "text": "Nos encargamos de absolutamente toda la logística para que tú solo pienses en disfrutar del agua. Desde tu llegada al aeropuerto de Caracas hasta cada transfer diario en lancha privada a los cayos más remotos." },
+  "edit2-img": { "img": "assets/IMG_4160.JPG" },
+  "edit3-title": { "text": "Descubre Una Mejor Forma de Viajar" },
+  "edit3-text": { "text": "Los Roques es una reserva marina protegida de valor incalculable. Operamos bajo estrictas normas de sostenibilidad: cero plásticos de un solo uso, protectores solares Reef-Safe y respeto absoluto por las comunidades pesqueras locales." },
+  "edit3-img": { "img": "assets/IMG_4128.JPG" },
+  "impact1-img": { "img": "assets/IMG_4162.JPG" },
+  "impact1-title": { "text": "La Historia de Ricky" },
+  "impact1-text": { "text": "Fundador y apasionado del mar compartiendo el paraíso marino de su infancia con el mundo." },
+  "impact2-img": { "img": "assets/IMG_4160.JPG" },
+  "impact2-title": { "text": "Protección de Arrecifes" },
+  "impact2-text": { "text": "Iniciativas para mantener intacta la barrera coralina de Los Roques para futuras generaciones." },
+  "impact3-img": { "img": "assets/IMG_4165.JPG" },
+  "impact3-title": { "text": "Apoyo a Capitanes Locales" },
+  "impact3-text": { "text": "Integración y trabajo digno con las familias de pescadores de la isla." },
+  "impact4-img": { "img": "assets/IMG_4129.JPG" },
+  "impact4-title": { "text": "Política Zero Plastic" },
+  "impact4-text": { "text": "Eliminación completa de plásticos en todos nuestros safaris náuticos." },
+  "story-main-title": { "text": "¿Por qué Los Roques es el Mejor Spot de Agua Plana del Mundo?" },
+  "story-main-text": { "text": "Descubre las razones meteorológicas e hidrográficas que convierten al archipiélago en un paraíso constante." },
+  "story-main-img": { "img": "assets/IMG_4118.JPG" },
+  "story1-title": { "text": "Qué Llevar a Tu Primera Expedición en Los Roques" },
+  "story1-img": { "img": "assets/IMG_4129.JPG" },
+  "story2-title": { "text": "Cómo Funciona la Conexión VIP en Caracas" },
+  "story2-img": { "img": "assets/IMG_4163.JPG" },
+  "story3-title": { "text": "Pescado Fresco & Langosta en Cayos Desiertos" },
+  "story3-img": { "img": "assets/IMG_4161.JPG" },
+  "dep-title": { "text": "Elige Tu Deporte & Descubre Los Destinos" },
+  "dep-subtitle": { "text": "Selecciona primero la disciplina deportiva o actividad que deseas realizar y te mostraremos exactamente en qué lugares de Venezuela puedes disfrutarla al máximo." },
+  "dest-caracas-title": { "text": "Caracas (Ciudad & Cultura)" },
+  "dest-caracas-desc": { "text": "El comienzo de la historia. Cultura, gastronomía VIP, El Ávila y skydiving." },
+  "dest-choroni-title": { "text": "Choroní (Selva & Mar)" },
+  "dest-choroni-desc": { "text": "Selva tropical y aguas del Caribe. Kitesurf, Surf y trekking en Henri Pittier." },
+  "dest-margarita-title": { "text": "Margarita & Coche (Islas)" },
+  "dest-margarita-desc": { "text": "La Perla del Caribe. El Yaque meca de Windsurf, Wingfoil y Buceo Los Frailes." },
+  "dest-losroques-title": { "text": "Los Roques (Safaris Acuáticos VIP)" },
+  "dest-losroques-desc": { "text": "El paraíso acuático por excelencia. Kitesurf, Windsurf, Wingfoil y Buceo PADI." },
+  "kite-title": { "text": "Kitesurf Experience" },
+  "kite-desc": { "text": "Aguas totalmente llanas (\"flat water\"), viento continuo de 18 a 25 nudos y temperatura perfecta." },
+  "kite-beg-d1": { "text": "Bienvenida en Gran Roque, setup de equipos, principios aerodinámicos de la cometa y primeros vuelos con Kite de entrenamiento en la playa." },
+  "kite-beg-d23": { "text": "Body drag en la piscina natural de Francisquí, water start (puesta de tabla) y primeros deslizamientos asistidos por instructor 1:1." },
+  "kite-beg-d46": { "text": "Navegación independiente ganando barlovento, perfeccionamiento de postura y safari de graduación en Cayo Crasquí." },
+  "kite-adv-d1": { "text": "Evaluación de spots locales, ajuste de arnés/foils y sesión de calentamiento en la barra de Francisquí." },
+  "kite-adv-d23": { "text": "Excursión en lancha rápida privada a una de las playas más bellas del mundo. Navegación en istmo de arena blanca y fotos HD." },
+  "kite-adv-d46": { "text": "Downwinder de 15km asistido por lancha de rescate entre cayos remotos (Sebastopol/Nordisquí) y clínica de saltos con Ricky." },
+  "wind-title": { "text": "Windsurf Paradise" },
+  "wind-desc": { "text": "El equilibrio perfecto entre vela, agua y brisa constante. Ideal para aprender rápido o planear a máxima velocidad." },
+  "wind-d1": { "text": "Izado de vela, posición del cuerpo, virada básica y navegación de ida y vuelta en zona protegida." },
+  "wind-d24": { "text": "Uso del arnés, entrada en footstraps y técnica para entrar en planeo sostenido en la laguna." },
+  "wind-d56": { "text": "Perfeccionamiento de jibe (trasuchada) y recorrido libre descubriendo los manglares y bajos de arena." },
+  "wing-title": { "text": "Wingfoil Experience" },
+  "wing-desc": { "text": "Vuela sin ruido sobre las aguas transparentes con el ala neumática y el hydrofoil." },
+  "wing-d1": { "text": "Aprende a dominar el viento con el ala neumática sobre tabla de SUP sin foil para entender la propulsión." },
+  "wing-d24": { "text": "Remolque suave detrás de la lancha para sentir el despegue del Foil, seguido del acople con el Wing." },
+  "wing-d56": { "text": "Desplazamiento fluido entre cayos volando sobre la superficie turquesa con coaching en video." },
+  "dive-title": { "text": "Buceo en el Arrecife" },
+  "dive-desc": { "text": "Explora una de las barreras coralinas más vivas del Caribe: tortugas, rayas, pecios y corales de fuego." },
+  "dive-d12": { "text": "Módulos PADI, ensamble del equipo autónomo y prácticas de flotabilidad en aguas poco profundas." },
+  "dive-d34": { "text": "Inmersiones reales en la barrera coralina hasta 18m de profundidad acompañados por Instructores PADI Master." },
+  "dive-d56": { "text": "Buceo de graduación en barcos hundidos y arrecifes de coral profundo con expedición fotográfica." },
+  "caracas-hero-img": { "img": "assets/IMG_4129.JPG" },
+  "caracas-title": { "text": "Caracas: El Comienzo de la Historia" },
+  "caracas-desc": { "text": "Mucho más que una puerta de entrada, Caracas es una vibrante metrópolis que late al pie del imponente cerro El Ávila. Sofisticada mezcla de gastronomía de clase mundial, arquitectura icónica y rica herencia cultural." },
+  "caracas-a1-title": { "text": "Parque Nacional El Ávila" },
+  "caracas-a1-text": { "text": "Ascenso en teleférico VIP, caminatas por senderos selváticos con vistas al mar Caribe y aire puro de montaña a 2.100m de altura." },
+  "caracas-a2-title": { "text": "Gastronomía de Autor" },
+  "caracas-a2-text": { "text": "Ruta gastronómica exclusiva visitando restaurantes galardonados, cata de rones premium venezolanos y café de especialidad." },
+  "caracas-a3-title": { "text": "Skydiving & Vuelos en Helicóptero" },
+  "caracas-a3-text": { "text": "Saltos en paracaídas tándem de alta altitud y sobrevuelos privados en helicóptero sobre el valle caraqueño y la costa marítima." },
+  "choroni-hero-img": { "img": "assets/IMG_4160.JPG" },
+  "choroni-title": { "text": "Choroní: Entre la Selva y el Mar" },
+  "choroni-desc": { "text": "Cruza las montañas nubladas del Parque Nacional Henri Pittier para llegar a Choroní, un tesoro colonial donde la selva tropical abraza las aguas del Caribe en un entorno virgen lleno de tradición." },
+  "choroni-a1-title": { "text": "Parque Henri Pittier" },
+  "choroni-a1-text": { "text": "El primer parque nacional de Venezuela. Selva nublada, cascadas de agua dulce y biodiversidad única a minutos del mar." },
+  "choroni-a2-title": { "text": "Playa Grande & Olas" },
+  "choroni-a2-text": { "text": "Una amplia bahía rodeada de cocoteros gigantes ideales para la práctica de Surf, Kitesurf y kayak de mar costero." },
+  "choroni-a3-title": { "text": "Pueblo Colonial de Puerto Colombia" },
+  "choroni-a3-text": { "text": "Posadas pintorescas, música de tambores al atardecer y gastronomía marina a base de pescado fresco del día." },
+  "margarita-hero-img": { "img": "assets/IMG_4118.JPG" },
+  "margarita-title": { "text": "Margarita y Coche: El Encanto de las Islas" },
+  "margarita-desc": { "text": "Desde la vibrante Isla de Margarita hasta la paz absoluta de las arenas blancas de la Isla de Coche. Disfruta de atardeceres inolvidables, deportes acuáticos de clase mundial y la calidez de nuestra gente." },
+  "margarita-a1-title": { "text": "El Yaque (Meca Mundial del Viento)" },
+  "margarita-a1-text": { "text": "Reconocida mundialmente por sus condiciones ideales de viento alisio, agua tibia y poca profundidad para el Windsurf y Kitesurf." },
+  "margarita-a2-title": { "text": "Isla de Coche (Arenas Blancas & Paz)" },
+  "margarita-a2-text": { "text": "A 20 minutos en lancha rápida. Un oasis de paz absoluta con mar espejo ideal para la práctica de Wingfoil y relax total." },
+  "margarita-a3-title": { "text": "Archipiélago Los Frailes" },
+  "margarita-a3-text": { "text": "Grupo de islotes rocosos rodeados de agua transparente habitados por mantarrayas, tortugas y cardúmenes de peces tropicales." },
+  "losroques-hero-img": { "img": "assets/IMG_4161.JPG" },
+  "losroques-title": { "text": "Los Roques: El Santuario del Viento y Cristal" },
+  "losroques-desc": { "text": "Considerado uno de los archipiélagos coralinos más prístinos del planeta. Aguas totalmente planas (\"flat water\"), viento alisio constante de 18 a 25 nudos y una visibilidad submarina infinita." },
+  "losroques-a1-title": { "text": "Cayo Francisquí & Cayo de Agua" },
+  "losroques-a1-text": { "text": "Piscinas naturales protegidas por arrecifes de coral y la famosa barra de arena blanca votada entre las mejores del mundo." },
+  "losroques-a2-title": { "text": "Viento Continuo 18-25 Nudos" },
+  "losroques-a2-text": { "text": "Brisa constante y pareja de Noviembre a Junio. Condiciones de entrenamiento e instrucción de nivel internacional." },
+  "losroques-a3-title": { "text": "Barrera Coralina & PADI" },
+  "losroques-a3-text": { "text": "Paredes profundas de coral vivo, pecios hundidos, tortugas marinas y certificación PADI Open Water completa." },
+  "losroques-s1-title": { "text": "Kitesurf Experience" },
+  "losroques-s1-desc": { "text": "Navegación en agua plana de Francisquí y downwinders extremos a Cayo de Agua con lancha de apoyo privada." },
+  "losroques-s2-title": { "text": "Windsurf Paradise" },
+  "losroques-s2-desc": { "text": "Planeo ilimitado en la laguna turquesa de Gran Roque con tablas y velas de marcas líderes." },
+  "losroques-s3-title": { "text": "Wingfoil Levitation" },
+  "losroques-s3-desc": { "text": "Aprende a levitar sobre el agua con remo o remolque de lancha (towing) seguido de vuelo independiente." },
+  "losroques-s4-title": { "text": "Buceo PADI 6 Días" },
+  "losroques-s4-desc": { "text": "Curso completo Open Water PADI con 4 inmersiones en mar abierto, pecios y fotos submarinas HD." },
+  "canaima-hero-img": { "img": "assets/IMG_4129.JPG" },
+  "canaima-title": { "text": "Canaima y Salto Ángel: La Tierra Sagrada" },
+  "canaima-desc": { "text": "Navega los ríos de agua roja teñida por minerales ancestrales hasta la caída de agua más alta del planeta (979 metros). Una aventura mística entre tepuyes millonarios." },
+  "canaima-a1-title": { "text": "Salto Ángel (Kerepakupai Vená)" },
+  "canaima-a1-text": { "text": "La caída de agua ininterrumpida más alta del mundo con 979 metros cayendo desde el Auyantepuy." },
+  "canaima-a2-title": { "text": "Laguna de Canaima & Saltos" },
+  "canaima-a2-text": { "text": "Navegación en curiaras tradicionales frente a los saltos Ucaima, Golondrina, Wadaima y Hacha." },
+  "canaima-a3-title": { "text": "Cultura Pemón & Tepuyes" },
+  "canaima-a3-text": { "text": "Conexión con las comunidades indígenas pemones en un paisaje místico de formaciones geológicas de más de 2.000 millones de años." },
+  "nos-title": { "text": "Confianza y Pasión por Venezuela" },
+  "nos-subtitle": { "text": "Creemos que la gente compra confianza antes que un viaje. Nuestra historia nace del amor profundo por Venezuela y el deseo de mostrar su cara más auténtica al mundo." },
+  "nos-founder-img": { "img": "assets/IMG_4162.JPG" },
+  "nos-founder-name": { "text": "Ricardo \"Ricky\"" },
+  "nos-founder-role": { "text": "Fundador & Anfitrión (Base en Austria)" },
+  "nos-bio1": { "text": "Desde nuestra base en Austria, diseñamos experiencias de turismo responsable que apoyan directamente a proveedores locales, garantizando que cada viaje sea un intercambio justo y enriquecedor." },
+  "nos-bio2": { "text": "Somos tus anfitriones en una tierra que conocemos y amamos, comprometidos con la calidad y la personalización total de tu aventura: desde la metrópolis cultural de Caracas y la selva marina de Choroní, hasta la paz caribeña de Margarita, Coche y los safaris acuáticos en Los Roques." },
+  "nos-c1-title": { "text": "Explorando Los Roques" },
+  "nos-c2-title": { "text": "Reef-Safe & Zero Plastic" },
+  "nos-cta-title": { "text": "¿Quieres Conocer a la Tripulación?" },
+  "nos-cta-desc": { "text": "Únete a nuestras próximas expediciones en grupos reducidos de 10 a 15 personas." },
+  "paq-title": { "text": "Tú Solo Preocúpate de Disfrutar" },
+  "paq-subtitle": { "text": "Nos encargamos de absolutamente toda la logística desde tu llegada al aeropuerto de Caracas hasta cada traslado diario a los cayos vírgenes." },
+  "paq-showcase-img": { "img": "assets/IMG_4161.JPG" },
+  "paq-showcase-badge": { "text": "Alojamiento B&B Incluido" },
+  "paq-showcase-title": { "text": "Posadas Seleccionadas con Encanto Caribeño" },
+  "paq-feature1-title": { "text": "Alojamiento B&B Seleccionado" },
+  "paq-feature1-text": { "text": "Habitaciones VIP con A/C, baño privado, desayunos frescos y cenas gourmet de pescado fresco frente al mar." },
+  "paq-feature2-title": { "text": "Logística Completa de Vuelos & Lanchas" },
+  "paq-feature2-text": { "text": "Recibimiento VIP en Caracas, pasajes de avión charter Caracas–Los Roques–Caracas y embarcaciones diarias equipadas." },
+  "paq-feature3-title": { "text": "Equipos Deportivos Top & Hidratación" },
+  "paq-feature3-text": { "text": "Cavas con hielo, fruta fresca y agua mineral ilimitada en cada playa. Equipos de kite/wind/wing de última generación." },
+  "paq-extras": { "text": "Sessions de SUP al atardecer, Snorkel con tortugas en arrecifes, Yoga en la playa al amanecer, opción de Skydiving (Salto en paracaídas con César) y hogueras nocturnas bajo las estrellas." },
+  "paq-cta-title": { "text": "¿Quieres Personalizar Tu Paquete?" },
+  "paq-cta-desc": { "text": "Utiliza nuestro cotizador interactivo o ponte en contacto con nuestro equipo para estructurar tu viaje ideal a medida." },
+  "con-title": { "text": "Personaliza Tu Experiencia" },
+  "con-subtitle": { "text": "Calcula un estimado de tu paquete según deporte, nivel y número de participantes." },
+  "con-whatsapp": { "text": "+58 412 000 0000" },
+  "con-email": { "text": "info@rickywaterman.com" },
+  "con-instagram": { "text": "@rickywaterman" },
+  "con-hero-title": { "text": "Únete a la Tripulación" },
+  "con-hero-desc": { "text": "Escríbenos tus fechas estimadas y deporte de interés. Diseñaremos un itinerario a tu medida en menos de 24 horas." },
+  "exp-title": { "text": "Más Que Un Viaje, Una Transformación" },
+  "exp-subtitle": { "text": "Nos apasiona el mar y queremos compartir esa devoción contigo en uno de nuestros rincones favoritos de la Tierra: el archipiélago de Los Roques." },
+  "exp-p1-title": { "text": "1. Adrenalina & Progresión" },
+  "exp-p1-text": { "text": "No importa si estás comenzando desde cero o si buscas volar en safaris de kite extremos. Nuestros entrenadores certificados garantizan que avances a tu máximo potencial de forma 100% segura." },
+  "exp-p2-title": { "text": "2. Naturaleza Caribeña Virgen" },
+  "exp-p2-text": { "text": "Los Roques es un Parque Nacional protegido de belleza hipnótica. Navegaremos a cayos desiertos, barras de arena blanca impecable y barreras de coral llenas de vida marina sin multitudes." },
+  "exp-p3-title": { "text": "3. Comunidad & Vibra Local" },
+  "exp-p3-text": { "text": "Viajamos en grupos reducidos de 10 a 15 personas. Crearás lazos de amistad genuinos con viajeros afines, disfrutando de cenas frente al mar, música y la calidez del pueblo pesquero." },
+  "exp-gal-title": { "text": "Galería de la Experiencia" },
+  "exp-gal1": { "img": "assets/IMG_4118.JPG" },
+  "exp-gal1-caption": { "text": "Aguas Turquesas Cristalinas" },
+  "exp-gal2": { "img": "assets/IMG_4128.JPG" },
+  "exp-gal2-caption": { "text": "Kite Safaris en Lancha" },
+  "exp-gal3": { "img": "assets/IMG_4160.JPG" },
+  "exp-gal3-caption": { "text": "Cayos Vírgenes Remotos" },
+  "exp-gal4": { "img": "assets/IMG_4165.JPG" },
+  "exp-gal4-caption": { "text": "Atardeceres Únicos" },
+  "exp-cta-title": { "text": "¿Listos para Vivirlo en Persona?" },
+  "exp-cta-desc": { "text": "Asegura tu lugar en los próximos grupos reducidos de la temporada 2026." },
+  "faq-title": { "text": "Preguntas Frecuentes" },
+  "faq-subtitle": { "text": "Todo lo que necesitas saber antes de empacar tu traje de baño y volar al paraíso caribeño de Los Roques." },
+  "faq-q1": { "text": "¿Cómo gestiono los vuelos hasta Los Roques?" },
+  "faq-a1": { "text": "Te asesoramos en la compra de tu vuelo internacional con destino al Aeropuerto de Caracas (CCS). Una vez allí, nosotros nos encargamos de reservar tus pasajes domésticos en avión chárter privado directo a Los Roques (40 min de vuelo) y del acompañamiento VIP en el terminal." },
+  "faq-q2": { "text": "¿Necesito visa para ingresar a Venezuela?" },
+  "faq-a2": { "text": "La mayoría de los ciudadanos europeos, británicos y latinoamericanos pueden ingresar como turistas por hasta 90 días con solo pasaporte vigente (mínimo 6 meses). Te daremos todos los requerimientos migratorios vigentes antes de tu salida." },
+  "faq-q3": { "text": "¿Qué debo empacar en mi equipaje? (Checklist)" },
+  "faq-a3": { "text": "Protector solar Reef-Safe (biodegradable), Lycras con protección UV / Neopreno ligero 1.5mm, Gafas de sol polarizadas con sujetador acuático, Sombrero o gorra protectora, Ropa ligera de algodón/lino para las noches y Repelente biodegradable de mosquitos." },
+  "faq-q4": { "text": "¿Tengo que llevar mi propio equipo deportivo?" },
+  "faq-a4": { "text": "No es necesario. Todos nuestros paquetes incluyen equipos de primera categoría (kites, tablas, arneses, velas, tanques y reguladores). Si prefieres traer tus propias cometas, te ayudaremos a coordinar el sobrepeso de equipaje en la aerolínea local." },
+  "faq-q5": { "text": "¿Cómo se compone el grupo de viaje?" },
+  "faq-a5": { "text": "Organizamos grupos pequeños de 10 a 15 personas apasionadas por el mar y la naturaleza. Pueden unirse viajeros individuales, parejas, amigos o familias. Promovemos un ambiente cálido, inclusivo y lleno de compañerismo." },
+  "faq-cta-title": { "text": "¿Tienes Alguna Otra Duda?" },
+  "faq-cta-desc": { "text": "Nuestro equipo está listo para ayudarte personalmente vía WhatsApp." }
 }
