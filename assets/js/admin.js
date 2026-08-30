@@ -843,6 +843,18 @@
                 if (!file) return;
                 var id = this.getAttribute('data-field-id');
 
+                var sizeMB = (file.size / 1024 / 1024);
+
+                if (file.type.startsWith('image/')) {
+                    if (sizeMB > 2.5) {
+                        showToast('💡 Sugerencia: Imagen de ' + sizeMB.toFixed(1) + ' MB. Se recomienda formato WebP/JPG comprimido (< 2MB) para carga ultra-rápida en celulares.', 'info');
+                    }
+                } else if (file.type.startsWith('video/')) {
+                    if (sizeMB > 15) {
+                        showToast('⚠️ Advertencia de Peso: Video de ' + sizeMB.toFixed(1) + ' MB. Se recomienda formato MP4 comprimido (< 15MB) para evitar lentitud.', 'info');
+                    }
+                }
+
                 showToast('Subiendo archivo al servidor...', 'info');
 
                 var formData = new FormData();
@@ -862,7 +874,7 @@
                             cmsData[id].img = resData.url;
                         }
                         renderEditor(PAGES[currentPage]);
-                        showToast('✅ Archivo subido al servidor (' + (file.size / 1024 / 1024).toFixed(2) + ' MB)', 'success');
+                        showToast('✅ Archivo subido al servidor (' + sizeMB.toFixed(2) + ' MB)', 'success');
                         checkServerStatus();
                     } else {
                         fallbackLocalUpload(file, id);
@@ -1069,16 +1081,22 @@
             .then(function (data) {
                 if (data && data.success && data.backups && data.backups.length > 0) {
                     var html = '';
-                    data.backups.forEach(function (b) {
+                    var list = data.backups.slice(0, 2); // Retain max 2 backups
+                    list.forEach(function (b) {
                         var dateStr = new Date(b.mtime).toLocaleString('es-ES');
                         html += '<div class="backup-item-row">';
                         html += '<div class="backup-info">';
                         html += '<span class="backup-name"><i class="fa-solid fa-file-code" style="color:var(--admin-accent);margin-right:0.4rem"></i>' + escapeHtml(b.filename) + '</span>';
                         html += '<span class="backup-meta">' + dateStr + ' • ' + b.sizeKB + ' KB</span>';
                         html += '</div>';
+                        html += '<div style="display:flex;gap:0.4rem">';
                         html += '<button class="admin-btn admin-btn-sm admin-btn-success" onclick="adminRestoreServerBackup(\'' + escapeAttr(b.filename) + '\')">';
                         html += '<i class="fa-solid fa-rotate-left"></i> Restaurar';
                         html += '</button>';
+                        html += '<button class="admin-btn admin-btn-sm admin-btn-danger" onclick="adminDeleteServerBackup(\'' + escapeAttr(b.filename) + '\')" title="Eliminar copia">';
+                        html += '<i class="fa-solid fa-trash-can"></i>';
+                        html += '</button>';
+                        html += '</div>';
                         html += '</div>';
                     });
                     container.innerHTML = html;
@@ -1090,6 +1108,35 @@
                 container.innerHTML = '<div style="text-align:center;padding:2rem;color:var(--admin-danger);">Error al cargar las copias de seguridad desde el servidor.</div>';
             });
     }
+
+    window.adminDeleteServerBackup = function (filename) {
+        requestSecurityConfirmation(
+            'Confirmar Eliminación de Copia',
+            'Estás a punto de borrar permanentemente la copia de seguridad <strong>' + escapeHtml(filename) + '</strong>.',
+            'ELIMINAR',
+            function () {
+                showToast('Eliminando copia de seguridad...', 'info');
+                fetch('/api/backups/delete', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ filename: filename })
+                })
+                .then(function (res) { return res.json(); })
+                .then(function (resData) {
+                    if (resData && resData.success) {
+                        showToast('✅ Copia de seguridad eliminada', 'success');
+                        fetchServerBackupsList();
+                        checkServerStatus();
+                    } else {
+                        showToast('Error al eliminar la copia', 'error');
+                    }
+                })
+                .catch(function () {
+                    showToast('Error de conexión con el servidor', 'error');
+                });
+            }
+        );
+    };
 
     window.adminCreateServerBackup = function () {
         showToast('Generando copia de seguridad...', 'info');

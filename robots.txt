@@ -1,0 +1,36 @@
+# ==========================================================================
+# ROBOTS.TXT — The Waterman Experience (Los Roques, Venezuela)
+# SEO, GEO & AI Search Indexing Configuration
+# ==========================================================================
+
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /api/
+Disallow: /data/
+Disallow: /uploads/
+
+# Allow major AI Bots for GEO / AI Search (ChatGPT, Claude, Gemini, Perplexity)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap Location
+Sitemap: https://rickywaterman.com/sitemap.xml

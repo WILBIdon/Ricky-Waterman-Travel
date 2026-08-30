@@ -40,14 +40,14 @@ function createBackupSnapshot(reason = 'manual') {
         const currentContent = fs.readFileSync(DB_FILE, 'utf8');
         fs.writeFileSync(backupPath, currentContent, 'utf8');
 
-        // Clean up old backups (keep latest 30)
+        // Clean up old backups (keep latest 2 maximum as requested)
         const backups = fs.readdirSync(BACKUPS_DIR)
             .filter(f => f.startsWith('backup_') && f.endsWith('.json'))
             .map(f => ({ name: f, time: fs.statSync(path.join(BACKUPS_DIR, f)).mtime.getTime() }))
             .sort((a, b) => b.time - a.time);
 
-        if (backups.length > 30) {
-            backups.slice(30).forEach(b => {
+        if (backups.length > 2) {
+            backups.slice(2).forEach(b => {
                 try { fs.unlinkSync(path.join(BACKUPS_DIR, b.name)); } catch (e) {}
             });
         }
@@ -177,6 +177,24 @@ app.post('/api/backups/restore', (req, res) => {
         res.json({ success: true, message: 'Base de datos restaurada con éxito', data: data });
     } catch (err) {
         console.error('Error restoring DB:', err);
+        res.status(500).json({ success: false, error: err.message });
+    }
+});
+
+// POST /api/backups/delete — Delete a specific backup snapshot
+app.post('/api/backups/delete', (req, res) => {
+    try {
+        const { filename } = req.body || {};
+        if (!filename) {
+            return res.status(400).json({ success: false, error: 'Nombre de archivo no especificado' });
+        }
+        const targetPath = path.join(BACKUPS_DIR, path.basename(filename));
+        if (fs.existsSync(targetPath)) {
+            fs.unlinkSync(targetPath);
+        }
+        res.json({ success: true, message: 'Copia de seguridad eliminada con éxito' });
+    } catch (err) {
+        console.error('Error deleting backup:', err);
         res.status(500).json({ success: false, error: err.message });
     }
 });
