@@ -83,15 +83,19 @@
                 <div class="admin-topbar-right">
                     <button class="admin-btn admin-btn-tour" onclick="startAdminTour()">
                         <i class="fa-solid fa-lightbulb" style="color: #FFD700"></i>
-                        <span>💡 Tour del Admin</span>
+                        <span>💡 Tour</span>
+                    </button>
+                    <button class="admin-btn" onclick="adminOpenBackupsModal()">
+                        <i class="fa-solid fa-box-archive" style="color: var(--admin-accent);"></i>
+                        <span>Copias de Seguridad</span>
                     </button>
                     <button class="admin-btn" onclick="adminResetPage()">
                         <i class="fa-solid fa-rotate-left"></i>
-                        <span>Resetear Página</span>
+                        <span>Resetear</span>
                     </button>
-                    <button class="admin-btn" onclick="adminPreview()">
+                    <button class="admin-btn admin-btn-success" onclick="adminLivePreview()">
                         <i class="fa-solid fa-eye"></i>
-                        <span>Previsualizar</span>
+                        <span>Vista Previa en Vivo</span>
                     </button>
                     <button class="admin-btn admin-btn-primary" onclick="adminSave()">
                         <i class="fa-solid fa-floppy-disk"></i>
@@ -105,6 +109,57 @@
                 <div id="editor-content">
                     <!-- Rendered dynamically by JS -->
                 </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================= LIVE PREVIEW MODAL ================= -->
+    <div id="live-preview-modal" class="admin-preview-modal">
+        <div class="admin-preview-bar">
+            <div class="preview-title">
+                <i class="fa-solid fa-desktop" style="color: var(--admin-accent);"></i>
+                <span>Vista Previa en Tiempo Real (Sin Guardar Aún)</span>
+            </div>
+            <div class="preview-device-toggle">
+                <button class="device-btn active" onclick="setPreviewDevice('desktop')" title="Escritorio"><i class="fa-solid fa-desktop"></i></button>
+                <button class="device-btn" onclick="setPreviewDevice('tablet')" title="Tablet"><i class="fa-solid fa-tablet-screen-button"></i></button>
+                <button class="device-btn" onclick="setPreviewDevice('mobile')" title="Móvil"><i class="fa-solid fa-mobile-screen"></i></button>
+            </div>
+            <div class="preview-actions">
+                <button class="admin-btn admin-btn-primary admin-btn-sm" onclick="closeLivePreview(); adminSave();">
+                    <i class="fa-solid fa-floppy-disk"></i> Confirmar y Guardar
+                </button>
+                <button class="admin-btn admin-btn-sm" onclick="closeLivePreview()">
+                    <i class="fa-solid fa-xmark"></i> Cerrar
+                </button>
+            </div>
+        </div>
+        <div class="admin-preview-iframe-wrapper desktop">
+            <iframe id="preview-iframe" src="about:blank"></iframe>
+        </div>
+    </div>
+
+
+    <!-- ================= BACKUPS MANAGEMENT MODAL ================= -->
+    <div id="backups-modal" class="admin-tour-modal">
+        <div class="admin-tour-card" style="max-width: 680px; width: 95%;">
+            <div class="tour-header">
+                <h3><i class="fa-solid fa-database" style="color:var(--admin-accent);margin-right:0.5rem"></i> Copias de Seguridad en Servidor</h3>
+                <button class="admin-btn admin-btn-sm admin-btn-primary" onclick="adminCreateServerBackup()">
+                    <i class="fa-solid fa-plus"></i> Crear Nueva Copia
+                </button>
+            </div>
+            <p class="tour-body" style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--admin-text-muted);">
+                Cada vez que guardas cambios, el servidor genera una copia de respaldo automáticamente. Puedes restaurar el sitio a cualquier estado anterior en un clic.
+            </p>
+            <div id="backups-list-container" class="backups-list-box">
+                <div style="text-align: center; padding: 2rem; color: var(--admin-text-dim);">
+                    <i class="fa-solid fa-spinner fa-spin" style="font-size: 1.5rem;"></i> Cargando copias de seguridad...
+                </div>
+            </div>
+            <div class="tour-footer" style="margin-top: 1.5rem; justify-content: flex-end;">
+                <button class="admin-btn" onclick="closeBackupsModal()">Cerrar</button>
             </div>
         </div>
     </div>

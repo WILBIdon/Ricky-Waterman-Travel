@@ -795,3 +795,153 @@ html, body {
     display: flex;
     align-items: center;
 }
+
+/* ==========================================================================
+   LIVE PREVIEW MODAL & BACKUPS MANAGER
+   ========================================================================== */
+.admin-preview-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(10px);
+    z-index: 10050;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+.admin-preview-modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.admin-preview-bar {
+    height: 54px;
+    background: var(--admin-surface);
+    border-bottom: 1px solid var(--admin-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    flex-shrink: 0;
+}
+
+.preview-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--admin-text);
+}
+
+.preview-device-toggle {
+    display: flex;
+    align-items: center;
+    background: var(--admin-bg);
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius-sm);
+    padding: 2px;
+}
+
+.device-btn {
+    background: none;
+    border: none;
+    color: var(--admin-text-muted);
+    padding: 0.4rem 0.85rem;
+    border-radius: calc(var(--admin-radius-sm) - 2px);
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+.device-btn:hover {
+    color: var(--admin-text);
+}
+.device-btn.active {
+    background: var(--admin-surface);
+    color: var(--admin-accent);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.preview-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.admin-preview-iframe-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.admin-preview-iframe-wrapper iframe {
+    background: #ffffff;
+    border: none;
+    border-radius: 0.875rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+}
+
+.admin-preview-iframe-wrapper.desktop iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.admin-preview-iframe-wrapper.tablet iframe {
+    width: 768px;
+    height: 90%;
+}
+
+.admin-preview-iframe-wrapper.mobile iframe {
+    width: 380px;
+    height: 85%;
+}
+
+/* Backups List Box */
+.backups-list-box {
+    max-height: 360px;
+    overflow-y: auto;
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius-sm);
+    background: var(--admin-bg);
+}
+
+.backup-item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--admin-border);
+    transition: background 0.2s;
+}
+.backup-item-row:last-child {
+    border-bottom: none;
+}
+.backup-item-row:hover {
+    background: var(--admin-surface);
+}
+
+.backup-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.backup-name {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--admin-text);
+    font-family: monospace;
+}
+
+.backup-meta {
+    font-size: 0.75rem;
+    color: var(--admin-text-muted);
+}
+
