@@ -73,7 +73,7 @@
                         { id: 'edit2-text', label: 'Texto Bloque 2', type: 'textarea', defaultText: 'Nos encargamos de absolutamente toda la logística para que tú solo pienses en disfrutar del agua. Desde tu llegada al aeropuerto de Caracas hasta cada transfer diario en lancha privada a los cayos más remotos.' },
                         { id: 'edit2-img', label: 'Foto Bloque 2', type: 'image', defaultImg: 'assets/IMG_4160.JPG' },
                         { id: 'edit3-title', label: 'Título Bloque 3', type: 'text', defaultText: 'Descubre Una Mejor Forma de Viajar' },
-                        { id: 'edit3-text', label: 'Texto Bloque 3', type: 'textarea', defaultText: 'Los Roques es una reserva marina protegida de valor incalculable. Operamos bajo estrictas normas de sostenibilidad: cero plásticos de un solo uso, protectores solares Reef-Safe y respeto absoluto por las comunidades pesqueras locales.' },
+                        { id: 'edit3-text', label: 'Texto Bloque 3', type: 'textarea', defaultText: 'Los Roques es una reserva marina protegida de valor incalculable. Operamos bajo strictly normas de sostenibilidad: cero plásticos de un solo uso, protectores solares Reef-Safe y respeto absoluto por las comunidades pesqueras locales.' },
                         { id: 'edit3-img', label: 'Foto Bloque 3', type: 'image', defaultImg: 'assets/IMG_4128.JPG' }
                     ]
                 },
@@ -418,6 +418,14 @@
                         { id: 'paq-feature3-text', label: 'Feature 3 - Descripción', type: 'textarea', defaultText: 'Cavas con hielo, fruta fresca y agua mineral ilimitada en cada playa. Equipos de kite/wind/wing de última generación.' },
                         { id: 'paq-extras', label: 'Actividades Extra (Lifestyle)', type: 'textarea', defaultText: 'Sessions de SUP al atardecer, Snorkel con tortugas en arrecifes, Yoga en la playa al amanecer, opción de Skydiving (Salto en paracaídas con César) y hogueras nocturnas bajo las estrellas.' }
                     ]
+                },
+                {
+                    title: 'Banner CTA Personalizar',
+                    icon: 'fa-sliders',
+                    fields: [
+                        { id: 'paq-cta-title', label: 'Título CTA', type: 'text', defaultText: '¿Quieres Personalizar Tu Paquete?' },
+                        { id: 'paq-cta-desc', label: 'Descripción CTA', type: 'textarea', defaultText: 'Utiliza nuestro cotizador interactivo o ponte en contacto con nuestro equipo para estructurar tu viaje ideal a medida.' }
+                    ]
                 }
             ]
         },
@@ -472,19 +480,17 @@
                     fields: [
                         { id: 'exp-p1-title', label: 'Pilar 1 - Título', type: 'text', defaultText: '1. Adrenalina & Progresión' },
                         { id: 'exp-p1-text', label: 'Pilar 1 - Texto', type: 'textarea', defaultText: 'No importa si estás comenzando desde cero o si buscas volar en safaris de kite extremos. Nuestros entrenadores certificados garantizan que avances a tu máximo potencial de forma 100% segura.' },
-                        { id: 'exp-p1-badge', label: 'Pilar 1 - Badge', type: 'text', defaultText: 'Equipos de última generación incluidos' },
                         { id: 'exp-p2-title', label: 'Pilar 2 - Título', type: 'text', defaultText: '2. Naturaleza Caribeña Virgen' },
                         { id: 'exp-p2-text', label: 'Pilar 2 - Texto', type: 'textarea', defaultText: 'Los Roques es un Parque Nacional protegido de belleza hipnótica. Navegaremos a cayos desiertos, barras de arena blanca impecable y barreras de coral llenas de vida marina sin multitudes.' },
-                        { id: 'exp-p2-badge', label: 'Pilar 2 - Badge', type: 'text', defaultText: 'Compromiso 100% Eco-Ocean (Zero plastic)' },
                         { id: 'exp-p3-title', label: 'Pilar 3 - Título', type: 'text', defaultText: '3. Comunidad & Vibra Local' },
-                        { id: 'exp-p3-text', label: 'Pilar 3 - Texto', type: 'textarea', defaultText: 'Viajamos en grupos reducidos de 10 a 15 personas. Crearás lazos de amistad genuinos con viajeros afines, disfrutando de cenas frente al mar, música y la calidez del pueblo pesquero.' },
-                        { id: 'exp-p3-badge', label: 'Pilar 3 - Badge', type: 'text', defaultText: 'Guías locales y expertos náuticos' }
+                        { id: 'exp-p3-text', label: 'Pilar 3 - Texto', type: 'textarea', defaultText: 'Viajamos en grupos reducidos de 10 a 15 personas. Crearás lazos de amistad genuinos con viajeros afines, disfrutando de cenas frente al mar, música y la calidez del pueblo pesquero.' }
                     ]
                 },
                 {
                     title: 'Galería de Fotos',
                     icon: 'fa-images',
                     fields: [
+                        { id: 'exp-gal-title', label: 'Título Sección Galería', type: 'text', defaultText: 'Galería de la Experiencia' },
                         { id: 'exp-gal1', label: 'Foto Galería 1', type: 'image', defaultImg: 'assets/IMG_4118.JPG' },
                         { id: 'exp-gal1-caption', label: 'Caption 1', type: 'text', defaultText: 'Aguas Turquesas Cristalinas' },
                         { id: 'exp-gal2', label: 'Foto Galería 2', type: 'image', defaultImg: 'assets/IMG_4128.JPG' },
@@ -493,6 +499,14 @@
                         { id: 'exp-gal3-caption', label: 'Caption 3', type: 'text', defaultText: 'Cayos Vírgenes Remotos' },
                         { id: 'exp-gal4', label: 'Foto Galería 4', type: 'image', defaultImg: 'assets/IMG_4165.JPG' },
                         { id: 'exp-gal4-caption', label: 'Caption 4', type: 'text', defaultText: 'Atardeceres Únicos' }
+                    ]
+                },
+                {
+                    title: 'Banner CTA Experiencia',
+                    icon: 'fa-bullhorn',
+                    fields: [
+                        { id: 'exp-cta-title', label: 'Título CTA', type: 'text', defaultText: '¿Listos para Vivirlo en Persona?' },
+                        { id: 'exp-cta-desc', label: 'Descripción CTA', type: 'textarea', defaultText: 'Asegura tu lugar en los próximos grupos reducidos de la temporada 2026.' }
                     ]
                 }
             ]
@@ -524,6 +538,14 @@
                         { id: 'faq-a4', label: 'Respuesta 4', type: 'textarea', defaultText: 'No es necesario. Todos nuestros paquetes incluyen equipos de primera categoría (kites, tablas, arneses, velas, tanques y reguladores). Si prefieres traer tus propias cometas, te ayudaremos a coordinar el sobrepeso de equipaje en la aerolínea local.' },
                         { id: 'faq-q5', label: 'Pregunta 5', type: 'text', defaultText: '¿Cómo se compone el grupo de viaje?' },
                         { id: 'faq-a5', label: 'Respuesta 5', type: 'textarea', defaultText: 'Organizamos grupos pequeños de 10 a 15 personas apasionadas por el mar y la naturaleza. Pueden unirse viajeros individuales, parejas, amigos o familias. Promovemos un ambiente cálido, inclusivo y lleno de compañerismo.' }
+                    ]
+                },
+                {
+                    title: 'Banner CTA FAQ',
+                    icon: 'fa-comments',
+                    fields: [
+                        { id: 'faq-cta-title', label: 'Título CTA', type: 'text', defaultText: '¿Tienes Alguna Otra Duda?' },
+                        { id: 'faq-cta-desc', label: 'Descripción CTA', type: 'textarea', defaultText: 'Nuestro equipo está listo para ayudarte personalmente vía WhatsApp.' }
                     ]
                 }
             ]
