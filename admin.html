@@ -190,6 +190,35 @@
     </div>
 
 
+    <!-- ================= DOUBLE SECURITY CONFIRMATION MODAL ================= -->
+    <div id="confirm-action-modal" class="admin-tour-modal">
+        <div class="admin-tour-card" style="max-width: 520px; width: 95%;">
+            <div class="tour-header" style="border-bottom: 1px solid rgba(224,90,71,0.3);">
+                <h3 id="confirm-modal-title" style="color: var(--admin-danger);">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Confirmación de Seguridad
+                </h3>
+            </div>
+            <div style="padding: 1.25rem 0;">
+                <p id="confirm-modal-msg" style="font-size: 0.95rem; color: var(--admin-text); line-height: 1.6; margin-bottom: 1.25rem;">
+                    Esta acción modificará la información. Escribe la palabra de confirmación para habilitar el botón.
+                </p>
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid var(--admin-border); border-radius: 0.75rem; padding: 1rem; margin-bottom: 1rem;">
+                    <label style="display: block; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--admin-text-dim); margin-bottom: 0.5rem;">
+                        Escribe <strong id="confirm-keyword-badge" style="color: var(--admin-accent); font-family: monospace; font-size: 1rem;">CONFIRMAR</strong> para continuar:
+                    </label>
+                    <input type="text" id="confirm-user-input" class="admin-input" placeholder="Escribe aquí la palabra requerida..." autocomplete="off" style="font-size: 1.05rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">
+                </div>
+            </div>
+            <div class="tour-footer">
+                <button class="admin-btn" onclick="closeConfirmModal()">Cancelar</button>
+                <button id="confirm-action-btn" class="admin-btn admin-btn-danger" disabled style="opacity: 0.4; cursor: not-allowed;">
+                    <i class="fa-solid fa-check"></i> Proceder y Ejecutar
+                </button>
+            </div>
+        </div>
+    </div>
+
+
     <!-- ================= TOAST CONTAINER ================= -->
     <div id="toast-container" class="admin-toast-container"></div>
 

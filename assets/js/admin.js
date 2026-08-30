@@ -813,6 +813,27 @@
                 var id = this.getAttribute('data-field-id');
                 if (!cmsData[id]) cmsData[id] = {};
                 cmsData[id].text = this.value;
+
+                // Live real-time update on preview iframe if modal is currently open
+                var modal = document.getElementById('live-preview-modal');
+                if (modal && modal.classList.contains('open')) {
+                    var iframe = document.getElementById('preview-iframe');
+                    if (iframe) {
+                        try {
+                            var doc = iframe.contentDocument || iframe.contentWindow.document;
+                            if (doc) {
+                                var targetEl = doc.querySelector('[data-cms-id="' + id + '"]');
+                                if (targetEl) {
+                                    if (targetEl.tagName === 'INPUT' || targetEl.tagName === 'TEXTAREA') {
+                                        targetEl.value = this.value;
+                                    } else {
+                                        targetEl.innerHTML = this.value;
+                                    }
+                                }
+                            }
+                        } catch (e) {}
+                    }
+                }
             });
         });
 
@@ -913,12 +934,11 @@
         var targetPageFile = PAGES[currentPage].pageFile || 'index.html';
         showToast('Cargando vista previa en tiempo real...', 'info');
 
-        iframe.onload = function () {
+        function applyDraftsToIframe() {
             try {
                 var doc = iframe.contentDocument || iframe.contentWindow.document;
                 if (!doc) return;
 
-                // Inject current in-memory draft cmsData into iframe DOM
                 Object.keys(cmsData).forEach(function (id) {
                     var entry = cmsData[id];
                     var el = doc.querySelector('[data-cms-id="' + id + '"]');
@@ -941,6 +961,12 @@
             } catch (err) {
                 console.warn('Error patching preview iframe:', err);
             }
+        }
+
+        iframe.onload = function () {
+            applyDraftsToIframe();
+            setTimeout(applyDraftsToIframe, 150);
+            setTimeout(applyDraftsToIframe, 400);
         };
 
         iframe.src = targetPageFile + '?preview=' + Date.now();
@@ -964,6 +990,60 @@
         if (event && event.currentTarget) {
             event.currentTarget.classList.add('active');
         }
+    };
+
+    // ===================== SECURITY CONFIRMATION MODAL =====================
+    var currentConfirmCallback = null;
+
+    function requestSecurityConfirmation(title, message, keyword, callback) {
+        var modal = document.getElementById('confirm-action-modal');
+        var titleEl = document.getElementById('confirm-modal-title');
+        var msgEl = document.getElementById('confirm-modal-msg');
+        var badgeEl = document.getElementById('confirm-keyword-badge');
+        var inputEl = document.getElementById('confirm-user-input');
+        var actionBtn = document.getElementById('confirm-action-btn');
+
+        if (!modal || !inputEl || !actionBtn) return;
+
+        currentConfirmCallback = callback;
+        titleEl.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> ' + escapeHtml(title);
+        msgEl.innerHTML = message;
+        badgeEl.textContent = keyword.toUpperCase();
+
+        inputEl.value = '';
+        actionBtn.disabled = true;
+        actionBtn.style.opacity = '0.4';
+        actionBtn.style.cursor = 'not-allowed';
+
+        inputEl.oninput = function () {
+            var val = inputEl.value.trim().toUpperCase();
+            if (val === keyword.toUpperCase()) {
+                actionBtn.disabled = false;
+                actionBtn.style.opacity = '1';
+                actionBtn.style.cursor = 'pointer';
+            } else {
+                actionBtn.disabled = true;
+                actionBtn.style.opacity = '0.4';
+                actionBtn.style.cursor = 'not-allowed';
+            }
+        };
+
+        actionBtn.onclick = function () {
+            if (!actionBtn.disabled && typeof currentConfirmCallback === 'function') {
+                var cb = currentConfirmCallback;
+                closeConfirmModal();
+                cb();
+            }
+        };
+
+        modal.classList.add('open');
+        setTimeout(function () { inputEl.focus(); }, 100);
+    }
+
+    window.closeConfirmModal = function () {
+        var modal = document.getElementById('confirm-action-modal');
+        if (modal) modal.classList.remove('open');
+        currentConfirmCallback = null;
     };
 
     // ===================== SERVER BACKUPS ENGINE =====================
@@ -1030,31 +1110,36 @@
     };
 
     window.adminRestoreServerBackup = function (filename) {
-        if (!confirm('¿Seguro que quieres restaurar la copia "' + filename + '"? El estado actual cambiará a esa versión.')) return;
-
-        showToast('Restaurando copia de seguridad...', 'info');
-        fetch('/api/backups/restore', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ filename: filename })
-        })
-        .then(function (res) { return res.json(); })
-        .then(function (resData) {
-            if (resData && resData.success && resData.data) {
-                cmsData = resData.data;
-                populateDefaults();
-                localStorage.setItem(STORAGE_KEY, JSON.stringify(cmsData));
-                renderEditor(PAGES[currentPage]);
-                closeBackupsModal();
-                showToast('✅ Sitio restaurado con éxito a ' + filename, 'success');
-                checkServerStatus();
-            } else {
-                showToast('Error al restaurar copia de seguridad', 'error');
+        requestSecurityConfirmation(
+            'Confirmar Restauración de Copia',
+            'Estás a punto de restaurar la copia de seguridad <strong>' + escapeHtml(filename) + '</strong>. Los contenidos actuales cambiarán a ese estado previo.',
+            'RESTAURAR',
+            function () {
+                showToast('Restaurando copia de seguridad...', 'info');
+                fetch('/api/backups/restore', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ filename: filename })
+                })
+                .then(function (res) { return res.json(); })
+                .then(function (resData) {
+                    if (resData && resData.success && resData.data) {
+                        cmsData = resData.data;
+                        populateDefaults();
+                        localStorage.setItem(STORAGE_KEY, JSON.stringify(cmsData));
+                        renderEditor(PAGES[currentPage]);
+                        closeBackupsModal();
+                        showToast('✅ Sitio restaurado con éxito a ' + filename, 'success');
+                        checkServerStatus();
+                    } else {
+                        showToast('Error al restaurar copia de seguridad', 'error');
+                    }
+                })
+                .catch(function () {
+                    showToast('Error de conexión al restaurar', 'error');
+                });
             }
-        })
-        .catch(function () {
-            showToast('Error de conexión al restaurar', 'error');
-        });
+        );
     };
 
     // ===================== GLOBAL ACTIONS =====================
@@ -1107,31 +1192,43 @@
     };
 
     window.adminResetPage = function () {
-        if (!confirm('¿Seguro que quieres borrar todos los cambios de "' + PAGES[currentPage].label + '"? Esta acción no se puede deshacer.')) return;
-        var page = PAGES[currentPage];
-        page.sections.forEach(function (section) {
-            section.fields.forEach(function (field) {
-                if (cmsData[field.id]) {
-                    delete cmsData[field.id].text;
-                    delete cmsData[field.id].img;
-                    delete cmsData[field.id].video;
-                }
-            });
-        });
-        populateDefaults();
-        saveData();
-        renderEditor(page);
-        showToast('Cambios de "' + page.label + '" restaurados a los valores por defecto', 'info');
+        requestSecurityConfirmation(
+            'Confirmar Restablecimiento de Página',
+            'Estás a punto de borrar todos los cambios guardados en la página <strong>' + escapeHtml(PAGES[currentPage].label) + '</strong> y volver a los valores originales.',
+            'BORRAR',
+            function () {
+                var page = PAGES[currentPage];
+                page.sections.forEach(function (section) {
+                    section.fields.forEach(function (field) {
+                        if (cmsData[field.id]) {
+                            delete cmsData[field.id].text;
+                            delete cmsData[field.id].img;
+                            delete cmsData[field.id].video;
+                        }
+                    });
+                });
+                populateDefaults();
+                saveData();
+                renderEditor(page);
+                showToast('Cambios de "' + page.label + '" restaurados a los valores por defecto', 'info');
+            }
+        );
     };
 
     window.adminResetAll = function () {
-        if (!confirm('¿Seguro que quieres borrar TODOS los cambios del CMS? Se restaurarán los contenidos originales.')) return;
-        cmsData = {};
-        localStorage.removeItem(STORAGE_KEY);
-        populateDefaults();
-        saveData();
-        renderEditor(PAGES[currentPage]);
-        showToast('Todos los contenidos han sido restaurados a los valores originales', 'info');
+        requestSecurityConfirmation(
+            'Confirmar Borrado Total del CMS',
+            '🚨 <strong>¡ATENCIÓN!</strong> Vas a borrar TODOS los cambios del sitio web completo y restaurar los contenidos iniciales.',
+            'BORRAR TODO',
+            function () {
+                cmsData = {};
+                localStorage.removeItem(STORAGE_KEY);
+                populateDefaults();
+                saveData();
+                renderEditor(PAGES[currentPage]);
+                showToast('Todos los contenidos han sido restaurados a los valores originales', 'info');
+            }
+        );
     };
 
     window.adminLogout = function () {
