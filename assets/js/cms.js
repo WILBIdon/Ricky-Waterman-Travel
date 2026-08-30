@@ -21,23 +21,23 @@
     }
 
     /**
-     * Apply stored content to the current page (server API first, localStorage fallback)
+     * Apply stored content to the current page (Single source of truth from Server API)
      */
     function applyContent() {
-        // First try fetching from Server API /api/cms
-        fetch('/api/cms')
+        // Fetch fresh database from Server API with no-store cache control
+        fetch('/api/cms?t=' + Date.now(), { cache: 'no-store' })
             .then(function (res) { return res.json(); })
             .then(function (resData) {
-                if (resData && resData.success && resData.data) {
-                    // Update localStorage cache with server database
+                if (resData && resData.success && resData.data && Object.keys(resData.data).length > 0) {
+                    // Overwrite local storage cache with live server database
                     localStorage.setItem(STORAGE_KEY, JSON.stringify(resData.data));
                     patchElements(resData.data);
                 } else {
                     patchElements(getCMSData());
                 }
             })
-            .catch(function (err) {
-                // Offline fallback
+            .catch(function () {
+                // Offline fallback only if server unavailable
                 patchElements(getCMSData());
             });
     }

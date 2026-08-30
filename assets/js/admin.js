@@ -590,7 +590,7 @@
 
     // ===================== STORAGE & SERVER API =====================
     function loadData() {
-        fetch('/api/cms')
+        fetch('/api/cms?t=' + Date.now(), { cache: 'no-store' })
             .then(function (res) { return res.json(); })
             .then(function (resData) {
                 if (resData && resData.success && resData.data) {
