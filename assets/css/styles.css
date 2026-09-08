@@ -117,64 +117,10 @@ img {
     position: relative;
 }
 
-/* Dripping Water Droplets Container */
-.drip-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 0;
-    pointer-events: none;
-    z-index: 99;
-}
-
+/* Dripping Water Droplets Container — Disabled per user request */
+.drip-container,
 .drip-drop {
-    position: absolute;
-    top: 0;
-    width: 9px;
-    height: 14px;
-    background: radial-gradient(circle at 35% 30%, #7BF4FF 0%, #10B3BF 60%, #096A71 100%);
-    border-radius: 50% 50% 50% 50% / 25% 25% 75% 75%;
-    box-shadow: 0 0 12px rgba(16, 179, 191, 0.9), inset 0 1px 2px #ffffff;
-    opacity: 0;
-    transform-origin: top center;
-    animation: dripFallStretch 4.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-.drip-drop:nth-child(1) { left: 12%; animation-delay: 0s; }
-.drip-drop:nth-child(2) { left: 28%; animation-delay: 1.2s; width: 7px; height: 11px; }
-.drip-drop:nth-child(3) { left: 46%; animation-delay: 2.5s; width: 10px; height: 16px; }
-.drip-drop:nth-child(4) { left: 68%; animation-delay: 0.7s; width: 8px; height: 12px; }
-.drip-drop:nth-child(5) { left: 84%; animation-delay: 3.2s; width: 9px; height: 15px; }
-
-@keyframes dripFallStretch {
-    0% {
-        transform: translateY(0) scale(0.6, 0.6);
-        opacity: 0;
-    }
-    15% {
-        transform: translateY(1px) scale(1, 1);
-        opacity: 0.95;
-    }
-    40% {
-        /* Stretch downward like liquid chorreando */
-        transform: translateY(10px) scale(0.55, 2.6);
-        opacity: 1;
-    }
-    60% {
-        /* Detach and fall faster down */
-        transform: translateY(32px) scale(0.4, 2.2);
-        opacity: 0.85;
-    }
-    80% {
-        /* Fall away into space */
-        transform: translateY(58px) scale(0.25, 1.2);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0) scale(0.6, 0.6);
-        opacity: 0;
-    }
+    display: none !important;
 }
 
 /* Scrolled Nav Compact State */
