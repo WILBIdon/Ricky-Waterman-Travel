@@ -1,5 +1,5 @@
 {
-  "hero-title": { "text": "Tu Aventura<br>Te Espera" },
+  "hero-title": { "text": "Tu Aventura Te Espera" },
   "hero-subtitle": { "text": "Ciudad, naturaleza y Caribe en una experiencia exclusiva diseñada a tu medida." },
   "hero-video": { "video": "assets/hero-video.mp4" },
   "hero-fallback": { "img": "assets/IMG_4118.JPG" },

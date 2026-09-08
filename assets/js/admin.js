@@ -19,7 +19,7 @@
                     title: 'Hero Principal',
                     icon: 'fa-film',
                     fields: [
-                        { id: 'hero-title', label: 'Título Hero', type: 'textarea', defaultText: 'Tu Aventura<br>Te Espera' },
+                        { id: 'hero-title', label: 'Título Hero', type: 'textarea', defaultText: 'Tu Aventura Te Espera' },
                         { id: 'hero-subtitle', label: 'Subtítulo Hero', type: 'textarea', defaultText: 'Ciudad, naturaleza y Caribe en una experiencia exclusiva diseñada a tu medida.' },
                         { id: 'hero-video', label: 'Video de Fondo (Hero)', type: 'video', defaultVideo: 'assets/hero-video.mp4' },
                         { id: 'hero-fallback', label: 'Imagen de Respaldo (Hero)', type: 'image', defaultImg: 'assets/IMG_4118.JPG' }
