@@ -78,7 +78,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     
     <!-- Custom Adventure.travel Style System -->
-    <link rel="stylesheet" href="assets/css/styles.css?v=1.1.0">
+    <link rel="stylesheet" href="assets/css/styles.css?v=1.2.0">
 </head>
 <body class="font-sans antialiased">
 
@@ -175,30 +175,29 @@
             <!-- Fallback bg image if video fails -->
             <img src="assets/IMG_4118.JPG" alt="Los Roques landscape" class="hero-bg" style="display:none" onerror="this.style.display='none'" id="hero-fallback-img" data-cms-id="hero-fallback">
 
-            <!-- Compact Floating Bottom Glass Bar (Una Sola Línea / Barra Inferior) -->
-            <div class="hero-glass-box">
-                <div class="hero-text-col">
+            <!-- Floating Hero Bottom Layout (Coexisting Logo + Refined Compact Glass Box) -->
+            <div class="hero-bottom-overlay">
+                <!-- Floating Standalone Logo (Left) -->
+                <div class="hero-floating-logo-standalone">
+                    <img src="assets/logo-full-services.png" alt="Ricky Waterman Full Services Logo">
+                </div>
+
+                <!-- Refined Compact Glass Box (Right) -->
+                <div class="hero-glass-box">
                     <div class="eyebrow">Tres Caras de Venezuela</div>
                     <h1 data-cms-id="hero-title">Tu Aventura Te Espera</h1>
                     <p class="hero-subtitle" data-cms-id="hero-subtitle">
                         Ciudad, naturaleza y Caribe en una experiencia exclusiva a tu medida.
                     </p>
+                    <div class="hero-cta-row">
+                        <a href="#destinos" class="btn-coral btn-ripple" onclick="ripple(event)">
+                            <i class="fa-solid fa-compass"></i> Explorar Destinos
+                        </a>
+                        <a href="contacto.html" class="btn-dark btn-ripple" onclick="ripple(event)">
+                            <i class="fa-solid fa-calendar-check"></i> Planifica tu Viaje
+                        </a>
+                    </div>
                 </div>
-
-                <!-- CTA Buttons -->
-                <div class="hero-cta-row">
-                    <a href="#destinos" class="btn-coral btn-ripple" onclick="ripple(event)">
-                        <i class="fa-solid fa-compass"></i> Explorar Destinos
-                    </a>
-                    <a href="contacto.html" class="btn-dark btn-ripple" onclick="ripple(event)">
-                        <i class="fa-solid fa-calendar-check"></i> Planifica tu Viaje
-                    </a>
-                </div>
-            </div>
-
-            <!-- Floating Hero Bottom-Left Standalone Logo (Solo Logo Vector/Texto, Grande) -->
-            <div class="hero-floating-logo-standalone">
-                <img src="assets/logo-full-services.png" alt="Ricky Waterman Full Services Logo">
             </div>
 
             <!-- SVG Wave Layers Animation -->
