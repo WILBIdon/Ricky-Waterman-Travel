@@ -84,7 +84,8 @@ app.use('/uploads', express.static(UPLOADS_DIR, {
 
 // Serve main static site files
 app.use(express.static(__dirname, {
-    maxAge: '1h'
+    maxAge: '0',
+    etag: false
 }));
 
 // ================= API ENDPOINTS =================

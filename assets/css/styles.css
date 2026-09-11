@@ -40,7 +40,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 h1, h2, h3, .display { font-family: var(--font-display); }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; display: block; image-orientation: from-image; }
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 
@@ -196,10 +196,16 @@ ul { list-style: none; }
   position: absolute;
   inset: 0;
   z-index: 0;
+  overflow: hidden;
 }
 .hero-video-bg video {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .hero-video-bg::after {
   content: "";
