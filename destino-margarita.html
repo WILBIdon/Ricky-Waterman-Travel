@@ -1,157 +1,172 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Margarita y Coche: El Encanto de las Islas | The Waterman Experience</title>
-    <meta name="description" content="Descubre Margarita y Coche: Windsurf en El Yaque, Wingfoil en Coche y buceo en Los Frailes.">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome 6 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    
-    <!-- Custom Adventure.travel Style System -->
-    <link rel="stylesheet" href="assets/css/styles.css?v=1.0.8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Isla de Margarita — La Perla del Caribe | Waterman Experience Tour</title>
+  <meta name="description" content="Descubre Margarita: windsurf, playas interminables, vida nocturna y la energía inigualable de la Perla del Caribe.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body class="font-sans antialiased">
+<body>
 
-    <!-- ================= 1. FLOATING NAV (SEMI-ROUNDED 16PX & BOLD LOGO) ================= -->
-    <header class="nav-floating">
-        <nav class="nav-inner">
+  <!-- NAV -->
+  <header class="nav-floating" id="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.png" alt="Waterman Experience Tour">
+        <div class="nav-logo-text">WATERMAN <span>TOUR</span></div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#destinos">Destinos</a>
+        <a href="index.html#itinerario">Itinerario</a>
+        <a href="index.html#deportes">Deportes</a>
+        <a href="index.html#tripulacion">Tripulación</a>
+        <a href="https://wa.me/584120000000?text=Hola!%20Me%20interesa%20el%20Waterman%20Experience%20Tour" target="_blank" class="nav-cta">Reservar</a>
+      </div>
+      <button class="nav-mobile-btn" onclick="toggleMobileMenu()" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
 
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu-overlay" onclick="closeMobileMenu(event)">
+    <div class="mobile-menu-panel" onclick="event.stopPropagation()">
+      <button class="mobile-menu-close" onclick="toggleMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="mobile-menu-links">
+        <a href="index.html">Inicio</a>
+        <a href="destino-choroni.html">Choroní</a>
+        <a href="destino-margarita.html">Margarita</a>
+        <a href="destino-coche.html">Isla de Coche</a>
+      </div>
+      <a href="https://wa.me/584120000000" target="_blank" class="btn-coral" style="text-align:center;margin-top:12px;">Reservar Ahora</a>
+    </div>
+  </div>
 
-            <a href="index.html" class="nav-logo" aria-label="Ricky Waterman Experience">
-                <img src="assets/logo-full-services.png" alt="Ricky Waterman Logo">
-                <div class="nav-logo-text">WATERMAN <span>EXPERIENCE</span></div>
-            </a>
+  <main>
+    <!-- HERO -->
+    <section class="dest-hero" style="background:linear-gradient(180deg,#123a35,#3a2f1c);">
+      <div class="dest-hero-bg">
+        <img src="assets/IMG_4160.JPG" alt="Isla de Margarita — La Perla del Caribe">
+      </div>
+      <div class="dest-hero-content">
+        <span class="dest-kicker" style="color:var(--mango);">Días 6–11 del tour</span>
+        <h1>Isla de Margarita</h1>
+        <p>La Perla del Caribe vibra de día y de noche. Windsurf, playas interminables, mercados y una energía que se contagia.</p>
+      </div>
+    </section>
 
-            <div class="nav-links">
-                <a href="index.html">Inicio</a>
-                <a href="deportes.html">Deportes</a>
-                <a href="paquetes.html">Paquetes</a>
-                <a href="nosotros.html">Nosotros</a>
-                <a href="admin.html" style="color:var(--color-turquoise); font-weight:700;"><i class="fa-solid fa-lock"></i> Admin</a>
-            </div>
-
-            <button class="nav-mobile-btn" onclick="toggleMobileMenu()" aria-label="Abrir menú">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </nav>
-    </header>
-
-    <!-- MOBILE MENU OVERLAY -->
-    <div id="mobile-menu" class="mobile-menu-overlay" onclick="closeMobileMenu(event)">
-        <div class="mobile-menu-panel" onclick="event.stopPropagation()">
-            <button class="mobile-menu-close" onclick="toggleMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
-            <div class="mobile-menu-links">
-                <a href="index.html">Inicio</a>
-                <a href="destino-caracas.html">Caracas</a>
-                <a href="destino-choroni.html">Choroní</a>
-                <a href="destino-margarita.html">Margarita & Coche</a>
-                <a href="deportes.html">Los Roques & Deportes</a>
-                <a href="admin.html" style="color:var(--color-turquoise);">🔒 Admin</a>
-            </div>
+    <!-- INFO GRID -->
+    <section class="dest-info" style="background:linear-gradient(180deg,#2a2008,#081815);">
+      <div style="max-width:640px;margin:0 auto 60px;text-align:center;">
+        <span class="dest-kicker" style="color:var(--mango);">Qué te espera</span>
+        <h2 style="font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:800;color:var(--paper);margin-top:14px;">6 días de pura energía caribeña</h2>
+      </div>
+      <div class="dest-info-grid">
+        <div class="info-card reveal">
+          <div class="info-icon">🏄</div>
+          <h3>Windsurf & Kite</h3>
+          <p>Playa El Yaque, uno de los mejores spots del mundo para deportes de viento, con instructores certificados.</p>
         </div>
+        <div class="info-card reveal">
+          <div class="info-icon">🌅</div>
+          <h3>Atardeceres Épicos</h3>
+          <p>Cielos que explotan en color cada tarde. Cada atardecer en Margarita es una experiencia irrepetible.</p>
+        </div>
+        <div class="info-card reveal">
+          <div class="info-icon">🛍️</div>
+          <h3>Compras & Mercados</h3>
+          <p>Zona libre de impuestos con mercados artesanales, ropa, joyería y souvenirs únicos de la isla.</p>
+        </div>
+        <div class="info-card reveal">
+          <div class="info-icon">🎶</div>
+          <h3>Vida Nocturna</h3>
+          <p>Bares en la playa, música en vivo y la calidez de la gente que hace cada noche especial.</p>
+        </div>
+        <div class="info-card reveal">
+          <div class="info-icon">🏖️</div>
+          <h3>Playas Infinitas</h3>
+          <p>Desde Playa Parguito hasta Playa Caribe: arena blanca, olas perfectas y aguas turquesas.</p>
+        </div>
+        <div class="info-card reveal">
+          <div class="info-icon">🦞</div>
+          <h3>Gastronomía de Mar</h3>
+          <p>Langosta, pescado fresco, empanadas de cazón y los mejores jugos de fruta tropical que hayas probado.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <div class="dest-gallery" style="padding-top:40px;padding-bottom:90px;">
+      <img src="assets/IMG_4160.JPG" alt="Margarita playa" class="reveal">
+      <img src="assets/IMG_4161.JPG" alt="Margarita windsurf" class="reveal">
+      <img src="assets/IMG_4163.JPG" alt="Margarita atardecer" class="reveal">
     </div>
 
-    <main style="padding-top: 6.5rem;">
-        
-        <!-- HERO DESTINO -->
-        <section class="max-w-editorial" style="margin-bottom: 3rem;">
-            <div style="position: relative; border-radius: 1.5rem; overflow: hidden; min-height: 420px; display: flex; align-items: flex-end; padding: clamp(2rem, 5vw, 3.5rem); box-shadow: 0 15px 40px rgba(0,0,0,0.3);">
-                <img src="assets/IMG_4118.JPG" alt="Margarita y Coche" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" data-cms-id="margarita-hero-img">
-                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(3,20,26,0.92) 0%, rgba(3,20,26,0.3) 60%, transparent 100%);"></div>
-                <div style="position: relative; z-index: 2; color: #fff; max-width: 750px;">
-                    <span class="eyebrow" style="color: var(--color-turquoise);">Destino #3 | Perla del Caribe &amp; Islas</span>
-                    <h1 style="font-family: var(--font-serif); font-size: clamp(2.2rem, 5vw, 3.8rem); margin-top: 0.5rem; margin-bottom: 1rem; line-height: 1.1;" data-cms-id="margarita-title">
-                        Margarita y Coche: El Encanto de las Islas
-                    </h1>
-                    <p style="font-size: 1.15rem; color: #E0F7FA; line-height: 1.6;" data-cms-id="margarita-desc">
-                        Desde la vibrante Isla de Margarita hasta la paz absoluta de las arenas blancas de la Isla de Coche. Disfruta de atardeceres inolvidables, deportes acuáticos de clase mundial y la calidez de nuestra gente.
-                    </p>
-                </div>
-            </div>
-        </section>
+    <!-- CTA -->
+    <section class="cta">
+      <div class="cta-inner">
+        <span class="dest-kicker">Reserva tu lugar</span>
+        <h2>Margarita te llama.<br>¿Respondes?</h2>
+        <div class="price">€3.499</div>
+        <div class="price-note">Tour completo de 15 días · vuelos no incluidos</div>
+        <a href="https://wa.me/584120000000?text=Hola!%20Quiero%20reservar%20mi%20lugar%20en%20el%20tour%20(me%20interesa%20Margarita)" target="_blank" class="cta-btn">Reserva tu aventura</a>
+      </div>
+    </section>
+  </main>
 
-        <!-- ATRACTIVOS DETALLADOS DE MARGARITA & COCHE -->
-        <section class="max-w-editorial" style="margin-bottom: 4rem;">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
-                <div class="text-gradient-card">
-                    <i class="fa-solid fa-wind" style="font-size: 2rem; color: var(--color-turquoise); margin-bottom: 1rem;"></i>
-                    <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-text-dark); margin-bottom: 0.5rem;" data-cms-id="margarita-a1-title">El Yaque (Meca Mundial del Viento)</h3>
-                    <p style="color: var(--color-text-body); font-size: 0.95rem; line-height: 1.6;" data-cms-id="margarita-a1-text">Reconocida mundialmente por sus condiciones ideales de viento alisio, agua tibia y poca profundidad para el Windsurf y Kitesurf.</p>
-                </div>
-                <div class="text-gradient-card">
-                    <i class="fa-solid fa-umbrella-beach" style="font-size: 2rem; color: var(--color-turquoise); margin-bottom: 1rem;"></i>
-                    <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-text-dark); margin-bottom: 0.5rem;" data-cms-id="margarita-a2-title">Isla de Coche (Arenas Blancas &amp; Paz)</h3>
-                    <p style="color: var(--color-text-body); font-size: 0.95rem; line-height: 1.6;" data-cms-id="margarita-a2-text">A 20 minutos en lancha rápida. Un oasis de paz absoluta con mar espejo ideal para la práctica de Wingfoil y relax total.</p>
-                </div>
-                <div class="text-gradient-card">
-                    <i class="fa-solid fa-water" style="font-size: 2rem; color: var(--color-turquoise); margin-bottom: 1rem;"></i>
-                    <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-text-dark); margin-bottom: 0.5rem;" data-cms-id="margarita-a3-title">Archipiélago Los Frailes</h3>
-                    <p style="color: var(--color-text-body); font-size: 0.95rem; line-height: 1.6;" data-cms-id="margarita-a3-text">Grupo de islotes rocosos rodeados de agua transparente habitados por mantarrayas, tortugas y cardúmenes de peces tropicales.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN DE SELECCIÓN DE DEPORTE EN MARGARITA & COCHE -->
-        <section class="max-w-editorial" style="margin-bottom: 5rem;">
-            <div style="background: #ffffff; border: 1px solid var(--color-border); border-radius: 1.5rem; padding: clamp(1.5rem, 4vw, 3rem); box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
-                <div style="text-align: center; margin-bottom: 2.5rem;">
-                    <span style="background: rgba(16,179,191,0.1); color: var(--color-turquoise); font-size: 0.8rem; font-weight: 800; padding: 0.35rem 0.85rem; border-radius: 9999px; text-transform: uppercase;">¡Ya Escogiste Margarita &amp; Coche!</span>
-                    <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--color-text-dark); margin-top: 0.5rem;">
-                        Ahora Selecciona Tu Deporte o Programa a Realizar en las Islas
-                    </h2>
-                </div>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-                    
-                    <!-- Deporte 1 -->
-                    <div style="border: 1px solid var(--color-border); border-radius: 1rem; padding: 1.5rem; background: #fafafa;">
-                        <span style="color: var(--color-coral); font-weight: 800; font-size: 0.75rem;">DEPORTE #1</span>
-                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-text-dark); margin: 0.5rem 0;">Windsurf &amp; Kitesurf en El Yaque</h3>
-                        <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5; margin-bottom: 1.25rem;">Clases y coaching pro en la playa de viento más famosa del Caribe con equipos de última generación.</p>
-                        <a href="contacto.html" class="btn-coral btn-sm btn-block" style="text-align: center;">Reservar Este Deporte</a>
-                    </div>
-
-                    <!-- Deporte 2 -->
-                    <div style="border: 1px solid var(--color-border); border-radius: 1rem; padding: 1.5rem; background: #fafafa;">
-                        <span style="color: var(--color-coral); font-weight: 800; font-size: 0.75rem;">DEPORTE #2</span>
-                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-text-dark); margin: 0.5rem 0;">Wingfoil &amp; Catamarán en Isla de Coche</h3>
-                        <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5; margin-bottom: 1.25rem;">Navegación en agua plana de espejo perfecta para levitar con Wingfoil y día de playa VIP en Coche.</p>
-                        <a href="contacto.html" class="btn-coral btn-sm btn-block" style="text-align: center;">Reservar Este Deporte</a>
-                    </div>
-
-                    <!-- Deporte 3 -->
-                    <div style="border: 1px solid var(--color-border); border-radius: 1rem; padding: 1.5rem; background: #fafafa;">
-                        <span style="color: var(--color-coral); font-weight: 800; font-size: 0.75rem;">DEPORTE #3</span>
-                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-text-dark); margin: 0.5rem 0;">Buceo &amp; Snorkel en Los Frailes</h3>
-                        <p style="font-size: 0.875rem; color: var(--color-text-body); line-height: 1.5; margin-bottom: 1.25rem;">Expedición submarina en islotes rocosos con instructores PADI y almuerzo marino en la playa.</p>
-                        <a href="contacto.html" class="btn-coral btn-sm btn-block" style="text-align: center;">Reservar Este Deporte</a>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <div class="footer-bottom">
-            <p>&copy; 2026 The Waterman Experience. Margarita &amp; Coche, Venezuela &amp; Austria.</p>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html">
+          <img src="assets/logo.png" alt="Waterman Experience Tour">
+          <span class="name">Waterman Tour</span>
+        </a>
+        <p>Viajes de aventura y deportes acuáticos en el Caribe venezolano.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Destinos</h4>
+        <ul>
+          <li><a href="destino-choroni.html">Choroní</a></li>
+          <li><a href="destino-margarita.html">Margarita</a></li>
+          <li><a href="destino-coche.html">Isla de Coche</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Conectar</h4>
+        <ul>
+          <li><a href="https://wa.me/584120000000" target="_blank">WhatsApp</a></li>
+          <li><a href="https://instagram.com/rickywaterman" target="_blank">Instagram</a></li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://instagram.com/rickywaterman" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://facebook.com/rickywaterman" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://youtube.com/@rickywaterman" target="_blank"><i class="fa-brands fa-youtube"></i></a>
         </div>
-    </footer>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Waterman Experience Tour. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
-    <!-- JAVASCRIPT LOGIC -->
-    <script>
-        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('is-open'); }
-        function closeMobileMenu(e) { if (e.target === document.getElementById('mobile-menu')) toggleMobileMenu(); }
-    </script>
-    <script src="assets/js/cms.js"></script>
+  <a href="https://wa.me/584120000000" target="_blank" class="whatsapp-float"><i class="fa-brands fa-whatsapp"></i></a>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+    function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('is-open'); }
+    function closeMobileMenu(e) { if (e.target === document.getElementById('mobile-menu')) toggleMobileMenu(); }
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('in-view'), i * 80); obs.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => obs.observe(el));
+  </script>
 </body>
 </html>
