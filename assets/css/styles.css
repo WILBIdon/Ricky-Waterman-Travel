@@ -75,11 +75,8 @@ ul { list-style: none; }
   gap: 12px;
 }
 .nav-logo img {
-  height: 42px;
+  height: 60px;
   width: auto;
-  border-radius: 50%;
-  background: #fff;
-  padding: 2px;
 }
 .nav-logo-text {
   font-family: var(--font-display);
