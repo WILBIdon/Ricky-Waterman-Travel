@@ -786,16 +786,28 @@ body::before {
   background: var(--coral);
   color: #fff;
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 800;
   font-size: 1rem;
   padding: 16px 38px;
   border-radius: var(--radius-pill);
   box-shadow: 0 12px 30px -10px rgba(255,107,69,0.4);
-  transition: transform 0.25s, box-shadow 0.25s;
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s, color 0.3s;
 }
 .btn-coral:hover {
+  background: var(--gold);
+  color: var(--ink);
   transform: translateY(-3px);
-  box-shadow: 0 18px 40px -12px rgba(255,107,69,0.5);
+  box-shadow: 0 18px 40px -12px rgba(255,200,87,0.5);
+}
+
+button[type="submit"] {
+  background: var(--coral);
+  color: #fff;
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s, color 0.3s;
+}
+button[type="submit"]:hover {
+  background: var(--gold);
+  color: var(--ink);
 }
 
 /* ---------- DESTINATION DETAIL PAGE (HERO) ---------- */
