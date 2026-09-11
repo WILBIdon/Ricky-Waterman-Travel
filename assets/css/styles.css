@@ -90,8 +90,12 @@ body::before {
   gap: 12px;
 }
 .nav-logo img {
-  height: 90px;
+  height: 160px;
   width: auto;
+  transition: transform 0.3s;
+}
+.nav-logo:hover img {
+  transform: scale(1.05);
 }
 .nav-logo-text {
   font-family: var(--font-display);
@@ -115,16 +119,18 @@ body::before {
 .nav-links a:hover { color: var(--turq-soft); }
 .nav-cta {
   background: var(--coral);
-  color: #fff !important;
-  padding: 10px 24px;
+  padding: 14px 28px;
   border-radius: var(--radius-pill);
-  font-weight: 700;
-  font-size: 0.88rem;
-  transition: transform 0.2s, box-shadow 0.2s;
+  font-weight: 800;
+  color: #fff;
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 15px -5px rgba(255,107,69,0.5);
 }
-.nav-cta:hover {
+.nav-cta:hover { 
+  background: var(--mango); 
+  color: #fff; 
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px -8px rgba(255,107,69,0.45);
+  box-shadow: 0 8px 20px -5px rgba(255,184,77,0.6);
 }
 @media (max-width: 860px) {
   .nav-links { display: none; }
@@ -415,7 +421,7 @@ body::before {
 }
 .dest-link:hover {
   background: var(--mango);
-  color: var(--ink);
+  color: #fff;
   transform: translateY(-3px);
   box-shadow: 0 12px 24px -8px rgba(255,184,77,0.5);
 }
@@ -477,10 +483,17 @@ body::before {
   box-shadow: 0 20px 40px -15px rgba(0,0,0,0.15);
 }
 .sport-card .sport-icon {
-  font-size: 3rem;
-  color: var(--coral);
+  font-size: 3.5rem;
   margin-bottom: 24px;
+  transition: transform 0.3s;
 }
+.sport-card:hover .sport-icon {
+  transform: scale(1.15);
+}
+.sport-card:nth-child(1) .sport-icon { color: var(--turq); }
+.sport-card:nth-child(2) .sport-icon { color: var(--mango); }
+.sport-card:nth-child(3) .sport-icon { color: var(--coral); }
+.sport-card:nth-child(4) .sport-icon { color: var(--gold); }
 .sport-card h3 { font-size: 1.6rem; margin-bottom: 12px; color: var(--ink); }
 .sport-card p { color: #555; line-height: 1.6; }
 
@@ -507,10 +520,14 @@ body::before {
   height: 300px;
   object-fit: cover;
   border-radius: var(--radius-sm);
-  transition: transform 0.4s;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
 }
 .gallery-grid img:hover {
-  transform: scale(1.03);
+  transform: scale(1.1);
+  box-shadow: 0 15px 30px -10px rgba(0,0,0,0.4);
+  z-index: 10;
+  position: relative;
 }
 
 /* ---------- ITINERARY ---------- */
@@ -533,10 +550,10 @@ body::before {
   width: 100%;
   height: 400px;
   object-fit: cover;
-  transition: transform 6s;
+  transition: transform 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .itin-panorama:hover img {
-  transform: scale(1.05);
+  transform: scale(1.12);
 }
 .itin-head .dest-kicker { color: var(--coral); }
 .itin-track {
@@ -1005,12 +1022,21 @@ footer {
 }
 
 /* ---------- PARALLAX ON DEST IMAGES ---------- */
+.dest-art { overflow: hidden; border-radius: var(--radius-md); }
 .dest-art img {
   transition: transform 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  width: 100%; height: 100%; object-fit: cover;
 }
 .dest.in-view .dest-art img,
 .dest-art:hover img {
-  transform: scale(1.08);
+  transform: scale(1.15);
+}
+
+.hover-scale-fast {
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.hover-scale-fast:hover {
+  transform: scale(1.1);
 }
 
 /* ---------- RESPONSIVE FINE TUNING ---------- */
