@@ -124,19 +124,27 @@ body::before {
   transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--turq-soft); }
+/* ---------- GLOBAL BUTTON STYLES ---------- */
+.nav-cta, .cta-btn, .dest-link, .btn-coral, button[type="submit"] {
+  background: var(--coral) !important;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+.nav-cta:hover, .cta-btn:hover, .dest-link:hover, .btn-coral:hover, button[type="submit"]:hover {
+  background: var(--gold) !important;
+  color: var(--ink) !important;
+}
+
 .nav-cta {
-  background: var(--coral);
-  color: #fff;
   padding: 14px 28px;
   font-size: 1rem;
   font-weight: 800;
   border-radius: var(--radius-pill);
   transition: transform 0.3s, background 0.3s, box-shadow 0.3s, color 0.3s;
   box-shadow: 0 4px 15px -5px rgba(255,107,69,0.5);
+  display: inline-block;
 }
 .nav-cta:hover {
-  background: var(--gold);
-  color: var(--ink);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px -5px rgba(255,200,87,0.6);
 }
@@ -421,15 +429,11 @@ body::before {
   padding: 16px 32px;
   font-weight: 800;
   font-size: 1.1rem;
-  color: #fff;
-  background: var(--coral);
   border-radius: var(--radius-pill);
   transition: transform 0.3s, background 0.3s, box-shadow 0.3s, color 0.3s;
   box-shadow: 0 8px 20px -6px rgba(255,107,69,0.4);
 }
 .dest-link:hover {
-  background: var(--gold);
-  color: var(--ink);
   transform: translateY(-3px);
   box-shadow: 0 12px 24px -8px rgba(255,200,87,0.5);
 }
@@ -740,8 +744,6 @@ body::before {
 }
 .cta-btn {
   display: inline-block;
-  background: var(--coral);
-  color: #fff;
   padding: 20px 48px;
   font-size: 1.25rem;
   font-weight: 800;
@@ -750,8 +752,6 @@ body::before {
   box-shadow: 0 10px 25px -8px rgba(255,107,69,0.5);
 }
 .cta-btn:hover {
-  background: var(--gold);
-  color: var(--ink);
   transform: translateY(-4px);
   box-shadow: 0 15px 30px -10px rgba(255,200,87,0.6);
 }
@@ -783,8 +783,6 @@ body::before {
 }
 .btn-coral {
   display: inline-block;
-  background: var(--coral);
-  color: #fff;
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 1rem;
@@ -794,20 +792,20 @@ body::before {
   transition: transform 0.3s, background 0.3s, box-shadow 0.3s, color 0.3s;
 }
 .btn-coral:hover {
-  background: var(--gold);
-  color: var(--ink);
   transform: translateY(-3px);
   box-shadow: 0 18px 40px -12px rgba(255,200,87,0.5);
 }
 
 button[type="submit"] {
-  background: var(--coral);
-  color: #fff;
   transition: transform 0.3s, background 0.3s, box-shadow 0.3s, color 0.3s;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 16px 32px;
+  font-weight: 800;
+  cursor: pointer;
 }
 button[type="submit"]:hover {
-  background: var(--gold);
-  color: var(--ink);
+  transform: translateY(-2px);
 }
 
 /* ---------- DESTINATION DETAIL PAGE (HERO) ---------- */
