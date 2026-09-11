@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recarga tu energía en el Caribe — Waterman Experience Tour</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#081815;
+    --deep:#0c2b28;
+    --ocean:#0e3b36;
+    --turq:#1fc7b6;
+    --turq-soft:#79e3d6;
+    --coral:#ff6b45;
+    --mango:#ffb84d;
+    --gold:#ffc857;
+    --sand:#f4ead9;
+    --paper:#faf6ee;
+    --ice:#dfeaf0;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter', sans-serif;
+    background:var(--ink);
+    color:var(--sand);
+    overflow-x:hidden;
+  }
+  h1,h2,h3, .display{
+    font-family:'Unbounded', sans-serif;
+  }
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 40px;}
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    background:
+      radial-gradient(ellipse 90% 60% at 20% -10%, rgba(31,199,182,0.18), transparent 60%),
+      radial-gradient(ellipse 70% 50% at 100% 0%, rgba(255,107,69,0.14), transparent 55%),
+      linear-gradient(180deg, #061210 0%, #0a201d 55%, #0c2b28 100%);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:120px 40px 160px;
+  }
+  .hero-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:var(--turq-soft);
+    font-size:0.95rem;
+    font-weight:600;
+    letter-spacing:0.02em;
+    margin-bottom:28px;
+  }
+  .hero-eyebrow::before{
+    content:"";
+    width:34px; height:1px;
+    background:var(--turq-soft);
+    display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 6.5vw, 5.2rem);
+    font-weight:900;
+    line-height:1.02;
+    max-width:920px;
+    color:var(--paper);
+    letter-spacing:-0.01em;
+  }
+  .hero h1 span{
+    color:var(--coral);
+  }
+  .hero-sub{
+    margin-top:32px;
+    max-width:560px;
+    font-size:1.25rem;
+    line-height:1.55;
+    color:var(--ice);
+    font-weight:400;
+  }
+  .hero-meta{
+    margin-top:56px;
+    display:flex;
+    gap:48px;
+    flex-wrap:wrap;
+  }
+  .hero-meta div{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+  }
+  .hero-meta .num{
+    font-family:'Unbounded', sans-serif;
+    font-size:1.9rem;
+    font-weight:700;
+    color:var(--gold);
+  }
+  .hero-meta .lab{
+    font-size:0.85rem;
+    color:var(--ice);
+    opacity:0.75;
+  }
+  .hero-route{
+    position:absolute;
+    right:40px;
+    bottom:120px;
+    text-align:right;
+    color:var(--ice);
+    font-size:0.9rem;
+    opacity:0.6;
+    display:none;
+  }
+  @media(min-width:900px){ .hero-route{display:block;} }
+
+  /* ============ TRANSITION STRIP ============ */
+  .transition{
+    position:relative;
+    background:var(--ocean);
+    padding:70px 40px;
+    text-align:center;
+  }
+  .transition p{
+    max-width:640px;
+    margin:0 auto;
+    font-size:1.15rem;
+    color:var(--turq-soft);
+    font-weight:500;
+    line-height:1.6;
+  }
+  .transition p strong{ color:var(--gold); font-weight:700; }
+
+  /* ============ WAVE DIVIDERS ============ */
+  .wave{ display:block; width:100%; height:auto; margin-bottom:-1px;}
+
+  /* ============ DESTINATION SECTIONS ============ */
+  .dest{
+    position:relative;
+    padding:100px 40px 110px;
+  }
+  .dest-inner{
+    max-width:1000px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:36px;
+  }
+  @media(min-width:860px){
+    .dest-inner{grid-template-columns: 0.85fr 1.15fr; align-items:center; gap:70px;}
+    .dest.reverse .dest-inner{ grid-template-columns: 1.15fr 0.85fr; }
+    .dest.reverse .dest-art{ order:2; }
+    .dest.reverse .dest-text{ order:1; }
+  }
+  .dest-kicker{
+    font-size:0.95rem;
+    font-weight:600;
+    margin-bottom:18px;
+    display:inline-block;
+  }
+  .dest-text h2{
+    font-size:clamp(1.9rem, 3.4vw, 2.7rem);
+    font-weight:800;
+    line-height:1.12;
+    margin-bottom:20px;
+  }
+  .dest-text p{
+    font-size:1.08rem;
+    line-height:1.65;
+    max-width:440px;
+    opacity:0.92;
+  }
+  .dest-tags{
+    margin-top:28px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .dest-tags span{
+    font-size:0.85rem;
+    font-weight:600;
+    padding:8px 16px;
+    border-radius:100px;
+    border:1px solid currentColor;
+    opacity:0.85;
+  }
+  .dest-art{
+    position:relative;
+    aspect-ratio:1/1;
+    border-radius:28px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .dest-art svg{ width:80%; height:80%; }
+
+  /* Coche */
+  .dest.coche{ background:var(--ocean); color:var(--sand); }
+  .dest.coche .dest-kicker{ color:var(--turq-soft); }
+  .dest.coche .dest-art{ background:linear-gradient(150deg,#0f4a44,#1fc7b6 130%); }
+  .dest.coche .dest-tags span{ color:var(--turq-soft); }
+
+  /* Margarita */
+  .dest.margarita{ background:linear-gradient(180deg,#123a35,#3a2f1c); color:var(--sand); }
+  .dest.margarita .dest-kicker{ color:var(--mango); }
+  .dest.margarita .dest-art{ background:linear-gradient(150deg,#7a3d1a,#ffb84d 130%); }
+  .dest.margarita .dest-tags span{ color:var(--mango); }
+
+  /* Choroni */
+  .dest.choroni{ background:linear-gradient(180deg,#3a2110,#4a1810); color:var(--sand); }
+  .dest.choroni .dest-kicker{ color:var(--coral); }
+  .dest.choroni .dest-art{ background:linear-gradient(150deg,#7a2410,#ff6b45 130%); }
+  .dest.choroni .dest-tags span{ color:var(--coral); }
+
+  /* ============ ITINERARY ============ */
+  .itin{
+    background:var(--paper);
+    color:var(--ink);
+    padding:110px 40px;
+  }
+  .itin-head{
+    max-width:640px;
+    margin:0 auto 70px;
+    text-align:center;
+  }
+  .itin-head .dest-kicker{ color:var(--coral); }
+  .itin-head h2{
+    font-size:clamp(1.9rem,3.4vw,2.6rem);
+    font-weight:800;
+    margin-top:16px;
+    color:var(--ink);
+  }
+  .itin-track{
+    max-width:960px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  @media(min-width:800px){
+    .itin-track{ grid-template-columns: repeat(3,1fr); gap:28px; }
+  }
+  .itin-card{
+    background:#fff;
+    border-radius:24px;
+    padding:36px 30px;
+    box-shadow:0 24px 50px -30px rgba(8,24,21,0.25);
+    position:relative;
+    border-top:5px solid var(--turq);
+  }
+  .itin-card.m{ border-top-color:var(--mango); }
+  .itin-card.c{ border-top-color:var(--coral); }
+  .itin-card .days{
+    font-family:'Unbounded', sans-serif;
+    font-size:0.9rem;
+    font-weight:700;
+    color:var(--ocean);
+    opacity:0.55;
+    margin-bottom:6px;
+  }
+  .itin-card h3{
+    font-size:1.5rem;
+    font-weight:800;
+    margin-bottom:14px;
+  }
+  .itin-card ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .itin-card li{
+    font-size:0.98rem;
+    line-height:1.4;
+    padding-left:20px;
+    position:relative;
+    opacity:0.85;
+  }
+  .itin-card li::before{
+    content:"";
+    position:absolute;
+    left:0; top:8px;
+    width:7px; height:7px;
+    border-radius:50%;
+    background:var(--turq);
+  }
+  .itin-card.m li::before{ background:var(--mango); }
+  .itin-card.c li::before{ background:var(--coral); }
+
+  .includes{
+    max-width:960px;
+    margin:70px auto 0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    justify-content:center;
+  }
+  .includes span{
+    background:var(--ink);
+    color:var(--sand);
+    font-size:0.9rem;
+    font-weight:600;
+    padding:12px 22px;
+    border-radius:100px;
+  }
+
+  /* ============ HOSTS ============ */
+  .hosts{
+    background:linear-gradient(180deg,#0a201d, #081815);
+    padding:110px 40px 100px;
+  }
+  .hosts-head{
+    max-width:640px;
+    margin:0 auto 64px;
+    text-align:center;
+  }
+  .hosts-head .dest-kicker{ color:var(--gold); }
+  .hosts-head h2{
+    font-size:clamp(1.9rem,3.4vw,2.6rem);
+    font-weight:800;
+    margin-top:16px;
+    color:var(--paper);
+  }
+  .hosts-grid{
+    max-width:1000px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+  @media(min-width:800px){
+    .hosts-grid{ grid-template-columns:repeat(3,1fr); }
+  }
+  .host{
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:24px;
+    padding:34px 28px;
+  }
+  .host .avatar{
+    width:64px; height:64px;
+    border-radius:50%;
+    margin-bottom:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Unbounded', sans-serif;
+    font-weight:700;
+    font-size:1.3rem;
+    color:var(--ink);
+  }
+  .host.lead .avatar{ background:var(--coral); }
+  .host.culture .avatar{ background:var(--mango); }
+  .host.logistics .avatar{ background:var(--turq); }
+  .host .role{
+    font-size:0.82rem;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    opacity:0.55;
+    margin-bottom:8px;
+  }
+  .host h3{
+    font-size:1.35rem;
+    font-weight:700;
+    margin-bottom:14px;
+    color:var(--paper);
+  }
+  .host p{
+    font-size:0.98rem;
+    line-height:1.55;
+    color:var(--ice);
+    opacity:0.85;
+  }
+
+  /* ============ PRICE / CTA ============ */
+  .cta{
+    position:relative;
+    background:linear-gradient(120deg, #ff6b45, #ffb84d 55%, #ffc857);
+    color:#2a1608;
+    padding:100px 40px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .cta::before{
+    content:"";
+    position:absolute; inset:0;
+    background:radial-gradient(circle at 15% 20%, rgba(255,255,255,0.35), transparent 40%);
+  }
+  .cta-inner{ position:relative; max-width:640px; margin:0 auto;}
+  .cta .dest-kicker{ color:#7a2c00; }
+  .cta h2{
+    font-size:clamp(2.2rem,5vw,3.4rem);
+    font-weight:900;
+    line-height:1.05;
+    margin:18px 0 20px;
+  }
+  .cta .price{
+    font-family:'Unbounded', sans-serif;
+    font-size:clamp(2.8rem,6vw,4rem);
+    font-weight:800;
+    margin:26px 0 6px;
+  }
+  .cta .price-note{
+    font-size:0.95rem;
+    opacity:0.75;
+    margin-bottom:36px;
+  }
+  .cta-btn{
+    display:inline-block;
+    background:#12100e;
+    color:var(--sand);
+    font-family:'Unbounded', sans-serif;
+    font-weight:600;
+    font-size:1.05rem;
+    padding:18px 42px;
+    border-radius:100px;
+    text-decoration:none;
+    box-shadow:0 20px 40px -18px rgba(0,0,0,0.5);
+  }
+
+  /* ============ FOOTER ============ */
+  footer{
+    background:var(--ink);
+    color:var(--ice);
+    padding:44px 40px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    font-size:0.95rem;
+  }
+  footer .brand{
+    font-family:'Unbounded', sans-serif;
+    font-weight:700;
+    color:var(--paper);
+  }
+  footer a{ color:var(--turq-soft); text-decoration:none; }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap" style="padding:0;">
+    <div class="hero-eyebrow">Venezuela Espléndida · 15 días</div>
+    <h1>Tu invierno<br>termina <span>aquí.</span></h1>
+    <p class="hero-sub">15 días en el Caribe venezolano para que vuelvas a sentir el sol, la arena caliente bajo tus pies y tu propia energía — antes de volver a Europa.</p>
+    <div class="hero-meta">
+      <div><span class="num">15</span><span class="lab">días de viaje</span></div>
+      <div><span class="num">3</span><span class="lab">destinos caribeños</span></div>
+      <div><span class="num">€3.499</span><span class="lab">paquete completo</span></div>
+    </div>
+  </div>
+  <div class="hero-route">Europa → Los Cocos, Venezuela</div>
+</section>
+
+<!-- ============ TRANSITION ============ -->
+<section class="transition">
+  <p>A 8.000 km de la lluvia y el gris, te espera <strong>otra temperatura de vida.</strong> Tres destinos, un mismo propósito: que recargues.</p>
+</section>
+
+<!-- ============ ISLA DE COCHE ============ -->
+<section class="dest coche">
+  <div class="dest-inner">
+    <div class="dest-art">
+      <svg viewBox="0 0 200 200" fill="none">
+        <path d="M20 140 Q60 110 100 140 T180 140" stroke="#eafffb" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+        <path d="M20 160 Q60 130 100 160 T180 160" stroke="#eafffb" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
+        <circle cx="150" cy="55" r="22" fill="#ffe9a8"/>
+        <path d="M60 60 L60 130 L120 100 Z" fill="#faf6ee" opacity="0.9"/>
+        <line x1="60" y1="40" x2="60" y2="130" stroke="#faf6ee" stroke-width="3"/>
+      </svg>
+    </div>
+    <div class="dest-text">
+      <span class="dest-kicker">Isla de Coche</span>
+      <h2>Donde el silencio<br>te encuentra</h2>
+      <p>Aguas poco profundas, viento constante y kitesurf de clase mundial. Aquí el tiempo se mide en olas, no en horas.</p>
+      <div class="dest-tags">
+        <span>Kitesurf</span>
+        <span>Aguas cristalinas</span>
+        <span>Calma total</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARGARITA ============ -->
+<section class="dest margarita reverse">
+  <div class="dest-inner">
+    <div class="dest-text">
+      <span class="dest-kicker">Isla de Margarita</span>
+      <h2>Donde el viento<br>te despierta</h2>
+      <p>La Perla del Caribe vibra de día y de noche: windsurf, playas interminables, mercados y una energía que se contagia.</p>
+      <div class="dest-tags">
+        <span>Deportes de viento</span>
+        <span>Vida nocturna</span>
+        <span>Compras</span>
+      </div>
+    </div>
+    <div class="dest-art">
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="60" cy="50" r="20" fill="#fff3d6"/>
+        <path d="M100 60 L100 150 L150 105 Z" fill="#3a2410" opacity="0.85"/>
+        <line x1="100" y1="45" x2="100" y2="150" stroke="#3a2410" stroke-width="3"/>
+        <path d="M20 150 Q60 125 100 150 T180 150" stroke="#3a2410" stroke-width="4" stroke-linecap="round" opacity="0.35"/>
+        <path d="M20 170 Q60 145 100 170 T180 170" stroke="#3a2410" stroke-width="4" stroke-linecap="round" opacity="0.2"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHORONI ============ -->
+<section class="dest choroni">
+  <div class="dest-inner">
+    <div class="dest-art">
+      <svg viewBox="0 0 200 200" fill="none">
+        <path d="M20 170 L60 90 L90 130 L120 60 L160 170 Z" fill="#3a1508" opacity="0.85"/>
+        <rect x="70" y="150" width="14" height="40" fill="#3a1508"/>
+        <rect x="95" y="150" width="14" height="40" fill="#3a1508"/>
+        <rect x="120" y="150" width="14" height="40" fill="#3a1508"/>
+        <circle cx="150" cy="40" r="16" fill="#ffe0b0"/>
+      </svg>
+    </div>
+    <div class="dest-text">
+      <span class="dest-kicker">Choroní</span>
+      <h2>Donde la selva te<br>recuerda quién eres</h2>
+      <p>Cacao, cascadas y tambores. Un pueblo colonial escondido entre montaña y mar, donde la cultura caribeña se siente en la piel.</p>
+      <div class="dest-tags">
+        <span>Selva tropical</span>
+        <span>Tours de cacao</span>
+        <span>Tambores afrocaribeños</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ITINERARIO ============ -->
+<section class="itin">
+  <div class="itin-head">
+    <span class="dest-kicker">La ruta</span>
+    <h2>3 destinos, 15 días,<br>una sola energía</h2>
+  </div>
+  <div class="itin-track">
+    <div class="itin-card">
+      <div class="days">Días 1–5</div>
+      <h3>Choroní</h3>
+      <ul>
+        <li>Tours de cacao y selva</li>
+        <li>Caminatas y senderismo</li>
+        <li>Cultura y tambores locales</li>
+      </ul>
+    </div>
+    <div class="itin-card m">
+      <div class="days">Días 6–11</div>
+      <h3>Margarita</h3>
+      <ul>
+        <li>Windsurf y deportes de viento</li>
+        <li>Playas y vida nocturna</li>
+        <li>Mercados y gastronomía</li>
+      </ul>
+    </div>
+    <div class="itin-card c">
+      <div class="days">Días 12–15</div>
+      <h3>Isla de Coche</h3>
+      <ul>
+        <li>Kitesurf e instrucción náutica</li>
+        <li>Aguas someras y calma</li>
+        <li>Cierre bajo el sol caribeño</li>
+      </ul>
+    </div>
+  </div>
+  <div class="includes">
+    <span>Alojamiento incluido</span>
+    <span>Comidas incluidas</span>
+    <span>Tours guiados</span>
+    <span>Instrucción náutica</span>
+  </div>
+</section>
+
+<!-- ============ TRIPULACIÓN ============ -->
+<section class="hosts">
+  <div class="hosts-head">
+    <span class="dest-kicker">Tu tripulación</span>
+    <h2>Tres personas, una misión:<br>que te recargues</h2>
+  </div>
+  <div class="hosts-grid">
+    <div class="host lead">
+      <div class="avatar">RW</div>
+      <div class="role">Líder de Aventura</div>
+      <h3>Ricky Waterman</h3>
+      <p>El mar es su casa. Guía cada sesión de kite, vela y navegación con una energía que se contagia a todo el grupo.</p>
+    </div>
+    <div class="host culture">
+      <div class="avatar">P</div>
+      <div class="role">Anfitrión de Cultura</div>
+      <h3>Pedro</h3>
+      <p>Conoce cada rincón de Choroní. Logística, historia y sabor local — con Pedro, cada parada tiene una historia detrás.</p>
+    </div>
+    <div class="host logistics">
+      <div class="avatar">C</div>
+      <div class="role">Anfitrión de Logística</div>
+      <h3>Carlos</h3>
+      <p>Hace que todo funcione. Actividades, hospitalidad y ese detalle extra que convierte un viaje en un recuerdo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRECIO / CTA ============ -->
+<section class="cta">
+  <div class="cta-inner">
+    <span class="dest-kicker">Reserva tu lugar</span>
+    <h2>No vuelvas igual.<br>Vuelve encendido.</h2>
+    <div class="price">€3.499</div>
+    <div class="price-note">Paquete completo · vuelos no incluidos</div>
+    <a href="#" class="cta-btn">Reserva tu aventura</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="brand">Waterman Experience Tour</div>
+  <div>www.watermanexperiencetour.com</div>
+</footer>
+
+</body>
+</html>
