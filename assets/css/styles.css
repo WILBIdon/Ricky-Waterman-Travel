@@ -190,7 +190,31 @@ ul { list-style: none; }
   flex-direction: column;
   justify-content: center;
   padding: 140px 40px 160px;
+  overflow: hidden;
 }
+.hero-video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-video-bg video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.hero-video-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(6,18,16,0.7) 0%, rgba(10,32,29,0.6) 40%, rgba(12,43,40,0.85) 100%),
+    radial-gradient(ellipse 90% 60% at 20% -10%, rgba(31,199,182,0.12), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 100% 0%, rgba(255,107,69,0.1), transparent 55%);
+}
+.hero .wrap,
+.hero .hero-eyebrow,
+.hero h1,
+.hero .hero-sub,
+.hero .hero-meta { position: relative; z-index: 2; }
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -924,10 +948,16 @@ footer {
   font-size: 1.8rem;
   box-shadow: 0 8px 28px -6px rgba(37,211,102,0.5);
   transition: transform 0.25s, box-shadow 0.25s;
+  animation: wa-pulse 2.5s ease-in-out infinite;
+}
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 8px 28px -6px rgba(37,211,102,0.5); }
+  50% { box-shadow: 0 4px 14px -2px rgba(37,211,102,0.3), 0 0 0 12px rgba(37,211,102,0.12); }
 }
 .whatsapp-float:hover {
   transform: scale(1.1);
   box-shadow: 0 12px 36px -6px rgba(37,211,102,0.6);
+  animation: none;
 }
 
 /* ---------- SCROLL ANIMATIONS ---------- */
@@ -941,6 +971,15 @@ footer {
   transform: translateY(0);
 }
 
+/* ---------- PARALLAX ON DEST IMAGES ---------- */
+.dest-art img {
+  transition: transform 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.dest.in-view .dest-art img,
+.dest-art:hover img {
+  transform: scale(1.08);
+}
+
 /* ---------- RESPONSIVE FINE TUNING ---------- */
 @media (max-width: 600px) {
   .hero { padding: 120px 20px 120px; }
@@ -951,4 +990,16 @@ footer {
   .cta { padding: 70px 20px; }
   .sports { padding: 80px 20px; }
   footer { padding: 40px 20px; }
+}
+@media (max-width: 400px) {
+  .hero-meta {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .hero-meta div {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .hero-meta .num { font-size: 1.5rem; }
 }
