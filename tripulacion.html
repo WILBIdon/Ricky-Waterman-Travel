@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestra Tripulación | Waterman Experience Tour</title>
+  <meta name="description" content="Conoce a la tripulación que hará de tu viaje una experiencia única: Ricky Waterman, Pedro y Carlos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    /* Custom styles for Tripulacion page */
+    .crew-hero {
+      background: linear-gradient(180deg, #0a201d, #081815);
+      padding: 160px 40px 80px;
+      text-align: center;
+    }
+    .crew-list {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 40px 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+    .crew-member {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 800px) {
+      .crew-member { grid-template-columns: 1fr 1fr; }
+      .crew-member:nth-child(even) .crew-video { order: 2; }
+      .crew-member:nth-child(even) .crew-info { order: 1; }
+    }
+    .crew-video {
+      position: relative;
+      aspect-ratio: 16/9;
+      background: #000;
+    }
+    @media (min-width: 800px) {
+      .crew-video { aspect-ratio: auto; height: 100%; }
+    }
+    .crew-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .crew-info {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .crew-info .role {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      color: var(--turq-soft);
+    }
+    .crew-member:nth-child(2) .role { color: var(--mango); }
+    .crew-member:nth-child(3) .role { color: var(--gold); }
+    
+    .crew-info h2 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      margin-bottom: 20px;
+      color: var(--paper);
+    }
+    .crew-info p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--ice);
+      opacity: 0.85;
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav-floating" id="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.png" alt="Waterman Experience Tour">
+        <div class="nav-logo-text">WATERMAN <span>TOUR</span></div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#destinos">Destinos</a>
+        <a href="index.html#itinerario">Itinerario</a>
+        <a href="index.html#deportes">Deportes</a>
+        <a href="tripulacion.html" style="color:var(--turq-soft);">Tripulación</a>
+        <a href="https://wa.me/584120000000?text=Hola!%20Me%20interesa%20el%20Waterman%20Experience%20Tour" target="_blank" class="nav-cta">Reservar</a>
+      </div>
+      <button class="nav-mobile-btn" onclick="toggleMobileMenu()" aria-label="Abrir menú"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu-overlay" onclick="closeMobileMenu(event)">
+    <div class="mobile-menu-panel" onclick="event.stopPropagation()">
+      <button class="mobile-menu-close" onclick="toggleMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="mobile-menu-links">
+        <a href="index.html">Inicio</a>
+        <a href="tripulacion.html">Tripulación</a>
+        <a href="destino-choroni.html">Choroní</a>
+        <a href="destino-margarita.html">Margarita</a>
+        <a href="destino-coche.html">Isla de Coche</a>
+      </div>
+      <a href="https://wa.me/584120000000" target="_blank" class="btn-coral" style="text-align:center;margin-top:12px;">Reservar Ahora</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="crew-hero">
+      <span class="dest-kicker" style="color:var(--gold);">Tu Tripulación</span>
+      <h1 style="font-size:clamp(2.4rem,5vw,3.5rem);font-weight:900;color:var(--paper);margin:16px 0;">Tres personas, una misión</h1>
+      <p style="font-size:1.15rem;color:var(--ice);max-width:600px;margin:0 auto;line-height:1.6;">Acompañantes expertos que aseguran que cada momento de tu expedición sea seguro, auténtico y memorable.</p>
+    </section>
+
+    <section class="crew-list">
+      
+      <!-- Ricky Waterman -->
+      <div class="crew-member reveal">
+        <div class="crew-video">
+          <video src="assets/hero-video.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <div class="crew-info">
+          <div class="role">Líder de Aventura</div>
+          <h2>Ricky Waterman</h2>
+          <p>El mar es su casa. Ricky lidera las actividades náuticas aportando toda su experiencia en kitesurf, vela y navegación. Su energía y pasión por el océano contagian a todo el grupo, garantizando una conexión real con el mar en cada destino.</p>
+          <a href="https://wa.me/584120000000?text=Hola!%20Quiero%20saber%20más%20sobre%20las%20actividades%20con%20Ricky" target="_blank" class="dest-link" style="color:var(--turq-soft);">Hablemos con Ricky <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Pedro -->
+      <div class="crew-member reveal">
+        <div class="crew-video">
+          <video src="assets/hero-video.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <div class="crew-info">
+          <div class="role">Anfitrión de Cultura</div>
+          <h2>Pedro</h2>
+          <p>Pedro conoce cada rincón de nuestras rutas, especialmente el encanto histórico y cultural de Choroní. Es el encargado de la logística terrestre, las historias locales y asegurar que sientas el verdadero sabor y ritmo del Caribe venezolano.</p>
+          <a href="https://wa.me/584120000000?text=Hola!%20Quiero%20saber%20más%20sobre%20la%20cultura%20con%20Pedro" target="_blank" class="dest-link" style="color:var(--mango);">Hablemos con Pedro <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Carlos -->
+      <div class="crew-member reveal">
+        <div class="crew-video">
+          <video src="assets/hero-video.mp4" autoplay muted loop playsinline></video>
+        </div>
+        <div class="crew-info">
+          <div class="role">Anfitrión de Logística</div>
+          <h2>Carlos</h2>
+          <p>La mente maestra detrás de escena. Carlos hace que todo funcione a la perfección, desde los traslados hasta los detalles de hospitalidad. Su objetivo es que tu única preocupación sea disfrutar y recargar tu energía.</p>
+          <a href="https://wa.me/584120000000?text=Hola!%20Quiero%20saber%20más%20sobre%20la%20logística%20con%20Carlos" target="_blank" class="dest-link" style="color:var(--gold);">Hablemos con Carlos <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="cta-inner">
+        <span class="dest-kicker">¿Listo para la aventura?</span>
+        <h2>Nuestra tripulación<br>te espera.</h2>
+        <div class="price">€3.499</div>
+        <div class="price-note">Paquete completo · vuelos no incluidos</div>
+        <a href="https://wa.me/584120000000?text=Hola!%20Quiero%20reservar%20mi%20lugar%20en%20el%20Waterman%20Experience%20Tour" target="_blank" class="cta-btn">Reserva tu aventura</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html">
+          <img src="assets/logo.png" alt="Waterman Experience Tour">
+          <span class="name">Waterman Tour</span>
+        </a>
+        <p>Viajes de aventura y deportes acuáticos en el Caribe venezolano. Recarga tu energía con nosotros.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Destinos</h4>
+        <ul>
+          <li><a href="destino-choroni.html">Choroní</a></li>
+          <li><a href="destino-margarita.html">Margarita</a></li>
+          <li><a href="destino-coche.html">Isla de Coche</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Conectar</h4>
+        <ul>
+          <li><a href="https://wa.me/584120000000" target="_blank">WhatsApp</a></li>
+          <li><a href="https://instagram.com/rickywaterman" target="_blank">Instagram</a></li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://instagram.com/rickywaterman" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://facebook.com/rickywaterman" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://youtube.com/@rickywaterman" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Waterman Experience Tour. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/584120000000" target="_blank" class="whatsapp-float"><i class="fa-brands fa-whatsapp"></i></a>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+    function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('is-open'); }
+    function closeMobileMenu(e) { if (e.target === document.getElementById('mobile-menu')) toggleMobileMenu(); }
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('in-view'), i * 80); obs.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
