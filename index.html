@@ -81,54 +81,17 @@
 
 
   <main>
-    <!-- ============ HERO WITH TEXT SLIDER ============ -->
+    <!-- ============ HERO ============ -->
     <section class="hero" id="hero-section">
       <div class="hero-video-bg">
         <video src="assets/hero-video.mp4" autoplay muted loop playsinline></video>
       </div>
-
-      <!-- Slide Container -->
-      <div class="hero-slider" id="hero-slider">
-        <!-- Slide 1 -->
-        <div class="hero-slide active" data-slide="0">
-          <div class="wrap" style="padding:0;">
-            <div class="hero-eyebrow">Ricky Waterman Experience Tour</div>
-            <h1>Bienvenidos a<br>Ricky Waterman<br><span>Experience Tour.</span></h1>
-            <p class="hero-sub">Vive una experiencia única y memorable, donde conectas con los elementos de la naturaleza: el agua, el sol, la arena y la vida marina.<br><strong style="color:var(--gold);">Revive tu esencia natural, enciende la chispa de tu alma.</strong></p>
-            <a href="ricky.html" class="btn-coral hero-slider-btn"><i class="fa-solid fa-user" style="margin-right:8px"></i> Conoce a Ricky</a>
-          </div>
-        </div>
-        <!-- Slide 2 -->
-        <div class="hero-slide" data-slide="1">
-          <div class="wrap" style="padding:0;">
-            <div class="hero-eyebrow">Venezuela Espléndida · 15 días</div>
-            <h1>Tu invierno<br>termina <span>aquí.</span></h1>
-            <p class="hero-sub">15 días en el Caribe venezolano para que vuelvas a sentir el sol, la arena caliente bajo tus pies y tu propia energía — antes de volver a Europa.</p>
-            <div class="hero-meta">
-              <div><span class="num">15</span><span class="lab">días de viaje</span></div>
-              <div><span class="num">3</span><span class="lab">destinos caribeños</span></div>
-              <div><span class="num">€3.499</span><span class="lab">paquete completo</span></div>
-            </div>
-            <a href="#destinos" class="btn-coral hero-slider-btn" style="margin-top:32px;"><i class="fa-solid fa-compass" style="margin-right:8px"></i> Ver Destinos</a>
-          </div>
-        </div>
+      <div class="wrap" style="padding:0; position:relative; z-index:2;">
+        <div class="hero-eyebrow">Ricky Waterman Experience Tour</div>
+        <h1>Bienvenidos a<br>Ricky Waterman<br><span>Experience Tour.</span></h1>
+        <p class="hero-sub">Vive una experiencia única y memorable, donde conectas con los elementos de la naturaleza: el agua, el sol, la arena y la vida marina.<br><strong style="color:var(--gold);">Revive tu esencia natural, enciende la chispa de tu alma.</strong></p>
+        <a href="ricky.html" class="btn-coral" style="display:inline-flex;align-items:center;margin-top:36px;font-size:1.05rem;"><i class="fa-solid fa-user" style="margin-right:8px"></i> Conoce a Ricky</a>
       </div>
-
-      <!-- Slider Navigation -->
-      <div class="hero-slider-nav" id="hero-slider-nav">
-        <button class="slider-arrow slider-prev" id="slider-prev" aria-label="Slide anterior"><i class="fa-solid fa-chevron-left"></i></button>
-        <div class="slider-dots">
-          <button class="slider-dot active" data-dot="0" aria-label="Slide 1"></button>
-          <button class="slider-dot" data-dot="1" aria-label="Slide 2"></button>
-        </div>
-        <button class="slider-arrow slider-next" id="slider-next" aria-label="Slide siguiente"><i class="fa-solid fa-chevron-right"></i></button>
-      </div>
-
-      <!-- Slider progress bar -->
-      <div class="slider-progress">
-        <div class="slider-progress-bar" id="slider-progress-bar"></div>
-      </div>
-
       <div class="hero-route">Europa → Los Cocos, Venezuela</div>
       <div class="hero-scroll"><i class="fa-solid fa-arrow-down"></i></div>
     </section>
@@ -425,77 +388,6 @@
     }, { threshold: 0.1 });
     reveals.forEach(el => revealObserver.observe(el));
 
-    // ========== HERO TEXT SLIDER ==========
-    (function() {
-      const slides = document.querySelectorAll('.hero-slide');
-      const dots = document.querySelectorAll('.slider-dot');
-      const prevBtn = document.getElementById('slider-prev');
-      const nextBtn = document.getElementById('slider-next');
-      const progressBar = document.getElementById('slider-progress-bar');
-      let current = 0;
-      let autoTimer = null;
-      const INTERVAL = 4000; // 4 seconds
-
-      function goToSlide(index) {
-        slides[current].classList.remove('active');
-        dots[current].classList.remove('active');
-        current = (index + slides.length) % slides.length;
-        slides[current].classList.add('active');
-        dots[current].classList.add('active');
-        resetProgress();
-      }
-
-      function nextSlide() { goToSlide(current + 1); }
-      function prevSlide() { goToSlide(current - 1); }
-
-      function resetProgress() {
-        if (progressBar) {
-          progressBar.style.transition = 'none';
-          progressBar.style.width = '0%';
-          // Force reflow
-          void progressBar.offsetWidth;
-          progressBar.style.transition = 'width ' + INTERVAL + 'ms linear';
-          progressBar.style.width = '100%';
-        }
-      }
-
-      function startAuto() {
-        stopAuto();
-        resetProgress();
-        autoTimer = setInterval(nextSlide, INTERVAL);
-      }
-
-      function stopAuto() {
-        if (autoTimer) clearInterval(autoTimer);
-      }
-
-      // Event listeners
-      nextBtn.addEventListener('click', () => { nextSlide(); startAuto(); });
-      prevBtn.addEventListener('click', () => { prevSlide(); startAuto(); });
-      dots.forEach(dot => {
-        dot.addEventListener('click', () => {
-          goToSlide(parseInt(dot.dataset.dot));
-          startAuto();
-        });
-      });
-
-      // Touch/Swipe support
-      let touchStartX = 0;
-      let touchEndX = 0;
-      const heroSection = document.getElementById('hero-section');
-      heroSection.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
-      heroSection.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        const diff = touchStartX - touchEndX;
-        if (Math.abs(diff) > 50) {
-          if (diff > 0) nextSlide(); else prevSlide();
-          startAuto();
-        }
-      }, { passive: true });
-
-      // Start auto-rotation
-      startAuto();
-    })();
   </script>
 
   <script src="assets/js/hover-swap.js"></script>
