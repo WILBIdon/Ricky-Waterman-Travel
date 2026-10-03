@@ -107,9 +107,10 @@ body::before {
 .nav-logo-text {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 0.92rem;
   color: var(--paper);
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 .nav-logo-text span { color: var(--coral); font-weight: 400; }
 .nav-links {
@@ -272,9 +273,9 @@ body::before {
   display: inline-block;
 }
 .hero h1 {
-  font-size: clamp(2.6rem, 6.5vw, 5.2rem);
+  font-size: clamp(2.2rem, 4.8vw, 4.0rem);
   font-weight: 900;
-  line-height: 1.02;
+  line-height: 1.08;
   max-width: 920px;
   color: var(--paper);
   letter-spacing: -0.01em;
