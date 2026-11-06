@@ -223,8 +223,8 @@ body::before {
     linear-gradient(180deg, #061210 0%, #0a201d 55%, #0c2b28 100%);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 140px 40px 160px;
+  justify-content: flex-end;
+  padding: 140px 40px 130px;
   overflow: hidden;
 }
 .hero-video-bg {
@@ -247,9 +247,8 @@ body::before {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(6,18,16,0.7) 0%, rgba(10,32,29,0.6) 40%, rgba(12,43,40,0.85) 100%),
-    radial-gradient(ellipse 90% 60% at 20% -10%, rgba(31,199,182,0.12), transparent 60%),
-    radial-gradient(ellipse 70% 50% at 100% 0%, rgba(255,107,69,0.1), transparent 55%);
+    linear-gradient(90deg, rgba(6,18,16,0.62) 0%, rgba(6,18,16,0.25) 45%, transparent 70%),
+    linear-gradient(180deg, rgba(6,18,16,0.35) 0%, transparent 25%, transparent 55%, rgba(12,43,40,0.8) 100%);
 }
 .hero .wrap,
 .hero .hero-eyebrow,
@@ -261,10 +260,10 @@ body::before {
   align-items: center;
   gap: 10px;
   color: var(--turq-soft);
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  margin-bottom: 28px;
+  letter-spacing: 0.04em;
+  margin-bottom: 18px;
 }
 .hero-eyebrow::before {
   content: "";
@@ -273,22 +272,25 @@ body::before {
   display: inline-block;
 }
 .hero h1 {
-  font-size: clamp(2.2rem, 4.8vw, 4.0rem);
+  font-size: clamp(1.9rem, 3.2vw, 3rem);
   font-weight: 900;
-  line-height: 1.08;
-  max-width: 920px;
+  line-height: 1.1;
+  max-width: 640px;
   color: var(--paper);
   letter-spacing: -0.01em;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.35);
 }
 .hero h1 span { color: var(--coral); }
 .hero-sub {
-  margin-top: 32px;
-  max-width: 560px;
-  font-size: 1.25rem;
+  margin-top: 18px;
+  max-width: 480px;
+  font-size: clamp(0.98rem, 1.1vw, 1.08rem);
   line-height: 1.55;
   color: var(--ice);
   font-weight: 400;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.45);
 }
+.hero .btn-coral { margin-top: 24px !important; font-size: 0.95rem !important; }
 .hero-meta {
   margin-top: 56px;
   display: flex;
