@@ -2,18 +2,15 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Copy package files and install dependencies
+# Instalar dependencias desde el lock (reproducible y más rápido que npm install)
 COPY package*.json ./
-RUN npm install --production
+RUN npm ci --omit=dev
 
-# Copy application files
+# Copiar el resto de la aplicación
 COPY . .
 
-# Ensure data and uploads directories exist
-RUN mkdir -p data uploads
+# Asegurar que existan los directorios que server.js escribe en runtime
+RUN mkdir -p data/backups uploads
 
-# Expose Railway dynamic PORT
-EXPOSE ${PORT}
-
-# Start Express Node.js server
+# Railway inyecta PORT en runtime; server.js lo lee con process.env.PORT
 CMD ["node", "server.js"]

@@ -1,10 +1,26 @@
+# Control de versiones y editor
 .git
 .gitignore
 .DS_Store
 .vscode
+
+# Logs y secretos
 *.log
 .env
+
+# Meta de Docker
 Dockerfile
 .dockerignore
-README.md
+
+# Documentación (no se sirve en la web)
+*.md
+
+# Dependencias: se instalan en el build con npm ci
 node_modules
+
+# Fotos originales sin optimizar (~52 MB). La web usa las de assets/.
+# server.js recrea el directorio en runtime si no existe.
+uploads
+
+# Backups del CMS legado. server.js recrea el directorio en runtime.
+data/backups
