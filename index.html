@@ -34,7 +34,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=2.3">
+  <link rel="stylesheet" href="assets/css/styles.css?v=2.4">
 </head>
 <body>
 
@@ -51,6 +51,7 @@
         <a href="#itinerario">Itinerario</a>
         <a href="#deportes">Deportes</a>
         <a href="tripulacion.html">Tripulación</a>
+        <a href="tienda.html">Tienda</a>
         <a href="https://wa.me/584120000000?text=Hola!%20Me%20interesa%20el%20Waterman%20Experience%20Tour" target="_blank" class="nav-cta">Reservar</a>
       </div>
       <button class="nav-mobile-btn" onclick="toggleMobileMenu()" aria-label="Abrir menú">
@@ -74,6 +75,8 @@
         <a href="destino-choroni.html">Choroní</a>
         <a href="destino-margarita.html">Margarita</a>
         <a href="destino-coche.html">Isla de Coche</a>
+        <a href="destino-roques.html">Los Roques</a>
+        <a href="tienda.html">Tienda</a>
       </div>
       <a href="https://wa.me/584120000000?text=Hola!%20Me%20interesa%20el%20Waterman%20Experience%20Tour" target="_blank" class="btn-coral" style="text-align:center;margin-top:12px;">Reservar Ahora</a>
     </div>
@@ -191,6 +194,26 @@
         </div>
       </section>
 
+      <!-- Los Roques — experiencia aparte de 10 días -->
+      <section class="dest roques reverse reveal">
+        <div class="dest-inner">
+          <div class="dest-text">
+            <span class="dest-kicker">Los Roques · Experiencia de 10 días</span>
+            <h2>Donde el viento<br>no se acaba nunca</h2>
+            <p>Una experiencia aparte del tour de 15 días: <strong>Europa → Los Roques → Europa</strong>, con salidas en cualquier momento del año. Aguas totalmente planas, viento alisio y cayos desiertos.</p>
+            <div class="dest-tags">
+              <span>10 días</span>
+              <span>Todo el año</span>
+              <span>Agua plana</span>
+            </div>
+            <a href="destino-roques.html" class="dest-link">Descubre Los Roques <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="dest-art reveal">
+            <img loading="lazy" decoding="async" src="assets/IMG_4161.webp" data-hover="assets/IMG_4118.webp" alt="Los Roques — archipiélago coralino">
+          </div>
+        </div>
+      </section>
+
     </div>
 
 
@@ -224,6 +247,11 @@
           <div class="sport-icon"><i class="fa-solid fa-water"></i></div>
           <h3>Buceo PADI</h3>
           <p>Explora los arrecifes de coral y la fascinante vida marina del Mar Caribe.</p>
+        </div>
+        <div class="sport-card reveal">
+          <div class="sport-icon"><i class="fa-solid fa-water-ladder"></i></div>
+          <h3>Surf</h3>
+          <p>Rompientes de olas en Playa Grande (Choroní) y Parguito (Margarita), para todos los niveles.</p>
         </div>
       </div>
     </section>
@@ -314,6 +342,153 @@
         <a href="https://wa.me/584120000000?text=Hola!%20Quiero%20reservar%20mi%20lugar%20en%20el%20Waterman%20Experience%20Tour" target="_blank" class="cta-btn">Reserva tu aventura</a>
       </div>
     </section>
+
+    <!-- ============ MICRO TIENDA (MUESTRA) ============ -->
+    <section class="shop reveal" id="tienda">
+      <div class="shop-head">
+        <span class="dest-kicker">Tienda Waterman</span>
+        <h2>Llévate el Caribe puesto</h2>
+        <p>Las camisas de la tripulación. Elige talla y color y nos escribes por WhatsApp.</p>
+        <div class="shop-demo-note"><i class="fa-solid fa-circle-info"></i> Muestra de tienda · precios de referencia</div>
+      </div>
+
+      <div class="shop-grid">
+
+        <article class="shirt-card" data-model="Waterman Classic" data-price="&euro;29">
+          <div class="shirt-visual">
+            <svg viewBox="0 0 200 215" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Camisa Waterman Classic">
+              <path class="tee-body" fill="#122a26" d="M72 10 C72 10 80 28 100 28 C120 28 128 10 128 10 L150 18 L190 46 L170 80 L152 70 L152 200 C152 206 148 209 142 209 L58 209 C52 209 48 206 48 200 L48 70 L30 80 L10 46 L50 18 Z"/>
+              <path fill="rgba(0,0,0,0.12)" d="M48 70 L48 200 C48 206 52 209 58 209 L72 209 L72 70 Z"/>
+              <text class="tee-art" x="100" y="118" text-anchor="middle" font-family="Unbounded, sans-serif" font-size="19" font-weight="900" fill="#faf6ee" letter-spacing="1">WATERMAN</text>
+              <text class="tee-art" x="100" y="136" text-anchor="middle" font-family="Inter, sans-serif" font-size="8.5" font-weight="700" fill="#faf6ee" letter-spacing="3">EXPERIENCE TOUR</text>
+              <rect class="tee-accent" x="78" y="146" width="44" height="2.5" fill="#ff6b45"/>
+            </svg>
+          </div>
+          <div class="shirt-body">
+            <div class="shirt-name">Waterman Classic</div>
+            <p class="shirt-desc">El logo de la marca, limpio y sin ruido. La que usa la tripulación todos los días.</p>
+            <div class="shirt-price">&euro;29</div>
+            <span class="shirt-opt-label">Talla</span>
+            <div class="shirt-sizes">
+              <button class="shirt-size" type="button">S</button>
+              <button class="shirt-size is-active" type="button">M</button>
+              <button class="shirt-size" type="button">L</button>
+              <button class="shirt-size" type="button">XL</button>
+            </div>
+            <span class="shirt-opt-label">Color</span>
+            <div class="shirt-colors">
+              <button class="shirt-color is-active" type="button" style="background:#122a26" data-hex="#122a26" data-name="Verde profundo" aria-label="Verde profundo"></button>
+              <button class="shirt-color" type="button" style="background:#faf6ee" data-hex="#faf6ee" data-name="Arena" aria-label="Arena"></button>
+              <button class="shirt-color" type="button" style="background:#ff6b45" data-hex="#ff6b45" data-name="Coral" aria-label="Coral"></button>
+            </div>
+            <button class="shirt-btn" type="button"><i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp</button>
+          </div>
+        </article>
+
+        <article class="shirt-card" data-model="Kitesurf Caribe" data-price="&euro;32">
+          <div class="shirt-visual">
+            <svg viewBox="0 0 200 215" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Camisa Kitesurf Caribe">
+              <path class="tee-body" fill="#1fc7b6" d="M72 10 C72 10 80 28 100 28 C120 28 128 10 128 10 L150 18 L190 46 L170 80 L152 70 L152 200 C152 206 148 209 142 209 L58 209 C52 209 48 206 48 200 L48 70 L30 80 L10 46 L50 18 Z"/>
+              <path fill="rgba(0,0,0,0.12)" d="M48 70 L48 200 C48 206 52 209 58 209 L72 209 L72 70 Z"/>
+              <path class="tee-art" d="M78 96 Q100 84 122 96 Q112 112 100 116 Q88 112 78 96 Z" fill="#122a26"/>
+              <path class="tee-art" stroke="#122a26" stroke-width="1.4" fill="none" d="M100 116 L100 142"/>
+              <circle class="tee-art" cx="100" cy="146" r="3.4" fill="#122a26"/>
+              <text class="tee-art" x="100" y="168" text-anchor="middle" font-family="Unbounded, sans-serif" font-size="11" font-weight="800" fill="#122a26" letter-spacing="1">KITESURF</text>
+            </svg>
+          </div>
+          <div class="shirt-body">
+            <div class="shirt-name">Kitesurf Caribe</div>
+            <p class="shirt-desc">Para los que viven colgados de una cometa. Cometa y líneas estampadas al frente.</p>
+            <div class="shirt-price">&euro;32</div>
+            <span class="shirt-opt-label">Talla</span>
+            <div class="shirt-sizes">
+              <button class="shirt-size" type="button">S</button>
+              <button class="shirt-size is-active" type="button">M</button>
+              <button class="shirt-size" type="button">L</button>
+              <button class="shirt-size" type="button">XL</button>
+            </div>
+            <span class="shirt-opt-label">Color</span>
+            <div class="shirt-colors">
+              <button class="shirt-color is-active" type="button" style="background:#1fc7b6" data-hex="#1fc7b6" data-name="Turquesa" aria-label="Turquesa"></button>
+              <button class="shirt-color" type="button" style="background:#faf6ee" data-hex="#faf6ee" data-name="Arena" aria-label="Arena"></button>
+              <button class="shirt-color" type="button" style="background:#122a26" data-hex="#122a26" data-name="Verde profundo" aria-label="Verde profundo"></button>
+            </div>
+            <button class="shirt-btn" type="button"><i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp</button>
+          </div>
+        </article>
+
+        <article class="shirt-card" data-model="Los Roques 18-25 kts" data-price="&euro;32">
+          <div class="shirt-visual">
+            <svg viewBox="0 0 200 215" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Camisa Los Roques 18-25 nudos">
+              <path class="tee-body" fill="#faf6ee" d="M72 10 C72 10 80 28 100 28 C120 28 128 10 128 10 L150 18 L190 46 L170 80 L152 70 L152 200 C152 206 148 209 142 209 L58 209 C52 209 48 206 48 200 L48 70 L30 80 L10 46 L50 18 Z"/>
+              <path fill="rgba(0,0,0,0.07)" d="M48 70 L48 200 C48 206 52 209 58 209 L72 209 L72 70 Z"/>
+              <text class="tee-art" x="100" y="112" text-anchor="middle" font-family="Unbounded, sans-serif" font-size="14" font-weight="900" fill="#122a26" letter-spacing="0.5">LOS ROQUES</text>
+              <text class="tee-accent" x="100" y="134" text-anchor="middle" font-family="Unbounded, sans-serif" font-size="17" font-weight="900" fill="#ff6b45">18&#8211;25</text>
+              <text class="tee-art" x="100" y="149" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#122a26" letter-spacing="3.5">NUDOS</text>
+              <path class="tee-art" stroke="#1fc7b6" stroke-width="1.8" fill="none" stroke-linecap="round" d="M74 162 H118 M74 169 H108 M74 176 H126"/>
+            </svg>
+          </div>
+          <div class="shirt-body">
+            <div class="shirt-name">Los Roques 18&#8211;25 kts</div>
+            <p class="shirt-desc">El viento alisio que hace del archipiélago el mejor spot de agua plana del mundo.</p>
+            <div class="shirt-price">&euro;32</div>
+            <span class="shirt-opt-label">Talla</span>
+            <div class="shirt-sizes">
+              <button class="shirt-size" type="button">S</button>
+              <button class="shirt-size is-active" type="button">M</button>
+              <button class="shirt-size" type="button">L</button>
+              <button class="shirt-size" type="button">XL</button>
+            </div>
+            <span class="shirt-opt-label">Color</span>
+            <div class="shirt-colors">
+              <button class="shirt-color is-active" type="button" style="background:#faf6ee" data-hex="#faf6ee" data-name="Arena" aria-label="Arena"></button>
+              <button class="shirt-color" type="button" style="background:#122a26" data-hex="#122a26" data-name="Verde profundo" aria-label="Verde profundo"></button>
+              <button class="shirt-color" type="button" style="background:#1fc7b6" data-hex="#1fc7b6" data-name="Turquesa" aria-label="Turquesa"></button>
+            </div>
+            <button class="shirt-btn" type="button"><i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp</button>
+          </div>
+        </article>
+
+        <article class="shirt-card" data-model="Choroní Tambores" data-price="&euro;29">
+          <div class="shirt-visual">
+            <svg viewBox="0 0 200 215" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Camisa Choroní Tambores">
+              <path class="tee-body" fill="#ff6b45" d="M72 10 C72 10 80 28 100 28 C120 28 128 10 128 10 L150 18 L190 46 L170 80 L152 70 L152 200 C152 206 148 209 142 209 L58 209 C52 209 48 206 48 200 L48 70 L30 80 L10 46 L50 18 Z"/>
+              <path fill="rgba(0,0,0,0.12)" d="M48 70 L48 200 C48 206 52 209 58 209 L72 209 L72 70 Z"/>
+              <circle class="tee-art" cx="100" cy="112" r="17" fill="none" stroke="#faf6ee" stroke-width="2.4"/>
+              <path class="tee-art" d="M86 104 L114 104 L110 134 L90 134 Z" fill="#faf6ee"/>
+              <path class="tee-cut" stroke="#ff6b45" stroke-width="1.6" fill="none" d="M92 112 H108 M92 120 H108"/>
+              <text class="tee-art" x="100" y="160" text-anchor="middle" font-family="Unbounded, sans-serif" font-size="12" font-weight="800" fill="#faf6ee" letter-spacing="1">CHORONÍ</text>
+            </svg>
+          </div>
+          <div class="shirt-body">
+            <div class="shirt-name">Choroní Tambores</div>
+            <p class="shirt-desc">Un homenaje al tambor afrocaribeño que suena al atardecer en Puerto Colombia.</p>
+            <div class="shirt-price">&euro;29</div>
+            <span class="shirt-opt-label">Talla</span>
+            <div class="shirt-sizes">
+              <button class="shirt-size" type="button">S</button>
+              <button class="shirt-size is-active" type="button">M</button>
+              <button class="shirt-size" type="button">L</button>
+              <button class="shirt-size" type="button">XL</button>
+            </div>
+            <span class="shirt-opt-label">Color</span>
+            <div class="shirt-colors">
+              <button class="shirt-color is-active" type="button" style="background:#ff6b45" data-hex="#ff6b45" data-name="Coral" aria-label="Coral"></button>
+              <button class="shirt-color" type="button" style="background:#122a26" data-hex="#122a26" data-name="Verde profundo" aria-label="Verde profundo"></button>
+              <button class="shirt-color" type="button" style="background:#faf6ee" data-hex="#faf6ee" data-name="Arena" aria-label="Arena"></button>
+            </div>
+            <button class="shirt-btn" type="button"><i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp</button>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="shop-foot">
+        Envíos a Europa y Venezuela. Al pulsar &laquo;Pedir por WhatsApp&raquo; se abre un chat con el
+        modelo, la talla y el color ya escritos.
+        <a href="tienda.html" style="color:var(--coral);font-weight:700;">Ver la tienda completa &rarr;</a>
+      </p>
+    </section>
   </main>
 
 
@@ -333,11 +508,13 @@
           <li><a href="destino-choroni.html">Choroní</a></li>
           <li><a href="destino-margarita.html">Margarita</a></li>
           <li><a href="destino-coche.html">Isla de Coche</a></li>
+          <li><a href="destino-roques.html">Los Roques</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Conectar</h4>
         <ul>
+          <li><a href="tienda.html">Tienda</a></li>
           <li><a href="https://wa.me/584120000000" target="_blank">WhatsApp</a></li>
           <li><a href="https://instagram.com/rickywaterman" target="_blank">Instagram</a></li>
         </ul>
@@ -391,5 +568,6 @@
   </script>
 
   <script src="assets/js/hover-swap.js"></script>
+  <script src="assets/js/shop.js?v=1.0"></script>
 </body>
 </html>

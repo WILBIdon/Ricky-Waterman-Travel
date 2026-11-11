@@ -149,6 +149,10 @@ body::before {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px -5px rgba(255,200,87,0.6);
 }
+@media (max-width: 1080px) {
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 0.86rem; }
+}
 @media (max-width: 860px) {
   .nav-links { display: none; }
 }
@@ -462,6 +466,13 @@ body::before {
 .dest.choroni .dest-tags span { color: var(--coral); }
 .dest.choroni .dest-link { color: var(--coral); }
 
+/* Los Roques */
+.dest.roques { background: linear-gradient(180deg, #0a2520, #123a35); color: var(--sand); }
+.dest.roques .dest-kicker { color: var(--gold); }
+.dest.roques .dest-art { background: linear-gradient(150deg, #0d3b4a, #ffc857 130%); }
+.dest.roques .dest-tags span { color: var(--gold); }
+.dest.roques .dest-link { color: var(--gold); }
+
 /* ---------- DEPORTES NÁUTICOS ---------- */
 .sports {
   padding: 120px 40px;
@@ -473,7 +484,7 @@ body::before {
 .sports-head h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-top: 16px; margin-bottom: 16px; color: var(--ink); }
 .sports-head p { font-size: 1.15rem; color: #4a4a4a; }
 .sports-grid {
-  max-width: 1000px;
+  max-width: 1180px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
@@ -483,12 +494,12 @@ body::before {
   .sports-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
 }
 @media (min-width: 1000px) {
-  .sports-grid { grid-template-columns: repeat(4, 1fr); }
+  .sports-grid { grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); }
 }
 .sport-card {
   background: #fff;
   border-radius: var(--radius-md);
-  padding: 40px 30px;
+  padding: 36px 22px;
   text-align: center;
   transition: transform 0.4s, box-shadow 0.4s;
   box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
@@ -498,8 +509,8 @@ body::before {
   box-shadow: 0 20px 40px -15px rgba(0,0,0,0.15);
 }
 .sport-card .sport-icon {
-  font-size: 3.5rem;
-  margin-bottom: 24px;
+  font-size: 3rem;
+  margin-bottom: 20px;
   transition: transform 0.3s;
 }
 .sport-card:hover .sport-icon {
@@ -509,7 +520,8 @@ body::before {
 .sport-card:nth-child(2) .sport-icon { color: var(--mango); }
 .sport-card:nth-child(3) .sport-icon { color: var(--coral); }
 .sport-card:nth-child(4) .sport-icon { color: var(--gold); }
-.sport-card h3 { font-size: 1.6rem; margin-bottom: 12px; color: var(--ink); }
+.sport-card:nth-child(5) .sport-icon { color: var(--turq-soft); }
+.sport-card h3 { font-size: 1.35rem; margin-bottom: 12px; color: var(--ink); }
 .sport-card p { color: #555; line-height: 1.6; }
 
 /* ---------- GALERIA ---------- */
@@ -1621,3 +1633,242 @@ footer {
   }
 }
 
+
+/* ---------- CASA RICKY WATERMAN (CHORONÍ) ---------- */
+.casa {
+  padding: 100px 40px;
+  background: linear-gradient(180deg, #2a1508, #1a2e28);
+}
+.casa-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 44px;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .casa-inner { grid-template-columns: 1.05fr 1fr; gap: 60px; }
+}
+.casa-photo {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-heavy);
+}
+.casa-photo img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  transition: transform 0.6s;
+}
+.casa-photo:hover img { transform: scale(1.04); }
+.casa-badge {
+  position: absolute;
+  top: 18px; left: 18px;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+}
+.casa-text h2 {
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  font-weight: 900;
+  color: var(--paper);
+  line-height: 1.12;
+  margin: 12px 0 18px;
+}
+.casa-text h2 span { color: var(--gold); }
+.casa-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ice);
+  opacity: 0.9;
+  margin-bottom: 14px;
+}
+.casa-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 26px 0 30px;
+}
+.casa-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--ice);
+}
+.casa-features i { color: var(--turq); width: 18px; text-align: center; }
+@media (max-width: 600px) {
+  .casa { padding: 70px 20px; }
+  .casa-features { grid-template-columns: 1fr; }
+  .casa-photo img { height: 300px; }
+}
+
+/* ---------- MICRO TIENDA (CAMISAS) ---------- */
+/* Hero de la tienda: el nav flotante mide ~196px por el logo, así que el
+   contenido arranca por debajo para que el título no quede pisado. */
+.shop-hero { min-height: 56vh; padding-top: 225px; }
+@media (max-width: 860px) { .shop-hero { padding-top: 215px; min-height: 48vh; } }
+
+.shop {
+  padding: 110px 40px;
+  background: var(--sand);
+  color: var(--ink);
+}
+.shop-head {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 56px;
+}
+.shop-head .dest-kicker { color: var(--coral); }
+.shop-head h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin: 16px 0;
+  color: var(--ink);
+}
+.shop-head p { font-size: 1.1rem; color: #4a4a4a; line-height: 1.6; }
+.shop-demo-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  background: rgba(255,107,69,0.12);
+  border: 1px solid rgba(255,107,69,0.35);
+  color: #b03a1c;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+}
+.shop-grid {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 28px;
+}
+.shirt-card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 10px 30px -12px rgba(0,0,0,0.12);
+  transition: transform 0.35s, box-shadow 0.35s;
+  display: flex;
+  flex-direction: column;
+}
+.shirt-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 44px -18px rgba(0,0,0,0.2);
+}
+.shirt-visual {
+  background: linear-gradient(160deg, #f0e7d6, #e2d6c0);
+  padding: 22px 18px 8px;
+  display: flex;
+  justify-content: center;
+}
+.shirt-visual svg { width: 100%; max-width: 180px; height: auto; }
+.shirt-body { padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1; }
+.shirt-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.shirt-desc {
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex: 1;
+}
+.shirt-price {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--coral);
+  margin-bottom: 18px;
+}
+.shirt-opt-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #8a8a8a;
+  margin-bottom: 8px;
+  display: block;
+}
+.shirt-sizes { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 16px; }
+.shirt-size {
+  border: 1.5px solid #d8d0c2;
+  background: #fff;
+  color: #555;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  min-width: 38px;
+  padding: 7px 4px;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.shirt-size:hover { border-color: var(--coral); color: var(--coral); }
+.shirt-size.is-active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+.shirt-colors { display: flex; gap: 9px; margin-bottom: 20px; }
+.shirt-color {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  box-shadow: 0 0 0 1.5px #d8d0c2;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.shirt-color:hover { transform: scale(1.12); }
+.shirt-color.is-active {
+  border-color: #fff;
+  box-shadow: 0 0 0 2.5px var(--coral);
+}
+.shirt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  background: #25D366;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  padding: 14px 18px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background 0.25s, transform 0.25s;
+}
+.shirt-btn:hover { background: #1da851; transform: translateY(-2px); }
+.shop-foot {
+  max-width: 680px;
+  margin: 50px auto 0;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #5a5a5a;
+  line-height: 1.6;
+}
+@media (max-width: 600px) {
+  .shop { padding: 70px 20px; }
+  .shop-grid { gap: 20px; }
+}
