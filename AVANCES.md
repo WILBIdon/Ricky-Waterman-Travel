@@ -163,6 +163,36 @@ es una plantilla de briefing de agencia sin rellenar. El único campo con texto 
 la lista de valores de marca, y parece el menú de opciones de la propia plantilla,
 no una elección del cliente. No contiene fotos ni cambios para el itinerario.
 
+---
+
+## 2026-11-11 (3) — Foto real de Ricky
+
+`assets/ricky-waterman.webp` (1200×1200, **93 KB**) sustituye a
+`assets/ricky-portrait.png` (656 KB) en sus 3 referencias: el hero de
+`ricky.html`, el banner de la home y el `og:image` de la vista previa al
+compartir. El hero pasó a `loading="eager"` + `fetchpriority="high"` porque
+está sobre el pliegue y es el elemento LCP de esa página.
+
+El `alt` ahora describe la foto de verdad: "Ricky Waterman saliendo del agua
+con su tabla de kitesurf".
+
+### Por qué importaba
+
+La foto anterior **era generada por IA**: un hombre genérico con camisa azul en
+una playa, presentado como Ricky Waterman en la página "Sobre Ricky" y en la
+vista previa de WhatsApp y redes. En un negocio construido sobre la marca
+personal de una persona real, eso es un problema de credibilidad, no de diseño.
+
+### ⚠️ Queda otra foto falsa
+
+`assets/ricky-surfing-youth.png` (1 MB), en `ricky.html`, también es generada
+por IA y es **un tercer hombre distinto**. Se delata sola: el texto de la tabla
+("Venezuela", "Los Roques") está escrito **en espejo**. Hace falta una foto real
+para reemplazarla.
+
+`assets/ricky-portrait.png` queda en el repo sin que nada la referencie (656 KB
+muertos). Se puede borrar cuando se confirme que no hace falta.
+
 ## Pendientes (necesitan datos tuyos)
 
 | # | Qué falta | Dónde |
