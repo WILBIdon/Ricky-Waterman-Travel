@@ -34,7 +34,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=3.1">
+  <link rel="stylesheet" href="assets/css/styles.css?v=3.2">
 </head>
 <body>
 
@@ -88,7 +88,8 @@
     <!-- ============ HERO ============ -->
     <section class="hero" id="hero-section">
       <div class="hero-video-bg">
-        <video src="assets/hero-video.mp4" autoplay muted loop playsinline></video>
+        <video id="hero-video" data-src="assets/hero-video.mp4" poster="assets/hero-poster.webp"
+               muted loop playsinline preload="none" aria-hidden="true"></video>
       </div>
       <div class="wrap" style="padding:0; position:relative; z-index:2;">
         <div class="hero-eyebrow">Del invierno europeo al Caribe</div>
@@ -630,6 +631,24 @@
 
   </script>
 
+  <script>
+    /* El video del hero pesa 5,7 MB. No se descarga si el visitante está en
+       móvil, tiene el ahorro de datos activado, va por una conexión lenta o
+       ha pedido menos animación: en esos casos se queda el poster, que pesa
+       61 KB y es el primer fotograma del propio video. */
+    (function () {
+      var v = document.getElementById('hero-video');
+      if (!v) return;
+      var con = navigator.connection || {};
+      var lenta = con.saveData === true || /^(slow-)?2g$/.test(con.effectiveType || '');
+      var menosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (window.innerWidth < 860 || lenta || menosMovimiento) return;
+      v.src = v.getAttribute('data-src');
+      v.autoplay = true;
+      var intento = v.play();
+      if (intento && intento.catch) intento.catch(function () {});
+    })();
+  </script>
   <script src="assets/js/hover-swap.js"></script>
   <script src="assets/js/shop.js?v=1.0"></script>
 </body>

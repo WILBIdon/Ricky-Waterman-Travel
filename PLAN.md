@@ -37,8 +37,8 @@ Leyenda: ✅ hecho · 🔨 en curso · ⬜ pendiente · 🧍 necesita algo del c
 | # | Tarea | Estado | Detalle |
 |---|---|---|---|
 | 3.1 | **Logo cortado en móvil** | ✅ | Media query por tramos. A 375px: nav de **196px → 84px**, logo 160→60px, wordmark oculto (el logo ya lo dice), hamburguesa despejada. A 768px: logo 72px, wordmark cabe sin solape. Escritorio sin tocar (160px/196px, verificado a 1280px). `.shop-hero` ajustado, que compensaba el nav gigante |
-| 3.2 | **Imágenes pesadas** | ⬜ | `choroni-panorama.webp` 6,2 MB cargada 2 veces en la home; `choroni-paraiso.webp` 4032px para un hueco de 420. Redimensionar (ideal: sustituir por fotos reales del cliente, tarea 1.6) |
-| 3.3 | **Video del hero sin `poster`** | ⬜ | 5,7 MB; en móvil con mala conexión se ve negro. Añadir imagen de respaldo |
+| 3.2 | **Imágenes pesadas** | ✅ | Resuelto al poner las fotos reales: home 10,7→0,72 MB, Choroní 9,4→1,38 MB, Coche 5,9→0,64 MB. Las panorámicas de 11.952 px ya no se usan |
+| 3.3 | **Video del hero sin `poster`** | ✅ | `hero-poster.webp` (61 KB, primer fotograma del propio video). Además **el móvil ya no descarga los 5,7 MB**: el video solo se carga en ≥860px, y nunca con ahorro de datos, 2G o `prefers-reduced-motion`. Verificado: 0 MP4 en móvil, reproduce en escritorio |
 | 3.4 | **`sitemap.xml` no existe** y `robots.txt` apunta a `rickywaterman.com` mientras el schema.org dice `watermanexperiencetour.com` | 🧍 | Crear sitemap con las 8 páginas + unificar dominio. **Necesito saber cuál es el dominio real** |
 | 3.5 | **CMS legado** | ⬜ | `admin.js` huérfano y APIs sin autenticación en `server.js`. Decidir: borrar el CMS o protegerlo. Mientras, no se sirve a visitantes |
 

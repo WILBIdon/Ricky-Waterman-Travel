@@ -2036,3 +2036,9 @@ footer {
   opacity: 0.72;
   margin-top: 5px;
 }
+
+/* El poster cubre el hueco igual que el video, para que no se vea un salto
+   cuando el video no llega a cargarse (móvil, ahorro de datos, 2G). */
+.hero-video-bg video {
+  background: var(--ink) url("../hero-poster.webp") center/cover no-repeat;
+}
