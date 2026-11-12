@@ -1935,3 +1935,22 @@ footer {
   color: var(--gold);
 }
 .mobile-menu-links small { opacity: 0.6; font-size: 0.75em; }
+
+/* ---------- NAV RESPONSIVE: el logo de 160px no cabe en un móvil ----------
+   A 375px el wordmark llegaba hasta los 493px (118px fuera de pantalla) y la
+   hamburguesa quedaba encima del texto. El nav medía 196px de alto, casi un
+   cuarto de la pantalla. Se reduce por tramos; .shop-hero sigue al nav. */
+@media (max-width: 860px) {
+  .nav-floating { padding: 12px 20px; }
+  .nav-floating.scrolled { padding: 10px 20px; }
+  .nav-logo { gap: 10px; }
+  .nav-logo img { height: 72px; }
+  .nav-logo-text { font-size: 0.78rem; white-space: normal; line-height: 1.2; }
+  .shop-hero { padding-top: 140px; min-height: 48vh; }
+}
+@media (max-width: 600px) {
+  .nav-logo img { height: 60px; }
+  /* El logo ya dice "Ricky Waterman": el wordmark repetido no cabe ni aporta. */
+  .nav-logo-text { display: none; }
+  .shop-hero { padding-top: 125px; }
+}

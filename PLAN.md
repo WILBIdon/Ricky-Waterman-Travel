@@ -34,7 +34,7 @@ Leyenda: ✅ hecho · 🔨 en curso · ⬜ pendiente · 🧍 necesita algo del c
 
 | # | Tarea | Estado | Detalle |
 |---|---|---|---|
-| 3.1 | **Logo cortado en móvil** | ⬜ | 160px fijos sin regla responsive: el wordmark se desborda hasta 493px en una pantalla de 375 y la hamburguesa queda encima del texto. Afecta a las 8 páginas. Arreglo: media query (~10 líneas) que baje el logo a ~64px y deje partir el texto. El nav pasaría de 196px a ~80px de alto |
+| 3.1 | **Logo cortado en móvil** | ✅ | Media query por tramos. A 375px: nav de **196px → 84px**, logo 160→60px, wordmark oculto (el logo ya lo dice), hamburguesa despejada. A 768px: logo 72px, wordmark cabe sin solape. Escritorio sin tocar (160px/196px, verificado a 1280px). `.shop-hero` ajustado, que compensaba el nav gigante |
 | 3.2 | **Imágenes pesadas** | ⬜ | `choroni-panorama.webp` 6,2 MB cargada 2 veces en la home; `choroni-paraiso.webp` 4032px para un hueco de 420. Redimensionar (ideal: sustituir por fotos reales del cliente, tarea 1.6) |
 | 3.3 | **Video del hero sin `poster`** | ⬜ | 5,7 MB; en móvil con mala conexión se ve negro. Añadir imagen de respaldo |
 | 3.4 | **`sitemap.xml` no existe** y `robots.txt` apunta a `rickywaterman.com` mientras el schema.org dice `watermanexperiencetour.com` | 🧍 | Crear sitemap con las 8 páginas + unificar dominio. **Necesito saber cuál es el dominio real** |
@@ -52,7 +52,7 @@ Leyenda: ✅ hecho · 🔨 en curso · ⬜ pendiente · 🧍 necesita algo del c
 
 ## Orden sugerido
 
-1. **1.2 Canaima** (en curso) → 2. **1.4 foto surf real** → 3. **3.1 logo móvil** → 4. **1.6 fotos por destino** (incluye 3.2) → 5. **3.3 poster del hero** → 6. **3.4 sitemap** (cuando haya dominio) → el resto según respuestas del cliente.
+~~1.2 Canaima~~ → ~~1.4 foto surf real~~ → ~~3.1 logo móvil~~ → **siguiente: 1.6 fotos por destino** (incluye 3.2 imágenes pesadas) → 3.3 poster del hero → 3.4 sitemap (cuando haya dominio) → el resto según respuestas del cliente.
 
 ## Regla fija
 
