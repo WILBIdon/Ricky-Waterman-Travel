@@ -40,7 +40,7 @@ Leyenda: ✅ hecho · 🔨 en curso · ⬜ pendiente · 🧍 necesita algo del c
 | 3.2 | **Imágenes pesadas** | ✅ | Resuelto al poner las fotos reales: home 10,7→0,72 MB, Choroní 9,4→1,38 MB, Coche 5,9→0,64 MB. Las panorámicas de 11.952 px ya no se usan |
 | 3.3 | **Video del hero sin `poster`** | ✅ | `hero-poster.webp` (61 KB, primer fotograma del propio video). Además **el móvil ya no descarga los 5,7 MB**: el video solo se carga en ≥860px, y nunca con ahorro de datos, 2G o `prefers-reduced-motion`. Verificado: 0 MP4 en móvil, reproduce en escritorio |
 | 3.4 | **`sitemap.xml` no existe** y `robots.txt` apunta a `rickywaterman.com` mientras el schema.org dice `watermanexperiencetour.com` | 🧍 | Crear sitemap con las 8 páginas + unificar dominio. **Necesito saber cuál es el dominio real** |
-| 3.5 | **CMS legado** | ⬜ | `admin.js` huérfano y APIs sin autenticación en `server.js`. Decidir: borrar el CMS o protegerlo. Mientras, no se sirve a visitantes |
+| 3.5 | **CMS legado — era explotable en producción** | ✅ | Verificado atacándolo en local: cualquiera podía **sobrescribir la base de contenidos** y **subir un `.html` que se ejecutaba** desde el dominio del sitio (XSS almacenado), con un límite de 500 MB por archivo. Además `server.js`, `Dockerfile`, `package.json`, `data/cms_db.json` y las notas internas eran **descargables**. Corregido: API apagada salvo que exista `ADMIN_TOKEN`, allowlist de archivos públicos, subidas limitadas a 25 MB con la extensión derivada del tipo MIME. `admin.js` (1.423 líneas, huérfano) eliminado |
 
 ## 4. Limpieza
 
