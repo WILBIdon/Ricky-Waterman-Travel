@@ -88,7 +88,10 @@
     <!-- ============ HERO ============ -->
     <section class="hero" id="hero-section">
       <div class="hero-video-bg">
-        <video id="hero-video" data-src="assets/hero-video.mp4" poster="assets/hero-poster.webp"
+        <video id="hero-video"
+               data-src="assets/hero-video.mp4"
+               data-src-movil="assets/hero-video-movil.mp4"
+               poster="assets/hero-poster.webp"
                muted loop playsinline preload="none" aria-hidden="true"></video>
       </div>
       <div class="wrap" style="padding:0; position:relative; z-index:2;">
@@ -632,18 +635,22 @@
   </script>
 
   <script>
-    /* El video del hero pesa 5,7 MB. No se descarga si el visitante está en
-       móvil, tiene el ahorro de datos activado, va por una conexión lenta o
-       ha pedido menos animación: en esos casos se queda el poster, que pesa
-       61 KB y es el primer fotograma del propio video. */
+    /* Tres niveles, según lo que aguante la conexión del visitante:
+         escritorio          -> el video completo
+         móvil y tablet      -> una versión ligera, sin audio
+         2G / ahorro datos / -> solo el poster (61 KB), que es el primer
+         menos movimiento       fotograma del propio video                */
     (function () {
       var v = document.getElementById('hero-video');
       if (!v) return;
+
       var con = navigator.connection || {};
       var lenta = con.saveData === true || /^(slow-)?2g$/.test(con.effectiveType || '');
       var menosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (window.innerWidth < 860 || lenta || menosMovimiento) return;
-      v.src = v.getAttribute('data-src');
+      if (lenta || menosMovimiento) return;   // se queda el poster
+
+      var ligero = window.innerWidth < 860;
+      v.src = v.getAttribute(ligero ? 'data-src-movil' : 'data-src');
       v.autoplay = true;
       var intento = v.play();
       if (intento && intento.catch) intento.catch(function () {});
