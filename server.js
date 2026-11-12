@@ -2,6 +2,7 @@ const express = require('express');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
+const { render, claves } = require('./render');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -55,7 +56,21 @@ app.use((req, res, next) => {
     // En la raíz solo se permiten extensiones públicas; nada de subcarpetas.
     const esRaiz = ruta.lastIndexOf('/') === 0;
     if (esRaiz && EXT_RAIZ_PUBLICA.test(ruta)) return next();
-    return res.status(404).sendFile(path.join(__dirname, 'index.html'));
+    return res.status(404).type('html').send(render('index'));
+});
+
+/* Las páginas se sirven desde plantillas (views/), no desde .html sueltos.
+   Mismas URLs que antes: /, /index.html, /destino-roques.html, etc. */
+claves.forEach(function (clave) {
+    const rutas = clave === 'index' ? ['/', '/index.html'] : ['/' + clave + '.html'];
+    app.get(rutas, function (req, res) {
+        try {
+            res.type('html').send(render(clave));
+        } catch (err) {
+            console.error('Error renderizando ' + clave + ':', err);
+            res.status(500).send('Error al generar la página');
+        }
+    });
 });
 
 app.use('/uploads', express.static(UPLOADS_DIR, { maxAge: '90d', immutable: true }));
@@ -235,7 +250,7 @@ app.get('/api/status', (req, res) => {
 
 // Cualquier otra ruta devuelve la portada (404 suave para un sitio estático).
 app.use((req, res) => {
-    res.status(404).sendFile(path.join(__dirname, 'index.html'));
+    res.status(404).type('html').send(render('index'));
 });
 
 app.listen(PORT, () => {

@@ -1,0 +1,42 @@
+{#
+  Pie extraído literalmente de index.html; antes estaba copiado en los 8
+  archivos. Solo se parametriza lo que variaba: el WhatsApp y el prefijo
+  de las anclas. Los aria-label de las redes estaban en 2 de 8: ahora en todas.
+#}
+<footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html">
+          <img loading="lazy" decoding="async" src="assets/logo-full-services.png" alt="Waterman Experience Tour">
+          <span class="name">Waterman Experience Tour</span>
+        </a>
+        <p>Viajes de aventura y deportes acuáticos en el Caribe venezolano. Recarga tu energía con nosotros.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Destinos</h4>
+        <ul>
+          <li><a href="destino-choroni.html">Choroní</a></li>
+          <li><a href="destino-margarita.html">Margarita</a></li>
+          <li><a href="destino-coche.html">Isla de Coche</a></li>
+          <li><a href="destino-roques.html">Los Roques</a></li>
+          <li><a href="{{ inicio }}#canaima">Canaima · Próximamente</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Conectar</h4>
+        <ul>
+          <li><a href="tienda.html">Tienda</a></li>
+          <li><a href="https://wa.me/{{ whatsapp }}" target="_blank">WhatsApp</a></li>
+          <li><a href="https://instagram.com/rickywaterman" target="_blank">Instagram</a></li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://instagram.com/rickywaterman" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://facebook.com/rickywaterman" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://youtube.com/@rickywaterman" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Waterman Experience Tour. Todos los derechos reservados.</p>
+    </div>
+  </footer>

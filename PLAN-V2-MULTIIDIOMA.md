@@ -170,9 +170,10 @@ Un nativo alemán para esas 2.000 palabras es un gasto pequeño comparado con el
 
 Cada fase deja el sitio **funcionando y publicable**. Nada de ramas largas.
 
-### Fase 0 · Dejar de duplicar
-Meter un motor de plantillas (Nunjucks o EJS) y extraer cabecera, pie y bloques repetidos a parciales. Las 8 páginas pasan a ser plantillas.
-*Sin cambios visibles. Es la base de todo lo demás.*
+### Fase 0 · Dejar de duplicar — ✅ **HECHA (2026-11-12)**
+Nunjucks. Cabecera, menú móvil, pie, botón flotante y scripts comunes extraídos a `views/parciales/`; las 8 páginas son ahora `views/paginas/*.njk` sobre una `base.njk`. El servidor las renderiza manteniendo las mismas URLs.
+Verificado comparando el HTML generado contra el original de las 8: mismos textos, mismos enlaces, cero imágenes rotas.
+**Se recuperó un fallo por el camino:** el botón flotante de WhatsApp se perdía en la primera extracción. Era el principal elemento de conversión del sitio.
 
 ### Fase 1 · Supabase y el contenido fuera del HTML
 Crear las tablas, sacar los textos actuales del HTML a la base (en español, que es lo que hay), y hacer que las plantillas lean de ahí con caché.

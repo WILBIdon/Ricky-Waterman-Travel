@@ -1,0 +1,24 @@
+{#
+  Cabecera extraída de index.html. Antes copiada en los 8 archivos.
+  Variables: whatsapp, wa_mensaje, inicio (prefijo de anclas), pagina (activa).
+#}
+<header class="nav-floating" id="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img loading="lazy" decoding="async" src="assets/logo-full-services.png" alt="Waterman Experience Tour">
+        <div class="nav-logo-text">WATERMAN <span>EXPERIENCE TOUR</span></div>
+      </a>
+      <div class="nav-links">
+        <a href="ricky.html"{% if pagina == "ricky" %} style="color:var(--coral);"{% endif %}>Sobre Ricky</a>
+        <a href="{{ inicio }}#destinos">Destinos</a>
+        <a href="{{ inicio }}#itinerario">Itinerario</a>
+        <a href="{{ inicio }}#deportes">Deportes</a>
+        <a href="tripulacion.html"{% if pagina == "tripulacion" %} style="color:var(--turq-soft);"{% endif %}>Tripulación</a>
+        <a href="tienda.html"{% if pagina == "tienda" %} style="color:var(--turq-soft);"{% endif %}>Tienda</a>
+        <a href="https://wa.me/{{ whatsapp }}?text={{ wa_mensaje }}" target="_blank" class="nav-cta">Reservar</a>
+      </div>
+      <button class="nav-mobile-btn" onclick="toggleMobileMenu()" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>

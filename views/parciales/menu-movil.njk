@@ -1,0 +1,26 @@
+{#
+  Menú móvil extraído de index.html. El enlace "Inicio" solo aparece
+  fuera de la portada; el resaltado lo decide `pagina`.
+#}
+<div id="mobile-menu" class="mobile-menu-overlay" onclick="closeMobileMenu(event)">
+    <div class="mobile-menu-panel" onclick="event.stopPropagation()">
+      <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="mobile-menu-links">
+        {% if pagina != "index" %}<a href="index.html">Inicio</a>
+        {% endif %}<a href="ricky.html"{% if pagina == "ricky" %} style="color:var(--coral);"{% endif %}>Sobre Ricky</a>
+        {% if pagina == "index" %}<a href="#destinos" onclick="toggleMobileMenu()">Destinos</a>
+        <a href="#itinerario" onclick="toggleMobileMenu()">Itinerario</a>
+        <a href="#deportes" onclick="toggleMobileMenu()">Deportes</a>{% endif %}
+        <a href="tripulacion.html"{% if pagina == "tripulacion" %} style="color:var(--turq-soft);"{% endif %}>Tripulación</a>
+        <a href="destino-choroni.html"{% if pagina == "destino-choroni" %} style="color:var(--coral);"{% endif %}>Choroní</a>
+        <a href="destino-margarita.html"{% if pagina == "destino-margarita" %} style="color:var(--mango);"{% endif %}>Margarita</a>
+        <a href="destino-coche.html"{% if pagina == "destino-coche" %} style="color:var(--turq-soft);"{% endif %}>Isla de Coche</a>
+        <a href="destino-roques.html"{% if pagina == "destino-roques" %} style="color:var(--turq-soft);"{% endif %}>Los Roques</a>
+        <a href="{{ inicio }}#canaima">Canaima <small>· Próximamente</small></a>
+        <a href="tienda.html"{% if pagina == "tienda" %} style="color:var(--turq-soft);"{% endif %}>Tienda</a>
+      </div>
+      <a href="https://wa.me/{{ whatsapp }}?text={{ wa_mensaje }}" target="_blank" class="btn-coral" style="text-align:center;margin-top:12px;">Reservar Ahora</a>
+    </div>
+  </div>

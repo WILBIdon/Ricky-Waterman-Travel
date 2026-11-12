@@ -1,0 +1,96 @@
+{#
+  Plantilla base. Antes la cabeza, el nav, el menú móvil, el pie y los
+  scripts estaban copiados a mano en los 8 .html: cambiar un enlace eran
+  8 ediciones, y con tres idiomas habrían sido 24.
+
+  Todo lo de aquí está EXTRAÍDO de index.html, no reescrito.
+
+  Variables por página: pagina, inicio, titulo, descripcion, og_imagen,
+  og_titulo, og_desc, jsonld, estilo_propio, cuerpo, usa_shop, usa_hover.
+#}<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ titulo }}</title>
+  <meta name="description" content="{{ descripcion }}">
+{% if robots %}  <meta name="robots" content="{{ robots }}">
+{% endif %}
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ og_titulo or titulo }}">
+  <meta property="og:description" content="{{ og_desc or descripcion }}">
+  <meta property="og:image" content="{{ og_imagen or 'assets/dest-roques.webp' }}">
+  <meta name="twitter:card" content="summary_large_image">
+{% if jsonld %}
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+{{ jsonld | safe }}
+  </script>
+{% endif %}
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css?v={{ version_css }}">
+{% if estilo_propio %}
+  <style>
+{{ estilo_propio | safe }}
+  </style>
+{% endif %}
+</head>
+<body>
+
+  {% include "parciales/nav.njk" %}
+
+  {% include "parciales/menu-movil.njk" %}
+
+{{ cuerpo | safe }}
+
+  {% include "parciales/footer.njk" %}
+
+  <!-- ============ WHATSAPP FLOAT ============ -->
+  <a href="https://wa.me/{{ whatsapp }}?text={{ wa_mensaje }}" target="_blank" class="whatsapp-float" title="Contactar por WhatsApp" aria-label="Contactar por WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Mobile menu
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('is-open');
+    }
+    function closeMobileMenu(e) {
+      if (e.target === document.getElementById('mobile-menu')) toggleMobileMenu();
+    }
+
+    // Scroll reveal (IntersectionObserver)
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('in-view'), i * 80);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => revealObserver.observe(el));
+
+  </script>
+{% if scripts_propios %}  <script>{{ scripts_propios | safe }}</script>
+{% endif %}
+{% if usa_hover %}  <script src="assets/js/hover-swap.js"></script>
+{% endif %}{% if usa_shop %}  <script src="assets/js/shop.js?v={{ version_shop }}"></script>
+{% endif %}</body>
+</html>
