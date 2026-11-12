@@ -1,6 +1,6 @@
 # Plan de trabajo — Waterman Experience Tour
 
-**Actualizado:** 2026-11-11 · (después de recibir el material del cliente: 146 archivos + `Ajuste Web RICKY.docx`)
+**Actualizado:** 2026-11-12 · (itinerario real, Canaima y fotos reales de Ricky ya publicados)
 
 Leyenda: ✅ hecho · 🔨 en curso · ⬜ pendiente · 🧍 necesita algo del cliente
 
@@ -11,9 +11,9 @@ Leyenda: ✅ hecho · 🔨 en curso · ⬜ pendiente · 🧍 necesita algo del c
 | # | Tarea | Estado | Detalle |
 |---|---|---|---|
 | 1.1 | **Itinerario real de 15 días** en la home | ✅ | Tarjetas corregidas (Choroní 1–4 · Margarita 5–9 · Coche 10–15) con desplegable "Ver día a día" por etapa. Nota sobre posible noche en Caracas |
-| 1.2 | **Sección "Canaima — Próximamente"** | 🔨 | Fotos ya elegidas de las 48 del Salto Ángel. Falta: convertir a WebP, montar la tarjeta en `#destinos` con texto de expectativa, sin precio |
+| 1.2 | **Sección "Canaima — Próximamente"** | ✅ | En `#destinos` con 2 fotos reales del Salto Ángel (hover dorado), badge, sin precio, CTA "Avísame cuando abra". Enlace en menú y footer de las 8 páginas |
 | 1.3 | **Foto real de Ricky** (retrato) | ✅ | `ricky-waterman.webp` reemplazó a la imagen generada por IA en hero, banner y og:image |
-| 1.4 | **Segunda foto falsa de Ricky** (`ricky-surfing-youth.png`, texto en espejo en la tabla) | ⬜ | Reemplazar con `material-cliente/extraido/Fotos y videos Los Roques/richy warterman.jpg` (foto real) |
+| 1.4 | **Segunda foto falsa de Ricky** (`ricky-surfing-youth.png`, texto en espejo en la tabla) | ✅ | Reemplazada por `ricky-surf-caribe.webp` (Ricky surfeando de verdad, fotos de César). También `venezuela-paradise-aerial.png` (IA) → `paraiso-venezuela.webp` (atardecer real en Los Roques). Queda una IA menor: `caribbean-sand-feet.png` (pies en la arena, genérica). ⚠️ Las fotos de César vienen comprimidas por WhatsApp (~500px): pedir los originales |
 | 1.5 | **Bio de Ricky en primera persona** | ✅ | Ya estaba montada en `ricky.html` con el mismo texto del docx |
 | 1.6 | **Repartir fotos reales por destinos** | ⬜ | Choroní (33), Los Roques (37), Coche (15), Transporte (3). Convertir HEIC→WebP, elegir las mejores por página, reemplazar las genéricas/IA |
 | 1.7 | **Ilustraciones (lettering de cada destino)** | ⬜ | 8 PNG en `material-cliente/extraido/Ilustraciones/`. Decidir si se usan como títulos gráficos en las páginas de destino |
