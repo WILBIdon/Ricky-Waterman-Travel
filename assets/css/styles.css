@@ -1979,3 +1979,23 @@ footer {
 @media (max-width: 600px) {
   .destinos-head { padding: 70px 20px 50px; }
 }
+
+/* ---------- NOMBRES DE DESTINO MÁS GRANDES ----------
+   .dest-kicker se reutiliza en toda la web ("La ruta", "Reserva tu lugar"…),
+   así que solo crece el nombre dentro de un bloque de destino. */
+.dest .dest-text .dest-kicker {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.8vw, 1.85rem);
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+.dest .dest-text .dest-kicker small {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  opacity: 0.72;
+  margin-top: 5px;
+}
