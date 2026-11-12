@@ -18,7 +18,7 @@ Leyenda: ✅ hecho · 🔨 en curso · ⬜ pendiente · 🧍 necesita algo del c
 | 1.6 | **Fotos reales en la home (#destinos)** | ✅ | Choroní y Los Roques con fotos reales niveladas; Coche de-torcida −4°. 10,7 MB → 0,72 MB. **Faltan las páginas de destino** (`destino-*.html`), que siguen con las viejas |
 | 1.6b | **Margarita no tiene ni una foto real** | 🧍 | No hay carpeta de Margarita en el material: las 4 carpetas son Choroní, Los Roques, Coche y Canaima. Su foto actual es de banco de imágenes. **Pedir fotos de Margarita** (Playa El Agua, Parguito, Juan Griego, El Yaque) |
 | 1.6c | **Coche tiene solo 5 fotos y flojas** | 🧍 | Una es un folleto. La principal de Coche es en realidad una foto del viaje a Los Roques (kitesurf). Contenido correcto, procedencia no. **Pedir fotos de Coche** |
-| 1.7 | **Ilustraciones (lettering de cada destino)** | ⬜ | 8 PNG en `material-cliente/extraido/Ilustraciones/`. Decidir si se usan como títulos gráficos en las páginas de destino |
+| 1.7 | **Ilustraciones (lettering de cada destino)** | ✅ | Convertidas de negro-sobre-blanco a blanco-sobre-transparente y puestas como `<h1>` en las 4 portadas de destino (el texto va en el `alt`). En la home se mantiene la tipografía gruesa: ahí manda la legibilidad de un vistazo |
 | 1.8 | **Videos del cliente** | ⬜ | Posada Coche (18 MB), Los Roques, actividades Coche. Pesan mucho para la web: comprimir o subir a un host de video. Decidir dónde van |
 | 1.9 | **Caracas como etapa** | 🧍 | Nota ya puesta en el itinerario. El tratamiento completo (sección propia, fotos) espera a que el cliente defina si la noche es a la llegada o al regreso |
 
@@ -39,16 +39,16 @@ Leyenda: ✅ hecho · 🔨 en curso · ⬜ pendiente · 🧍 necesita algo del c
 | 3.1 | **Logo cortado en móvil** | ✅ | Media query por tramos. A 375px: nav de **196px → 84px**, logo 160→60px, wordmark oculto (el logo ya lo dice), hamburguesa despejada. A 768px: logo 72px, wordmark cabe sin solape. Escritorio sin tocar (160px/196px, verificado a 1280px). `.shop-hero` ajustado, que compensaba el nav gigante |
 | 3.2 | **Imágenes pesadas** | ✅ | Resuelto al poner las fotos reales: home 10,7→0,72 MB, Choroní 9,4→1,38 MB, Coche 5,9→0,64 MB. Las panorámicas de 11.952 px ya no se usan |
 | 3.3 | **Video del hero sin `poster`** | ✅ | `hero-poster.webp` (61 KB, primer fotograma del propio video). Además **el móvil ya no descarga los 5,7 MB**: el video solo se carga en ≥860px, y nunca con ahorro de datos, 2G o `prefers-reduced-motion`. Verificado: 0 MP4 en móvil, reproduce en escritorio |
-| 3.4 | **`sitemap.xml` no existe** y `robots.txt` apunta a `rickywaterman.com` mientras el schema.org dice `watermanexperiencetour.com` | 🧍 | Crear sitemap con las 8 páginas + unificar dominio. **Necesito saber cuál es el dominio real** |
+| 3.4 | **`sitemap.xml` + dominio** | ⚠️ | Creado con las 8 páginas y `robots.txt` unificado en `watermanexperiencetour.com`. **Ninguno de los dos dominios existe todavía** (ambos dan NXDOMAIN): el sitio está en una URL de Railway. Cuando haya dominio real, cambiarlo en `sitemap.xml` y en la línea `Sitemap:` de `robots.txt` — nada más |
 | 3.5 | **CMS legado — era explotable en producción** | ✅ | Verificado atacándolo en local: cualquiera podía **sobrescribir la base de contenidos** y **subir un `.html` que se ejecutaba** desde el dominio del sitio (XSS almacenado), con un límite de 500 MB por archivo. Además `server.js`, `Dockerfile`, `package.json`, `data/cms_db.json` y las notas internas eran **descargables**. Corregido: API apagada salvo que exista `ADMIN_TOKEN`, allowlist de archivos públicos, subidas limitadas a 25 MB con la extensión derivada del tipo MIME. `admin.js` (1.423 líneas, huérfano) eliminado |
 
 ## 4. Limpieza
 
 | # | Tarea | Estado |
 |---|---|---|
-| 4.1 | Borrar `assets/ricky-portrait.png` (656 KB, IA, ya sin referencias) — tras confirmar | ⬜ |
+| 4.1 | Borrar imágenes sin usar | ✅ | 24 archivos huérfanos de `assets/` (13,5 MB): las IMG_41xx giradas, las 3 de IA y las sustituidas. Conservados los logotipos y `colores-web.png` |
 | 4.2 | Borrar el zip duplicado de Choroní en `~/Downloads` (376 MB) | ⬜ |
-| 4.3 | Al terminar 1.6: borrar las imágenes IA que queden sin uso en `assets/` | ⬜ |
+| 4.3 | Limpiar `uploads/` | ✅ | 13 duplicados exactos del material del cliente borrados (45,4 MB). Quedan 6 únicos, 6,8 MB |
 
 ---
 

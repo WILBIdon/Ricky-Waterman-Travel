@@ -5,7 +5,6 @@
 
 User-agent: *
 Allow: /
-Disallow: /admin.html
 Disallow: /api/
 Disallow: /data/
 Disallow: /uploads/
@@ -33,4 +32,4 @@ User-agent: Bingbot
 Allow: /
 
 # Sitemap Location
-Sitemap: https://rickywaterman.com/sitemap.xml
+Sitemap: https://watermanexperiencetour.com/sitemap.xml

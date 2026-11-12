@@ -2042,3 +2042,20 @@ footer {
 .hero-video-bg video {
   background: var(--ink) url("../hero-poster.webp") center/cover no-repeat;
 }
+
+/* ---------- NOMBRE MANUSCRITO EN LA PORTADA DE CADA DESTINO ----------
+   Ilustraciones del propio cliente. El nombre sigue siendo un <h1> de verdad:
+   el texto va en el alt, así que buscadores y lectores de pantalla lo leen. */
+.h1-letra {
+  margin: 0 0 18px;
+  line-height: 0;
+}
+.h1-letra img {
+  width: clamp(240px, 46vw, 520px);
+  height: auto;
+  /* Trazo fino sobre foto: una sombra suave lo despega del fondo. */
+  filter: drop-shadow(0 3px 14px rgba(8, 20, 35, 0.55));
+}
+@media (max-width: 600px) {
+  .h1-letra img { width: min(78vw, 300px); }
+}
