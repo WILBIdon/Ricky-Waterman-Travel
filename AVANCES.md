@@ -193,6 +193,36 @@ para reemplazarla.
 `assets/ricky-portrait.png` queda en el repo sin que nada la referencie (656 KB
 muertos). Se puede borrar cuando se confirme que no hace falta.
 
+---
+
+## 2026-11-11 (4) — Llegó el material del cliente
+
+El cliente bajó el Drive y lo dejó en la carpeta del proyecto. Está ordenado en
+`material-cliente/` (excluido del repo: GitHub rechazó un zip de 117 MB que se
+coló en un commit; ese commit se reescribió antes de subir).
+
+**146 archivos, ~624 MB**, extraídos en `material-cliente/extraido/`:
+Choroní (33), Los Roques (27 + 10 de César), Coche (14 + video de la posada),
+**Canaima/Salto Ángel (50)**, Transporte (3), Ilustraciones (8: lettering de cada
+destino). Muchos HEIC de iPhone: convertir antes de usar.
+
+**`Ajuste Web RICKY.docx`** — lo que faltaba. Contiene:
+
+1. **Itinerario real de 15 días**, día a día: Choroní 4d · Margarita 5d · Coche 6d
+   (difiere del actual: la web dice "3 destinos, 15 días" con otro reparto)
+2. **Bio de Ricky en primera persona** (Ricardo Parada, Viena) + textos por
+   destino en su voz — reemplaza el texto genérico de ricky.html
+3. Copy nuevo "Descubre tres caras de Venezuela: ciudad, naturaleza y Caribe"
+4. **Ajustes pedidos:**
+   - Sección/botón "Canaima — Próximamente" con fotos del Salto Ángel y texto de
+     expectativa (sin precio, lista de espera)
+   - **Incluir Caracas** como parada (los turistas duermen ahí al menos 1 noche)
+   - **GDPR:** estudiar si WhatsApp desde la web es viable en la UE; quizá pasar
+     a correo + casilla de consentimiento
+   - Duda sobre el fondo color arena ("¿turquesa? ¿un color que estimule compra?")
+5. Cotizaciones (15d US$4.390 ref · Choroní 7n US$2.800 · Margarita US$2.890 ·
+   Coche US$3.090) — **el propio doc dice NO publicarlas como precio garantizado**
+
 ## Pendientes (necesitan datos tuyos)
 
 | # | Qué falta | Dónde |

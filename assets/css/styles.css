@@ -1872,3 +1872,66 @@ footer {
   .shop { padding: 70px 20px; }
   .shop-grid { gap: 20px; }
 }
+
+/* ---------- ITINERARIO: día a día desplegable ---------- */
+.itin-dias {
+  margin-top: 18px;
+  border-top: 1px solid rgba(18, 48, 77, 0.12);
+  padding-top: 14px;
+}
+.itin-dias summary {
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--coral);
+  list-style: none;
+  user-select: none;
+}
+.itin-dias summary::-webkit-details-marker { display: none; }
+.itin-dias summary::after { content: "  ▾"; }
+.itin-dias[open] summary::after { content: "  ▴"; }
+.itin-dias ol {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.itin-dias li {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  padding-left: 0;
+  opacity: 0.85;
+}
+.itin-dias li::before { display: none; }
+.itin-dias strong { color: var(--ocean); }
+.itin-nota {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--ocean);
+  opacity: 0.75;
+  max-width: 560px;
+  margin: 22px auto 0;
+}
+
+/* ---------- CANAIMA: próximamente ---------- */
+.dest.canaima { background: linear-gradient(180deg, #0f2a44, #4a2d10); color: var(--sand); }
+.dest.canaima .dest-kicker { color: var(--gold); }
+.dest.canaima .dest-art { background: linear-gradient(150deg, #143a60, #ffb84d 130%); }
+.dest.canaima .dest-tags span { color: var(--gold); }
+.dest-soon {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 4px 14px;
+  border: 1px solid var(--gold);
+  border-radius: 100px;
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.mobile-menu-links small { opacity: 0.6; font-size: 0.75em; }
