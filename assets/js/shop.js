@@ -6,7 +6,7 @@
 (function () {
   'use strict';
 
-  var WHATSAPP = '584120000000';
+  var WHATSAPP = '4367764216757';
   var INK = '#122a26';
   var PAPER = '#faf6ee';
 

@@ -4,11 +4,11 @@
 
 /* ---------- DESIGN TOKENS ---------- */
 :root {
-  --ink:       #122a26;
-  --deep:      #183a34;
-  --ocean:     #1e4a43;
-  --turq:      #1fc7b6;
-  --turq-soft: #79e3d6;
+  --ink:       #14304d;
+  --deep:      #1b4268;
+  --ocean:     #215a86;
+  --turq:      #22b5d8;
+  --turq-soft: #8ad8ec;
   --coral:     #ff6b45;
   --mango:     #ffb84d;
   --gold:      #ffc857;
@@ -25,7 +25,7 @@
   --radius-lg:  28px;
   --radius-pill: 100px;
 
-  --shadow-card: 0 24px 50px -30px rgba(8,24,21,0.25);
+  --shadow-card: 0 24px 50px -30px rgba(11,33,55,0.25);
   --shadow-heavy: 0 20px 40px -18px rgba(0,0,0,0.5);
 }
 
@@ -73,7 +73,7 @@ body::before {
   transition: background 0.35s, padding 0.35s, backdrop-filter 0.35s;
 }
 .nav-floating.scrolled {
-  background: rgba(8,24,21,0.92);
+  background: rgba(11,33,55,0.92);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   padding: 12px 40px;
@@ -172,7 +172,7 @@ body::before {
 .mobile-menu-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(8,24,21,0.85);
+  background: rgba(11,33,55,0.85);
   backdrop-filter: blur(10px);
   z-index: 2000;
   opacity: 0;
@@ -222,9 +222,9 @@ body::before {
   position: relative;
   min-height: 100vh;
   background:
-    radial-gradient(ellipse 90% 60% at 20% -10%, rgba(31,199,182,0.18), transparent 60%),
+    radial-gradient(ellipse 90% 60% at 20% -10%, rgba(34,181,216,0.18), transparent 60%),
     radial-gradient(ellipse 70% 50% at 100% 0%, rgba(255,107,69,0.14), transparent 55%),
-    linear-gradient(180deg, #061210 0%, #0a201d 55%, #0c2b28 100%);
+    linear-gradient(180deg, #091d30 0%, #0b2440 55%, #0c284c 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -251,8 +251,8 @@ body::before {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(6,18,16,0.62) 0%, rgba(6,18,16,0.25) 45%, transparent 70%),
-    linear-gradient(180deg, rgba(6,18,16,0.35) 0%, transparent 25%, transparent 55%, rgba(12,43,40,0.8) 100%);
+    linear-gradient(90deg, rgba(9,29,48,0.62) 0%, rgba(9,29,48,0.25) 45%, transparent 70%),
+    linear-gradient(180deg, rgba(9,29,48,0.35) 0%, transparent 25%, transparent 55%, rgba(12,40,76,0.8) 100%);
 }
 .hero .wrap,
 .hero .hero-eyebrow,
@@ -276,7 +276,7 @@ body::before {
   display: inline-block;
 }
 .hero h1 {
-  font-size: clamp(1.9rem, 3.2vw, 3rem);
+  font-size: clamp(1.7rem, 3.2vw, 3rem);
   font-weight: 900;
   line-height: 1.1;
   max-width: 640px;
@@ -388,7 +388,7 @@ body::before {
   color: var(--turq-soft);
 }
 .dest-text h2 {
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(1.75rem, 4vw, 3.2rem);
   line-height: 1.1;
   margin-bottom: 24px;
   color: #fff;
@@ -448,12 +448,12 @@ body::before {
 /* Coche */
 .dest.coche { background: var(--ocean); color: var(--sand); }
 .dest.coche .dest-kicker { color: var(--turq-soft); }
-.dest.coche .dest-art { background: linear-gradient(150deg, #0f4a44, #1fc7b6 130%); }
+.dest.coche .dest-art { background: linear-gradient(150deg, #113769, #22b5d8 130%); }
 .dest.coche .dest-tags span { color: var(--turq-soft); }
 .dest.coche .dest-link { color: var(--turq-soft); }
 
 /* Margarita */
-.dest.margarita { background: linear-gradient(180deg, #123a35, #3a2f1c); color: var(--sand); }
+.dest.margarita { background: linear-gradient(180deg, #10335d, #3a2f1c); color: var(--sand); }
 .dest.margarita .dest-kicker { color: var(--mango); }
 .dest.margarita .dest-art { background: linear-gradient(150deg, #7a3d1a, #ffb84d 130%); }
 .dest.margarita .dest-tags span { color: var(--mango); }
@@ -467,9 +467,9 @@ body::before {
 .dest.choroni .dest-link { color: var(--coral); }
 
 /* Los Roques */
-.dest.roques { background: linear-gradient(180deg, #0a2520, #123a35); color: var(--sand); }
+.dest.roques { background: linear-gradient(180deg, #0b2945, #10335d); color: var(--sand); }
 .dest.roques .dest-kicker { color: var(--gold); }
-.dest.roques .dest-art { background: linear-gradient(150deg, #0d3b4a, #ffc857 130%); }
+.dest.roques .dest-art { background: linear-gradient(150deg, #113167, #ffc857 130%); }
 .dest.roques .dest-tags span { color: var(--gold); }
 .dest.roques .dest-link { color: var(--gold); }
 
@@ -481,7 +481,7 @@ body::before {
 }
 .sports-head { text-align: center; margin-bottom: 60px; max-width: 600px; margin-left: auto; margin-right: auto; }
 .sports-head .dest-kicker { color: var(--coral); }
-.sports-head h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-top: 16px; margin-bottom: 16px; color: var(--ink); }
+.sports-head h2 { font-size: clamp(1.75rem, 4vw, 2.8rem); margin-top: 16px; margin-bottom: 16px; color: var(--ink); }
 .sports-head p { font-size: 1.15rem; color: #4a4a4a; }
 .sports-grid {
   max-width: 1180px;
@@ -521,7 +521,7 @@ body::before {
 .sport-card:nth-child(3) .sport-icon { color: var(--coral); }
 .sport-card:nth-child(4) .sport-icon { color: var(--gold); }
 .sport-card:nth-child(5) .sport-icon { color: var(--turq-soft); }
-.sport-card h3 { font-size: 1.35rem; margin-bottom: 12px; color: var(--ink); }
+.sport-card h3 { font-size: clamp(1.25rem, 2.4vw, 1.35rem); margin-bottom: 12px; color: var(--ink); }
 .sport-card p { color: #555; line-height: 1.6; }
 
 /* ---------- GALERIA ---------- */
@@ -531,7 +531,7 @@ body::before {
   text-align: center;
 }
 .gallery-head h2 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw, 2.5rem);
   color: var(--ink);
   margin-bottom: 40px;
 }
@@ -564,7 +564,7 @@ body::before {
   padding: 140px 40px;
 }
 .itin-head { text-align: center; margin-bottom: 60px; }
-.itin-head h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-top: 16px; color: var(--ink); }
+.itin-head h2 { font-size: clamp(1.75rem, 4vw, 2.8rem); margin-top: 16px; color: var(--ink); }
 
 .itin-panorama {
   max-width: 1200px;
@@ -612,7 +612,7 @@ body::before {
   margin-bottom: 6px;
 }
 .itin-card h3 {
-  font-size: 1.5rem;
+  font-size: clamp(1.35rem, 2.6vw, 1.5rem);
   font-weight: 800;
   margin-bottom: 14px;
 }
@@ -657,7 +657,7 @@ body::before {
 
 /* ---------- HOSTS / TRIPULACIÓN ---------- */
 .hosts {
-  background: linear-gradient(180deg, #0a201d, #081815);
+  background: linear-gradient(180deg, #0b2440, #0b2137);
   padding: 110px 40px 100px;
 }
 .hosts-head {
@@ -667,7 +667,7 @@ body::before {
 }
 .hosts-head .dest-kicker { color: var(--gold); }
 .hosts-head h2 {
-  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  font-size: clamp(1.7rem, 3.4vw, 2.6rem);
   font-weight: 800;
   margin-top: 16px;
   color: var(--paper);
@@ -741,14 +741,14 @@ body::before {
 .cta-inner { position: relative; max-width: 640px; margin: 0 auto; }
 .cta .dest-kicker { color: #7a2c00; }
 .cta h2 {
-  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-size: clamp(1.9rem, 5vw, 3.4rem);
   font-weight: 900;
   line-height: 1.05;
   margin: 18px 0 20px;
 }
 .cta .price {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 6vw, 4rem);
+  font-size: clamp(2.2rem, 6vw, 4rem);
   font-weight: 800;
   margin: 26px 0 6px;
 }
@@ -783,7 +783,7 @@ body::before {
 }
 .cta-dark .dest-kicker { color: var(--gold); }
 .cta-dark h2 {
-  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-size: clamp(1.7rem, 4vw, 2.8rem);
   font-weight: 800;
   color: var(--paper);
   margin: 18px 0 20px;
@@ -845,7 +845,7 @@ button[type="submit"]:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(8,24,21,0.9) 0%, rgba(8,24,21,0.3) 50%, transparent 100%);
+  background: linear-gradient(0deg, rgba(11,33,55,0.9) 0%, rgba(11,33,55,0.3) 50%, transparent 100%);
 }
 .dest-hero-content {
   position: relative;
@@ -854,7 +854,7 @@ button[type="submit"]:hover {
 }
 .dest-hero-content .dest-kicker { margin-bottom: 14px; }
 .dest-hero-content h1 {
-  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 900;
   color: var(--paper);
   line-height: 1.05;
@@ -1216,8 +1216,8 @@ footer {
 .ricky-banner {
   position: relative;
   background:
-    radial-gradient(ellipse 80% 60% at 30% 100%, rgba(31,199,182,0.08), transparent 60%),
-    linear-gradient(180deg, var(--ink), #0e2d29 50%, var(--ink));
+    radial-gradient(ellipse 80% 60% at 30% 100%, rgba(34,181,216,0.08), transparent 60%),
+    linear-gradient(180deg, var(--ink), #0d2c4f 50%, var(--ink));
   padding: 100px 40px;
   overflow: hidden;
 }
@@ -1279,7 +1279,7 @@ footer {
   }
 }
 .ricky-banner-text h2 {
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
   font-weight: 900;
   color: var(--paper);
   margin: 12px 0 24px;
@@ -1315,8 +1315,8 @@ footer {
   overflow: hidden;
   background:
     radial-gradient(ellipse 80% 50% at 80% 30%, rgba(255,107,69,0.12), transparent 60%),
-    radial-gradient(ellipse 70% 60% at 10% 80%, rgba(31,199,182,0.1), transparent 55%),
-    linear-gradient(180deg, #061210, #0c2b28);
+    radial-gradient(ellipse 70% 60% at 10% 80%, rgba(34,181,216,0.1), transparent 55%),
+    linear-gradient(180deg, #091d30, #0c284c);
 }
 .ricky-hero-inner {
   max-width: 1100px;
@@ -1362,7 +1362,7 @@ footer {
   .ricky-hero-photo img { max-width: 280px; }
 }
 .ricky-hero-text h1 {
-  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-size: clamp(1.9rem, 5vw, 3.6rem);
   font-weight: 900;
   color: var(--paper);
   line-height: 1.1;
@@ -1400,7 +1400,7 @@ footer {
 .ricky-story-block.accent-mango { border-left-color: var(--mango); }
 
 .ricky-story-block h2 {
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-size: clamp(1.35rem, 3vw, 2.2rem);
   font-weight: 800;
   color: var(--paper);
   margin-bottom: 20px;
@@ -1434,7 +1434,7 @@ footer {
 .ricky-quote blockquote {
   max-width: 700px;
   margin: 0 auto;
-  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
   font-weight: 500;
   line-height: 1.6;
   color: var(--paper);
@@ -1476,7 +1476,7 @@ footer {
 .dest-story-block.accent-turq { border-left-color: var(--turq-soft); }
 
 .dest-story-block h3 {
-  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
   font-weight: 800;
   color: var(--paper);
   margin-bottom: 16px;
@@ -1525,13 +1525,13 @@ footer {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(0,229,204,0.15);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(0,185,229,0.15);
   border: 1px solid rgba(255,255,255,0.08);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 .ricky-story-media:hover {
   transform: translateY(-6px);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 30px rgba(0,229,204,0.3);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5), 0 0 30px rgba(0,185,229,0.3);
 }
 .ricky-story-media img {
   width: 100%;
@@ -1547,7 +1547,7 @@ footer {
   position: absolute;
   top: 16px;
   left: 16px;
-  background: rgba(8, 24, 21, 0.85);
+  background: rgba(11, 33, 55, 0.85);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255,255,255,0.15);
   color: var(--paper);
@@ -1563,7 +1563,7 @@ footer {
   left: 0;
   right: 0;
   padding: 16px 20px;
-  background: linear-gradient(180deg, transparent, rgba(8, 24, 21, 0.95));
+  background: linear-gradient(180deg, transparent, rgba(11, 33, 55, 0.95));
   color: var(--paper);
   font-size: 0.9rem;
   font-weight: 500;
@@ -1603,7 +1603,7 @@ footer {
 .ricky-gallery-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 35%, rgba(8, 24, 21, 0.92));
+  background: linear-gradient(180deg, transparent 35%, rgba(11, 33, 55, 0.92));
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1637,7 +1637,7 @@ footer {
 /* ---------- CASA RICKY WATERMAN (CHORONÍ) ---------- */
 .casa {
   padding: 100px 40px;
-  background: linear-gradient(180deg, #2a1508, #1a2e28);
+  background: linear-gradient(180deg, #2a1508, #213a48);
 }
 .casa-inner {
   max-width: 1100px;
@@ -1676,7 +1676,7 @@ footer {
   border-radius: var(--radius-pill);
 }
 .casa-text h2 {
-  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  font-size: clamp(1.6rem, 3.4vw, 2.6rem);
   font-weight: 900;
   color: var(--paper);
   line-height: 1.12;
@@ -1729,7 +1729,7 @@ footer {
 }
 .shop-head .dest-kicker { color: var(--coral); }
 .shop-head h2 {
-  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-size: clamp(1.75rem, 4vw, 2.8rem);
   margin: 16px 0;
   color: var(--ink);
 }

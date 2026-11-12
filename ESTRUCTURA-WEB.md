@@ -193,7 +193,7 @@ a mano dentro del HTML**. Para cambiar un texto, se edita el HTML. No hay panel.
 
 | # | Qué pasa | Dónde |
 |---|---|---|
-| 1 | **El WhatsApp es un número de relleno:** `584120000000` aparece en los 6 archivos. Hay que reemplazarlo por el real. | todos los `.html` |
+| 1 | ~~El WhatsApp es un número de relleno~~ **Resuelto (2026-11-11):** el número real `+43 677 64216757` está en los 8 `.html`, en `shop.js` y en el schema.org. | — |
 | 2 | `robots.txt` apunta a `https://rickywaterman.com/sitemap.xml`, pero el schema.org dice `watermanexperiencetour.com` y **el `sitemap.xml` no existe**. | `robots.txt`, `index.html` |
 | 3 | **Imágenes muy pesadas:** `choroni-panorama.webp` pesa **6,2 MB** y se usa dos veces en el inicio. Hay varias de 1–2 MB. Conviene redimensionarlas. | `assets/` |
 | 4 | El hero tiene `<video autoplay>` de 5,7 MB sin imagen de respaldo (`poster`), así que en móvil con mala conexión se ve negro al principio. | `index.html` |
@@ -221,7 +221,7 @@ estática), aunque sin servidor.
 | Un texto, título o precio | El `.html` de esa página |
 | Colores, tamaños, espaciados | `assets/css/styles.css`, bloque correspondiente |
 | La paleta completa de la marca | Las variables `:root` arriba de `styles.css` |
-| El número de WhatsApp | Buscar `584120000000` en los 6 `.html` |
+| El número de WhatsApp | Buscar `4367764216757` en los 8 `.html`, en `assets/js/shop.js` y en el `telephone` del schema.org de `index.html` |
 | El menú o el footer | Los 6 `.html` (están duplicados) |
 | Añadir un destino nuevo | Copiar un `destino-*.html` y añadir su bloque en `index.html` |
 | Que algo aparezca al hacer scroll | Añadirle `class="reveal"` |

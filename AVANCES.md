@@ -1,6 +1,6 @@
 # Avances — 4 tareas nuevas (Los Roques, Surf, Casa, Tienda)
 
-**Última actualización:** 2026-11-10
+**Última actualización:** 2026-11-11
 **Estado:** ✅ **Las 4 tareas están completas, verificadas en navegador y subidas.**
 
 ---
@@ -52,6 +52,117 @@ que siempre contraste.
 
 ---
 
+---
+
+## 2026-11-11 — Número real de WhatsApp + títulos más pequeños en móvil
+
+### WhatsApp real
+
+`+43 677 64216757` (Austria) sustituye al relleno `584120000000` en las **46
+referencias**: los 8 `.html` (nav, menú móvil, CTAs, footer, botón flotante),
+`assets/js/shop.js` y el `telephone` del schema.org de `index.html`.
+
+Queda fuera a propósito el CMS legado (`assets/js/admin.js`, `data/cms_db.json`),
+que conserva `+58 412 000 0000`. `admin.js` está huérfano — no lo carga ningún
+HTML — así que no lo ve ningún visitante.
+
+### Títulos más pequeños en móvil
+
+**37 declaraciones** en 8 archivos. El método importa: casi todos los títulos ya
+usaban `clamp(min, Xvw, max)`, y en un móvil el término `vw` siempre queda por
+debajo del mínimo, así que **es el mínimo el que manda**. Bajando sólo el mínimo,
+el móvil encoge y **el escritorio no cambia ni un píxel** — verificado midiendo a
+1280px antes y después: lista de tamaños idéntica.
+
+Los 3 tamaños fijos (`.gallery-head h2`, `.itin-card h3`, `.sport-card h3`) se
+convirtieron a `clamp()` con el valor viejo como máximo, con el mismo efecto.
+
+| Título | Antes | Ahora |
+|---|---|---|
+| `.gallery-head h2` | 40 px | 32 px |
+| `.dest-hero-content h1` (destinos, tienda) | 38,4 px | 32 px |
+| `.cta h2` (cierre de todas las páginas) | 35,2 px | 30,4 px |
+| `.ricky-hero-text h1` | 35,2 px | 30,4 px |
+| `.dest-text / .sports-head / .itin-head / .shop-head h2` | 32 px | 28 px |
+| `.hero h1` (home) | 30,4 px | 27,2 px |
+| `.ricky-banner-text / .casa-text h2` | 28,8 px | 25,6 px |
+| `.itin-card h3` | 24 px | 21,6 px |
+| `.sport-card h3` | 21,6 px | 20 px |
+
+Entre −7 % y −20 %: más recorte cuanto más grande era el título. `.info-card h3`
+(18,4 px) se dejó igual, ya estaba en el límite de lo legible.
+
+Ojo: 19 de esas declaraciones estaban **inline en el HTML**, no en el CSS — sobre
+todo en las páginas de destino. Una media query no las habría tocado.
+
+**El cache-buster subió de `?v=2.4` a `?v=2.5`** en los 8 `.html`. Sin eso, quien
+ya hubiera visitado el sitio seguiría viendo la hoja de estilos vieja.
+
+Verificado en las 8 páginas a 375 px: ningún desborde horizontal.
+
+---
+
+## 2026-11-11 (2) — La marca pasa del verde al azul
+
+El cliente dijo que casi no le gusta el negro y que prefiere la gama de azules
+sobre los verdes. Se aplicó la **opción A (Azul océano)** de las tres que se le
+presentaron.
+
+### Alcance real: 104 apariciones, no 5 variables
+
+La paleta no vivía solo en `:root`. Había verdes escritos a mano por todo el
+proyecto — `#122a26` aparecía **40 veces**, la mayoría inline en el HTML. En
+total **20 valores verdes distintos en 104 apariciones**, en el CSS y en los
+8 `.html`.
+
+### Cómo se transformaron
+
+No se eligieron 104 colores a mano. Los verdes estaban todos en un rango de
+matiz muy cerrado (162°–195°), así que se aplicó una transformación por bandas
+de luminosidad:
+
+- **Estructura** (luz < 30 %): matiz +40° (tope 218°), saturación ×1,35 (tope
+  72 %), luz **+6,5 puntos**. Ese empujón de luz es lo que responde al "casi no
+  me gusta el negro": los fondos dejan de leerse como negro y pasan a azul marino.
+- **Acentos** (luz ≥ 30 %): matiz +18°, saturación y luz intactas. El turquesa se
+  vuelve cian azulado sin perder el carácter caribeño.
+
+Las 5 variables de marca de `:root` se fijaron a mano para que coincidieran
+exactamente con la opción A que vio el cliente:
+
+| Variable | Antes | Ahora |
+|---|---|---|
+| `--ink` | `#122a26` | `#14304d` |
+| `--deep` | `#183a34` | `#1b4268` |
+| `--ocean` | `#1e4a43` | `#215a86` |
+| `--turq` | `#1fc7b6` | `#22b5d8` |
+| `--turq-soft` | `#79e3d6` | `#8ad8ec` |
+
+### Lo que NO se tocó
+
+- **Coral, mango y dorado.** Son la energía de la marca, y sobre azul marino
+  contrastan mejor que sobre verde: son colores opuestos. Los botones de
+  "Reservar" resaltan más que antes.
+- **El verde de WhatsApp** (`#25D366`, `#1da851`): sus 8 apariciones intactas.
+  Es el color de una marca ajena, no de la nuestra.
+- Arena, papel y hielo.
+
+**Cache-buster a `?v=2.6`.**
+
+### Si hay que cambiar de opinión
+
+La transformación es un script por bandas de luminosidad, no una lista escrita a
+mano. Cambiar a la opción B (Caribe claro) o C (Azul noche) es volver a correrlo
+con otras constantes. Comparación de las tres:
+https://claude.ai/code/artifact/56094589-9801-4b7f-bc9b-769e6b9498c0
+
+### Sobre el briefing del cliente
+
+El documento de Drive (`Briefing Diseño Web.docx`) **está prácticamente vacío**:
+es una plantilla de briefing de agencia sin rellenar. El único campo con texto es
+la lista de valores de marca, y parece el menú de opciones de la propia plantilla,
+no una elección del cliente. No contiene fotos ni cambios para el itinerario.
+
 ## Pendientes (necesitan datos tuyos)
 
 | # | Qué falta | Dónde |
@@ -91,7 +202,7 @@ sí lo menciona (Playa Grande y Parguito). El Surf como deporte está en la home
 
 De [ESTRUCTURA-WEB.md](ESTRUCTURA-WEB.md):
 
-1. **WhatsApp de relleno** `584120000000` en todo el sitio, incluidas las páginas nuevas. Es la única vía de conversión
+1. ~~**WhatsApp de relleno**~~ **Resuelto (2026-11-11):** número real `+43 677 64216757` aplicado en las 46 referencias (8 `.html` + `assets/js/shop.js`) y en el `telephone` del schema.org. Queda fuera a propósito el CMS legado (`assets/js/admin.js`, `data/cms_db.json`), que no se sirve a los visitantes
 2. `choroni-panorama.webp` pesa **6,2 MB** y se carga dos veces en la home. `choroni-paraiso.webp` es de 4032×3024 para un hueco de 420px
 3. `sitemap.xml` no existe, y `robots.txt` apunta a un dominio distinto al del schema.org. Las 2 páginas nuevas tampoco están en él
 4. CMS legado: `admin.js` huérfano y APIs sin autenticación en `server.js`
